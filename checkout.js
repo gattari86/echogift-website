@@ -1,20 +1,21 @@
 // Stripe configuration
 const stripe = Stripe('pk_live_51RTWhNEinaZMSMtjUEnWpzUPDC8KZBlFOy9O4Is2iG6KDg0CrCLszCw8QksowdNQcUyFdp8BIuWmSPMYueau2t5200ayCjCLBw');
-const elements = stripe.elements();
 
-// Product pricing
+// Product pricing and Stripe Price IDs
+// TODO: Replace these with your actual Stripe Price IDs from your dashboard
+const STRIPE_PRICES = {
+    single: 'price_1234567890abcdef', // TODO: Replace with actual price ID for $79 song
+    album: 'price_0987654321fedcba'   // TODO: Replace with actual price ID for $299 album
+};
+
 const PRICING = {
     single: { price: 79.00, name: 'Personalized Song', description: 'Custom AI-generated song with your story' },
     album: { price: 299.00, name: 'Custom Song Album', description: '3-5 personalized songs telling your complete story' }
 };
 
-// Processing fee (2.9% + $0.30 for Stripe)
-const calculateProcessingFee = (amount) => Math.round((amount * 0.029 + 0.30) * 100) / 100;
-
 // Initialize checkout page
 document.addEventListener('DOMContentLoaded', function() {
     loadOrderData();
-    setupStripeElements();
     setupPaymentForm();
 });
 
@@ -30,16 +31,14 @@ function loadOrderData() {
 
     // Populate order summary
     const product = PRICING[orderData.productType];
-    const processingFee = calculateProcessingFee(product.price);
-    const total = product.price + processingFee;
 
     document.getElementById('product-name').textContent = product.name;
     document.getElementById('product-description').textContent = product.description;
     document.getElementById('product-price').textContent = `$${product.price.toFixed(2)}`;
     document.getElementById('subtotal').textContent = `$${product.price.toFixed(2)}`;
-    document.getElementById('processing-fee').textContent = `$${processingFee.toFixed(2)}`;
-    document.getElementById('final-total').textContent = `$${total.toFixed(2)}`;
-    document.getElementById('button-amount').textContent = total.toFixed(2);
+    document.getElementById('processing-fee').textContent = 'Included';
+    document.getElementById('final-total').textContent = `$${product.price.toFixed(2)}`;
+    document.getElementById('button-amount').textContent = product.price.toFixed(2);
 
     // Populate order details
     document.getElementById('recipient-display').textContent = orderData.recipientName || 'N/A';
@@ -50,43 +49,7 @@ function loadOrderData() {
 
     // Store for payment processing
     window.orderData = orderData;
-    window.orderTotal = total;
-}
-
-function setupStripeElements() {
-    // Create card element
-    const cardElement = elements.create('card', {
-        style: {
-            base: {
-                fontSize: '16px',
-                color: '#2C3E50',
-                fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-                '::placeholder': {
-                    color: '#95A5A6',
-                },
-                padding: '16px',
-            },
-            invalid: {
-                color: '#E74C3C',
-            },
-        },
-    });
-
-    cardElement.mount('#card-element');
-
-    // Handle real-time validation errors from the card Element
-    cardElement.on('change', function(event) {
-        const displayError = document.getElementById('card-errors');
-        if (event.error) {
-            displayError.textContent = event.error.message;
-            displayError.style.display = 'block';
-        } else {
-            displayError.textContent = '';
-            displayError.style.display = 'none';
-        }
-    });
-
-    window.cardElement = cardElement;
+    window.orderTotal = product.price;
 }
 
 function setupPaymentForm() {
@@ -107,27 +70,10 @@ async function handleSubmit(event) {
     spinner.classList.remove('hidden');
 
     try {
-        // Create payment method
-        const {paymentMethod, error} = await stripe.createPaymentMethod({
-            type: 'card',
-            card: window.cardElement,
-            billing_details: {
-                name: document.getElementById('billing-name').value,
-                email: document.getElementById('email').value,
-            },
-        });
-
-        if (error) {
-            throw error;
-        }
-
-        // In a real implementation, you would send this to your server
-        // For now, we'll simulate success and redirect
-        await processPayment(paymentMethod);
-        
+        await createStripeCheckoutSession();
     } catch (error) {
-        console.error('Payment failed:', error);
-        showError(error.message || 'An error occurred processing your payment.');
+        console.error('Checkout failed:', error);
+        showError(error.message || 'An error occurred starting checkout.');
         
         // Re-enable submit button
         submitButton.disabled = false;
@@ -136,35 +82,45 @@ async function handleSubmit(event) {
     }
 }
 
-async function processPayment(paymentMethod) {
-    // TODO: In production, send this data to your server to create a payment intent
+async function createStripeCheckoutSession() {
     const orderData = window.orderData;
-    const paymentData = {
-        paymentMethodId: paymentMethod.id,
-        amount: Math.round(window.orderTotal * 100), // Amount in cents
-        currency: 'usd',
-        orderDetails: orderData,
-        billingDetails: paymentMethod.billing_details
-    };
-
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
-    // For demo purposes, we'll assume success and redirect
-    // Store order confirmation data
-    const confirmationData = {
-        orderId: 'EG-' + Date.now(),
-        amount: window.orderTotal,
-        product: orderData.productType === 'single' ? 'Personalized Song' : 'Custom Song Album',
-        email: orderData.email,
-        estimatedDelivery: getEstimatedDelivery()
-    };
+    const priceId = STRIPE_PRICES[orderData.productType];
     
-    sessionStorage.setItem('confirmationData', JSON.stringify(confirmationData));
-    sessionStorage.removeItem('orderData'); // Clear order data
+    if (!priceId || priceId.includes('1234567890')) {
+        throw new Error('Stripe price IDs not configured. Please set up your products in Stripe Dashboard.');
+    }
     
-    // Redirect to success page
-    window.location.href = 'success.html';
+    // Get current domain for success/cancel URLs
+    const currentDomain = window.location.origin;
+    
+    // Create checkout session
+    const { error } = await stripe.redirectToCheckout({
+        mode: 'payment',
+        lineItems: [{
+            price: priceId,
+            quantity: 1
+        }],
+        customerEmail: orderData.email,
+        metadata: {
+            recipientName: orderData.recipientName,
+            occasion: orderData.occasion,
+            storyThemes: orderData.storyThemes.substring(0, 500), // Stripe metadata limit
+            genre: orderData.genre,
+            tone: orderData.tone,
+            delivery: orderData.delivery,
+            orderId: 'EG-' + Date.now()
+        },
+        successUrl: `${currentDomain}/success.html?session_id={CHECKOUT_SESSION_ID}`,
+        cancelUrl: `${currentDomain}/checkout.html?canceled=true`,
+        allowPromotionCodes: true,
+        billingAddressCollection: 'required',
+        shippingAddressCollection: null,
+        submitType: 'pay'
+    });
+
+    if (error) {
+        throw error;
+    }
 }
 
 function getEstimatedDelivery() {
