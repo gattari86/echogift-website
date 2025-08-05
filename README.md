@@ -2,6 +2,8 @@
 
 **Your Story. Your Song.**
 
+🌐 **Live at: [echogifts.shop](https://echogifts.shop)**
+
 A sleek, minimalist website for EchoGift, offering personalized AI-generated songs and albums as digital gifts.
 
 ## Features
