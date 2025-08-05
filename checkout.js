@@ -1,6 +1,5 @@
 // Stripe configuration
-// Note: Replace with your actual Stripe publishable key
-const stripe = Stripe('pk_test_51234567890abcdef...');  // Replace with your publishable key
+const stripe = Stripe('pk_live_51RTWhNEinaZMSMtjUEnWpzUPDC8KZBlFOy9O4Is2iG6KDg0CrCLszCw8QksowdNQcUyFdp8BIuWmSPMYueau2t5200ayCjCLBw');
 const elements = stripe.elements();
 
 // Product pricing
