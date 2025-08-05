@@ -2,15 +2,14 @@
 const stripe = Stripe('pk_live_51RTWhNEinaZMSMtjUEnWpzUPDC8KZBlFOy9O4Is2iG6KDg0CrCLszCw8QksowdNQcUyFdp8BIuWmSPMYueau2t5200ayCjCLBw');
 
 // Product pricing and Stripe Price IDs
-// TODO: Replace these with your actual Stripe Price IDs from your dashboard
 const STRIPE_PRICES = {
-    single: 'price_1234567890abcdef', // TODO: Replace with actual price ID for $79 song
-    album: 'price_0987654321fedcba'   // TODO: Replace with actual price ID for $299 album
+    single: 'price_1RsuIhEinaZMSMtjh8LOF9vc', // $79 Personalized Song
+    album: 'price_1RsuIqEinaZMSMtjlfcmwgvI'   // $299 Custom Song Album
 };
 
 const PRICING = {
-    single: { price: 79.00, name: 'Personalized Song', description: 'Custom AI-generated song with your story' },
-    album: { price: 299.00, name: 'Custom Song Album', description: '3-5 personalized songs telling your complete story' }
+    single: { price: 79.00, name: 'Personalized Song', description: 'Custom AI-generated song with your story + custom artwork' },
+    album: { price: 299.00, name: 'Custom Song Album', description: '5 personalized songs telling your complete story + custom artwork' }
 };
 
 // Initialize checkout page
@@ -126,6 +125,7 @@ async function createStripeCheckoutSession() {
             
             // Customer Story (Stripe limits metadata to 500 chars per field)
             storyThemes: orderData.storyThemes ? orderData.storyThemes.substring(0, 500) : 'No story provided',
+            artworkInspiration: orderData.artworkInspiration ? orderData.artworkInspiration.substring(0, 500) : 'No artwork inspiration provided',
             
             // Technical Details
             source: 'echogifts.shop',
@@ -165,12 +165,23 @@ async function sendOrderDetailsEmail(orderData) {
         
         // Customer Story
         'Story & Themes': orderData.storyThemes,
-        
-        // Technical
-        'Order Source': 'echogifts.shop',
-        'Order ID': 'EG-' + Date.now(),
-        'Status': 'Payment Pending'
+        'Artwork Inspiration': orderData.artworkInspiration || 'None provided',
     };
+    
+    // Add album songs if applicable
+    if (orderData.productType === 'album' && orderData.albumSongs) {
+        orderData.albumSongs.forEach((song, index) => {
+            if (song.title || song.story) {
+                emailData[`Song ${song.songNumber} Title`] = song.title || 'No title provided';
+                emailData[`Song ${song.songNumber} Story`] = song.story || 'No story provided';
+            }
+        });
+    }
+    
+    // Add technical details
+    emailData['Order Source'] = 'echogifts.shop';
+    emailData['Order ID'] = 'EG-' + Date.now();
+    emailData['Status'] = 'Payment Pending';
     
     const response = await fetch('https://formspree.io/f/xkgzqpyy', {
         method: 'POST',

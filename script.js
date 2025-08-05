@@ -55,11 +55,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 recipientName: data['recipient-name'],
                 occasion: data.occasion,
                 storyThemes: data['story-themes'],
+                artworkInspiration: data['artwork-inspiration'] || '',
                 genre: data.genre,
                 tone: data.tone,
                 email: data.email,
                 delivery: data.delivery
             };
+            
+            // Add album-specific song details if album is selected
+            if (data['product-type'] === 'album') {
+                orderData.albumSongs = [];
+                for (let i = 1; i <= 5; i++) {
+                    const songTitle = data[`song${i}-title`] || '';
+                    const songStory = data[`song${i}-story`] || '';
+                    if (songTitle || songStory) {
+                        orderData.albumSongs.push({
+                            songNumber: i,
+                            title: songTitle,
+                            story: songStory
+                        });
+                    }
+                }
+            }
             
             // Store in session storage for checkout page
             sessionStorage.setItem('orderData', JSON.stringify(orderData));
@@ -98,11 +115,12 @@ document.addEventListener('DOMContentLoaded', function() {
         history.replaceState(null, null, window.location.pathname + window.location.search);
     }
     
-    // Dynamic pricing update
+    // Dynamic pricing update and form fields
     const productSelect = document.getElementById('product-type');
     if (productSelect) {
         productSelect.addEventListener('change', function() {
             updatePricingHighlight(this.value);
+            toggleAlbumFields(this.value);
         });
     }
 });
@@ -153,6 +171,74 @@ function updatePricingHighlight(selectedType) {
     } else if (selectedType === 'album') {
         priceCards[1].classList.add('featured');
     }
+}
+
+// Toggle album-specific fields
+function toggleAlbumFields(selectedType) {
+    // First, check if album fields already exist
+    let albumFieldsContainer = document.getElementById('album-fields');
+    
+    if (selectedType === 'album') {
+        // Show album-specific fields if not already present
+        if (!albumFieldsContainer) {
+            albumFieldsContainer = createAlbumFields();
+            const storyGroup = document.querySelector('textarea[name="story-themes"]').closest('.form-group');
+            storyGroup.parentNode.insertBefore(albumFieldsContainer, storyGroup.nextSibling);
+        }
+        albumFieldsContainer.style.display = 'block';
+        
+        // Update the main story field label and placeholder for albums
+        const storyLabel = document.querySelector('label[for="story-themes"]');
+        const storyTextarea = document.getElementById('story-themes');
+        storyLabel.textContent = 'Tell Us Your Story (Overall Album Theme)';
+        storyTextarea.placeholder = 'Share the overarching theme or story that connects all 5 songs...';
+    } else {
+        // Hide album fields for single songs
+        if (albumFieldsContainer) {
+            albumFieldsContainer.style.display = 'none';
+        }
+        
+        // Reset the main story field for single songs
+        const storyLabel = document.querySelector('label[for="story-themes"]');
+        const storyTextarea = document.getElementById('story-themes');
+        storyLabel.textContent = 'Tell Us Your Story';
+        storyTextarea.placeholder = 'Share the key stories, memories, or themes you\'d like included in your song...';
+    }
+}
+
+// Create album-specific fields for 5 songs
+function createAlbumFields() {
+    const container = document.createElement('div');
+    container.id = 'album-fields';
+    container.className = 'album-fields-container';
+    
+    let fieldsHTML = `
+        <div class="album-fields-header">
+            <h4>Individual Song Details</h4>
+            <p>Please provide specific details for each of the 5 songs in your album:</p>
+        </div>
+    `;
+    
+    for (let i = 1; i <= 5; i++) {
+        fieldsHTML += `
+            <div class="song-field-group">
+                <h5>Song ${i}</h5>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="song${i}-title">Song Title/Theme</label>
+                        <input type="text" id="song${i}-title" name="song${i}-title" placeholder="e.g., 'Our First Dance', 'College Years'..." class="album-field">
+                    </div>
+                    <div class="form-group">
+                        <label for="song${i}-story">Story/Memory for This Song</label>
+                        <textarea id="song${i}-story" name="song${i}-story" rows="2" placeholder="Brief story or memory for song ${i}..." class="album-field"></textarea>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    container.innerHTML = fieldsHTML;
+    return container;
 }
 
 // Message display functions
@@ -250,6 +336,49 @@ style.textContent = `
     
     .message-popup {
         font-family: 'Inter', sans-serif;
+    }
+    
+    .album-fields-container {
+        margin: 20px 0;
+        padding: 24px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border: 1px solid #e9ecef;
+        display: none;
+    }
+    
+    .album-fields-header h4 {
+        margin: 0 0 8px 0;
+        color: #D4AF37;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    .album-fields-header p {
+        margin: 0 0 20px 0;
+        color: #666;
+        font-size: 14px;
+    }
+    
+    .song-field-group {
+        margin-bottom: 24px;
+        padding: 16px;
+        background: white;
+        border-radius: 8px;
+        border: 1px solid #e9ecef;
+    }
+    
+    .song-field-group h5 {
+        margin: 0 0 12px 0;
+        color: #333;
+        font-size: 16px;
+        font-weight: 600;
+        border-bottom: 1px solid #e9ecef;
+        padding-bottom: 8px;
+    }
+    
+    .album-field {
+        background: #f8f9fa;
     }
 `;
 document.head.appendChild(style);
