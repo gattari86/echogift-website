@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchoGift - Custom AI-Generated Song Gifts | Your Story, Your Song</title>
+    <meta name="description" content="Transform your memories into personalized AI-generated songs and albums. Perfect digital gifts for any occasion. Single songs from $79, albums from $299. Order today!">
+    <meta name="keywords" content="AI songs, personalized music, custom songs, digital gifts, AI-generated music, song gifts">
+    <meta property="og:title" content="EchoGift - Custom AI-Generated Song Gifts">
+    <meta property="og:description" content="Transform your memories into personalized AI-generated songs. Perfect digital gifts delivered fast.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://echogift.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Story. Your Song.</h1>
+                <p class="hero-subtitle">Custom AI-written song gifts delivered fast. Albums coming soon.</p>
+                <button class="cta-button" onclick="scrollToOrder()">Order Your Song</button>
+            </div>
+            <div class="hero-visual">
+                <div class="music-wave">
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h3>Single Song</h3>
+                    <div class="price">$79</div>
+                    <p>Perfect for birthdays, anniversaries, or any special moment</p>
+                </div>
+                <div class="price-card featured">
+                    <h3>Album</h3>
+                    <div class="price">$299</div>
+                    <p>3-5 songs telling your complete story</p>
+                    <span class="badge">Most Popular</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order" class="order-form">
+        <div class="container">
+            <h2>Create Your Musical Gift</h2>
+            <form class="order-form-content">
+                <div class="form-group">
+                    <label for="product-type">Choose Your Gift Type</label>
+                    <select id="product-type" name="product-type" required>
+                        <option value="">Select an option</option>
+                        <option value="single">Single Song - $79</option>
+                        <option value="album">Album (3-5 songs) - $299</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="recipient-name">Recipient Name</label>
+                        <input type="text" id="recipient-name" name="recipient-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="occasion">Occasion</label>
+                        <input type="text" id="occasion" name="occasion" placeholder="Birthday, Anniversary, Wedding..." required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="story-themes">Tell Us Your Story</label>
+                    <textarea id="story-themes" name="story-themes" rows="4" placeholder="Share the key stories, memories, or themes you'd like included in your song..." required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="genre">Musical Style</label>
+                        <select id="genre" name="genre" required>
+                            <option value="">Choose a genre</option>
+                            <option value="pop">Pop</option>
+                            <option value="acoustic">Acoustic</option>
+                            <option value="country">Country</option>
+                            <option value="rock">Rock</option>
+                            <option value="folk">Folk</option>
+                            <option value="jazz">Jazz</option>
+                            <option value="r&b">R&B</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tone">Tone</label>
+                        <select id="tone" name="tone" required>
+                            <option value="">Select tone</option>
+                            <option value="upbeat">Upbeat & Joyful</option>
+                            <option value="romantic">Romantic</option>
+                            <option value="nostalgic">Nostalgic</option>
+                            <option value="emotional">Emotional</option>
+                            <option value="celebratory">Celebratory</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="delivery">Delivery Preference</label>
+                        <select id="delivery" name="delivery" required>
+                            <option value="">Choose delivery method</option>
+                            <option value="email">Email Download</option>
+                            <option value="streaming">Streaming Link</option>
+                            <option value="both">Both</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Create My Song Gift</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Vinyl Section -->
+    <section class="vinyl-section">
+        <div class="container">
+            <div class="vinyl-content">
+                <h2>Vinyl Records – Coming Soon</h2>
+                <p>Turn your AI-generated songs into beautiful vinyl records. Be the first to know when this magical option becomes available.</p>
+                <div class="vinyl-signup">
+                    <input type="email" placeholder="Enter your email" class="vinyl-email">
+                    <button class="vinyl-button">Join the Vinyl Waitlist</button>
+                </div>
+            </div>
+            <div class="vinyl-visual">
+                <div class="vinyl-record">
+                    <div class="vinyl-center"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="quote">"I gave my husband a song about our 20-year journey together for our anniversary. He cried happy tears – it captured our story perfectly."</div>
+                    <div class="author">— Sarah M.</div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"My daughter's graduation song included all her achievements and dreams. She plays it every morning before work. Best gift I've ever given."</div>
+                    <div class="author">— Michael R.</div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"The album about my late father helped our whole family heal. Each song told a different chapter of his life. Absolutely beautiful."</div>
+                    <div class="author">— Jennifer L.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>EchoGift</h3>
+                    <p>Your story, your song.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EchoGift. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
