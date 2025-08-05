@@ -245,10 +245,12 @@
             <div class="vinyl-content">
                 <h2>Vinyl Records – Coming Soon</h2>
                 <p>Turn your AI-generated songs into beautiful vinyl records. Be the first to know when this magical option becomes available.</p>
-                <div class="vinyl-signup">
-                    <input type="email" placeholder="Enter your email" class="vinyl-email">
-                    <button class="vinyl-button">Join the Vinyl Waitlist</button>
-                </div>
+                <form action="https://formspree.io/f/xkgzqpyy" method="POST" class="vinyl-signup">
+                    <input type="email" name="email" placeholder="Enter your email" class="vinyl-email" required>
+                    <input type="hidden" name="_subject" value="New Vinyl Waitlist Signup - EchoGift">
+                    <input type="hidden" name="_next" value="https://gattari86.github.io/echogift-website/#vinyl-success">
+                    <button type="submit" class="vinyl-button">Join the Vinyl Waitlist</button>
+                </form>
             </div>
             <div class="vinyl-visual">
                 <div class="vinyl-record">

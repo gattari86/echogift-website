@@ -69,25 +69,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Vinyl waitlist form
+    // Vinyl waitlist form (now handled by Formspree)
     if (vinylForm) {
-        const vinylButton = vinylForm.querySelector('.vinyl-button');
-        const vinylEmail = vinylForm.querySelector('.vinyl-email');
-        
-        vinylButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const email = vinylEmail.value.trim();
+        vinylForm.addEventListener('submit', function(e) {
+            const email = vinylForm.querySelector('.vinyl-email').value.trim();
             
             if (!validateEmail(email)) {
+                e.preventDefault();
                 showErrorMessage('Please enter a valid email address.');
                 return;
             }
             
-            // Show success message
-            showSuccessMessage('Thank you! You\'ve been added to our vinyl waitlist.');
-            vinylEmail.value = '';
+            // Show loading state
+            const submitButton = vinylForm.querySelector('.vinyl-button');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Joining...';
+            submitButton.disabled = true;
+            
+            // Form will submit to Formspree, then redirect back
+            // Success message will be shown when they return
         });
+    }
+    
+    // Check if user returned from Formspree vinyl signup
+    if (window.location.hash === '#vinyl-success') {
+        showSuccessMessage('Thank you! You\'ve been added to our vinyl waitlist. We\'ll email you when vinyl records are available!');
+        // Clean up the hash
+        history.replaceState(null, null, window.location.pathname + window.location.search);
     }
     
     // Dynamic pricing update
