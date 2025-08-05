@@ -92,6 +92,75 @@
         </div>
     </section>
 
+    <!-- Audio Samples Section -->
+    <section id="audio-samples" class="audio-samples">
+        <div class="container">
+            <h2>Hear the Magic - Real Customer Songs</h2>
+            <p class="samples-subtitle">Listen to actual personalized songs we've created for our customers. Each tells a unique story.</p>
+            
+            <div class="samples-grid">
+                <div class="sample-card">
+                    <div class="sample-info">
+                        <h3>"Two Decades Strong"</h3>
+                        <p class="sample-story">Created for Sarah M.'s 20th anniversary gift to her husband. A beautiful journey through their marriage milestones.</p>
+                        <p class="sample-details"><strong>Genre:</strong> Acoustic Folk • <strong>Occasion:</strong> Anniversary</p>
+                    </div>
+                    <div class="audio-player-container">
+                        <audio controls preload="metadata" class="custom-audio-player">
+                            <source src="audio/Two Decades Strong.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="play-info">
+                            <span class="play-icon">▶️</span>
+                            <span class="duration">Listen to sample</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sample-card">
+                    <div class="sample-info">
+                        <h3>"The Sky She Reached"</h3>
+                        <p class="sample-story">Michael R.'s graduation gift for his daughter, celebrating her achievements and dreams for the future.</p>
+                        <p class="sample-details"><strong>Genre:</strong> Uplifting Pop • <strong>Occasion:</strong> Graduation</p>
+                    </div>
+                    <div class="audio-player-container">
+                        <audio controls preload="metadata" class="custom-audio-player">
+                            <source src="audio/The Sky She Reached.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="play-info">
+                            <span class="play-icon">▶️</span>
+                            <span class="duration">Listen to sample</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sample-card">
+                    <div class="sample-info">
+                        <h3>"Chapters of You"</h3>
+                        <p class="sample-story">Jennifer L.'s tribute album about her late father, helping her family heal through music and memories.</p>
+                        <p class="sample-details"><strong>Genre:</strong> Emotional Ballad • <strong>Occasion:</strong> Memorial</p>
+                    </div>
+                    <div class="audio-player-container">
+                        <audio controls preload="metadata" class="custom-audio-player">
+                            <source src="audio/Chapters of You (Remix).wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="play-info">
+                            <span class="play-icon">▶️</span>
+                            <span class="duration">Listen to sample</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="samples-cta">
+                <p class="samples-note">🎵 Each song is completely unique and created from the customer's personal story</p>
+                <button class="cta-button" onclick="scrollToOrder()">Create Your Custom Song</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Order Form Section -->
     <section id="order" class="order-form">
         <div class="container">
@@ -197,14 +266,17 @@
                 <div class="testimonial">
                     <div class="quote">"I gave my husband a song about our 20-year journey together for our anniversary. He cried happy tears – it captured our story perfectly."</div>
                     <div class="author">— Sarah M.</div>
+                    <a href="#audio-samples" class="testimonial-link" onclick="scrollToSamples('Two Decades Strong')">🎵 Hear Sarah's Song</a>
                 </div>
                 <div class="testimonial">
                     <div class="quote">"My daughter's graduation song included all her achievements and dreams. She plays it every morning before work. Best gift I've ever given."</div>
                     <div class="author">— Michael R.</div>
+                    <a href="#audio-samples" class="testimonial-link" onclick="scrollToSamples('The Sky She Reached')">🎵 Hear Michael's Song</a>
                 </div>
                 <div class="testimonial">
                     <div class="quote">"The album about my late father helped our whole family heal. Each song told a different chapter of his life. Absolutely beautiful."</div>
                     <div class="author">— Jennifer L.</div>
+                    <a href="#audio-samples" class="testimonial-link" onclick="scrollToSamples('Chapters of You')">🎵 Hear Jennifer's Song</a>
                 </div>
             </div>
         </div>

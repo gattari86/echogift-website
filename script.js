@@ -7,6 +7,29 @@ function scrollToOrder() {
     });
 }
 
+// Scroll to samples section and highlight specific song
+function scrollToSamples(songTitle) {
+    const samplesSection = document.getElementById('audio-samples');
+    samplesSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+    });
+    
+    // Highlight the specific song card after scrolling
+    setTimeout(() => {
+        const sampleCards = document.querySelectorAll('.sample-card');
+        sampleCards.forEach(card => {
+            const title = card.querySelector('h3').textContent;
+            if (title.includes(songTitle.replace(' (Remix)', ''))) {
+                card.classList.add('highlighted');
+                setTimeout(() => {
+                    card.classList.remove('highlighted');
+                }, 3000); // Remove highlight after 3 seconds
+            }
+        });
+    }, 800); // Wait for scroll to complete
+}
+
 // Form handling
 document.addEventListener('DOMContentLoaded', function() {
     const orderForm = document.querySelector('.order-form-content');
