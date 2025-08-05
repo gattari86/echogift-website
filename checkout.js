@@ -90,6 +90,14 @@ async function createStripeCheckoutSession() {
         throw new Error('Stripe price IDs not configured. Please set up your products in Stripe Dashboard.');
     }
     
+    // Send order details via email before payment (backup)
+    try {
+        await sendOrderDetailsEmail(orderData);
+    } catch (error) {
+        console.warn('Failed to send order email backup:', error);
+        // Don't block checkout if email fails
+    }
+    
     // Get current domain for success/cancel URLs
     const currentDomain = window.location.origin;
     
@@ -102,13 +110,26 @@ async function createStripeCheckoutSession() {
         }],
         customerEmail: orderData.email,
         metadata: {
-            recipientName: orderData.recipientName,
-            occasion: orderData.occasion,
-            storyThemes: orderData.storyThemes.substring(0, 500), // Stripe metadata limit
-            genre: orderData.genre,
-            tone: orderData.tone,
-            delivery: orderData.delivery,
-            orderId: 'EG-' + Date.now()
+            // Order Identification
+            orderId: 'EG-' + Date.now(),
+            productType: orderData.productType,
+            orderDate: new Date().toLocaleDateString(),
+            
+            // Recipient Details
+            recipientName: orderData.recipientName || 'Not specified',
+            occasion: orderData.occasion || 'Not specified',
+            
+            // Song Requirements
+            genre: orderData.genre || 'Not specified',
+            tone: orderData.tone || 'Not specified',
+            delivery: orderData.delivery || 'Email Download',
+            
+            // Customer Story (Stripe limits metadata to 500 chars per field)
+            storyThemes: orderData.storyThemes ? orderData.storyThemes.substring(0, 500) : 'No story provided',
+            
+            // Technical Details
+            source: 'echogifts.shop',
+            timestamp: Date.now().toString()
         },
         successUrl: `${currentDomain}/success.html?session_id={CHECKOUT_SESSION_ID}`,
         cancelUrl: `${currentDomain}/checkout.html?canceled=true`,
@@ -121,6 +142,49 @@ async function createStripeCheckoutSession() {
     if (error) {
         throw error;
     }
+}
+
+// Backup: Send order details via email before payment
+async function sendOrderDetailsEmail(orderData) {
+    const emailData = {
+        _subject: `🎵 NEW SONG ORDER - ${orderData.recipientName} (${orderData.occasion})`,
+        _template: 'box',
+        _next: window.location.href, // Stay on current page
+        
+        // Order Summary
+        'Order Type': orderData.productType === 'single' ? 'Personalized Song ($79)' : 'Custom Album ($299)',
+        'Customer Email': orderData.email,
+        'Order Date': new Date().toLocaleDateString(),
+        
+        // Song Details
+        'Recipient Name': orderData.recipientName,
+        'Occasion': orderData.occasion,
+        'Genre': orderData.genre,
+        'Tone': orderData.tone,
+        'Delivery Method': orderData.delivery,
+        
+        // Customer Story
+        'Story & Themes': orderData.storyThemes,
+        
+        // Technical
+        'Order Source': 'echogifts.shop',
+        'Order ID': 'EG-' + Date.now(),
+        'Status': 'Payment Pending'
+    };
+    
+    const response = await fetch('https://formspree.io/f/xkgzqpyy', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(emailData)
+    });
+    
+    if (!response.ok) {
+        throw new Error('Failed to send order email');
+    }
+    
+    return response.json();
 }
 
 function getEstimatedDelivery() {
