@@ -26,11 +26,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Show success message (in a real app, this would submit to a server)
-            showSuccessMessage('Thank you! We\'ll start creating your custom song and send you a confirmation email within 24 hours.');
+            // Store order data and redirect to checkout
+            const orderData = {
+                productType: data['product-type'],
+                recipientName: data['recipient-name'],
+                occasion: data.occasion,
+                storyThemes: data['story-themes'],
+                genre: data.genre,
+                tone: data.tone,
+                email: data.email,
+                delivery: data.delivery
+            };
             
-            // Reset form
-            orderForm.reset();
+            // Store in session storage for checkout page
+            sessionStorage.setItem('orderData', JSON.stringify(orderData));
+            
+            // Redirect to checkout
+            window.location.href = 'checkout.html';
         });
     }
     
