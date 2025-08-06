@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 artworkInspiration: data['artwork-inspiration'] || '',
                 genre: data.genre,
                 tone: data.tone,
+                languagePreference: data['language-preference'],
                 email: data.email,
                 delivery: 'Email Download' // Default since delivery preference was removed
             };
@@ -164,6 +165,7 @@ function validateOrderForm(data) {
         'story-themes',
         'genre',
         'tone',
+        'language-preference',
         'email',
         'terms-agreement'
     ];

@@ -2577,6 +2577,20 @@ p {
 }
 
 /* Language Support Section */
+.language-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.language-hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    max-height: 400px;
+    object-fit: cover;
+}
+
 .language-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -3035,6 +3049,19 @@ p {
     padding: 20px 40px;
     margin: 32px auto;
     display: inline-block;
+}
+
+.cta-button.contrast-safe {
+    background: #ffffff;
+    color: #2C3E50;
+    border: 2px solid #ffffff;
+}
+
+.cta-button.contrast-safe:hover {
+    background: #f8f9fa;
+    color: #2C3E50;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
 .guarantee {
