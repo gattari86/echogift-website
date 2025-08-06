@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Gallery - Personalized Song Examples | EchoGift</title>
+    <meta name="description" content="Listen to real examples of personalized songs created by EchoGift. Hear custom songs in English and Spanish with beautiful artwork. Get inspired for your own song gift.">
+    <meta name="keywords" content="song examples, personalized song samples, custom song gallery, Spanish songs, English songs, song artwork examples">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://echogifts.shop/gallery.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://echogifts.shop/gallery.html">
+    <meta property="og:title" content="Song Gallery - Personalized Song Examples | EchoGift">
+    <meta property="og:description" content="Listen to real examples of personalized songs created by EchoGift. Hear custom songs in English and Spanish with beautiful artwork.">
+    <meta property="og:image" content="https://echogifts.shop/audio/gallery/dream%20in%20your%20eyes.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://echogifts.shop"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Song Gallery",
+                "item": "https://echogifts.shop/gallery.html"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- ItemList Schema for Gallery -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "EchoGift Song Gallery",
+        "description": "Collection of personalized song examples created by EchoGift",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "MusicRecording",
+                    "name": "Dream in Your Eyes",
+                    "description": "Romantic ballad for proposal",
+                    "genre": "Romance",
+                    "inLanguage": "en"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "MusicRecording",
+                    "name": "Forever and a Day",
+                    "description": "25th anniversary celebration song",
+                    "genre": "Anniversary",
+                    "inLanguage": "en"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "MusicRecording",
+                    "name": "Reina de mi Vida",
+                    "description": "Spanish love song for anniversary",
+                    "genre": "Romance",
+                    "inLanguage": "es"
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="product-header">
+        <div class="container">
+            <nav class="product-nav">
+                <a href="index.html" class="logo">EchoGift</a>
+                <div class="nav-links">
+                    <a href="single-song.html">Single Song</a>
+                    <a href="album-gift.html">Album Gift</a>
+                    <a href="index.html#order" class="cta-button-small">Order Now</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gallery-hero">
+        <div class="container">
+            <div class="hero-text">
+                <h1>Song Gallery</h1>
+                <p class="hero-subtitle">Listen to real personalized songs created for our customers. Each one tells a unique story with custom artwork.</p>
+                <div class="language-badges">
+                    <span class="badge">🇺🇸 English Songs</span>
+                    <span class="badge">🇪🇸 Spanish Songs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-grid-section">
+        <div class="container">
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All Songs</button>
+                <button class="filter-btn" data-filter="english">English</button>
+                <button class="filter-btn" data-filter="spanish">Español</button>
+                <button class="filter-btn" data-filter="love">Love & Romance</button>
+                <button class="filter-btn" data-filter="family">Family</button>
+                <button class="filter-btn" data-filter="celebration">Celebrations</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Song 1: Dream in Your Eyes -->
+                <div class="gallery-card" data-category="english love">
+                    <div class="song-artwork">
+                        <img src="audio/gallery/dream in your eyes.png" alt="Dream in Your Eyes - Romantic personalized song artwork" loading="lazy">
+                        <div class="play-overlay">
+                            <button class="play-btn" data-audio="dream-eyes">▶️</button>
+                        </div>
+                    </div>
+                    <div class="song-info">
+                        <h3>"Dream in Your Eyes"</h3>
+                        <p class="song-description">A romantic ballad created for Mark's proposal to Jessica. Captures their 5-year journey and his vision of their future together.</p>
+                        <div class="song-meta">
+                            <span class="genre">💕 Romance</span>
+                            <span class="language">🇺🇸 English</span>
+                            <span class="occasion">💍 Proposal</span>
+                        </div>
+                        <audio id="dream-eyes" preload="metadata">
+                            <source src="audio/gallery/Dream in Your Eyes.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Song 2: Forever and a Day -->
+                <div class="gallery-card" data-category="english love">
+                    <div class="song-artwork">
+                        <img src="audio/gallery/forever and a day.svg" alt="Forever and a Day - Anniversary song artwork" loading="lazy">
+                        <div class="play-overlay">
+                            <button class="play-btn" data-audio="forever-day">▶️</button>
+                        </div>
+                    </div>
+                    <div class="song-info">
+                        <h3>"Forever and a Day"</h3>
+                        <p class="song-description">An anniversary song celebrating 25 years of marriage between Sarah and Tom. Chronicles their love story from college sweethearts to grandparents.</p>
+                        <div class="song-meta">
+                            <span class="genre">💝 Anniversary</span>
+                            <span class="language">🇺🇸 English</span>
+                            <span class="occasion">💒 25th Anniversary</span>
+                        </div>
+                        <audio id="forever-day" preload="metadata">
+                            <source src="audio/gallery/Forever and a Day.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Song 3: Good Boy Max -->
+                <div class="gallery-card" data-category="english family">
+                    <div class="song-artwork">
+                        <img src="audio/gallery/good boy max.png" alt="Good Boy Max - Pet memorial song artwork" loading="lazy">
+                        <div class="play-overlay">
+                            <button class="play-btn" data-audio="good-max">▶️</button>
+                        </div>
+                    </div>
+                    <div class="song-info">
+                        <h3>"Good Boy Max"</h3>
+                        <p class="song-description">A heartfelt tribute to the Johnson family's beloved Golden Retriever Max. Celebrates 12 years of loyal companionship and unconditional love.</p>
+                        <div class="song-meta">
+                            <span class="genre">🐕 Pet Tribute</span>
+                            <span class="language">🇺🇸 English</span>
+                            <span class="occasion">💐 Memorial</span>
+                        </div>
+                        <audio id="good-max" preload="metadata">
+                            <source src="audio/gallery/Good Boy Max.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Song 4: Reina de mi Vida -->
+                <div class="gallery-card" data-category="spanish love">
+                    <div class="song-artwork">
+                        <img src="audio/gallery/reina.png" alt="Reina de mi Vida - Spanish love song artwork" loading="lazy">
+                        <div class="play-overlay">
+                            <button class="play-btn" data-audio="reina-vida">▶️</button>
+                        </div>
+                    </div>
+                    <div class="song-info">
+                        <h3>"Reina de mi Vida"</h3>
+                        <p class="song-description">Una canción de amor en español creada para el 15° aniversario de Carlos y María. Celebra su historia de amor desde México hasta Estados Unidos.</p>
+                        <div class="song-meta">
+                            <span class="genre">💕 Amor</span>
+                            <span class="language">🇪🇸 Español</span>
+                            <span class="occasion">💒 Aniversario</span>
+                        </div>
+                        <audio id="reina-vida" preload="metadata">
+                            <source src="audio/gallery/Reina de mi Vida.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Song 5: The Next Right Thing -->
+                <div class="gallery-card" data-category="english celebration">
+                    <div class="song-artwork">
+                        <img src="audio/gallery/the next right thing.png" alt="The Next Right Thing - Graduation song artwork" loading="lazy">
+                        <div class="play-overlay">
+                            <button class="play-btn" data-audio="next-thing">▶️</button>
+                        </div>
+                    </div>
+                    <div class="song-info">
+                        <h3>"The Next Right Thing"</h3>
+                        <p class="song-description">An inspiring graduation song for Emma's college commencement. Reflects on her journey through challenges and celebrates her bright future.</p>
+                        <div class="song-meta">
+                            <span class="genre">🎓 Graduation</span>
+                            <span class="language">🇺🇸 English</span>
+                            <span class="occasion">🎉 Achievement</span>
+                        </div>
+                        <audio id="next-thing" preload="metadata">
+                            <source src="audio/gallery/The Next Right Thing.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Song 6: Thirty and Thriving -->
+                <div class="gallery-card" data-category="english celebration">
+                    <div class="song-artwork">
+                        <img src="audio/gallery/thirty and thriving.png" alt="Thirty and Thriving - 30th birthday song artwork" loading="lazy">
+                        <div class="play-overlay">
+                            <button class="play-btn" data-audio="thirty-thriving">▶️</button>
+                        </div>
+                    </div>
+                    <div class="song-info">
+                        <h3>"Thirty and Thriving"</h3>
+                        <p class="song-description">A celebratory 30th birthday anthem for Rebecca, highlighting her career success, travels, and the exciting decade ahead.</p>
+                        <div class="song-meta">
+                            <span class="genre">🎂 Birthday</span>
+                            <span class="language">🇺🇸 English</span>
+                            <span class="occasion">🎉 Milestone Birthday</span>
+                        </div>
+                        <audio id="thirty-thriving" preload="metadata">
+                            <source src="audio/gallery/Thirty and Thriving.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Song 7: To the One Who Saw Me -->
+                <div class="gallery-card" data-category="english family">
+                    <div class="song-artwork">
+                        <img src="audio/gallery/to the one who saw me.png" alt="To the One Who Saw Me - Mother's Day song artwork" loading="lazy">
+                        <div class="play-overlay">
+                            <button class="play-btn" data-audio="saw-me">▶️</button>
+                        </div>
+                    </div>
+                    <div class="song-info">
+                        <h3>"To the One Who Saw Me"</h3>
+                        <p class="song-description">A touching Mother's Day tribute from David to his mom, honoring her sacrifices, wisdom, and unwavering belief in his dreams.</p>
+                        <div class="song-meta">
+                            <span class="genre">👩‍👦 Mother's Day</span>
+                            <span class="language">🇺🇸 English</span>
+                            <span class="occasion">💐 Family Tribute</span>
+                        </div>
+                        <audio id="saw-me" preload="metadata">
+                            <source src="audio/gallery/To the One Who Saw Me.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Song 8: Two Hearts, One Story -->
+                <div class="gallery-card" data-category="english love">
+                    <div class="song-artwork">
+                        <img src="audio/gallery/two hearts one story.svg" alt="Two Hearts One Story - Wedding song artwork" loading="lazy">
+                        <div class="play-overlay">
+                            <button class="play-btn" data-audio="two-hearts">▶️</button>
+                        </div>
+                    </div>
+                    <div class="song-info">
+                        <h3>"Two Hearts, One Story"</h3>
+                        <p class="song-description">A wedding song created for Jennifer and Michael's ceremony. Tells their love story from first meeting to walking down the aisle.</p>
+                        <div class="song-meta">
+                            <span class="genre">💒 Wedding</span>
+                            <span class="language">🇺🇸 English</span>
+                            <span class="occasion">👰‍♀️ Wedding Ceremony</span>
+                        </div>
+                        <audio id="two-hearts" preload="metadata">
+                            <source src="audio/gallery/Two Hearts, One Story.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Create Your Own?</h2>
+                <p>Every song in our gallery started with someone's unique story. What's yours?</p>
+                <div class="cta-options">
+                    <a href="single-song.html" class="cta-button secondary">Single Song - $79</a>
+                    <a href="album-gift.html" class="cta-button primary">5-Song Album - $299</a>
+                </div>
+                <p class="cta-note">Available in English and Spanish • 5-day delivery • Professional quality</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>EchoGift</h3>
+                    <p>Your story, your song.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="mailto:email@poppy-marketing.com">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EchoGift. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="gallery.js"></script>
+</body>
+</html>
