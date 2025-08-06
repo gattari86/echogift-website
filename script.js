@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 genre: data.genre,
                 tone: data.tone,
                 email: data.email,
-                delivery: data.delivery
+                delivery: 'Email Download' // Default since delivery preference was removed
             };
             
             // Add album-specific song details if album is selected
@@ -134,8 +134,7 @@ function validateOrderForm(data) {
         'story-themes',
         'genre',
         'tone',
-        'email',
-        'delivery'
+        'email'
     ];
     
     for (let field of requiredFields) {

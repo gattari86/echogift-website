@@ -100,6 +100,10 @@ async function createStripeCheckoutSession() {
     // Get current domain for success/cancel URLs
     const currentDomain = window.location.origin;
     
+    // Note: Since we can't create checkout sessions on the frontend with metadata,
+    // we'll store order details in session storage and send via email backup
+    // The metadata functionality would need a backend implementation
+    
     // Create checkout session
     const { error } = await stripe.redirectToCheckout({
         mode: 'payment',
@@ -108,29 +112,6 @@ async function createStripeCheckoutSession() {
             quantity: 1
         }],
         customerEmail: orderData.email,
-        metadata: {
-            // Order Identification
-            orderId: 'EG-' + Date.now(),
-            productType: orderData.productType,
-            orderDate: new Date().toLocaleDateString(),
-            
-            // Recipient Details
-            recipientName: orderData.recipientName || 'Not specified',
-            occasion: orderData.occasion || 'Not specified',
-            
-            // Song Requirements
-            genre: orderData.genre || 'Not specified',
-            tone: orderData.tone || 'Not specified',
-            delivery: orderData.delivery || 'Email Download',
-            
-            // Customer Story (Stripe limits metadata to 500 chars per field)
-            storyThemes: orderData.storyThemes ? orderData.storyThemes.substring(0, 500) : 'No story provided',
-            artworkInspiration: orderData.artworkInspiration ? orderData.artworkInspiration.substring(0, 500) : 'No artwork inspiration provided',
-            
-            // Technical Details
-            source: 'echogifts.shop',
-            timestamp: Date.now().toString()
-        },
         successUrl: `${currentDomain}/success.html?session_id={CHECKOUT_SESSION_ID}`,
         cancelUrl: `${currentDomain}/checkout.html?canceled=true`,
         allowPromotionCodes: true,

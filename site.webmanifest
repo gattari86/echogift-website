@@ -1,0 +1,21 @@
+{
+    "name": "EchoGift - Personalized AI Song Gifts",
+    "short_name": "EchoGift", 
+    "description": "Create custom AI-generated songs and albums as unique gifts",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#D4AF37",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "16x16 32x32",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ]
+}

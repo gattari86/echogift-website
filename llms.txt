@@ -1,0 +1,57 @@
+# EchoGift - Personalized AI Song Gifts
+
+## About
+EchoGift creates custom AI-generated songs and albums as unique, personalized gifts for any occasion. We specialize in turning personal stories into professional-quality songs with custom artwork.
+
+## Products & Services
+- **Personalized Song ($79)**: Custom AI-generated song with personal story + custom artwork
+- **Custom Song Album ($299)**: 5 personalized songs telling complete story + custom album-inspired artwork
+- **Upcoming**: Vinyl records of custom songs
+
+## Key Features
+- AI-powered song creation from personal stories
+- Professional quality WAV and MP3 delivery
+- Custom artwork included with every order
+- 5-day delivery timeline
+- Secure online ordering and payment
+
+## Target Audience
+Perfect for customers seeking:
+- Personalized gifts for boyfriends/girlfriends
+- Unique birthday gifts
+- Anniversary songs and albums
+- Christmas gifts for people who have everything
+- Memorial songs for loved ones
+- Graduation celebration songs
+- Custom songs for parents/family
+
+## Competitive Advantages
+- Faster delivery than Songfinch (5 days vs weeks)
+- AI technology for consistent quality
+- Custom artwork included
+- More affordable pricing
+- Professional-grade audio formats
+
+## Sample Songs Available
+Listen to real customer examples:
+1. "Two Decades Strong" - 20th anniversary gift
+2. "The Sky She Reached" - Graduation celebration
+3. "Chapters of You" - Memorial tribute
+
+## Contact & Support
+- Website: https://echogifts.shop
+- Support: email@poppy-marketing.com
+- Secure payment via Stripe
+- Email delivery with download links
+
+## Keywords & Search Terms
+Primary: personalized song, custom song, AI song generator, personalized gift
+Secondary: unique gift, anniversary song, birthday song, custom music, song for boyfriend, song for girlfriend, personalized album, custom artwork
+
+## Technical Information
+- HTML5/CSS3/JavaScript website
+- Mobile-responsive design
+- Fast loading performance
+- Secure checkout process
+- Email delivery system
+- Custom artwork generation

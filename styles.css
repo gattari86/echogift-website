@@ -234,6 +234,50 @@ p {
     border-color: var(--primary-color);
 }
 
+.sample-artwork {
+    margin-bottom: 24px;
+}
+
+.song-artwork {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.song-artwork:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.email-delivery-note {
+    margin-top: 8px;
+}
+
+.email-delivery-note small {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.4;
+    display: block;
+}
+
+.album-artwork-note {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.album-artwork-note small {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.4;
+    display: block;
+}
+
 .sample-info h3 {
     color: var(--primary-color);
     margin-bottom: 16px;
