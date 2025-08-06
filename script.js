@@ -1,3 +1,33 @@
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const navMenu = document.querySelector('.nav-menu');
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    
+    navMenu.classList.toggle('active');
+    mobileToggle.classList.toggle('active');
+}
+
+// Initialize mobile menu on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Close mobile menu when clicking nav links
+    const navLinks = document.querySelectorAll('.nav-link, .nav-cta');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const navMenu = document.querySelector('.nav-menu');
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            }
+        });
+    });
+});
+
 // Smooth scrolling function
 function scrollToOrder() {
     const orderSection = document.getElementById('order');

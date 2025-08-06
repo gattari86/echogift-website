@@ -168,6 +168,26 @@
     </script>
 </head>
 <body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">EchoGift</a>
+                <div class="nav-menu">
+                    <a href="gallery.html" class="nav-link">🎵 Gallery</a>
+                    <a href="single-song.html" class="nav-link">Single Song ($79)</a>
+                    <a href="album-gift.html" class="nav-link">Album Gift ($299)</a>
+                    <a href="#order" class="nav-cta">Order Now</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -196,6 +216,7 @@
                     <h3>Single Song</h3>
                     <div class="price">$79</div>
                     <p>Perfect for birthdays, anniversaries, or any special moment + custom artwork</p>
+                    <a href="single-song.html" class="card-link">Learn More →</a>
                 </div>
                 <div class="price-card featured">
                     <h3>Album</h3>
@@ -205,6 +226,7 @@
                         <small>🎨 Includes custom album-inspired artwork designed specifically for your story</small>
                     </div>
                     <span class="badge">Most Popular</span>
+                    <a href="album-gift.html" class="card-link">Learn More →</a>
                 </div>
             </div>
         </div>
@@ -283,7 +305,10 @@
 
             <div class="samples-cta">
                 <p class="samples-note">🎵 Each song is completely unique and created from the customer's personal story</p>
-                <button class="cta-button" onclick="scrollToOrder()">Create Your Custom Song</button>
+                <div class="samples-buttons">
+                    <a href="gallery.html" class="cta-button secondary">🎵 Hear More Examples</a>
+                    <button class="cta-button" onclick="scrollToOrder()">Create Your Custom Song</button>
+                </div>
             </div>
         </div>
     </section>
