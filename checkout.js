@@ -7,6 +7,12 @@ const STRIPE_PRICES = {
     album: 'price_1RsuIqEinaZMSMtjlfcmwgvI'   // $299 Custom Song Album
 };
 
+// Alternative: Use Payment Links (more reliable than client-only checkout)
+const PAYMENT_LINKS = {
+    single: 'https://buy.stripe.com/YOUR_SINGLE_SONG_PAYMENT_LINK',
+    album: 'https://buy.stripe.com/YOUR_ALBUM_PAYMENT_LINK'
+};
+
 const PRICING = {
     single: { price: 79.00, name: 'Personalized Song', description: 'Custom AI-generated song with your story + custom artwork' },
     album: { price: 299.00, name: 'Custom Song Album', description: '5 personalized songs telling your complete story + custom artwork' }
@@ -100,23 +106,27 @@ async function createStripeCheckoutSession() {
     // Get current domain for success/cancel URLs
     const currentDomain = window.location.origin;
     
-    // Note: Since we can't create checkout sessions on the frontend with metadata,
-    // we'll store order details in session storage and send via email backup
-    // The metadata functionality would need a backend implementation
-    
-    // Create checkout session - using only basic parameters to avoid parameter errors
-    const { error } = await stripe.redirectToCheckout({
-        lineItems: [{
-            price: priceId,
-            quantity: 1
-        }],
-        mode: 'payment',
-        successUrl: `${currentDomain}/success.html?session_id={CHECKOUT_SESSION_ID}`,
-        cancelUrl: `${currentDomain}/checkout.html?canceled=true`,
-        customerEmail: orderData.email
-    });
+    try {
+        // Try client-only checkout first
+        const { error } = await stripe.redirectToCheckout({
+            lineItems: [{
+                price: priceId,
+                quantity: 1
+            }],
+            mode: 'payment',
+            successUrl: `${currentDomain}/success.html?session_id={CHECKOUT_SESSION_ID}`,
+            cancelUrl: `${currentDomain}/checkout.html?canceled=true`,
+            customerEmail: orderData.email
+        });
 
-    if (error) {
+        if (error) {
+            throw error;
+        }
+    } catch (error) {
+        // If client-only checkout fails, show instructions to enable it
+        if (error.message && error.message.includes('client-only integration')) {
+            throw new Error('Stripe checkout needs to be configured. Please enable "Client-only integration" in your Stripe Dashboard at https://dashboard.stripe.com/account/checkout/settings, or contact support.');
+        }
         throw error;
     }
 }
