@@ -134,11 +134,18 @@ function validateOrderForm(data) {
         'story-themes',
         'genre',
         'tone',
-        'email'
+        'email',
+        'terms-agreement'
     ];
     
     for (let field of requiredFields) {
-        if (!data[field] || data[field].trim() === '') {
+        if (field === 'terms-agreement') {
+            // Special validation for checkbox
+            if (!data[field]) {
+                showErrorMessage('You must agree to the Terms of Service and Privacy Policy to proceed.');
+                return false;
+            }
+        } else if (!data[field] || data[field].trim() === '') {
             showErrorMessage(`Please fill in the ${field.replace('-', ' ')} field.`);
             return false;
         }
