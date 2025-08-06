@@ -104,18 +104,16 @@ async function createStripeCheckoutSession() {
     // we'll store order details in session storage and send via email backup
     // The metadata functionality would need a backend implementation
     
-    // Create checkout session
+    // Create checkout session - using only basic parameters to avoid parameter errors
     const { error } = await stripe.redirectToCheckout({
-        mode: 'payment',
         lineItems: [{
             price: priceId,
             quantity: 1
         }],
-        customerEmail: orderData.email,
+        mode: 'payment',
         successUrl: `${currentDomain}/success.html?session_id={CHECKOUT_SESSION_ID}`,
         cancelUrl: `${currentDomain}/checkout.html?canceled=true`,
-        billingAddressCollection: 'required',
-        submitType: 'pay'
+        customerEmail: orderData.email
     });
 
     if (error) {
