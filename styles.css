@@ -2651,29 +2651,97 @@ p {
     color: var(--text-primary);
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
 }
 
-.example-tracks {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-    max-width: 800px;
+.example-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 32px;
+    font-style: italic;
+}
+
+.example-album-tracks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-.example-track {
+.example-album-track {
     background: white;
-    padding: 16px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    font-weight: 500;
-    color: var(--text-primary);
-    transition: transform 0.2s ease;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
 }
 
-.example-track:hover {
-    transform: translateY(-2px);
+.example-album-track:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.track-info {
+    flex: 1;
+    text-align: left;
+}
+
+.track-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.track-number {
+    color: var(--text-secondary);
+    font-weight: 600;
+    min-width: 20px;
+}
+
+.track-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.track-lang {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.track-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.track-player {
+    flex-shrink: 0;
+}
+
+.mixed-album-audio {
+    width: 240px;
+    height: 40px;
+}
+
+.album-cta {
+    margin-top: 24px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.08) 0%, rgba(52, 73, 94, 0.05) 100%);
+    border-radius: 12px;
+}
+
+.album-cta p {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.1rem;
 }
 
 .track-lang {
@@ -2698,9 +2766,15 @@ p {
         font-size: 1.1rem;
     }
     
-    .example-tracks {
-        grid-template-columns: 1fr;
-        gap: 12px;
+    .example-album-track {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+    
+    .mixed-album-audio {
+        width: 100%;
+        max-width: 300px;
     }
     
     .language-example-showcase {
