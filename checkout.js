@@ -114,9 +114,7 @@ async function createStripeCheckoutSession() {
         customerEmail: orderData.email,
         successUrl: `${currentDomain}/success.html?session_id={CHECKOUT_SESSION_ID}`,
         cancelUrl: `${currentDomain}/checkout.html?canceled=true`,
-        allowPromotionCodes: true,
         billingAddressCollection: 'required',
-        shippingAddressCollection: null,
         submitType: 'pay'
     });
 
