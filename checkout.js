@@ -4,7 +4,10 @@ const stripe = Stripe('pk_live_51RTWhNEinaZMSMtjUEnWpzUPDC8KZBlFOy9O4Is2iG6KDg0C
 // Product pricing and Stripe Price IDs
 const STRIPE_PRICES = {
     single: 'price_1RsuIhEinaZMSMtjh8LOF9vc', // $79 Personalized Song
-    album: 'price_1RsuIqEinaZMSMtjlfcmwgvI'   // $299 Custom Song Album
+    album: 'price_1RsuIqEinaZMSMtjlfcmwgvI',   // $299 Custom Song Album
+    // Discounted prices (15% off)
+    singleDiscounted: 'price_PLACEHOLDER_SINGLE_15_OFF', // $67.15 (need to create in Stripe)
+    albumDiscounted: 'price_PLACEHOLDER_ALBUM_15_OFF'    // $254.15 (need to create in Stripe)
 };
 
 // Alternative: Use Payment Links (more reliable than client-only checkout)
@@ -103,7 +106,21 @@ async function handleSubmit(event) {
 
 async function createStripeCheckoutSession() {
     const orderData = window.orderData;
-    const priceId = STRIPE_PRICES[orderData.productType];
+    
+    // Determine which price ID to use based on coupon
+    let priceId;
+    if (orderData.couponCode === 'SOCIAL15') {
+        // Use discounted price ID for 15% off
+        priceId = STRIPE_PRICES[orderData.productType + 'Discounted'];
+        
+        // If discounted price ID is not set up yet, fall back to manual process
+        if (!priceId || priceId.includes('PLACEHOLDER')) {
+            throw new Error(`⚠️ IMPORTANT: Your ${orderData.couponCode} discount has been applied!\n\nTo complete your discounted order:\n1. We've captured your coupon details in our system\n2. You'll be charged the discounted amount: $${orderData.finalPrice}\n3. Continue with checkout - the discount is already calculated\n\nYour order will be processed at the discounted price of $${orderData.finalPrice} instead of $${orderData.originalPrice}.`);
+        }
+    } else {
+        // Use regular price ID
+        priceId = STRIPE_PRICES[orderData.productType];
+    }
     
     if (!priceId || priceId.includes('1234567890')) {
         throw new Error('Stripe price IDs not configured. Please set up your products in Stripe Dashboard.');
@@ -121,7 +138,7 @@ async function createStripeCheckoutSession() {
     const currentDomain = window.location.origin;
     
     try {
-        // Prepare checkout session configuration
+        // Standard checkout configuration (works with or without coupon via different price IDs)
         const checkoutConfig = {
             lineItems: [{
                 price: priceId,
@@ -130,17 +147,16 @@ async function createStripeCheckoutSession() {
             mode: 'payment',
             successUrl: `${currentDomain}/success.html?session_id={CHECKOUT_SESSION_ID}`,
             cancelUrl: `${currentDomain}/checkout.html?canceled=true`,
-            customerEmail: orderData.email
+            customerEmail: orderData.email,
+            // Add metadata to track the coupon usage
+            metadata: orderData.couponCode ? {
+                coupon_code: orderData.couponCode,
+                original_price: orderData.originalPrice?.toString() || '',
+                discount_amount: orderData.discountAmount?.toString() || ''
+            } : {}
         };
 
-        // Add coupon if applied
-        if (orderData.couponCode) {
-            checkoutConfig.discounts = [{
-                coupon: orderData.couponCode
-            }];
-        }
-
-        // Try client-only checkout first
+        // Try client-only checkout
         const { error } = await stripe.redirectToCheckout(checkoutConfig);
 
         if (error) {
