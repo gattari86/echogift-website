@@ -4048,6 +4048,22 @@ p {
     }
 }
 
+/* ===== CHECKOUT DISCOUNT STYLES ===== */
+
+.discount-row {
+    color: #27AE60 !important;
+    font-weight: 500;
+}
+
+.discount-row span:first-child {
+    color: #27AE60;
+}
+
+.discount-row span:last-child {
+    color: #27AE60;
+    font-weight: 600;
+}
+
 /* Mobile Responsiveness for Blog */
 @media (max-width: 768px) {
     .blog-hero {

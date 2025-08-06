@@ -103,11 +103,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 for (let i = 1; i <= 5; i++) {
                     const songTitle = data[`song${i}-title`] || '';
                     const songStory = data[`song${i}-story`] || '';
+                    const songLanguage = data[`song${i}-language`] || '';
                     if (songTitle || songStory) {
                         orderData.albumSongs.push({
                             songNumber: i,
                             title: songTitle,
-                            story: songStory
+                            story: songStory,
+                            language: songLanguage
                         });
                     }
                 }
@@ -268,12 +270,20 @@ function createAlbumFields() {
                 <div class="form-row">
                     <div class="form-group">
                         <label for="song${i}-title">Song Title/Theme</label>
-                        <input type="text" id="song${i}-title" name="song${i}-title" placeholder="e.g., 'Our First Dance', 'College Years'..." class="album-field">
+                        <input type="text" id="song${i}-title" name="song${i}-title" placeholder="e.g., 'Our First Dance', 'College Years'...">
                     </div>
                     <div class="form-group">
-                        <label for="song${i}-story">Story/Memory for This Song</label>
-                        <textarea id="song${i}-story" name="song${i}-story" rows="2" placeholder="Brief story or memory for song ${i}..." class="album-field"></textarea>
+                        <label for="song${i}-language">Language</label>
+                        <select id="song${i}-language" name="song${i}-language">
+                            <option value="">Select language</option>
+                            <option value="english">English</option>
+                            <option value="spanish">Spanish</option>
+                        </select>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label for="song${i}-story">Story/Memory for This Song</label>
+                    <textarea id="song${i}-story" name="song${i}-story" rows="2" placeholder="Brief story or memory for song ${i}..."></textarea>
                 </div>
             </div>
         `;
@@ -419,8 +429,25 @@ style.textContent = `
         padding-bottom: 8px;
     }
     
-    .album-field {
-        background: #f8f9fa;
+    .song-field-group input,
+    .song-field-group textarea,
+    .song-field-group select {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid #E8E8E8;
+        border-radius: 8px;
+        font-size: 14px;
+        font-family: inherit;
+        background: white;
+        transition: border-color 0.3s ease;
+    }
+    
+    .song-field-group input:focus,
+    .song-field-group textarea:focus,
+    .song-field-group select:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        background: white;
     }
 `;
 document.head.appendChild(style);

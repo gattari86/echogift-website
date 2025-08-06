@@ -36,14 +36,28 @@ function loadOrderData() {
 
     // Populate order summary
     const product = PRICING[orderData.productType];
+    const originalPrice = product.price;
+    let finalPrice = originalPrice;
+
+    // Handle coupon discount
+    if (orderData.couponCode && orderData.finalPrice) {
+        finalPrice = orderData.finalPrice;
+        const discountAmount = originalPrice - finalPrice;
+        
+        // Show discount row
+        const discountRow = document.getElementById('discount-row');
+        discountRow.style.display = 'flex';
+        document.getElementById('checkout-discount-code').textContent = orderData.couponCode;
+        document.getElementById('checkout-discount-amount').textContent = `-$${discountAmount.toFixed(2)}`;
+    }
 
     document.getElementById('product-name').textContent = product.name;
     document.getElementById('product-description').textContent = product.description;
-    document.getElementById('product-price').textContent = `$${product.price.toFixed(2)}`;
-    document.getElementById('subtotal').textContent = `$${product.price.toFixed(2)}`;
+    document.getElementById('product-price').textContent = `$${originalPrice.toFixed(2)}`;
+    document.getElementById('subtotal').textContent = `$${originalPrice.toFixed(2)}`;
     document.getElementById('processing-fee').textContent = 'Included';
-    document.getElementById('final-total').textContent = `$${product.price.toFixed(2)}`;
-    document.getElementById('button-amount').textContent = product.price.toFixed(2);
+    document.getElementById('final-total').textContent = `$${finalPrice.toFixed(2)}`;
+    document.getElementById('button-amount').textContent = finalPrice.toFixed(2);
 
     // Populate order details
     document.getElementById('recipient-display').textContent = orderData.recipientName || 'N/A';
@@ -54,7 +68,7 @@ function loadOrderData() {
 
     // Store for payment processing
     window.orderData = orderData;
-    window.orderTotal = product.price;
+    window.orderTotal = finalPrice; // Use discounted price
 }
 
 function setupPaymentForm() {
@@ -107,8 +121,8 @@ async function createStripeCheckoutSession() {
     const currentDomain = window.location.origin;
     
     try {
-        // Try client-only checkout first
-        const { error } = await stripe.redirectToCheckout({
+        // Prepare checkout session configuration
+        const checkoutConfig = {
             lineItems: [{
                 price: priceId,
                 quantity: 1
@@ -117,7 +131,17 @@ async function createStripeCheckoutSession() {
             successUrl: `${currentDomain}/success.html?session_id={CHECKOUT_SESSION_ID}`,
             cancelUrl: `${currentDomain}/checkout.html?canceled=true`,
             customerEmail: orderData.email
-        });
+        };
+
+        // Add coupon if applied
+        if (orderData.couponCode) {
+            checkoutConfig.discounts = [{
+                coupon: orderData.couponCode
+            }];
+        }
+
+        // Try client-only checkout first
+        const { error } = await stripe.redirectToCheckout(checkoutConfig);
 
         if (error) {
             throw error;
@@ -161,8 +185,17 @@ async function sendOrderDetailsEmail(orderData) {
             if (song.title || song.story) {
                 emailData[`Song ${song.songNumber} Title`] = song.title || 'No title provided';
                 emailData[`Song ${song.songNumber} Story`] = song.story || 'No story provided';
+                emailData[`Song ${song.songNumber} Language`] = song.language || 'Not specified';
             }
         });
+    }
+    
+    // Add coupon information if applied
+    if (orderData.couponCode) {
+        emailData['Coupon Code'] = orderData.couponCode;
+        emailData['Original Price'] = `$${orderData.originalPrice}`;
+        emailData['Discount Amount'] = `$${orderData.discountAmount}`;
+        emailData['Final Price'] = `$${orderData.finalPrice}`;
     }
     
     // Add technical details
