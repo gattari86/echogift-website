@@ -2554,7 +2554,7 @@ p {
 }
 
 .feature-card.featured {
-    border: 2px solid var(--primary-color);
+    background: linear-gradient(135deg, rgba(52, 73, 94, 0.02) 0%, white 100%);
     position: relative;
 }
 
@@ -2577,39 +2577,135 @@ p {
 }
 
 /* Language Support Section */
-.language-hero {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.language-hero-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    max-height: 400px;
-    object-fit: cover;
-}
-
-.language-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+.language-hero-section {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.language-text ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
+.language-hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 60px;
 }
 
-.language-text li {
-    padding: 8px 0;
+.language-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
     color: var(--text-primary);
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.language-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.language-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.language-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.feature-check {
+    font-size: 1.2rem;
+    color: #27AE60;
+}
+
+.language-hero-visual {
+    position: relative;
+}
+
+.language-hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.language-hero-image:hover {
+    transform: translateY(-8px);
+}
+
+.language-example-showcase {
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.05) 0%, rgba(52, 73, 94, 0.02) 100%);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+}
+
+.language-example-showcase h4 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.example-tracks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.example-track {
+    background: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     font-weight: 500;
+    color: var(--text-primary);
+    transition: transform 0.2s ease;
+}
+
+.example-track:hover {
+    transform: translateY(-2px);
+}
+
+.track-lang {
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+/* Mobile responsiveness for language section */
+@media (max-width: 768px) {
+    .language-hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .language-text h2 {
+        font-size: 2rem;
+    }
+    
+    .language-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .example-tracks {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .language-example-showcase {
+        padding: 24px 16px;
+    }
 }
 
 .language-example {
@@ -2694,8 +2790,7 @@ p {
 }
 
 .occasion-card.featured {
-    border: 2px solid var(--primary-color);
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, white 100%);
+    background: linear-gradient(135deg, rgba(52, 73, 94, 0.02) 0%, white 100%);
 }
 
 .occasion-emoji {
@@ -2815,8 +2910,7 @@ p {
 }
 
 .testimonial.featured {
-    border: 2px solid var(--primary-color);
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, white 100%);
+    background: linear-gradient(135deg, rgba(52, 73, 94, 0.02) 0%, white 100%);
 }
 
 .testimonial .stars {
@@ -2932,7 +3026,8 @@ p {
 }
 
 .single-col {
-    color: var(--text-secondary);
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 .album-col {
