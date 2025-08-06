@@ -70,9 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
         orderForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(orderForm);
-            const data = Object.fromEntries(formData);
+            // Get form data including coupon information
+            const data = getFormData(orderForm);
             
             // Basic validation
             if (!validateOrderForm(data)) {
@@ -90,7 +89,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 tone: data.tone,
                 languagePreference: data['language-preference'],
                 email: data.email,
-                delivery: 'Email Download' // Default since delivery preference was removed
+                delivery: 'Email Download', // Default since delivery preference was removed
+                // Coupon information for tracking
+                couponCode: data.couponCode || null,
+                originalPrice: data.originalPrice || null,
+                discountAmount: data.discountAmount || null,
+                finalPrice: data.finalPrice || null
             };
             
             // Add album-specific song details if album is selected
@@ -420,3 +424,213 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ===== COUPON FUNCTIONALITY =====
+
+// Coupon configuration
+const COUPON_CONFIG = {
+    'SOCIAL15': {
+        discount: 15,
+        type: 'percentage',
+        description: '15% Social Media Discount'
+    }
+    // Add more coupons here in the future
+};
+
+// Coupon state
+let appliedCoupon = null;
+let currentSubtotal = 0;
+
+// Initialize coupon functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const applyCouponBtn = document.getElementById('apply-coupon');
+    const couponInput = document.getElementById('coupon-code');
+    const productSelect = document.getElementById('product-type');
+    
+    if (applyCouponBtn && couponInput) {
+        applyCouponBtn.addEventListener('click', applyCoupon);
+        
+        // Allow applying coupon with Enter key
+        couponInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                applyCoupon();
+            }
+        });
+        
+        // Clear coupon when input changes
+        couponInput.addEventListener('input', function() {
+            if (appliedCoupon) {
+                clearCoupon();
+            }
+        });
+    }
+    
+    // Update pricing when product type changes
+    if (productSelect) {
+        productSelect.addEventListener('change', function() {
+            updateSubtotal(this.value);
+            if (appliedCoupon) {
+                updatePriceBreakdown();
+            }
+        });
+    }
+});
+
+function updateSubtotal(productType) {
+    let price = 0;
+    
+    switch(productType) {
+        case 'single':
+            price = 79;
+            break;
+        case 'album':
+            price = 299;
+            break;
+        default:
+            price = 0;
+    }
+    
+    currentSubtotal = price;
+    
+    // Update price breakdown if coupon is applied
+    if (appliedCoupon && price > 0) {
+        updatePriceBreakdown();
+    } else if (price === 0) {
+        // Hide price breakdown if no product selected
+        document.getElementById('price-breakdown').style.display = 'none';
+    }
+}
+
+function applyCoupon() {
+    const couponInput = document.getElementById('coupon-code');
+    const couponCode = couponInput.value.trim().toUpperCase();
+    const messageEl = document.getElementById('coupon-message');
+    const applyBtn = document.getElementById('apply-coupon');
+    
+    // Clear previous messages
+    clearCouponMessage();
+    
+    // Validate input
+    if (!couponCode) {
+        showCouponMessage('Please enter a coupon code', 'error');
+        return;
+    }
+    
+    // Check if product is selected
+    const productType = document.getElementById('product-type').value;
+    if (!productType) {
+        showCouponMessage('Please select a product first', 'error');
+        return;
+    }
+    
+    // Show loading state
+    showCouponMessage('Validating coupon...', 'loading');
+    applyBtn.disabled = true;
+    
+    // Simulate API call delay (replace with actual Stripe API call)
+    setTimeout(() => {
+        validateCoupon(couponCode);
+        applyBtn.disabled = false;
+    }, 1000);
+}
+
+function validateCoupon(couponCode) {
+    // In production, this should call your Stripe API to validate the coupon
+    // For now, we'll use local validation
+    
+    const coupon = COUPON_CONFIG[couponCode];
+    
+    if (!coupon) {
+        showCouponMessage('Invalid coupon code', 'error');
+        return;
+    }
+    
+    // Apply the coupon
+    appliedCoupon = {
+        code: couponCode,
+        ...coupon
+    };
+    
+    showCouponMessage(`✓ ${coupon.description} applied successfully!`, 'success');
+    updatePriceBreakdown();
+    
+    // Disable input and button to prevent reapplication
+    document.getElementById('coupon-code').disabled = true;
+    document.getElementById('apply-coupon').textContent = 'Applied';
+    document.getElementById('apply-coupon').disabled = true;
+}
+
+function clearCoupon() {
+    appliedCoupon = null;
+    clearCouponMessage();
+    document.getElementById('price-breakdown').style.display = 'none';
+    
+    // Re-enable input and button
+    document.getElementById('coupon-code').disabled = false;
+    document.getElementById('apply-coupon').textContent = 'Apply';
+    document.getElementById('apply-coupon').disabled = false;
+}
+
+function updatePriceBreakdown() {
+    if (!appliedCoupon || currentSubtotal === 0) {
+        document.getElementById('price-breakdown').style.display = 'none';
+        return;
+    }
+    
+    const discountAmount = calculateDiscount(currentSubtotal, appliedCoupon);
+    const finalTotal = currentSubtotal - discountAmount;
+    
+    // Update breakdown elements
+    document.getElementById('subtotal').textContent = `$${currentSubtotal}`;
+    document.getElementById('discount-percentage').textContent = `${appliedCoupon.discount}%`;
+    document.getElementById('discount-amount').textContent = `-$${discountAmount.toFixed(2)}`;
+    document.getElementById('final-total').textContent = `$${finalTotal.toFixed(2)}`;
+    
+    // Show the breakdown
+    document.getElementById('price-breakdown').style.display = 'block';
+}
+
+function calculateDiscount(subtotal, coupon) {
+    if (coupon.type === 'percentage') {
+        return (subtotal * coupon.discount) / 100;
+    }
+    // Add support for fixed amount discounts in the future
+    return 0;
+}
+
+function showCouponMessage(message, type) {
+    const messageEl = document.getElementById('coupon-message');
+    messageEl.textContent = message;
+    messageEl.className = `coupon-message ${type}`;
+}
+
+function clearCouponMessage() {
+    const messageEl = document.getElementById('coupon-message');
+    messageEl.textContent = '';
+    messageEl.className = 'coupon-message';
+}
+
+// Update form submission to include coupon data
+function getFormData(form) {
+    const formData = new FormData(form);
+    const data = {};
+    
+    for (let [key, value] of formData.entries()) {
+        if (key === 'terms-agreement') {
+            data[key] = form.querySelector(`[name="${key}"]`).checked;
+        } else {
+            data[key] = value;
+        }
+    }
+    
+    // Add coupon information
+    if (appliedCoupon) {
+        data.couponCode = appliedCoupon.code;
+        data.originalPrice = currentSubtotal;
+        data.discountAmount = calculateDiscount(currentSubtotal, appliedCoupon);
+        data.finalPrice = currentSubtotal - data.discountAmount;
+    }
+    
+    return data;
+}
