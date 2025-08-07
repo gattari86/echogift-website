@@ -4,10 +4,7 @@ const stripe = Stripe('pk_live_51RTWhNEinaZMSMtjUEnWpzUPDC8KZBlFOy9O4Is2iG6KDg0C
 // Product pricing and Stripe Price IDs
 const STRIPE_PRICES = {
     single: 'price_1RsuIhEinaZMSMtjh8LOF9vc', // $79 Personalized Song
-    album: 'price_1RsuIqEinaZMSMtjlfcmwgvI',   // $299 Custom Song Album
-    // Discounted prices (15% off)
-    singleDiscounted: 'price_PLACEHOLDER_SINGLE_15_OFF', // $67.15 (need to create in Stripe)
-    albumDiscounted: 'price_PLACEHOLDER_ALBUM_15_OFF'    // $254.15 (need to create in Stripe)
+    album: 'price_1RsuIqEinaZMSMtjlfcmwgvI'   // $299 Custom Song Album
 };
 
 // Alternative: Use Payment Links (more reliable than client-only checkout)
@@ -39,28 +36,14 @@ function loadOrderData() {
 
     // Populate order summary
     const product = PRICING[orderData.productType];
-    const originalPrice = product.price;
-    let finalPrice = originalPrice;
-
-    // Handle coupon discount
-    if (orderData.couponCode && orderData.finalPrice) {
-        finalPrice = orderData.finalPrice;
-        const discountAmount = originalPrice - finalPrice;
-        
-        // Show discount row
-        const discountRow = document.getElementById('discount-row');
-        discountRow.style.display = 'flex';
-        document.getElementById('checkout-discount-code').textContent = orderData.couponCode;
-        document.getElementById('checkout-discount-amount').textContent = `-$${discountAmount.toFixed(2)}`;
-    }
 
     document.getElementById('product-name').textContent = product.name;
     document.getElementById('product-description').textContent = product.description;
-    document.getElementById('product-price').textContent = `$${originalPrice.toFixed(2)}`;
-    document.getElementById('subtotal').textContent = `$${originalPrice.toFixed(2)}`;
-    document.getElementById('processing-fee').textContent = 'Included';
-    document.getElementById('final-total').textContent = `$${finalPrice.toFixed(2)}`;
-    document.getElementById('button-amount').textContent = finalPrice.toFixed(2);
+    document.getElementById('product-price').textContent = `$${product.price.toFixed(2)}`;
+    document.getElementById('subtotal').textContent = `$${product.price.toFixed(2)}`;
+    document.getElementById('processing-fee').textContent = '$2.30';
+    document.getElementById('final-total').textContent = `$${(product.price + 2.30).toFixed(2)}`;
+    document.getElementById('button-amount').textContent = (product.price + 2.30).toFixed(2);
 
     // Populate order details
     document.getElementById('recipient-display').textContent = orderData.recipientName || 'N/A';
@@ -71,7 +54,7 @@ function loadOrderData() {
 
     // Store for payment processing
     window.orderData = orderData;
-    window.orderTotal = finalPrice; // Use discounted price
+    window.orderTotal = product.price;
 }
 
 function setupPaymentForm() {
@@ -106,21 +89,7 @@ async function handleSubmit(event) {
 
 async function createStripeCheckoutSession() {
     const orderData = window.orderData;
-    
-    // Determine which price ID to use based on coupon
-    let priceId;
-    if (orderData.couponCode === 'SOCIAL15') {
-        // Use discounted price ID for 15% off
-        priceId = STRIPE_PRICES[orderData.productType + 'Discounted'];
-        
-        // If discounted price ID is not set up yet, fall back to manual process
-        if (!priceId || priceId.includes('PLACEHOLDER')) {
-            throw new Error(`⚠️ IMPORTANT: Your ${orderData.couponCode} discount has been applied!\n\nTo complete your discounted order:\n1. We've captured your coupon details in our system\n2. You'll be charged the discounted amount: $${orderData.finalPrice}\n3. Continue with checkout - the discount is already calculated\n\nYour order will be processed at the discounted price of $${orderData.finalPrice} instead of $${orderData.originalPrice}.`);
-        }
-    } else {
-        // Use regular price ID
-        priceId = STRIPE_PRICES[orderData.productType];
-    }
+    const priceId = STRIPE_PRICES[orderData.productType];
     
     if (!priceId || priceId.includes('1234567890')) {
         throw new Error('Stripe price IDs not configured. Please set up your products in Stripe Dashboard.');
@@ -138,8 +107,8 @@ async function createStripeCheckoutSession() {
     const currentDomain = window.location.origin;
     
     try {
-        // Standard checkout configuration (works with or without coupon via different price IDs)
-        const checkoutConfig = {
+        // Try client-only checkout first
+        const { error } = await stripe.redirectToCheckout({
             lineItems: [{
                 price: priceId,
                 quantity: 1
@@ -147,17 +116,8 @@ async function createStripeCheckoutSession() {
             mode: 'payment',
             successUrl: `${currentDomain}/success.html?session_id={CHECKOUT_SESSION_ID}`,
             cancelUrl: `${currentDomain}/checkout.html?canceled=true`,
-            customerEmail: orderData.email,
-            // Add metadata to track the coupon usage
-            metadata: orderData.couponCode ? {
-                coupon_code: orderData.couponCode,
-                original_price: orderData.originalPrice?.toString() || '',
-                discount_amount: orderData.discountAmount?.toString() || ''
-            } : {}
-        };
-
-        // Try client-only checkout
-        const { error } = await stripe.redirectToCheckout(checkoutConfig);
+            customerEmail: orderData.email
+        });
 
         if (error) {
             throw error;
@@ -204,14 +164,6 @@ async function sendOrderDetailsEmail(orderData) {
                 emailData[`Song ${song.songNumber} Language`] = song.language || 'Not specified';
             }
         });
-    }
-    
-    // Add coupon information if applied
-    if (orderData.couponCode) {
-        emailData['Coupon Code'] = orderData.couponCode;
-        emailData['Original Price'] = `$${orderData.originalPrice}`;
-        emailData['Discount Amount'] = `$${orderData.discountAmount}`;
-        emailData['Final Price'] = `$${orderData.finalPrice}`;
     }
     
     // Add technical details

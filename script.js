@@ -70,8 +70,17 @@ document.addEventListener('DOMContentLoaded', function() {
         orderForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data including coupon information
-            const data = getFormData(orderForm);
+            // Get form data
+            const formData = new FormData(orderForm);
+            const data = {};
+            
+            for (let [key, value] of formData.entries()) {
+                if (key === 'terms-agreement') {
+                    data[key] = orderForm.querySelector(`[name="${key}"]`).checked;
+                } else {
+                    data[key] = value;
+                }
+            }
             
             // Basic validation
             if (!validateOrderForm(data)) {
@@ -89,12 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 tone: data.tone,
                 languagePreference: data['language-preference'],
                 email: data.email,
-                delivery: 'Email Download', // Default since delivery preference was removed
-                // Coupon information for tracking
-                couponCode: data.couponCode || null,
-                originalPrice: data.originalPrice || null,
-                discountAmount: data.discountAmount || null,
-                finalPrice: data.finalPrice || null
+                delivery: 'Email Download' // Default since delivery preference was removed
             };
             
             // Add album-specific song details if album is selected
@@ -270,7 +274,7 @@ function createAlbumFields() {
                 <div class="form-row">
                     <div class="form-group">
                         <label for="song${i}-title">Song Title/Theme</label>
-                        <input type="text" id="song${i}-title" name="song${i}-title" placeholder="e.g., 'Our First Dance', 'College Years'...">
+                        <input type="text" id="song${i}-title" name="song${i}-title" placeholder="e.g., 'Our First Dance', 'College Years'..." autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="song${i}-language">Language</label>
@@ -283,13 +287,40 @@ function createAlbumFields() {
                 </div>
                 <div class="form-group">
                     <label for="song${i}-story">Story/Memory for This Song</label>
-                    <textarea id="song${i}-story" name="song${i}-story" rows="2" placeholder="Brief story or memory for song ${i}..."></textarea>
+                    <textarea id="song${i}-story" name="song${i}-story" rows="3" placeholder="Brief story or memory for song ${i}..." autocomplete="off"></textarea>
                 </div>
             </div>
         `;
     }
     
     container.innerHTML = fieldsHTML;
+    
+    // Add event listeners to ensure fields work properly after creation
+    setTimeout(() => {
+        for (let i = 1; i <= 5; i++) {
+            const titleField = document.getElementById(`song${i}-title`);
+            const storyField = document.getElementById(`song${i}-story`);
+            
+            if (titleField) {
+                titleField.addEventListener('focus', function() {
+                    this.style.borderColor = '#3498DB';
+                });
+                titleField.addEventListener('blur', function() {
+                    this.style.borderColor = '#E8E8E8';
+                });
+            }
+            
+            if (storyField) {
+                storyField.addEventListener('focus', function() {
+                    this.style.borderColor = '#3498DB';
+                });
+                storyField.addEventListener('blur', function() {
+                    this.style.borderColor = '#E8E8E8';
+                });
+            }
+        }
+    }, 100);
+    
     return container;
 }
 
@@ -437,227 +468,34 @@ style.textContent = `
         border: 2px solid #E8E8E8;
         border-radius: 8px;
         font-size: 14px;
-        font-family: inherit;
-        background: white;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: white !important;
+        color: #333;
+        box-sizing: border-box;
         transition: border-color 0.3s ease;
+        resize: vertical;
     }
     
     .song-field-group input:focus,
     .song-field-group textarea:focus,
     .song-field-group select:focus {
         outline: none;
-        border-color: var(--primary-color);
-        background: white;
+        border-color: #3498DB !important;
+        background: white !important;
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    }
+    
+    .song-field-group input::placeholder,
+    .song-field-group textarea::placeholder {
+        color: #999;
+        opacity: 1;
+    }
+    
+    .song-field-group input:disabled,
+    .song-field-group textarea:disabled,
+    .song-field-group select:disabled {
+        background: #f5f5f5 !important;
+        cursor: not-allowed;
     }
 `;
 document.head.appendChild(style);
-
-// ===== COUPON FUNCTIONALITY =====
-
-// Coupon configuration
-const COUPON_CONFIG = {
-    'SOCIAL15': {
-        discount: 15,
-        type: 'percentage',
-        description: '15% Social Media Discount'
-    }
-    // Add more coupons here in the future
-};
-
-// Coupon state
-let appliedCoupon = null;
-let currentSubtotal = 0;
-
-// Initialize coupon functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const applyCouponBtn = document.getElementById('apply-coupon');
-    const couponInput = document.getElementById('coupon-code');
-    const productSelect = document.getElementById('product-type');
-    
-    if (applyCouponBtn && couponInput) {
-        applyCouponBtn.addEventListener('click', applyCoupon);
-        
-        // Allow applying coupon with Enter key
-        couponInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                applyCoupon();
-            }
-        });
-        
-        // Clear coupon when input changes
-        couponInput.addEventListener('input', function() {
-            if (appliedCoupon) {
-                clearCoupon();
-            }
-        });
-    }
-    
-    // Update pricing when product type changes
-    if (productSelect) {
-        productSelect.addEventListener('change', function() {
-            updateSubtotal(this.value);
-            if (appliedCoupon) {
-                updatePriceBreakdown();
-            }
-        });
-    }
-});
-
-function updateSubtotal(productType) {
-    let price = 0;
-    
-    switch(productType) {
-        case 'single':
-            price = 79;
-            break;
-        case 'album':
-            price = 299;
-            break;
-        default:
-            price = 0;
-    }
-    
-    currentSubtotal = price;
-    
-    // Update price breakdown if coupon is applied
-    if (appliedCoupon && price > 0) {
-        updatePriceBreakdown();
-    } else if (price === 0) {
-        // Hide price breakdown if no product selected
-        document.getElementById('price-breakdown').style.display = 'none';
-    }
-}
-
-function applyCoupon() {
-    const couponInput = document.getElementById('coupon-code');
-    const couponCode = couponInput.value.trim().toUpperCase();
-    const messageEl = document.getElementById('coupon-message');
-    const applyBtn = document.getElementById('apply-coupon');
-    
-    // Clear previous messages
-    clearCouponMessage();
-    
-    // Validate input
-    if (!couponCode) {
-        showCouponMessage('Please enter a coupon code', 'error');
-        return;
-    }
-    
-    // Check if product is selected
-    const productType = document.getElementById('product-type').value;
-    if (!productType) {
-        showCouponMessage('Please select a product first', 'error');
-        return;
-    }
-    
-    // Show loading state
-    showCouponMessage('Validating coupon...', 'loading');
-    applyBtn.disabled = true;
-    
-    // Simulate API call delay (replace with actual Stripe API call)
-    setTimeout(() => {
-        validateCoupon(couponCode);
-        applyBtn.disabled = false;
-    }, 1000);
-}
-
-function validateCoupon(couponCode) {
-    // In production, this should call your Stripe API to validate the coupon
-    // For now, we'll use local validation
-    
-    const coupon = COUPON_CONFIG[couponCode];
-    
-    if (!coupon) {
-        showCouponMessage('Invalid coupon code', 'error');
-        return;
-    }
-    
-    // Apply the coupon
-    appliedCoupon = {
-        code: couponCode,
-        ...coupon
-    };
-    
-    showCouponMessage(`✓ ${coupon.description} applied successfully!`, 'success');
-    updatePriceBreakdown();
-    
-    // Disable input and button to prevent reapplication
-    document.getElementById('coupon-code').disabled = true;
-    document.getElementById('apply-coupon').textContent = 'Applied';
-    document.getElementById('apply-coupon').disabled = true;
-}
-
-function clearCoupon() {
-    appliedCoupon = null;
-    clearCouponMessage();
-    document.getElementById('price-breakdown').style.display = 'none';
-    
-    // Re-enable input and button
-    document.getElementById('coupon-code').disabled = false;
-    document.getElementById('apply-coupon').textContent = 'Apply';
-    document.getElementById('apply-coupon').disabled = false;
-}
-
-function updatePriceBreakdown() {
-    if (!appliedCoupon || currentSubtotal === 0) {
-        document.getElementById('price-breakdown').style.display = 'none';
-        return;
-    }
-    
-    const discountAmount = calculateDiscount(currentSubtotal, appliedCoupon);
-    const finalTotal = currentSubtotal - discountAmount;
-    
-    // Update breakdown elements
-    document.getElementById('subtotal').textContent = `$${currentSubtotal}`;
-    document.getElementById('discount-percentage').textContent = `${appliedCoupon.discount}%`;
-    document.getElementById('discount-amount').textContent = `-$${discountAmount.toFixed(2)}`;
-    document.getElementById('final-total').textContent = `$${finalTotal.toFixed(2)}`;
-    
-    // Show the breakdown
-    document.getElementById('price-breakdown').style.display = 'block';
-}
-
-function calculateDiscount(subtotal, coupon) {
-    if (coupon.type === 'percentage') {
-        return (subtotal * coupon.discount) / 100;
-    }
-    // Add support for fixed amount discounts in the future
-    return 0;
-}
-
-function showCouponMessage(message, type) {
-    const messageEl = document.getElementById('coupon-message');
-    messageEl.textContent = message;
-    messageEl.className = `coupon-message ${type}`;
-}
-
-function clearCouponMessage() {
-    const messageEl = document.getElementById('coupon-message');
-    messageEl.textContent = '';
-    messageEl.className = 'coupon-message';
-}
-
-// Update form submission to include coupon data
-function getFormData(form) {
-    const formData = new FormData(form);
-    const data = {};
-    
-    for (let [key, value] of formData.entries()) {
-        if (key === 'terms-agreement') {
-            data[key] = form.querySelector(`[name="${key}"]`).checked;
-        } else {
-            data[key] = value;
-        }
-    }
-    
-    // Add coupon information
-    if (appliedCoupon) {
-        data.couponCode = appliedCoupon.code;
-        data.originalPrice = currentSubtotal;
-        data.discountAmount = calculateDiscount(currentSubtotal, appliedCoupon);
-        data.finalPrice = currentSubtotal - data.discountAmount;
-    }
-    
-    return data;
-}
