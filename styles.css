@@ -1547,3 +1547,44 @@ h5 { font-size: 1.25rem; }
         padding: 30px;
     }
 }
+
+/* Gallery Playback Indicators */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.gallery-card:hover .play-overlay {
+    opacity: 1 !important;
+}
+
+.gallery-card.playing .playing-indicator {
+    display: block !important;
+}
+
+.gallery-card.playing .play-overlay {
+    opacity: 1 !important;
+    background: rgba(0,0,0,0.5) !important;
+}
+
+.gallery-card.playing .play-btn::before {
+    content: "⏸️";
+}
+
+.gallery-card.playing .play-btn {
+    background: var(--terracotta) !important;
+}
+
+/* Remove underlines from all CTAs */
+.cta-button,
+.read-more,
+.testimonial-link,
+a[href="#audio-samples"],
+a[href*="gallery.html"],
+a[href*="blog/"] {
+    text-decoration: none !important;
+}

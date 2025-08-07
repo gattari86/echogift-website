@@ -44,49 +44,76 @@ function initializeGallery() {
 function setupAudioPlayers() {
     const playButtons = document.querySelectorAll('.play-btn');
     let currentAudio = null;
-    let currentButton = null;
+    let currentCard = null;
 
     playButtons.forEach(button => {
         button.addEventListener('click', function() {
             const audioId = this.dataset.audio;
             const audio = document.getElementById(audioId);
+            const galleryCard = this.closest('.gallery-card');
             
-            if (!audio) return;
+            if (!audio || !galleryCard) return;
 
             // Stop any currently playing audio
             if (currentAudio && currentAudio !== audio) {
                 currentAudio.pause();
                 currentAudio.currentTime = 0;
-                if (currentButton) {
-                    currentButton.textContent = '▶️';
-                    currentButton.closest('.song-artwork').classList.remove('playing');
+                if (currentCard) {
+                    currentCard.classList.remove('playing');
                 }
             }
 
             // Toggle play/pause
             if (audio.paused) {
-                audio.play();
-                this.textContent = '⏸️';
-                this.closest('.song-artwork').classList.add('playing');
+                audio.play().catch(e => {
+                    console.log('Playback failed:', e);
+                });
+                galleryCard.classList.add('playing');
                 currentAudio = audio;
-                currentButton = this;
+                currentCard = galleryCard;
+                
+                // Track play for analytics
+                const songTitle = galleryCard.querySelector('h3').textContent;
+                trackSongPlay(songTitle);
             } else {
                 audio.pause();
-                this.textContent = '▶️';
-                this.closest('.song-artwork').classList.remove('playing');
+                galleryCard.classList.remove('playing');
                 currentAudio = null;
-                currentButton = null;
+                currentCard = null;
             }
 
             // Handle audio ended
             audio.addEventListener('ended', function() {
-                button.textContent = '▶️';
-                button.closest('.song-artwork').classList.remove('playing');
+                galleryCard.classList.remove('playing');
                 currentAudio = null;
-                currentButton = null;
-            });
+                currentCard = null;
+            }, { once: true });
+
+            // Handle audio errors
+            audio.addEventListener('error', function() {
+                console.error('Audio playback error for:', audioId);
+                galleryCard.classList.remove('playing');
+                currentAudio = null;
+                currentCard = null;
+            }, { once: true });
         });
     });
+
+    // Pause all audio when another starts playing
+    document.addEventListener('play', function(e) {
+        if (e.target.tagName === 'AUDIO') {
+            const audios = document.querySelectorAll('audio');
+            audios.forEach(audio => {
+                if (audio !== e.target && !audio.paused) {
+                    audio.pause();
+                    const card = audio.closest('.gallery-card');
+                    if (card) {
+                        card.classList.remove('playing');
+                    }
+                }
+            });
+        }
+    }, true);
 }
 
 function setupFilterButtons() {
@@ -137,10 +164,9 @@ document.addEventListener('visibilitychange', function() {
         audios.forEach(audio => {
             if (!audio.paused) {
                 audio.pause();
-                const button = document.querySelector(`[data-audio="${audio.id}"]`);
-                if (button) {
-                    button.textContent = '▶️';
-                    button.closest('.song-artwork').classList.remove('playing');
+                const card = audio.closest('.gallery-card');
+                if (card) {
+                    card.classList.remove('playing');
                 }
             }
         });
