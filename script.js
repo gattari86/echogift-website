@@ -274,33 +274,33 @@ function createAlbumFields() {
         const songGroup = document.createElement('div');
         songGroup.className = 'song-field-group';
         
-        // Create the HTML for this song
+        // Create the HTML for this song - using different class names to avoid conflicts
         songGroup.innerHTML = `
             <h5>Song ${i}</h5>
-            <div class="form-row">
-                <div class="form-group">
+            <div class="album-form-row">
+                <div class="album-form-group">
                     <label for="song${i}-title">Song Title/Theme</label>
                     <input type="text" id="song${i}-title" name="song${i}-title" 
+                           class="album-input"
                            placeholder="e.g., 'Our First Dance', 'College Years'..." 
-                           autocomplete="off"
-                           style="background: white !important; pointer-events: auto !important;">
+                           autocomplete="off">
                 </div>
-                <div class="form-group">
+                <div class="album-form-group">
                     <label for="song${i}-language">Language</label>
                     <select id="song${i}-language" name="song${i}-language"
-                            style="background: white !important; pointer-events: auto !important;">
+                            class="album-select">
                         <option value="">Select language</option>
                         <option value="english">English</option>
                         <option value="spanish">Spanish</option>
                     </select>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="album-form-group">
                 <label for="song${i}-story">Story/Memory for This Song</label>
                 <textarea id="song${i}-story" name="song${i}-story" rows="3" 
+                          class="album-textarea"
                           placeholder="Brief story or memory for song ${i}..." 
-                          autocomplete="off"
-                          style="background: white !important; pointer-events: auto !important;"></textarea>
+                          autocomplete="off"></textarea>
             </div>
         `;
         
@@ -309,29 +309,40 @@ function createAlbumFields() {
     
     // Add event listeners to ensure fields work properly after creation
     setTimeout(() => {
-        for (let i = 1; i <= 5; i++) {
-            const titleField = document.getElementById(`song${i}-title`);
-            const storyField = document.getElementById(`song${i}-story`);
+        // Force focus capability on all album fields
+        const albumFields = container.querySelectorAll('.album-input, .album-textarea, .album-select');
+        albumFields.forEach(field => {
+            // Remove any existing event listeners
+            field.removeAttribute('readonly');
+            field.removeAttribute('disabled');
             
-            if (titleField) {
-                titleField.addEventListener('focus', function() {
-                    this.style.borderColor = '#3498DB';
-                });
-                titleField.addEventListener('blur', function() {
-                    this.style.borderColor = '#E8E8E8';
+            // Add focus event listeners
+            field.addEventListener('focus', function() {
+                this.style.borderColor = '#3498DB';
+                this.style.backgroundColor = 'white';
+            });
+            
+            field.addEventListener('blur', function() {
+                this.style.borderColor = '#E8E8E8';
+                this.style.backgroundColor = 'white';
+            });
+            
+            // Ensure the field is clickable
+            field.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.focus();
+            });
+            
+            // Add input event to ensure typing works
+            if (field.type === 'text' || field.tagName === 'TEXTAREA') {
+                field.addEventListener('input', function() {
+                    console.log(`Input detected in ${this.id}: ${this.value}`);
                 });
             }
-            
-            if (storyField) {
-                storyField.addEventListener('focus', function() {
-                    this.style.borderColor = '#3498DB';
-                });
-                storyField.addEventListener('blur', function() {
-                    this.style.borderColor = '#E8E8E8';
-                });
-            }
-        }
-    }, 100);
+        });
+        
+        console.log(`Album fields initialized: ${albumFields.length} fields found`);
+    }, 200);
     
     return container;
 }
@@ -472,64 +483,78 @@ style.textContent = `
         padding-bottom: 8px;
     }
     
-    .song-field-group input[type="text"],
-    .song-field-group textarea,
-    .song-field-group select {
-        width: 100%;
-        padding: 12px 16px;
-        border: 2px solid #E8E8E8;
-        border-radius: 8px;
-        font-size: 14px;
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    .album-input,
+    .album-textarea,
+    .album-select {
+        width: 100% !important;
+        padding: 12px 16px !important;
+        border: 2px solid #E8E8E8 !important;
+        border-radius: 8px !important;
+        font-size: 14px !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
         background: white !important;
         background-color: white !important;
         color: #333 !important;
-        box-sizing: border-box;
-        transition: border-color 0.3s ease;
+        box-sizing: border-box !important;
+        transition: border-color 0.3s ease !important;
         resize: vertical;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
         pointer-events: auto !important;
         user-select: text !important;
         -webkit-user-select: text !important;
         -moz-user-select: text !important;
         opacity: 1 !important;
+        z-index: 10 !important;
+        position: relative !important;
     }
     
-    .song-field-group input[type="text"]:focus,
-    .song-field-group textarea:focus,
-    .song-field-group select:focus {
-        outline: none;
+    .album-input:focus,
+    .album-textarea:focus,
+    .album-select:focus {
+        outline: none !important;
         border-color: #3498DB !important;
         background: white !important;
         background-color: white !important;
-        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1) !important;
     }
     
-    .song-field-group input::placeholder,
-    .song-field-group textarea::placeholder {
-        color: #999;
-        opacity: 1;
+    .album-input::placeholder,
+    .album-textarea::placeholder {
+        color: #999 !important;
+        opacity: 1 !important;
     }
     
-    .song-field-group input[type="text"]:disabled,
-    .song-field-group textarea:disabled,
-    .song-field-group select:disabled {
+    .album-input:disabled,
+    .album-textarea:disabled,
+    .album-select:disabled {
         background: #f5f5f5 !important;
         cursor: not-allowed;
+    }
+    
+    /* Additional styling for album form groups */
+    .album-form-group {
+        margin-bottom: 16px !important;
+    }
+    
+    .album-form-group label {
+        display: block !important;
+        margin-bottom: 8px !important;
+        font-weight: 500 !important;
+        color: #333 !important;
+    }
+    
+    .album-form-row {
+        display: flex !important;
+        gap: 16px !important;
+        margin-bottom: 16px !important;
+    }
+    
+    .album-form-row .album-form-group {
+        flex: 1 !important;
     }
     
     /* Ensure album fields container is interactive */
     .album-fields-container * {
         pointer-events: auto !important;
-    }
-    
-    .album-fields-container input,
-    .album-fields-container textarea,
-    .album-fields-container select {
-        z-index: 1;
-        position: relative;
     }
 `;
 document.head.appendChild(style);
