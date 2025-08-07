@@ -1797,3 +1797,26 @@ a[href*="blog/"],
 a[href*="index.html#order"] {
     text-decoration: none !important;
 }
+
+/* Comparison Table Mobile Responsiveness */
+@media (max-width: 768px) {
+    .desktop-comparison {
+        display: none !important;
+    }
+    
+    .mobile-comparison {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .desktop-comparison {
+        display: block !important;
+    }
+    
+    .mobile-comparison {
+        display: none !important;
+    }
+}
