@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchoGifts Redesign Asset Inventory & Usage Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #F1EDE6;
+            --dusty-pink: #E8C9CF;
+            --terracotta: #A25524;
+            --deep-indigo: #333333;
+            --luxury-gold: #BFA181;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--cream);
+            color: var(--deep-indigo);
+            line-height: 1.6;
+        }
+        
+        .heading-font {
+            font-family: 'Prata', serif;
+        }
+        
+        .luxury-card {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--dusty-pink) 100%);
+            border: 2px solid var(--luxury-gold);
+        }
+        
+        .section-header {
+            background: linear-gradient(90deg, var(--terracotta) 0%, var(--luxury-gold) 100%);
+            color: white;
+        }
+        
+        .asset-card {
+            background: white;
+            border-left: 4px solid var(--dusty-pink);
+            transition: all 0.3s ease;
+        }
+        
+        .asset-card:hover {
+            border-left-color: var(--terracotta);
+            transform: translateY(-2px);
+        }
+        
+        .usage-tag {
+            background: var(--dusty-pink);
+            color: var(--deep-indigo);
+        }
+        
+        .priority-high {
+            background: var(--terracotta);
+            color: white;
+        }
+        
+        .priority-medium {
+            background: var(--luxury-gold);
+            color: white;
+        }
+        
+        .priority-low {
+            background: var(--dusty-pink);
+            color: var(--deep-indigo);
+        }
+    </style>
+</head>
+<body class="py-8 px-4">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="luxury-card rounded-lg p-8 mb-8 text-center">
+            <h1 class="heading-font text-4xl mb-4" style="color: var(--terracotta);">
+                <i class="fas fa-palette mr-3"></i>
+                EchoGifts.shop Redesign Asset Collection
+            </h1>
+            <p class="text-lg mb-4">Sophisticated Visual Assets for Warm Luxury Aesthetic</p>
+            <div class="grid grid-cols-5 gap-4 mt-6">
+                <div class="text-center">
+                    <div class="w-12 h-12 rounded-full mx-auto mb-2" style="background-color: var(--cream);"></div>
+                    <p class="text-xs">Cream<br>#F1EDE6</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 rounded-full mx-auto mb-2" style="background-color: var(--dusty-pink);"></div>
+                    <p class="text-xs">Dusty Pink<br>#E8C9CF</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 rounded-full mx-auto mb-2" style="background-color: var(--terracotta);"></div>
+                    <p class="text-xs">Terracotta<br>#A25524</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 rounded-full mx-auto mb-2" style="background-color: var(--deep-indigo);"></div>
+                    <p class="text-xs">Deep Indigo<br>#333333</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-12 h-12 rounded-full mx-auto mb-2" style="background-color: var(--luxury-gold);"></div>
+                    <p class="text-xs">Luxury Gold<br>#BFA181</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Design Philosophy -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="heading-font text-2xl mb-4" style="color: var(--terracotta);">
+                <i class="fas fa-lightbulb mr-2"></i>Design Philosophy & Strategy
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <i class="fas fa-heart text-4xl mb-3" style="color: var(--dusty-pink);"></i>
+                    <h3 class="font-bold mb-2">Emotional Resonance</h3>
+                    <p class="text-sm">Every visual tells a story of connection, love, and meaningful moments through warm, intimate imagery.</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-gem text-4xl mb-3" style="color: var(--luxury-gold);"></i>
+                    <h3 class="font-bold mb-2">Sophisticated Luxury</h3>
+                    <p class="text-sm">Premium aesthetic without ostentation - refined elegance that builds trust and desire.</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-users text-4xl mb-3" style="color: var(--terracotta);"></i>
+                    <h3 class="font-bold mb-2">Inclusive Diversity</h3>
+                    <p class="text-sm">Representing diverse relationships, ages, and celebrations to connect with all customers.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero & Emotional Assets -->
+        <div class="section-header rounded-t-lg p-4 mb-0">
+            <h2 class="heading-font text-2xl">
+                <i class="fas fa-heart-pulse mr-2"></i>Hero & Emotional Assets
+            </h2>
+            <p class="text-sm opacity-90">Primary imagery for homepage hero, emotional triggers, and intimate moments</p>
+        </div>
+        <div class="bg-white rounded-b-lg shadow-lg p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="asset-card p-4 rounded-lg shadow-sm">
+                    <img src="https://images.stockcake.com/public/e/a/8/ea8d0632-a913-404b-9204-efaf259cbc35_large/candlelit-romantic-moment-stockcake.jpg" alt="Candlelit Romantic Moment" class="w-full h-48 object-cover rounded mb-3">
+                    <h3 class="font-bold mb-2">Candlelit Romantic Moment</h3>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="usage-tag px-2 py-1 rounded text-xs">Homepage Hero</span>
+                        <span class="priority-high px-2 py-1 rounded text-xs">High Priority</span>
+                    </div>
+                    <p class="text-sm mb-2"><strong>Usage:</strong> Primary hero background for romantic occasions, anniversary pages</p>
+                    <p class="text-sm"><strong>Emotion:</strong> Intimate, warm, sophisticated romance</p>
+                </div>
+                
+                <div class="asset-card p-4 rounded-lg shadow-sm">
+                    <img src="https://images.stockcake.com/public/7/c/0/7c041941-8916-4176-a0cd-80885110db94_large/cozy-couple-moment-stockcake.jpg" alt="Cozy Couple Moment" class="w-full h-48 object-cover rounded mb-3">
+                    <h3 class="font-bold mb-2">Cozy Couple Moment</h3>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="usage-tag px-2 py-1 rounded text-xs">Testimonial Section</span>
+                        <span class="priority-high px-2 py-1 rounded text-xs">High Priority</span>
+                    </div>
+                    <p class="text-sm mb-2"><strong>Usage:</strong> Background for customer stories, relationship gifts section</p>
+                    <p class="text-sm"><strong>Emotion:</strong> Comfort, togetherness, everyday love</p>
+                </div>
+                
+                <div class="asset-card p-4 rounded-lg shadow-sm">
+                    <img src="https://images.stockcake.com/public/6/3/a/63a28ec8-649c-4b94-bbaa-ecdf6480b098_large/candlelight-intimate-moment-stockcake.jpg" alt="Candlelight Intimate Moment" class="w-full h-48 object-cover rounded mb-3">
+                    <h3 class="font-bold mb-2">Candlelight Intimate Moment</h3>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="usage-tag px-2 py-1 rounded text-xs">Single Song Page</span>
+                        <span class="priority-medium px-2 py-1 rounded text-xs">Medium Priority</span>
+                    </div>
+                    <p class="text-sm mb-2"><strong>Usage:</strong> Single song product page, romantic gift category</p>
+                    <p class="text-sm"><strong>Emotion:</strong> Intimate connection, special moments</p>
+                </div>
+                
+                <div class="asset-card p-4 rounded-lg shadow-sm">
+                    <img src="https://images.stockcake.com/public/b/3/2/b32bdab9-ede2-4cae-9144-2c18e8dfb033_large/autumn-love-connection-stockcake.jpg" alt="Autumn Love Connection" class="w-full h-48 object-cover rounded mb-3">
+                    <h3 class="font-bold mb-2">Elderly Couple Connection</h3>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="usage-tag px-2 py-1 rounded text-xs">Family Section</span>
+                        <span class="priority-medium px-2 py-1 rounded text-xs">Medium Priority</span>
+                    </div>
+                    <p class="text-sm mb-2"><strong>Usage:</strong> Multi-generational testimonials, lifetime celebration gifts</p>
+                    <p class="text-sm"><strong>Emotion:</strong> Enduring love, wisdom, legacy</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Music & Audio Assets -->
+        <div class="section-header rounded-t-lg p-4 mb-0">
+            <h2 class="heading-font text-2xl">
+                <i class="fas fa-music mr-2"></i>Music & Audio Assets
+            </h2>
+            <p class="text-sm opacity-90">Visual elements representing music creation, audio equipment, and sound</p>
+        </div>
+        <div class="bg-white rounded-b-lg shadow-lg p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="asset-card p-4 rounded-lg shadow-sm">
+                    <img src="https://images.stockcake.com/public/7/3/b/73b6dd6a-31b7-4fb0-bb70-e9acc20671ed_large/vintage-record-player-stockcake.jpg" alt="Vintage Record Player" class="w-full h-48 object-cover rounded mb-3">
+                    <h3 class="font-bold mb-2">Vintage Record Player</h3>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="usage-tag px-2 py-1 rounded text-xs">Vinyl Section</span>
+                        <span class="priority-high px-2 py-1 rounded text-xs">High Priority</span>
+                    </div>
+                    <p class="text-sm mb-2"><strong>Usage:</strong> "Vinyl Records Coming Soon" section, luxury music experience</p>
+                    <p class="text-sm"><strong>Aesthetic:</strong> Vintage elegance, premium music culture</p>
+                </div>
+                
+                <div class="asset-card p-4 rounded-lg shadow-sm">
+                    <img src="https://images.stockcake.com/public/5/9/4/5948952a-84e9-42c9-b145-3ff4084ee63c_large/waveform-visualization-set-stockcake.jpg" alt="Waveform Visualization" class="w-full h-48 object-cover rounded mb-3">
+                    <h3 class="font-bold mb-2">Waveform Visualization Set</h3>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="usage-tag px-2 py-1 rounded text-xs">Sample Player</span>
+                        <span class="priority-high px-2 py-1 rounded text-xs">High Priority</span>
+                    </div>
+                    <p class="text-sm mb-2"><strong>Usage:</strong> Audio player interface, sample song displays</p>
+                    <p class="text-sm"><strong>Function:</strong> Visual audio representation, interactive elements</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Process & Creation Assets -->
+        <div class="section-header rounded-t-lg p-4 mb-0">
+            <h2 class="heading-font text-2xl">
+                <i class="fas fa-cogs mr-2"></i>Process & Creation Assets
+            </h2>
+            <p class="text-sm opacity-90">Behind-the-scenes imagery showing professional music production and AI creation</p>
+        </div>
+        <div class="bg-white rounded-b-lg shadow-lg p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="asset-card p-4 rounded-lg shadow-sm">
+                    <img src="https://images.stockcake.com/public/d/3/c/d3c1ad08-b5e8-442e-b3fd-19fd4d1ba826_large/professional-recording-studio-stockcake.jpg" alt="Professional Recording Studio" class="w-full h-32 object-cover rounded mb-2">
+                    <h4 class="font-bold text-sm mb-1">Recording Studio</h4>
+                    <span class="usage-tag px-2 py-1 rounded text-xs">How It Works</span>
+                </div>
+                
+                <div class="asset-card p-4 rounded-lg shadow-sm">
+                    <img src="https://images.stockcake.com/public/6/d/a/6da86b89-b9c4-46fe-9ff6-cb7e753cd9fb_large/professional-music-studio-stockcake.jpg" alt="Professional Music Studio" class="w-full h-32 object-cover rounded mb-2">
+                    <h4 class="font-bold text-sm mb-1">Music Studio</h4>
+                    <span class="usage-tag px-2 py-1 rounded text-xs">Process Steps</span>
+                </div>
+                
+                <div class="asset-card p-4 rounded-lg shadow-sm">
+                    <img src="https://images.stockcake.com/public/4/0/8/40860477-cc46-45e3-b046-696ccb9cd5c5_large/professional-studio-setup-stockcake.jpg" alt="Professional Studio Setup" class="w-full h-32 object-cover rounded mb-2">
+                    <h4 class="font-bold text-sm mb-1">Studio Setup</h4>
+                    <span class="usage-tag px-2 py-1 rounded text-xs">Technical Quality</span>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                <h3 class="font-bold mb-2">Implementation Strategy:</h3>
+                <p class="text-sm">Use these images to build trust through professional quality demonstration. Show the sophisticated process behind AI song creation without overwhelming technical details.</p>
+            </div>
+        </div>
+
+        <!-- Occasions & Celebrations -->
+        <div class="section-header rounded-t-lg p-4 mb-0">
+            <h2 class="heading-font text-2xl">
+                <i class="fas fa-gift mr-2"></i>Occasions & Celebrations
+            </h2>
+            <p class="text-sm opacity-90">Images representing different gift-giving occasions and emotional reactions</p>
+        </div>
+        <div class="bg-white rounded-b-lg shadow-lg p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="asset-card p-4 rounded-lg shadow-sm">
+                    <img src="https://images.stockcake.com/public/e/d/9/ed9611fd-02e0-4b5b-9daf-87498a9b01e4_large/vintage-family-time-stockcake.jpg" alt="Vintage Family Time" class="w-full h-48 object-cover rounded mb-3">
+                    <h3 class="font-bold mb-2">Family Celebration</h3>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="usage-tag px-2 py-1 rounded text-xs">Family Gifts</span>
+                        <span class="priority-medium px-2 py-1 rounded text-xs">Medium Priority</span>
+                    </div>
+                    <p class="text-sm mb-2"><strong>Usage:</strong> Family celebrations, multi-generational gifts, holiday sections</p>
+                    <p class="text-sm"><strong>Occasions:</strong> Birthdays, graduations, family reunions</p>
+                </div>
+                
+                <div class="asset-card p-4 rounded-lg shadow-sm">
+                    <img src="https://images.stockcake.com/public/0/2/7/0271a1f6-ee55-4421-97f5-3ba1cd755462_large/surprise-gift-reaction-stockcake.jpg" alt="Surprise Gift Reaction" class="w-full h-48 object-cover rounded mb-3">
+                    <h3 class="font-bold mb-2">Surprise Gift Reaction</h3>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="usage-tag px-2 py-1 rounded text-xs">Testimonials</span>
+                        <span class="priority-high px-2 py-1 rounded text-xs">High Priority</span>
+                    </div>
+                    <p class="text-sm mb-2"><strong>Usage:</strong> Customer reaction stories, emotional impact demonstrations</p>
+                    <p class="text-sm"><strong>Emotion:</strong> Joy, surprise, gratitude, authentic reaction</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Backgrounds & Textures -->
+        <div class="section-header rounded-t-lg p-4 mb-0">
+            <h2 class="heading-font text-2xl">
+                <i class="fas fa-palette mr-2"></i>Backgrounds & Textures
+            </h2>
+            <p class="text-sm opacity-90">Subtle backgrounds and textures aligned with the warm luxury color palette</p>
+        </div>
+        <div class="bg-white rounded-b-lg shadow-lg p-6 mb-8">
+            <div class="asset-card p-4 rounded-lg shadow-sm">
+                <img src="https://images.stockcake.com/public/c/c/8/cc8a201c-09e0-425c-9ead-65c7b2cb88c0_large/marbled-pink-elegance-stockcake.jpg" alt="Marbled Pink Elegance" class="w-full h-48 object-cover rounded mb-3">
+                <h3 class="font-bold mb-2">Marbled Pink Elegance Texture</h3>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    <span class="usage-tag px-2 py-1 rounded text-xs">Section Backgrounds</span>
+                    <span class="priority-medium px-2 py-1 rounded text-xs">Medium Priority</span>
+                </div>
+                <p class="text-sm mb-2"><strong>Usage:</strong> Subtle section backgrounds, card overlays, hero gradients</p>
+                <p class="text-sm"><strong>Properties:</strong> Elegant marble texture in dusty pink tones, sophisticated luxury feel</p>
+            </div>
+        </div>
+
+        <!-- Animations -->
+        <div class="section-header rounded-t-lg p-4 mb-0">
+            <h2 class="heading-font text-2xl">
+                <i class="fas fa-play-circle mr-2"></i>Animations & Interactive Elements
+            </h2>
+            <p class="text-sm opacity-90">Animated elements to enhance user experience and demonstrate audio functionality</p>
+        </div>
+        <div class="bg-white rounded-b-lg shadow-lg p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="asset-card p-4 rounded-lg shadow-sm text-center">
+                    <i class="fas fa-wave-square text-6xl mb-4" style="color: var(--terracotta);"></i>
+                    <h3 class="font-bold mb-2">Waveform Animation</h3>
+                    <div class="flex flex-wrap gap-2 justify-center mb-3">
+                        <span class="usage-tag px-2 py-1 rounded text-xs">Audio Players</span>
+                        <span class="priority-high px-2 py-1 rounded text-xs">High Priority</span>
+                    </div>
+                    <p class="text-sm mb-2"><strong>File:</strong> waveform_animation.gif (2.9MB)</p>
+                    <p class="text-sm"><strong>Usage:</strong> Audio sample players, loading states, music visualization</p>
+                </div>
+                
+                <div class="asset-card p-4 rounded-lg shadow-sm text-center">
+                    <i class="fas fa-water text-6xl mb-4" style="color: var(--dusty-pink);"></i>
+                    <h3 class="font-bold mb-2">Audio Waves Animation</h3>
+                    <div class="flex flex-wrap gap-2 justify-center mb-3">
+                        <span class="usage-tag px-2 py-1 rounded text-xs">Background Effects</span>
+                        <span class="priority-medium px-2 py-1 rounded text-xs">Medium Priority</span>
+                    </div>
+                    <p class="text-sm mb-2"><strong>File:</strong> audio_waves_animation.gif (1.6MB)</p>
+                    <p class="text-sm"><strong>Usage:</strong> Subtle background animations, hero section movement</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation Checklist -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="heading-font text-2xl mb-6" style="color: var(--terracotta);">
+                <i class="fas fa-clipboard-check mr-2"></i>Implementation Checklist
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-bold mb-3 text-lg">Homepage Priority</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked>
+                            <span class="text-sm">Hero: Candlelit romantic moment</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked>
+                            <span class="text-sm">Audio samples: Waveform visualizations</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2" checked>
+                            <span class="text-sm">Testimonials: Gift reaction images</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span class="text-sm">Vinyl section: Record player imagery</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold mb-3 text-lg">Technical Integration</h3>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span class="text-sm">Optimize images for web (WebP format)</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span class="text-sm">Implement lazy loading</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span class="text-sm">Add alt text for accessibility</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" class="mr-2">
+                            <span class="text-sm">Test mobile responsiveness</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asset Download Links -->
+        <div class="luxury-card rounded-lg p-6 text-center">
+            <h2 class="heading-font text-2xl mb-4" style="color: var(--terracotta);">
+                <i class="fas fa-download mr-2"></i>Asset Download Access
+            </h2>
+            <p class="mb-6">All assets are organized in the AI Drive with the following structure:</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+                <a href="https://www.genspark.ai/aidrive/files/echogifts_redesign_assets/hero_emotional" class="block p-3 bg-white rounded border-2 border-solid transition-all hover:scale-105" style="border-color: var(--dusty-pink);">
+                    <i class="fas fa-heart mb-2 text-2xl" style="color: var(--dusty-pink);"></i>
+                    <div class="font-bold">Hero & Emotional</div>
+                    <div class="text-xs opacity-75">4 high-quality images</div>
+                </a>
+                
+                <a href="https://www.genspark.ai/aidrive/files/echogifts_redesign_assets/process_creation" class="block p-3 bg-white rounded border-2 border-solid transition-all hover:scale-105" style="border-color: var(--terracotta);">
+                    <i class="fas fa-cogs mb-2 text-2xl" style="color: var(--terracotta);"></i>
+                    <div class="font-bold">Process & Creation</div>
+                    <div class="text-xs opacity-75">5 studio images</div>
+                </a>
+                
+                <a href="https://www.genspark.ai/aidrive/files/echogifts_redesign_assets/music_audio" class="block p-3 bg-white rounded border-2 border-solid transition-all hover:scale-105" style="border-color: var(--luxury-gold);">
+                    <i class="fas fa-music mb-2 text-2xl" style="color: var(--luxury-gold);"></i>
+                    <div class="font-bold">Music & Audio</div>
+                    <div class="text-xs opacity-75">Premium vinyl imagery</div>
+                </a>
+                
+                <a href="https://www.genspark.ai/aidrive/files/echogifts_redesign_assets/animations" class="block p-3 bg-white rounded border-2 border-solid transition-all hover:scale-105" style="border-color: var(--deep-indigo);">
+                    <i class="fas fa-play-circle mb-2 text-2xl" style="color: var(--deep-indigo);"></i>
+                    <div class="font-bold">Animations</div>
+                    <div class="text-xs opacity-75">2 waveform GIFs</div>
+                </a>
+            </div>
+            
+            <p class="mt-6 text-sm opacity-80">All assets are watermark-free and suitable for commercial use. Total collection size: ~5MB optimized for fast web loading.</p>
+        </div>
+    </div>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDpH4MFtQLBRk%2Be%2FssuI4nlctqLmroGJ3dxQIpGToW2Zs6pCnG%2B3%2FvEWfg6JTfKQw85p7h7FmHRKzvjQWvHB4nx4RuNEMUUisBLmgp0jR2P9BIl9N1zuzV2no%2BoqRThUvfacCxq6INnYoYJ9pwqhsxMGzb69oSXQ9oujWQGfwSGKfwzbtaXwjrro8orX4cGxOvZmwBxiSjuFnrVru85sxqukQps2LLxa9sbSZSSfRXJqyKqV%2B9oy7aKeJHz4LG786kYAxFdpw3bDm2fleLUyjoLRgRgbnmRRj11qZ2IN5LhTmyao1Ul4bxfYvS8sYJSD%2B6yA1SUwMoZH%2BE4ab%2BM9a%2BptlrGJXJvDTvBe3CwG%2FzavwM8tFhyJbdoPQNNmkgrdJ7dsoEMQ4jHeK%2BSQPd9WrwH1laxIqOC27E6nlk3%2FPT%2FIrDDnhDoJFRg4ds9ADNmNB%2FQmqH86zC6Xh4omoOKTtSnmEHkn2U1XpCvLd0ofKSePkwzgBtLjdHbMk3H10m3w46ctrPWP3wBC%2Fy6JTbtakg8E%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDpH4MFtQLBRk+e/ssuI4nlctqLmroGJ3dxQIpGToW2Zs6pCnG+3/vEWfg6JTfKQw85p7h7FmHRKzvjQWvHB4nx4RuNEMUUisBLmgp0jR2P9BIl9N1zuzV2no+oqRThUvfacCxq6INnYoYJ9pwqhsxMGzb69oSXQ9oujWQGfwSGKfwzbtaXwjrro8orX4cGxOvZmwBxiSjuFnrVru85sxqukQps2LLxa9sbSZSSfRXJqyKqV+9oy7aKeJHz4LG786kYAxFdpw3bDm2fleLUyjoLRgRgbnmRRj11qZ2IN5LhTmyao1Ul4bxfYvS8sYJSD+6yA1SUwMoZH+E4ab+M9a+ptlrGJXJvDTvBe3CwG/zavwM8tFhyJbdoPQNNmkgrdJ7dsoEMQ4jHeK+SQPd9WrwH1laxIqOC27E6nlk3/PT/IrDDnhDoJFRg4ds9ADNmNB/QmqH86zC6Xh4omoOKTtSnmEHkn2U1XpCvLd0ofKSePkwzgBtLjdHbMk3H10m3w46ctrPWP3wBC/y6JTbtakg8E=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
