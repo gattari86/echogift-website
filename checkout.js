@@ -41,9 +41,8 @@ function loadOrderData() {
     document.getElementById('product-description').textContent = product.description;
     document.getElementById('product-price').textContent = `$${product.price.toFixed(2)}`;
     document.getElementById('subtotal').textContent = `$${product.price.toFixed(2)}`;
-    document.getElementById('processing-fee').textContent = '$2.30';
-    document.getElementById('final-total').textContent = `$${(product.price + 2.30).toFixed(2)}`;
-    document.getElementById('button-amount').textContent = (product.price + 2.30).toFixed(2);
+    document.getElementById('final-total').textContent = `$${product.price.toFixed(2)}`;
+    document.getElementById('button-amount').textContent = product.price.toFixed(2);
 
     // Populate order details
     document.getElementById('recipient-display').textContent = orderData.recipientName || 'N/A';

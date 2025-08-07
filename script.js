@@ -260,40 +260,52 @@ function createAlbumFields() {
     container.id = 'album-fields';
     container.className = 'album-fields-container';
     
-    let fieldsHTML = `
-        <div class="album-fields-header">
-            <h4>Individual Song Details</h4>
-            <p>Please provide specific details for each of the 5 songs in your album:</p>
-        </div>
+    // Create the header
+    const header = document.createElement('div');
+    header.className = 'album-fields-header';
+    header.innerHTML = `
+        <h4>Individual Song Details</h4>
+        <p>Please provide specific details for each of the 5 songs in your album:</p>
     `;
+    container.appendChild(header);
     
+    // Create each song field group
     for (let i = 1; i <= 5; i++) {
-        fieldsHTML += `
-            <div class="song-field-group">
-                <h5>Song ${i}</h5>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="song${i}-title">Song Title/Theme</label>
-                        <input type="text" id="song${i}-title" name="song${i}-title" placeholder="e.g., 'Our First Dance', 'College Years'..." autocomplete="off">
-                    </div>
-                    <div class="form-group">
-                        <label for="song${i}-language">Language</label>
-                        <select id="song${i}-language" name="song${i}-language">
-                            <option value="">Select language</option>
-                            <option value="english">English</option>
-                            <option value="spanish">Spanish</option>
-                        </select>
-                    </div>
+        const songGroup = document.createElement('div');
+        songGroup.className = 'song-field-group';
+        
+        // Create the HTML for this song
+        songGroup.innerHTML = `
+            <h5>Song ${i}</h5>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="song${i}-title">Song Title/Theme</label>
+                    <input type="text" id="song${i}-title" name="song${i}-title" 
+                           placeholder="e.g., 'Our First Dance', 'College Years'..." 
+                           autocomplete="off"
+                           style="background: white !important; pointer-events: auto !important;">
                 </div>
                 <div class="form-group">
-                    <label for="song${i}-story">Story/Memory for This Song</label>
-                    <textarea id="song${i}-story" name="song${i}-story" rows="3" placeholder="Brief story or memory for song ${i}..." autocomplete="off"></textarea>
+                    <label for="song${i}-language">Language</label>
+                    <select id="song${i}-language" name="song${i}-language"
+                            style="background: white !important; pointer-events: auto !important;">
+                        <option value="">Select language</option>
+                        <option value="english">English</option>
+                        <option value="spanish">Spanish</option>
+                    </select>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="song${i}-story">Story/Memory for This Song</label>
+                <textarea id="song${i}-story" name="song${i}-story" rows="3" 
+                          placeholder="Brief story or memory for song ${i}..." 
+                          autocomplete="off"
+                          style="background: white !important; pointer-events: auto !important;"></textarea>
+            </div>
         `;
+        
+        container.appendChild(songGroup);
     }
-    
-    container.innerHTML = fieldsHTML;
     
     // Add event listeners to ensure fields work properly after creation
     setTimeout(() => {
@@ -460,7 +472,7 @@ style.textContent = `
         padding-bottom: 8px;
     }
     
-    .song-field-group input,
+    .song-field-group input[type="text"],
     .song-field-group textarea,
     .song-field-group select {
         width: 100%;
@@ -470,18 +482,28 @@ style.textContent = `
         font-size: 14px;
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         background: white !important;
-        color: #333;
+        background-color: white !important;
+        color: #333 !important;
         box-sizing: border-box;
         transition: border-color 0.3s ease;
         resize: vertical;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        pointer-events: auto !important;
+        user-select: text !important;
+        -webkit-user-select: text !important;
+        -moz-user-select: text !important;
+        opacity: 1 !important;
     }
     
-    .song-field-group input:focus,
+    .song-field-group input[type="text"]:focus,
     .song-field-group textarea:focus,
     .song-field-group select:focus {
         outline: none;
         border-color: #3498DB !important;
         background: white !important;
+        background-color: white !important;
         box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
     }
     
@@ -491,11 +513,23 @@ style.textContent = `
         opacity: 1;
     }
     
-    .song-field-group input:disabled,
+    .song-field-group input[type="text"]:disabled,
     .song-field-group textarea:disabled,
     .song-field-group select:disabled {
         background: #f5f5f5 !important;
         cursor: not-allowed;
+    }
+    
+    /* Ensure album fields container is interactive */
+    .album-fields-container * {
+        pointer-events: auto !important;
+    }
+    
+    .album-fields-container input,
+    .album-fields-container textarea,
+    .album-fields-container select {
+        z-index: 1;
+        position: relative;
     }
 `;
 document.head.appendChild(style);
