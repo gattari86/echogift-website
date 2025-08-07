@@ -25,7 +25,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     
     <!-- BlogPosting Schema -->
@@ -58,47 +58,57 @@
     </script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="product-header">
+    <!-- Navigation Header -->
+    <header class="main-header">
         <div class="container">
-            <nav class="product-nav">
+            <nav class="main-nav">
                 <a href="../index.html" class="logo">EchoGift</a>
-                <div class="nav-links">
-                    <a href="../gallery.html">Gallery</a>
-                    <a href="../single-song.html">Single Song</a>
-                    <a href="../album-gift.html">Album Gift</a>
-                    <a href="../blog.html">Blog</a>
-                    <a href="../index.html#order" class="cta-button-small">Order Now</a>
+                <div class="nav-menu">
+                    <a href="../gallery.html" class="nav-link">🎵 Gallery</a>
+                    <a href="../single-song.html" class="nav-link">Single Song ($79)</a>
+                    <a href="../album-gift.html" class="nav-link">Album Gift ($299)</a>
+                    <a href="../blog.html" class="nav-link active">📝 Blog</a>
+                    <a href="../index.html#order" class="nav-cta">Order Now</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Blog Post Header -->
-    <header class="blog-post-header">
-        <div class="container">
-            <div class="blog-post-meta">
-                <div class="post-meta">
-                    <span class="post-date">January 15, 2025</span>
-                    <div class="post-tags">
-                        <span class="tag">How-To</span>
-                        <span class="tag">Guide</span>
+    <!-- Blog Post Header with Premium Design -->
+    <section style="background: var(--gradient-warm); padding: 100px 0; position: relative; overflow: hidden;">
+        <!-- Premium Background Layer -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('../assets/premium/premium_graphics/golden_musical_notes_elegant.jpg') center center / cover no-repeat; opacity: 0.08;"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
+        <div class="container" style="position: relative; z-index: 3;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <div style="display: flex; gap: 16px; justify-content: center; align-items: center; margin-bottom: 24px;">
+                    <span style="color: var(--text-secondary); font-size: 16px;">January 15, 2025</span>
+                    <div style="display: flex; gap: 8px;">
+                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">How-To</span>
+                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">Guide</span>
                     </div>
                 </div>
-                <h1 class="blog-post-title">How to Choose the Perfect Custom Song: A Quick Guide</h1>
-                <p class="blog-post-excerpt">Step-by-step tips for crafting a song that hits all the right notes. From defining the occasion to adding personal details, we've got you covered.</p>
+                <h1 style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--deep-indigo); margin-bottom: 24px; line-height: 1.2;">How to Choose the Perfect Custom Song: A Quick Guide</h1>
+                <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.6; max-width: 700px; margin: 0 auto;">Step-by-step tips for crafting a song that hits all the right notes. From defining the occasion to adding personal details, we've got you covered.</p>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Blog Post Content -->
-    <article class="blog-post-content">
-        <div class="container">
+    <!-- Blog Post Content with Premium Design -->
+    <article style="padding: 100px 0; background: white; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('../assets/premium/premium_textures/elegant_beige_marble_luxury.jpg') center center / cover no-repeat; opacity: 0.02;"></div>
+        <div class="container" style="position: relative; z-index: 2; max-width: 800px;">
+            <div style="font-family: 'Lato', sans-serif; font-size: 18px; line-height: 1.8; color: var(--text-secondary);">
             <p>Creating the perfect custom song isn't about being musical—it's about being thoughtful. Whether you're planning an anniversary surprise or celebrating a friend's achievement, the key to a meaningful personalized song lies in the details you choose to include and how you present them.</p>
 
             <p>Here's your step-by-step guide to crafting a song that will resonate deeply with your recipient.</p>
 
-            <h2>Step 1: Define Your Core Message</h2>
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">Step 1: Define Your Core Message</h2>
 
             <p>Before diving into specific memories, ask yourself: <strong>What's the main thing you want this song to communicate?</strong></p>
 
@@ -113,28 +123,28 @@
 
             <p>Having a clear core message helps everything else fall into place. Every detail, memory, and reference should support this central theme.</p>
 
-            <h2>Step 2: Choose Your Timeframe</h2>
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">Step 2: Choose Your Timeframe</h2>
 
             <p>Decide which period of time your song will cover:</p>
 
-            <h3>Option 1: The Journey Approach</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Option 1: The Journey Approach</h3>
             <p>Tell their complete story from beginning to present. Great for milestone birthdays, anniversaries, or major life transitions.</p>
 
-            <h3>Option 2: The Snapshot Approach</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Option 2: The Snapshot Approach</h3>
             <p>Focus on a specific period or theme. Perfect for celebrating recent achievements, new relationships, or particular chapters of their life.</p>
 
-            <h3>Option 3: The Moment Approach</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Option 3: The Moment Approach</h3>
             <p>Center the song around one meaningful event or realization. Ideal for weddings, graduations, or "just because" appreciation songs.</p>
 
-            <blockquote>
+            <blockquote style="background: rgba(241, 237, 230, 0.3); border-left: 4px solid var(--terracotta); padding: 32px; margin: 32px 0; border-radius: 8px; font-style: italic; font-size: 20px; color: var(--deep-indigo); line-height: 1.6;">
                 "The best custom songs feel like they could only be about one person in the whole world. That specificity comes from choosing the right timeframe and diving deep into it."
             </blockquote>
 
-            <h2>Step 3: Gather Your Details</h2>
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">Step 3: Gather Your Details</h2>
 
             <p>Now comes the fun part: collecting the specific details that will make your song unique. Use these categories as prompts:</p>
 
-            <h3>Essential Details</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Essential Details</h3>
             <ul>
                 <li><strong>Names:</strong> Their full name, nicknames, what you call them</li>
                 <li><strong>Key relationships:</strong> Family members, friends, pets</li>
@@ -142,7 +152,7 @@
                 <li><strong>Places:</strong> Hometown, favorite spots, significant locations</li>
             </ul>
 
-            <h3>Personality Details</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Personality Details</h3>
             <ul>
                 <li>Character traits you admire</li>
                 <li>Quirks that make them unique</li>
@@ -150,7 +160,7 @@
                 <li>Values they hold dear</li>
             </ul>
 
-            <h3>Shared Memories</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Shared Memories</h3>
             <ul>
                 <li>First meetings or memorable encounters</li>
                 <li>Adventures you've shared</li>
@@ -159,7 +169,7 @@
                 <li>Traditions you share together</li>
             </ul>
 
-            <h3>Achievements & Growth</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Achievements & Growth</h3>
             <ul>
                 <li>Challenges they've overcome</li>
                 <li>Goals they've achieved</li>
@@ -167,25 +177,25 @@
                 <li>Impact they've made on others</li>
             </ul>
 
-            <h2>Step 4: Select Your Musical Style</h2>
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">Step 4: Select Your Musical Style</h2>
 
             <p>The musical style should match both the recipient's taste and the song's message:</p>
 
-            <h3>For Love & Romance:</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">For Love & Romance:</h3>
             <ul>
                 <li><strong>Acoustic/Folk:</strong> Intimate and heartfelt</li>
                 <li><strong>Pop Ballad:</strong> Contemporary and emotional</li>
                 <li><strong>Jazz:</strong> Sophisticated and timeless</li>
             </ul>
 
-            <h3>For Celebration & Achievement:</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">For Celebration & Achievement:</h3>
             <ul>
                 <li><strong>Upbeat Pop:</strong> Energetic and joyful</li>
                 <li><strong>Rock:</strong> Powerful and confident</li>
                 <li><strong>Gospel/Soul:</strong> Uplifting and inspiring</li>
             </ul>
 
-            <h3>For Reflection & Gratitude:</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">For Reflection & Gratitude:</h3>
             <ul>
                 <li><strong>Country:</strong> Storytelling and authentic</li>
                 <li><strong>Singer-songwriter:</strong> Personal and reflective</li>
@@ -194,51 +204,51 @@
 
             <p><strong>Pro tip:</strong> Consider their favorite artists or genres, but don't be afraid to choose something different if it better fits your message.</p>
 
-            <h2>Step 5: Organize Your Story</h2>
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">Step 5: Organize Your Story</h2>
 
             <p>Most songs follow a simple structure. Here's how to organize your details:</p>
 
-            <h3>Verse 1: The Setup</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Verse 1: The Setup</h3>
             <p>Introduce the person or situation. Set the scene with basic details about who they are or how your story began.</p>
 
-            <h3>Chorus: The Core Message</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Chorus: The Core Message</h3>
             <p>This is your main theme—the central thing you want to communicate. It should be emotional and memorable.</p>
 
-            <h3>Verse 2: The Development</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Verse 2: The Development</h3>
             <p>Add more specific details, memories, or character traits. This is where you get personal.</p>
 
-            <h3>Bridge: The Deeper Truth</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Bridge: The Deeper Truth</h3>
             <p>Share the impact they've made, lessons they've taught you, or why they matter so much.</p>
 
-            <h3>Final Chorus: The Commitment</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Final Chorus: The Commitment</h3>
             <p>Reinforce your main message with even more conviction or add a forward-looking element.</p>
 
-            <h2>Step 6: Add the Special Touches</h2>
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">Step 6: Add the Special Touches</h2>
 
             <p>These details elevate a good song to an unforgettable one:</p>
 
-            <h3>Language Considerations</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Language Considerations</h3>
             <ul>
                 <li>Do they speak multiple languages?</li>
                 <li>Are there phrases or words from their heritage that would be meaningful?</li>
                 <li>Do they have linguistic quirks or expressions they use?</li>
             </ul>
 
-            <h3>Cultural Elements</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Cultural Elements</h3>
             <ul>
                 <li>Musical traditions from their background</li>
                 <li>Cultural values or themes that resonate</li>
                 <li>References to their heritage or family history</li>
             </ul>
 
-            <h3>Sensory Details</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Sensory Details</h3>
             <ul>
                 <li>What they look, sound, or smell like</li>
                 <li>Physical gestures or mannerisms</li>
                 <li>Environmental details from shared memories</li>
             </ul>
 
-            <h2>Step 7: Review and Refine</h2>
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">Step 7: Review and Refine</h2>
 
             <p>Before finalizing your song details, ask yourself:</p>
 
@@ -249,7 +259,7 @@
                 <li><strong>Is it complete?</strong> Have you included the most important elements of their story?</li>
             </ol>
 
-            <h2>Common Mistakes to Avoid</h2>
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">Common Mistakes to Avoid</h2>
 
             <ul>
                 <li><strong>Being too vague:</strong> "You're amazing" doesn't create emotional connection</li>
@@ -258,7 +268,7 @@
                 <li><strong>Making it about you:</strong> The song should celebrate them, not your relationship necessarily</li>
             </ul>
 
-            <h2>The Final Touch: Presentation Matters</h2>
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">The Final Touch: Presentation Matters</h2>
 
             <p>How you give the song is almost as important as the song itself:</p>
 
@@ -273,21 +283,23 @@
 
             <p>The magic happens when they hear their own story transformed into something beautiful, permanent, and uniquely theirs.</p>
 
-            <div class="back-to-blog">
-                <a href="../blog.html">← Back to Blog</a>
+                <div style="margin-top: 60px; text-align: center;">
+                    <a href="../blog.html" style="color: var(--terracotta); font-weight: 600; text-decoration: none; font-size: 16px; padding: 12px 24px; border: 2px solid var(--dusty-pink); border-radius: 25px; display: inline-block; transition: var(--transition);">← Back to Blog</a>
+                </div>
             </div>
         </div>
     </article>
 
-    <!-- CTA Section -->
-    <section class="blog-cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Put This Guide to Work?</h2>
-                <p>Use these steps to create a perfect personalized song that celebrates someone special</p>
-                <div class="cta-buttons">
-                    <a href="../single-song.html" class="cta-button secondary">Single Song - $79</a>
-                    <a href="../album-gift.html" class="cta-button primary">5-Song Album - $299</a>
+    <!-- CTA Section with Premium Design -->
+    <section style="padding: 100px 0; background: var(--gradient-warm); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('../assets/premium/occasions_celebrations/surprise_gift_reaction.jpg') center center / cover no-repeat; opacity: 0.08;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h2 style="font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 2.5rem); color: var(--deep-indigo); margin-bottom: 24px;">Ready to Put This Guide to Work?</h2>
+                <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 40px; line-height: 1.6;">Use these steps to create a perfect personalized song that celebrates someone special</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="../single-song.html" class="cta-button secondary" style="background: rgba(255, 255, 255, 0.9); color: var(--terracotta); border: 2px solid var(--dusty-pink);">Single Song - $79</a>
+                    <a href="../album-gift.html" class="cta-button" style="background: var(--gradient-luxury);">5-Song Album - $299</a>
                 </div>
             </div>
         </div>
