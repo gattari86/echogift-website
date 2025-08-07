@@ -1583,8 +1583,10 @@ h5 { font-size: 1.25rem; }
 .cta-button,
 .read-more,
 .testimonial-link,
+.nav-cta,
 a[href="#audio-samples"],
 a[href*="gallery.html"],
-a[href*="blog/"] {
+a[href*="blog/"],
+a[href*="index.html#order"] {
     text-decoration: none !important;
 }
