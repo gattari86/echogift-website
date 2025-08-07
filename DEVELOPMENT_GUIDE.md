@@ -9,10 +9,31 @@ This guide documents the complete development process, technical decisions, and 
 
 ## Tech Stack
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript
+- **Design System**: Premium warm luxury aesthetic with Prata/Lato typography
+- **Visual Assets**: Premium emotional photography and marble textures
 - **Payment Processing**: Stripe (client-side checkout)
 - **Email Service**: Formspree (order processing, vinyl waitlist)
 - **Hosting**: Vercel (with GitHub auto-deployment)
 - **Domain**: Custom domain with SSL
+
+## Premium Design System (2025 Redesign)
+
+### Color Palette
+- **Cream**: `#F1EDE6` - Primary background, warm neutral base
+- **Dusty Pink**: `#E8C9CF` - Romantic warmth, accent elements
+- **Terracotta**: `#A25524` - Primary brand color, CTA buttons
+- **Deep Indigo**: `#333333` - Text primary, sophisticated contrast
+- **Luxury Gold**: `#BFA181` - Premium accents, badges, highlights
+
+### Typography System
+- **Headings**: Prata serif - elegant, literary, emotional resonance
+- **Body Text**: Lato sans-serif - clean, readable, humanistic
+- **Design Logic**: Combines sophistication with accessibility
+
+### Visual Philosophy
+1. **Emotional Resonance**: Every visual tells a story of connection and love
+2. **Sophisticated Luxury**: Premium aesthetic without ostentation
+3. **Inclusive Diversity**: Representing diverse relationships and celebrations
 
 ## Key Features Implemented
 
@@ -347,6 +368,7 @@ The solutions documented here can be adapted for various e-commerce scenarios, f
 
 ## Development Timeline Summary
 
+### Initial Development (2024)
 1. **Initial Setup** (Day 1): Basic HTML structure and styling
 2. **Form Development** (Day 2): Order form with validation
 3. **Payment Integration** (Day 3): Stripe checkout implementation
@@ -354,5 +376,33 @@ The solutions documented here can be adapted for various e-commerce scenarios, f
 5. **Bug Fixes** (Days 5-6): Coupon removal and input field fixes
 6. **Final Optimization** (Day 7): Performance and UX improvements
 
-**Total Development Time**: ~7 days for full-featured e-commerce site
-**Key Success Factors**: Iterative development, comprehensive testing, user feedback incorporation
+### Premium Redesign (2025)
+7. **Design System Research** (Day 8): Color psychology, luxury branding analysis
+8. **Premium Asset Integration** (Day 9): Emotional photography, marble textures
+9. **Typography & Layout** (Day 10): Prata/Lato implementation, visual hierarchy
+10. **Technical Preservation** (Day 11): Ensuring all functionality remains intact
+11. **Mobile Optimization** (Day 12): Premium responsive design implementation
+
+**Total Development Time**: ~12 days for premium e-commerce experience
+**Key Success Factors**: Iterative development, comprehensive testing, user feedback incorporation, design system consistency
+
+## Premium Redesign Process (2025)
+
+### Design Research & Strategy
+- **Color Psychology**: Warm luxury palette evoking trust and emotional connection
+- **Typography Pairing**: Prata (serif elegance) + Lato (humanistic clarity)
+- **Emotional Imagery**: Candlelit moments, intimate connections, celebration
+- **Competitive Analysis**: Luxury gift and custom product sites
+
+### Technical Implementation
+- **CSS Custom Properties**: Scalable design system with consistent variables
+- **Gradient Systems**: Sophisticated color transitions throughout interface
+- **Animation Enhancement**: Subtle micro-interactions improving user experience
+- **Asset Optimization**: Premium imagery with performance considerations
+
+### Functionality Preservation
+- **Form Logic**: All existing JavaScript functionality maintained
+- **Stripe Integration**: Payment processing completely preserved
+- **Album Fields**: Dynamic form generation working perfectly
+- **Mobile Responsiveness**: Enhanced for luxury aesthetic
+- **SEO Structure**: All metadata and structured data maintained
