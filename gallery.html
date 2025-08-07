@@ -18,7 +18,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
     <!-- Breadcrumb Schema -->
@@ -89,62 +89,71 @@
     </script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="product-header">
+    <!-- Navigation Header -->
+    <header class="main-header">
         <div class="container">
-            <nav class="product-nav">
+            <nav class="main-nav">
                 <a href="index.html" class="logo">EchoGift</a>
-                <div class="nav-links">
-                    <a href="single-song.html">Single Song</a>
-                    <a href="album-gift.html">Album Gift</a>
-                    <a href="index.html#order" class="cta-button-small">Order Now</a>
+                <div class="nav-menu">
+                    <a href="gallery.html" class="nav-link active">🎵 Gallery</a>
+                    <a href="single-song.html" class="nav-link">Single Song ($79)</a>
+                    <a href="album-gift.html" class="nav-link">Album Gift ($299)</a>
+                    <a href="blog.html" class="nav-link">📝 Blog</a>
+                    <a href="index.html#order" class="nav-cta">Order Now</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="gallery-hero">
-        <div class="container">
-            <div class="hero-text">
-                <h1>Song Gallery</h1>
-                <p class="hero-subtitle">Listen to real personalized songs created for our customers. Each one tells a unique story with custom artwork.</p>
-                <div class="language-badges">
-                    <span class="badge">🇺🇸 English Songs</span>
-                    <span class="badge">🇪🇸 Spanish Songs</span>
+    <!-- Hero Section with Premium Design -->
+    <section style="background: var(--gradient-warm); padding: 100px 0; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/hero_emotional/music_listening_moment.jpg') center center / cover no-repeat; opacity: 0.08;"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
+        <div class="container" style="position: relative; z-index: 3;">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1 style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 4rem); color: var(--deep-indigo); margin-bottom: 24px;">Song Gallery</h1>
+                <p style="font-size: 22px; color: var(--text-secondary); margin-bottom: 40px; line-height: 1.6;">Listen to real personalized songs created for our customers. Each one tells a unique story with custom artwork.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <span style="background: white; color: var(--deep-indigo); padding: 12px 24px; border-radius: 20px; font-weight: 600; box-shadow: 0 4px 16px rgba(162, 85, 36, 0.1);">🇺🇸 English Songs</span>
+                    <span style="background: white; color: var(--deep-indigo); padding: 12px 24px; border-radius: 20px; font-weight: 600; box-shadow: 0 4px 16px rgba(162, 85, 36, 0.1);">🇪🇸 Spanish Songs</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery Grid -->
-    <section class="gallery-grid-section">
+    <section style="padding: 100px 0; background: white;">
         <div class="container">
-            <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">All Songs</button>
-                <button class="filter-btn" data-filter="english">English</button>
-                <button class="filter-btn" data-filter="spanish">Español</button>
-                <button class="filter-btn" data-filter="love">Love & Romance</button>
-                <button class="filter-btn" data-filter="family">Family</button>
-                <button class="filter-btn" data-filter="celebration">Celebrations</button>
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px;">
+                <button class="filter-btn active" data-filter="all" style="background: var(--gradient-luxury); color: white; border: none; padding: 12px 24px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">All Songs</button>
+                <button class="filter-btn" data-filter="english" style="background: transparent; color: var(--deep-indigo); border: 2px solid var(--dusty-pink); padding: 10px 22px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">English</button>
+                <button class="filter-btn" data-filter="spanish" style="background: transparent; color: var(--deep-indigo); border: 2px solid var(--dusty-pink); padding: 10px 22px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">Español</button>
+                <button class="filter-btn" data-filter="love" style="background: transparent; color: var(--deep-indigo); border: 2px solid var(--dusty-pink); padding: 10px 22px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">Love & Romance</button>
+                <button class="filter-btn" data-filter="family" style="background: transparent; color: var(--deep-indigo); border: 2px solid var(--dusty-pink); padding: 10px 22px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">Family</button>
+                <button class="filter-btn" data-filter="celebration" style="background: transparent; color: var(--deep-indigo); border: 2px solid var(--dusty-pink); padding: 10px 22px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">Celebrations</button>
             </div>
 
-            <div class="gallery-grid">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
                 <!-- Song 1: Dream in Your Eyes -->
-                <div class="gallery-card" data-category="english love">
-                    <div class="song-artwork">
-                        <img src="audio/gallery/dream in your eyes.png" alt="Dream in Your Eyes - Mother to son personalized song artwork" loading="lazy">
-                        <div class="play-overlay">
-                            <button class="play-btn" data-audio="dream-eyes">▶️</button>
+                <div class="gallery-card" data-category="english love" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); transition: var(--transition);">
+                    <div style="position: relative; aspect-ratio: 1; overflow: hidden;">
+                        <img src="audio/gallery/dream in your eyes.png" alt="Dream in Your Eyes - Mother to son personalized song artwork" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition);">
+                            <button class="play-btn" data-audio="dream-eyes" style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-luxury); border: none; color: white; font-size: 24px; cursor: pointer; transition: var(--transition);">▶️</button>
                         </div>
                     </div>
-                    <div class="song-info">
-                        <h3>"Dream in Your Eyes"</h3>
-                        <p class="song-description">A heartfelt mother to son song expressing unconditional love, hopes, and dreams for his future journey.</p>
-                        <div class="song-meta">
-                            <span class="genre">👩‍👦 Family</span>
-                            <span class="language">🇺🇸 English</span>
-                            <span class="occasion">💝 Mother to Son</span>
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px; font-size: 20px;">"Dream in Your Eyes"</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">A heartfelt mother to son song expressing unconditional love, hopes, and dreams for his future journey.</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">👩‍👦 Family</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🇺🇸 English</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">💝 Mother to Son</span>
                         </div>
                         <audio id="dream-eyes" preload="metadata">
                             <source src="audio/gallery/Dream in Your Eyes.wav" type="audio/wav">
@@ -153,20 +162,20 @@
                 </div>
 
                 <!-- Song 2: Forever and a Day -->
-                <div class="gallery-card" data-category="english love">
-                    <div class="song-artwork">
-                        <img src="audio/gallery/forever and a day.svg" alt="Forever and a Day - Friendship tribute song artwork" loading="lazy">
-                        <div class="play-overlay">
-                            <button class="play-btn" data-audio="forever-day">▶️</button>
+                <div class="gallery-card" data-category="english love" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); transition: var(--transition);">
+                    <div style="position: relative; aspect-ratio: 1; overflow: hidden;">
+                        <img src="audio/gallery/forever and a day.svg" alt="Forever and a Day - Friendship tribute song artwork" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition);">
+                            <button class="play-btn" data-audio="forever-day" style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-luxury); border: none; color: white; font-size: 24px; cursor: pointer; transition: var(--transition);">▶️</button>
                         </div>
                     </div>
-                    <div class="song-info">
-                        <h3>"Forever and a Day"</h3>
-                        <p class="song-description">An upbeat tribute to lasting friendship celebrating decades of shared memories, adventures, and unwavering support.</p>
-                        <div class="song-meta">
-                            <span class="genre">🤝 Friendship</span>
-                            <span class="language">🇺🇸 English</span>
-                            <span class="occasion">🎉 Celebration</span>
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px; font-size: 20px;">"Forever and a Day"</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">An upbeat tribute to lasting friendship celebrating decades of shared memories, adventures, and unwavering support.</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🤝 Friendship</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🇺🇸 English</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🎉 Celebration</span>
                         </div>
                         <audio id="forever-day" preload="metadata">
                             <source src="audio/gallery/Forever and a Day.wav" type="audio/wav">
@@ -175,20 +184,20 @@
                 </div>
 
                 <!-- Song 3: Good Boy Max -->
-                <div class="gallery-card" data-category="english family">
-                    <div class="song-artwork">
-                        <img src="audio/gallery/good boy max.png" alt="Good Boy Max - Pet memorial song artwork" loading="lazy">
-                        <div class="play-overlay">
-                            <button class="play-btn" data-audio="good-max">▶️</button>
+                <div class="gallery-card" data-category="english family" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); transition: var(--transition);">
+                    <div style="position: relative; aspect-ratio: 1; overflow: hidden;">
+                        <img src="audio/gallery/good boy max.png" alt="Good Boy Max - Pet memorial song artwork" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition);">
+                            <button class="play-btn" data-audio="good-max" style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-luxury); border: none; color: white; font-size: 24px; cursor: pointer; transition: var(--transition);">▶️</button>
                         </div>
                     </div>
-                    <div class="song-info">
-                        <h3>"Good Boy Max"</h3>
-                        <p class="song-description">A heartfelt tribute to the Johnson family's beloved Golden Retriever Max. Celebrates 12 years of loyal companionship and unconditional love.</p>
-                        <div class="song-meta">
-                            <span class="genre">🐕 Pet Tribute</span>
-                            <span class="language">🇺🇸 English</span>
-                            <span class="occasion">💐 Memorial</span>
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px; font-size: 20px;">"Good Boy Max"</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">A heartfelt tribute to the Johnson family's beloved Golden Retriever Max. Celebrates 12 years of loyal companionship and unconditional love.</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🐕 Pet Tribute</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🇺🇸 English</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">💐 Memorial</span>
                         </div>
                         <audio id="good-max" preload="metadata">
                             <source src="audio/gallery/Good Boy Max.wav" type="audio/wav">
@@ -197,20 +206,20 @@
                 </div>
 
                 <!-- Song 4: Reina de mi Vida -->
-                <div class="gallery-card" data-category="spanish love">
-                    <div class="song-artwork">
-                        <img src="audio/gallery/reina.png" alt="Reina de mi Vida - Spanish love song artwork" loading="lazy">
-                        <div class="play-overlay">
-                            <button class="play-btn" data-audio="reina-vida">▶️</button>
+                <div class="gallery-card" data-category="spanish love" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); transition: var(--transition);">
+                    <div style="position: relative; aspect-ratio: 1; overflow: hidden;">
+                        <img src="audio/gallery/reina.png" alt="Reina de mi Vida - Spanish love song artwork" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition);">
+                            <button class="play-btn" data-audio="reina-vida" style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-luxury); border: none; color: white; font-size: 24px; cursor: pointer; transition: var(--transition);">▶️</button>
                         </div>
                     </div>
-                    <div class="song-info">
-                        <h3>"Reina de mi Vida"</h3>
-                        <p class="song-description">Una canción de amor en español creada para el 15° aniversario de Carlos y María. Celebra su historia de amor desde México hasta Estados Unidos.</p>
-                        <div class="song-meta">
-                            <span class="genre">💕 Amor</span>
-                            <span class="language">🇪🇸 Español</span>
-                            <span class="occasion">💒 Aniversario</span>
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px; font-size: 20px;">"Reina de mi Vida"</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">Una canción de amor en español creada para el 15° aniversario de Carlos y María. Celebra su historia de amor desde México hasta Estados Unidos.</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">💕 Amor</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🇪🇸 Español</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">💒 Aniversario</span>
                         </div>
                         <audio id="reina-vida" preload="metadata">
                             <source src="audio/gallery/Reina de mi Vida.wav" type="audio/wav">
@@ -219,20 +228,20 @@
                 </div>
 
                 <!-- Song 5: The Next Right Thing -->
-                <div class="gallery-card" data-category="english celebration">
-                    <div class="song-artwork">
-                        <img src="audio/gallery/to the one who saw me.png" alt="The Next Right Thing - Motivational song artwork" loading="lazy">
-                        <div class="play-overlay">
-                            <button class="play-btn" data-audio="next-thing">▶️</button>
+                <div class="gallery-card" data-category="english celebration" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); transition: var(--transition);">
+                    <div style="position: relative; aspect-ratio: 1; overflow: hidden;">
+                        <img src="audio/gallery/to the one who saw me.png" alt="The Next Right Thing - Motivational song artwork" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition);">
+                            <button class="play-btn" data-audio="next-thing" style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-luxury); border: none; color: white; font-size: 24px; cursor: pointer; transition: var(--transition);">▶️</button>
                         </div>
                     </div>
-                    <div class="song-info">
-                        <h3>"The Next Right Thing"</h3>
-                        <p class="song-description">An encouraging song about forward momentum, overcoming obstacles, and embracing the courage to take the next step.</p>
-                        <div class="song-meta">
-                            <span class="genre">💪 Motivation</span>
-                            <span class="language">🇺🇸 English</span>
-                            <span class="occasion">🚀 Personal Growth</span>
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px; font-size: 20px;">"The Next Right Thing"</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">An encouraging song about forward momentum, overcoming obstacles, and embracing the courage to take the next step.</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">💪 Motivation</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🇺🇸 English</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🚀 Personal Growth</span>
                         </div>
                         <audio id="next-thing" preload="metadata">
                             <source src="audio/gallery/The Next Right Thing.wav" type="audio/wav">
@@ -241,20 +250,20 @@
                 </div>
 
                 <!-- Song 6: Thirty and Thriving -->
-                <div class="gallery-card" data-category="english celebration">
-                    <div class="song-artwork">
-                        <img src="audio/gallery/thirty and thriving.png" alt="Thirty and Thriving - 30th birthday song artwork" loading="lazy">
-                        <div class="play-overlay">
-                            <button class="play-btn" data-audio="thirty-thriving">▶️</button>
+                <div class="gallery-card" data-category="english celebration" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); transition: var(--transition);">
+                    <div style="position: relative; aspect-ratio: 1; overflow: hidden;">
+                        <img src="audio/gallery/thirty and thriving.png" alt="Thirty and Thriving - 30th birthday song artwork" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition);">
+                            <button class="play-btn" data-audio="thirty-thriving" style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-luxury); border: none; color: white; font-size: 24px; cursor: pointer; transition: var(--transition);">▶️</button>
                         </div>
                     </div>
-                    <div class="song-info">
-                        <h3>"Thirty and Thriving"</h3>
-                        <p class="song-description">A celebratory 30th birthday anthem for Rebecca, highlighting her career success, travels, and the exciting decade ahead.</p>
-                        <div class="song-meta">
-                            <span class="genre">🎂 Birthday</span>
-                            <span class="language">🇺🇸 English</span>
-                            <span class="occasion">🎉 Milestone Birthday</span>
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px; font-size: 20px;">"Thirty and Thriving"</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">A celebratory 30th birthday anthem for Rebecca, highlighting her career success, travels, and the exciting decade ahead.</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🎂 Birthday</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🇺🇸 English</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🎉 Milestone Birthday</span>
                         </div>
                         <audio id="thirty-thriving" preload="metadata">
                             <source src="audio/gallery/Thirty and Thriving.wav" type="audio/wav">
@@ -263,20 +272,20 @@
                 </div>
 
                 <!-- Song 7: To the One Who Saw Me -->
-                <div class="gallery-card" data-category="english family">
-                    <div class="song-artwork">
-                        <img src="audio/gallery/the next right thing.png" alt="To the One Who Saw Me - Teacher tribute song artwork" loading="lazy">
-                        <div class="play-overlay">
-                            <button class="play-btn" data-audio="saw-me">▶️</button>
+                <div class="gallery-card" data-category="english family" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); transition: var(--transition);">
+                    <div style="position: relative; aspect-ratio: 1; overflow: hidden;">
+                        <img src="audio/gallery/the next right thing.png" alt="To the One Who Saw Me - Teacher tribute song artwork" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition);">
+                            <button class="play-btn" data-audio="saw-me" style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-luxury); border: none; color: white; font-size: 24px; cursor: pointer; transition: var(--transition);">▶️</button>
                         </div>
                     </div>
-                    <div class="song-info">
-                        <h3>"To the One Who Saw Me"</h3>
-                        <p class="song-description">A student tribute to a teacher who believed in them, recognizing their guidance, mentorship, and lasting impact.</p>
-                        <div class="song-meta">
-                            <span class="genre">🎓 Education</span>
-                            <span class="language">🇺🇸 English</span>
-                            <span class="occasion">🏆 Teacher Tribute</span>
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px; font-size: 20px;">"To the One Who Saw Me"</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">A student tribute to a teacher who believed in them, recognizing their guidance, mentorship, and lasting impact.</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🎓 Education</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🇺🇸 English</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🏆 Teacher Tribute</span>
                         </div>
                         <audio id="saw-me" preload="metadata">
                             <source src="audio/gallery/To the One Who Saw Me.wav" type="audio/wav">
@@ -285,20 +294,20 @@
                 </div>
 
                 <!-- Song 8: Two Hearts, One Story -->
-                <div class="gallery-card" data-category="english love">
-                    <div class="song-artwork">
-                        <img src="audio/gallery/two hearts one story.svg" alt="Two Hearts One Story - Wedding song artwork" loading="lazy">
-                        <div class="play-overlay">
-                            <button class="play-btn" data-audio="two-hearts">▶️</button>
+                <div class="gallery-card" data-category="english love" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); transition: var(--transition);">
+                    <div style="position: relative; aspect-ratio: 1; overflow: hidden;">
+                        <img src="audio/gallery/two hearts one story.svg" alt="Two Hearts One Story - Wedding song artwork" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition);">
+                            <button class="play-btn" data-audio="two-hearts" style="width: 80px; height: 80px; border-radius: 50%; background: var(--gradient-luxury); border: none; color: white; font-size: 24px; cursor: pointer; transition: var(--transition);">▶️</button>
                         </div>
                     </div>
-                    <div class="song-info">
-                        <h3>"Two Hearts, One Story"</h3>
-                        <p class="song-description">A wedding song created for Jennifer and Michael's ceremony. Tells their love story from first meeting to walking down the aisle.</p>
-                        <div class="song-meta">
-                            <span class="genre">💒 Wedding</span>
-                            <span class="language">🇺🇸 English</span>
-                            <span class="occasion">👰‍♀️ Wedding Ceremony</span>
+                    <div style="padding: 24px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px; font-size: 20px;">"Two Hearts, One Story"</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">A wedding song created for Jennifer and Michael's ceremony. Tells their love story from first meeting to walking down the aisle.</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">💒 Wedding</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">🇺🇸 English</span>
+                            <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">👰‍♀️ Wedding Ceremony</span>
                         </div>
                         <audio id="two-hearts" preload="metadata">
                             <source src="audio/gallery/Two Hearts, One Story.wav" type="audio/wav">
@@ -310,16 +319,16 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="gallery-cta">
+    <section style="padding: 100px 0; background: var(--gradient-warm); text-align: center;">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Create Your Own?</h2>
-                <p>Every song in our gallery started with someone's unique story. What's yours?</p>
-                <div class="cta-options">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--deep-indigo); margin-bottom: 24px;">Ready to Create Your Own?</h2>
+                <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 40px;">Every song in our gallery started with someone's unique story. What's yours?</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px;">
                     <a href="single-song.html" class="cta-button secondary">Single Song - $79</a>
-                    <a href="album-gift.html" class="cta-button primary">5-Song Album - $299</a>
+                    <a href="album-gift.html" class="cta-button">5-Song Album - $299</a>
                 </div>
-                <p class="cta-note">Available in English and Spanish • 5-day delivery • Professional quality</p>
+                <p style="color: var(--text-secondary); font-size: 16px;">Available in English and Spanish • 5-day delivery • Professional quality</p>
             </div>
         </div>
     </section>

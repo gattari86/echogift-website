@@ -353,17 +353,18 @@ h5 { font-size: 1.25rem; }
     position: relative;
     flex: 1;
     max-width: 400px;
-    border: 2px solid transparent;
+    border: 2px solid rgba(232, 201, 207, 0.3);
 }
 
 .price-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 64px rgba(162, 85, 36, 0.15);
+    border-color: var(--dusty-pink);
 }
 
 .price-card.featured {
     border: 2px solid var(--luxury-gold);
-    background: var(--gradient-warm);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(241, 237, 230, 0.95) 100%);
     transform: scale(1.05);
 }
 
@@ -384,13 +385,6 @@ h5 { font-size: 1.25rem; }
     color: var(--deep-indigo);
     margin-bottom: 8px;
     line-height: 1;
-}
-
-.price:before {
-    content: '$';
-    font-size: 2rem;
-    vertical-align: top;
-    margin-right: 4px;
 }
 
 .price-card p {

@@ -25,7 +25,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
     <!-- Product Schema -->
@@ -165,147 +165,123 @@
     </script>
 </head>
 <body>
-    <!-- Header with CTA -->
-    <header class="product-header">
+    <!-- Navigation Header -->
+    <header class="main-header">
         <div class="container">
-            <nav class="product-nav">
+            <nav class="main-nav">
                 <a href="index.html" class="logo">EchoGift</a>
-                <div class="nav-links">
-                    <a href="gallery.html">Gallery</a>
-                    <a href="single-song.html">Single Song</a>
-                    <a href="index.html#order" class="cta-button-small">Order Now</a>
+                <div class="nav-menu">
+                    <a href="gallery.html" class="nav-link">🎵 Gallery</a>
+                    <a href="single-song.html" class="nav-link">Single Song ($79)</a>
+                    <a href="album-gift.html" class="nav-link active">Album Gift ($299)</a>
+                    <a href="blog.html" class="nav-link">📝 Blog</a>
+                    <a href="index.html#order" class="nav-cta">Order Now</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="product-hero album-hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="badge featured-badge">Most Popular</div>
-                    <h1>Custom Song Album Gift</h1>
-                    <p class="hero-subtitle">5 personalized songs telling your complete story with custom album-inspired artwork</p>
-                    
-                    <div class="product-highlights">
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🎵</span>
-                            <span>5 unique songs, each with its own story</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🎨</span>
-                            <span>Custom album artwork inspired by your journey</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🌎</span>
-                            <span>Available in English & Spanish</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">📚</span>
-                            <span>Complete life story in musical format</span>
-                        </div>
+    <!-- Hero Section with Premium Imagery -->
+    <section class="product-hero" style="background: var(--gradient-warm); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/hero_emotional/family_celebration.jpg') center center / cover no-repeat; opacity: 0.08;"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
+        <div class="container" style="position: relative; z-index: 3;">
+            <div class="product-hero-content" style="padding: 100px 0; text-align: center; max-width: 900px; margin: 0 auto;">
+                <div class="badge" style="background: var(--dusty-pink); color: white; display: inline-block; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; margin-bottom: 24px;">Most Popular</div>
+                <h1 class="hero-title" style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 4rem); color: var(--deep-indigo); margin-bottom: 24px;">Five Songs, One Complete Story</h1>
+                <p class="hero-subtitle" style="font-size: 22px; color: var(--text-secondary); margin-bottom: 40px; line-height: 1.6;">Transform your life's most meaningful chapters into a complete musical album. Five personalized songs that flow together, capturing your entire journey from beginning to forever.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto 40px;">
+                    <div style="background: rgba(255, 255, 255, 0.9); padding: 16px; border-radius: 12px; text-align: center;">
+                        <span style="font-size: 2rem; display: block; margin-bottom: 8px;">🎵</span>
+                        <span style="font-size: 14px; color: var(--deep-indigo);">5 Unique Songs</span>
                     </div>
-                    
-                    <div class="pricing-hero">
-                        <span class="price">$299</span>
-                        <span class="price-note">Complete 5-song collection</span>
-                        <div class="value-prop">Only $59.80 per song!</div>
+                    <div style="background: rgba(255, 255, 255, 0.9); padding: 16px; border-radius: 12px; text-align: center;">
+                        <span style="font-size: 2rem; display: block; margin-bottom: 8px;">🎨</span>
+                        <span style="font-size: 14px; color: var(--deep-indigo);">Album Artwork</span>
                     </div>
-                    
-                    <div class="hero-cta">
-                        <a href="index.html#order" class="cta-button primary">Create Your Album Now</a>
-                        <a href="gallery.html" class="cta-button secondary">Hear Sample Albums</a>
+                    <div style="background: rgba(255, 255, 255, 0.9); padding: 16px; border-radius: 12px; text-align: center;">
+                        <span style="font-size: 2rem; display: block; margin-bottom: 8px;">🌎</span>
+                        <span style="font-size: 14px; color: var(--deep-indigo);">English & Spanish</span>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.9); padding: 16px; border-radius: 12px; text-align: center;">
+                        <span style="font-size: 2rem; display: block; margin-bottom: 8px;">📚</span>
+                        <span style="font-size: 14px; color: var(--deep-indigo);">Complete Journey</span>
                     </div>
                 </div>
                 
-                <div class="hero-visual">
-                    <div class="album-preview">
-                        <div class="album-cover">
-                            <img src="audio/lifes_journey.png" alt="Example of custom album artwork for personalized song collections" class="preview-artwork">
-                        </div>
-                        <div class="track-list">
-                            <h4>Sample Album: "Life's Journey"</h4>
-                            <div class="track">
-                                <span class="track-number">1.</span>
-                                <span class="track-name">Where It All Began</span>
-                            </div>
-                            <div class="track">
-                                <span class="track-number">2.</span>
-                                <span class="track-name">First Love's Dance</span>
-                            </div>
-                            <div class="track">
-                                <span class="track-number">3.</span>
-                                <span class="track-name">Building Our Dreams</span>
-                            </div>
-                            <div class="track">
-                                <span class="track-number">4.</span>
-                                <span class="track-name">Through the Storms</span>
-                            </div>
-                            <div class="track">
-                                <span class="track-number">5.</span>
-                                <span class="track-name">Forever Forward</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="price-highlight" style="background: white; display: inline-block; padding: 32px 48px; border-radius: 20px; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.1); margin-bottom: 40px;">
+                    <span style="font-family: 'Prata', serif; font-size: 3.5rem; color: var(--terracotta);">$299</span>
+                    <span style="display: block; font-size: 16px; color: var(--text-secondary); margin-top: 8px;">Complete 5-song collection</span>
+                    <div style="background: var(--gradient-luxury); color: white; display: inline-block; padding: 6px 16px; border-radius: 12px; font-size: 14px; margin-top: 12px;">Save $95 vs individual songs!</div>
+                </div>
+                <div>
+                    <a href="index.html#order" class="cta-button" style="margin-right: 20px;">Create Your Album Now</a>
+                    <a href="gallery.html" class="cta-button secondary">Hear Examples</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- What Makes Albums Special -->
-    <section class="album-special">
+    <section style="padding: 100px 0; background: white;">
         <div class="container">
-            <h2>Why Choose a 5-Song Album?</h2>
-            <div class="special-grid">
-                <div class="special-card">
-                    <div class="special-icon">📖</div>
-                    <h3>Complete Story Arc</h3>
-                    <p>Unlike single songs, albums let you tell a complete journey - from beginning to present, capturing all the important chapters of your story.</p>
+            <h2 style="text-align: center; font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--deep-indigo); margin-bottom: 60px;">Why Choose a 5-Song Album?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto;">
+                <div style="text-align: center; padding: 40px 24px; background: rgba(241, 237, 230, 0.3); border-radius: 20px; transition: var(--transition);">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">📖</div>
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">Complete Story Arc</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px;">Unlike single songs, albums let you tell a complete journey - from beginning to present, capturing all the important chapters of your story.</p>
                 </div>
-                <div class="special-card">
-                    <div class="special-icon">🎭</div>
-                    <h3>Emotional Range</h3>
-                    <p>Express different moods and emotions across 5 songs - joy, nostalgia, triumph, love, and hope - creating a rich emotional experience.</p>
+                <div style="text-align: center; padding: 40px 24px; background: rgba(241, 237, 230, 0.3); border-radius: 20px; transition: var(--transition);">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🎭</div>
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">Emotional Range</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px;">Express different moods and emotions across 5 songs - joy, nostalgia, triumph, love, and hope - creating a rich emotional experience.</p>
                 </div>
-                <div class="special-card">
-                    <div class="special-icon">💎</div>
-                    <h3>Ultimate Gift</h3>
-                    <p>Perfect for milestone anniversaries, major birthdays, or life celebrations where a single song just isn't enough to capture everything.</p>
+                <div style="text-align: center; padding: 40px 24px; background: rgba(241, 237, 230, 0.3); border-radius: 20px; transition: var(--transition);">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">💎</div>
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">Ultimate Gift</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px;">Perfect for milestone anniversaries, major birthdays, or life celebrations where a single song just isn't enough to capture everything.</p>
                 </div>
-                <div class="special-card">
-                    <div class="special-icon">💰</div>
-                    <h3>Better Value</h3>
-                    <p>At just $59.80 per song (vs $79 individually), albums offer 25% savings while delivering a more impactful gift experience.</p>
+                <div style="text-align: center; padding: 40px 24px; background: rgba(241, 237, 230, 0.3); border-radius: 20px; transition: var(--transition);">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">💰</div>
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">Better Value</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px;">At just $59.80 per song (vs $79 individually), albums offer 25% savings while delivering a more impactful gift experience.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- What You Get Section -->
-    <section class="what-you-get">
-        <div class="container">
-            <h2>What's Included in Your Album Gift</h2>
-            <div class="features-grid">
-                <div class="feature-card featured">
-                    <div class="feature-icon">🎵</div>
-                    <h3>5 Custom Songs</h3>
-                    <p>Each song tells a different part of your story, with unique lyrics, melodies, and emotional themes tailored to your journey.</p>
+    <section style="padding: 100px 0; background: var(--gradient-warm); position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/occasions_celebrations/milestone_celebration.jpg') center center / cover no-repeat; opacity: 0.05;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h2 style="text-align: center; font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--deep-indigo); margin-bottom: 60px;">What's Included in Your Album Gift</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; max-width: 1000px; margin: 0 auto;">
+                <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🎵</div>
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">5 Custom Songs</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px;">Each song tells a different part of your story, with unique lyrics, melodies, and emotional themes tailored to your journey.</p>
                 </div>
-                <div class="feature-card featured">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Album Artwork</h3>
-                    <p>Custom album cover art inspired by your complete story, tying together all 5 songs with a cohesive visual narrative.</p>
+                <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🎨</div>
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">Album Artwork</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px;">Custom album cover art inspired by your complete story, tying together all 5 songs with a cohesive visual narrative.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Professional Files</h3>
-                    <p>All 5 songs in high-quality WAV and MP3 formats, plus album artwork as PNG - ready for any platform or device.</p>
+                <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">📱</div>
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">Professional Files</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px;">All 5 songs in high-quality WAV and MP3 formats, plus album artwork as PNG - ready for any platform or device.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💝</div>
-                    <h3>Full Rights</h3>
-                    <p>Complete ownership of your album - use for personal enjoyment, share publicly, or even distribute commercially.</p>
+                <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">💝</div>
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">Full Rights</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px;">Complete ownership of your album - use for personal enjoyment, share publicly, or even distribute commercially.</p>
                 </div>
             </div>
         </div>
@@ -479,36 +455,37 @@
     </section>
 
     <!-- Album Creation Process -->
-    <section class="album-process">
-        <div class="container">
-            <h2>How Your 5-Song Album Gets Created</h2>
-            <div class="process-steps">
-                <div class="step-detailed">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Story Mapping</h3>
-                        <p>Tell us your complete story and we'll help organize it into 5 distinct chapters, each perfect for its own song</p>
+    <section style="padding: 100px 0; background: white; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/process_creation/professional_music_studio.jpg') center center / cover no-repeat; opacity: 0.03;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h2 style="text-align: center; font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--deep-indigo); margin-bottom: 60px;">How Your 5-Song Album Gets Created</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="display: flex; align-items: flex-start; margin-bottom: 48px;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient-luxury); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; flex-shrink: 0;">1</div>
+                    <div style="margin-left: 32px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px;">Story Mapping</h3>
+                        <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6;">Tell us your complete story and we'll help organize it into 5 distinct chapters, each perfect for its own song</p>
                     </div>
                 </div>
-                <div class="step-detailed">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Individual Song Details</h3>
-                        <p>Provide specific memories, themes, and preferred styles for each of the 5 songs in your collection</p>
+                <div style="display: flex; align-items: flex-start; margin-bottom: 48px;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient-luxury); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; flex-shrink: 0;">2</div>
+                    <div style="margin-left: 32px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px;">Individual Song Details</h3>
+                        <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6;">Provide specific memories, themes, and preferred styles for each of the 5 songs in your collection</p>
                     </div>
                 </div>
-                <div class="step-detailed">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>AI Album Creation</h3>
-                        <p>Our AI creates 5 unique songs that flow together while telling your complete story, plus cohesive album artwork</p>
+                <div style="display: flex; align-items: flex-start; margin-bottom: 48px;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient-luxury); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; flex-shrink: 0;">3</div>
+                    <div style="margin-left: 32px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px;">AI Album Creation</h3>
+                        <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6;">Our AI creates 5 unique songs that flow together while telling your complete story, plus cohesive album artwork</p>
                     </div>
                 </div>
-                <div class="step-detailed">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Complete Collection</h3>
-                        <p>Receive your full album with all 5 songs and artwork, ready to share and treasure forever</p>
+                <div style="display: flex; align-items: flex-start;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient-luxury); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; flex-shrink: 0;">4</div>
+                    <div style="margin-left: 32px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px;">Complete Collection</h3>
+                        <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6;">Receive your full album with all 5 songs and artwork, ready to share and treasure forever</p>
                     </div>
                 </div>
             </div>
@@ -558,24 +535,30 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
+    <section style="padding: 100px 0; background: var(--gradient-warm);">
         <div class="container">
-            <h2>What Our Album Customers Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial featured">
-                    <div class="stars">★★★★★</div>
-                    <p>"The 5-song album for our 30th anniversary was incredible. Each song captured a different decade of our marriage. We listened to it together and cried happy tears at every single track."</p>
-                    <div class="author">- Patricia & James K., 30th Anniversary Album</div>
+            <h2 style="text-align: center; font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--deep-indigo); margin-bottom: 60px;">What Our Album Customers Say</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto;">
+                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 16px 48px rgba(162, 85, 36, 0.1); position: relative;">
+                    <span style="position: absolute; top: -20px; left: 40px; font-family: 'Prata', serif; font-size: 4rem; color: var(--dusty-pink); line-height: 1;">"</span>
+                    <div style="color: var(--luxury-gold); margin-bottom: 16px; font-size: 20px;">★★★★★</div>
+                    <p style="font-family: 'Prata', serif; font-size: 18px; color: var(--deep-indigo); line-height: 1.6; margin-bottom: 24px; font-style: italic;">The 5-song album for our 30th anniversary was incredible. Each song captured a different decade of our marriage. We listened to it together and cried happy tears at every single track.</p>
+                    <div style="color: var(--terracotta); font-weight: 600;">Patricia & James K.</div>
+                    <div style="color: var(--text-secondary); font-size: 14px;">30th Anniversary Album</div>
                 </div>
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p>"I ordered an album in Spanish for my mother's 70th birthday telling her immigration story. The whole family was in tears - it was like having our history turned into beautiful music."</p>
-                    <div class="author">- Elena R., Family Legacy Album</div>
+                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 16px 48px rgba(162, 85, 36, 0.1); position: relative;">
+                    <span style="position: absolute; top: -20px; left: 40px; font-family: 'Prata', serif; font-size: 4rem; color: var(--dusty-pink); line-height: 1;">"</span>
+                    <div style="color: var(--luxury-gold); margin-bottom: 16px; font-size: 20px;">★★★★★</div>
+                    <p style="font-family: 'Prata', serif; font-size: 18px; color: var(--deep-indigo); line-height: 1.6; margin-bottom: 24px; font-style: italic;">I ordered an album in Spanish for my mother's 70th birthday telling her immigration story. The whole family was in tears - it was like having our history turned into beautiful music.</p>
+                    <div style="color: var(--terracotta); font-weight: 600;">Elena R.</div>
+                    <div style="color: var(--text-secondary); font-size: 14px;">Family Legacy Album</div>
                 </div>
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p>"Best retirement gift ever. The album captured 35 years of my husband's career journey. He plays it in his workshop every day now."</p>
-                    <div class="author">- Susan M., Retirement Album</div>
+                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 16px 48px rgba(162, 85, 36, 0.1); position: relative;">
+                    <span style="position: absolute; top: -20px; left: 40px; font-family: 'Prata', serif; font-size: 4rem; color: var(--dusty-pink); line-height: 1;">"</span>
+                    <div style="color: var(--luxury-gold); margin-bottom: 16px; font-size: 20px;">★★★★★</div>
+                    <p style="font-family: 'Prata', serif; font-size: 18px; color: var(--deep-indigo); line-height: 1.6; margin-bottom: 24px; font-style: italic;">Best retirement gift ever. The album captured 35 years of my husband's career journey. He plays it in his workshop every day now.</p>
+                    <div style="color: var(--terracotta); font-weight: 600;">Susan M.</div>
+                    <div style="color: var(--text-secondary); font-size: 14px;">Retirement Album</div>
                 </div>
             </div>
         </div>
@@ -646,18 +629,18 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="final-cta">
+    <section style="padding: 100px 0; background: white; text-align: center;">
         <div class="container">
-            <div class="cta-content">
-                <h2>Create Your Personalized Album Gift Today</h2>
-                <p>Tell your complete story with 5 personalized songs. Available in English and Spanish.</p>
-                <div class="cta-pricing">
-                    <span class="cta-price">$299</span>
-                    <span class="cta-features">5 Professional Songs + Custom Album Artwork + Full Rights</span>
-                    <div class="value-highlight">Save $95 compared to buying individually!</div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--deep-indigo); margin-bottom: 24px;">Create Your Personalized Album Gift Today</h2>
+                <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 40px;">Tell your complete story with 5 personalized songs. Available in English and Spanish.</p>
+                <div style="background: var(--gradient-warm); padding: 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 16px 48px rgba(162, 85, 36, 0.1);">
+                    <span style="font-family: 'Prata', serif; font-size: 4rem; color: var(--deep-indigo); display: block; margin-bottom: 8px;">$299</span>
+                    <span style="font-size: 18px; color: var(--text-secondary); display: block; margin-bottom: 16px;">5 Professional Songs + Custom Album Artwork + Full Rights</span>
+                    <div style="background: var(--gradient-luxury); color: white; display: inline-block; padding: 12px 24px; border-radius: 12px; font-size: 16px; font-weight: 600;">Save $95 compared to buying individually!</div>
                 </div>
-                <a href="index.html#order" class="cta-button primary large contrast-safe">Create Your Album Now</a>
-                <p class="guarantee">5-day delivery • One free revision per song • Your complete story in music</p>
+                <a href="index.html#order" class="cta-button" style="font-size: 18px; padding: 20px 40px; margin-bottom: 24px;">Create Your Album Now</a>
+                <p style="color: var(--text-secondary); font-size: 16px;">5-day delivery • One free revision per song • Your complete story in music</p>
             </div>
         </div>
     </section>

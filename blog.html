@@ -25,7 +25,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
     <!-- Blog Listing Schema -->
@@ -105,159 +105,164 @@
     </script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="product-header">
+    <!-- Navigation Header -->
+    <header class="main-header">
         <div class="container">
-            <nav class="product-nav">
+            <nav class="main-nav">
                 <a href="index.html" class="logo">EchoGift</a>
-                <div class="nav-links">
-                    <a href="gallery.html">Gallery</a>
-                    <a href="single-song.html">Single Song</a>
-                    <a href="album-gift.html">Album Gift</a>
-                    <a href="blog.html" class="active">Blog</a>
-                    <a href="index.html#order" class="cta-button-small">Order Now</a>
+                <div class="nav-menu">
+                    <a href="gallery.html" class="nav-link">🎵 Gallery</a>
+                    <a href="single-song.html" class="nav-link">Single Song ($79)</a>
+                    <a href="album-gift.html" class="nav-link">Album Gift ($299)</a>
+                    <a href="blog.html" class="nav-link active">📝 Blog</a>
+                    <a href="index.html#order" class="nav-cta">Order Now</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Blog Hero -->
-    <section class="blog-hero">
-        <div class="container">
-            <div class="blog-hero-content">
-                <h1>The EchoGift Blog</h1>
-                <p class="blog-subtitle">Discover the art and science of meaningful gift-giving through personalized music</p>
+    <!-- Blog Hero with Premium Design -->
+    <section style="background: var(--gradient-warm); padding: 100px 0; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/hero_emotional/thoughtful_reading.jpg') center center / cover no-repeat; opacity: 0.08;"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
+        <div class="container" style="position: relative; z-index: 3;">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1 style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 4rem); color: var(--deep-indigo); margin-bottom: 24px;">The EchoGift Blog</h1>
+                <p style="font-size: 22px; color: var(--text-secondary); margin-bottom: 50px; line-height: 1.6;">Discover the art and science of meaningful gift-giving through personalized music</p>
                 
                 <!-- Tag Filter -->
-                <div class="tag-filter">
-                    <button class="tag-btn active" data-tag="all">All Posts</button>
-                    <button class="tag-btn" data-tag="science">Science & Psychology</button>
-                    <button class="tag-btn" data-tag="ai">AI & Technology</button>
-                    <button class="tag-btn" data-tag="guide">How-To Guides</button>
-                    <button class="tag-btn" data-tag="occasions">Occasions</button>
-                    <button class="tag-btn" data-tag="trends">Trends</button>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <button class="tag-btn active" data-tag="all" style="background: var(--gradient-luxury); color: white; border: none; padding: 12px 24px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">All Posts</button>
+                    <button class="tag-btn" data-tag="science" style="background: transparent; color: var(--deep-indigo); border: 2px solid var(--dusty-pink); padding: 10px 22px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">Science & Psychology</button>
+                    <button class="tag-btn" data-tag="ai" style="background: transparent; color: var(--deep-indigo); border: 2px solid var(--dusty-pink); padding: 10px 22px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">AI & Technology</button>
+                    <button class="tag-btn" data-tag="guide" style="background: transparent; color: var(--deep-indigo); border: 2px solid var(--dusty-pink); padding: 10px 22px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">How-To Guides</button>
+                    <button class="tag-btn" data-tag="occasions" style="background: transparent; color: var(--deep-indigo); border: 2px solid var(--dusty-pink); padding: 10px 22px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">Occasions</button>
+                    <button class="tag-btn" data-tag="trends" style="background: transparent; color: var(--deep-indigo); border: 2px solid var(--dusty-pink); padding: 10px 22px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">Trends</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Featured Post -->
-    <section class="featured-post-section">
+    <section style="padding: 100px 0; background: white;">
         <div class="container">
-            <article class="featured-post" data-tags="science psychology">
-                <div class="featured-image">
-                    <img src="blog-images/happiness-science.png" alt="Science of happiness through personalized gifts" loading="lazy">
-                    <span class="featured-badge">Featured</span>
+            <article class="featured-post" data-tags="science psychology" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; background: rgba(241, 237, 230, 0.2); border-radius: 24px; overflow: hidden; padding: 0;">
+                <div style="position: relative; aspect-ratio: 4/3;">
+                    <img src="blog-images/happiness-science.png" alt="Science of happiness through personalized gifts" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                    <span style="position: absolute; top: 20px; left: 20px; background: var(--gradient-luxury); color: white; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 600;">Featured</span>
                 </div>
-                <div class="featured-content">
-                    <div class="post-meta">
-                        <span class="post-date">January 15, 2025</span>
-                        <span class="post-tags">
-                            <span class="tag">Science</span>
-                            <span class="tag">Psychology</span>
-                        </span>
+                <div style="padding: 60px 60px 60px 0;">
+                    <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 16px;">
+                        <span style="color: var(--text-secondary); font-size: 14px;">January 15, 2025</span>
+                        <div style="display: flex; gap: 8px;">
+                            <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">Science</span>
+                            <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600;">Psychology</span>
+                        </div>
                     </div>
-                    <h2><a href="blog/personalized-gifts-happiness.html">Why Personalized Gifts Are Scientifically Proven to Make People Happier</a></h2>
-                    <p>Discover the science behind why personalized gifts boost happiness. Research from the University of Bath shows that custom presents transform simple objects into meaningful experiences that elevate joy and strengthen bonds.</p>
-                    <a href="blog/personalized-gifts-happiness.html" class="read-more">Read Full Article →</a>
+                    <h2 style="font-family: 'Prata', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--deep-indigo); margin-bottom: 16px; line-height: 1.3;"><a href="blog/personalized-gifts-happiness.html" style="color: inherit; text-decoration: none;">Why Personalized Gifts Are Scientifically Proven to Make People Happier</a></h2>
+                    <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6; margin-bottom: 24px;">Discover the science behind why personalized gifts boost happiness. Research from the University of Bath shows that custom presents transform simple objects into meaningful experiences that elevate joy and strengthen bonds.</p>
+                    <a href="blog/personalized-gifts-happiness.html" style="color: var(--terracotta); font-weight: 600; text-decoration: none; font-size: 16px;">Read Full Article →</a>
                 </div>
             </article>
         </div>
     </section>
 
     <!-- Blog Grid -->
-    <section class="blog-grid-section">
+    <section style="padding: 100px 0; background: white;">
         <div class="container">
-            <div class="blog-grid">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
                 
                 <!-- Post 2: AI vs Human Music -->
-                <article class="blog-card" data-tags="ai technology guide">
-                    <div class="blog-card-image">
-                        <img src="blog-images/ai-vs-human.png" alt="AI music versus human composers comparison" loading="lazy">
+                <article class="blog-card" data-tags="ai technology guide" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); transition: var(--transition);">
+                    <div style="aspect-ratio: 16/9; overflow: hidden;">
+                        <img src="blog-images/ai-vs-human.png" alt="AI music versus human composers comparison" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="blog-card-content">
-                        <div class="post-meta">
-                            <span class="post-date">January 15, 2025</span>
-                            <div class="post-tags">
-                                <span class="tag">AI</span>
-                                <span class="tag">Technology</span>
+                    <div style="padding: 24px;">
+                        <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 12px;">
+                            <span style="color: var(--text-secondary); font-size: 14px;">January 15, 2025</span>
+                            <div style="display: flex; gap: 6px;">
+                                <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 10px; border-radius: 10px; font-size: 11px; font-weight: 600;">AI</span>
+                                <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 10px; border-radius: 10px; font-size: 11px; font-weight: 600;">Technology</span>
                             </div>
                         </div>
-                        <h3><a href="blog/ai-vs-human-music.html">AI-Generated Music vs. Human Composers: Which Makes a Better Gift?</a></h3>
-                        <p>In the era of high-tech gifting, should you choose an AI-generated custom song or one by a human composer? We compare creativity, cost, and emotional impact.</p>
-                        <a href="blog/ai-vs-human-music.html" class="read-more">Read More →</a>
+                        <h3 style="font-family: 'Prata', serif; font-size: 18px; color: var(--deep-indigo); margin-bottom: 12px; line-height: 1.4;"><a href="blog/ai-vs-human-music.html" style="color: inherit; text-decoration: none;">AI-Generated Music vs. Human Composers: Which Makes a Better Gift?</a></h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">In the era of high-tech gifting, should you choose an AI-generated custom song or one by a human composer? We compare creativity, cost, and emotional impact.</p>
+                        <a href="blog/ai-vs-human-music.html" style="color: var(--terracotta); font-weight: 600; text-decoration: none; font-size: 14px;">Read More →</a>
                     </div>
                 </article>
 
                 <!-- Post 3: Top 7 Occasions -->
-                <article class="blog-card" data-tags="occasions guide">
-                    <div class="blog-card-image">
-                        <img src="blog-images/occasions.png" alt="Special occasions for custom songs" loading="lazy">
+                <article class="blog-card" data-tags="occasions guide" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); transition: var(--transition);">
+                    <div style="aspect-ratio: 16/9; overflow: hidden;">
+                        <img src="blog-images/occasions.png" alt="Special occasions for custom songs" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="blog-card-content">
-                        <div class="post-meta">
-                            <span class="post-date">January 15, 2025</span>
-                            <div class="post-tags">
-                                <span class="tag">Occasions</span>
-                                <span class="tag">Guide</span>
+                    <div style="padding: 24px;">
+                        <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 12px;">
+                            <span style="color: var(--text-secondary); font-size: 14px;">January 15, 2025</span>
+                            <div style="display: flex; gap: 6px;">
+                                <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 10px; border-radius: 10px; font-size: 11px; font-weight: 600;">Occasions</span>
+                                <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 10px; border-radius: 10px; font-size: 11px; font-weight: 600;">Guide</span>
                             </div>
                         </div>
-                        <h3><a href="blog/occasions-custom-song.html">Top 7 Occasions That Deserve a Custom Song (and Why They Work)</a></h3>
-                        <p>From anniversaries to "just because" moments, discover the perfect occasions for gifting a personalized song and why they create such memorable experiences.</p>
-                        <a href="blog/occasions-custom-song.html" class="read-more">Read More →</a>
+                        <h3 style="font-family: 'Prata', serif; font-size: 18px; color: var(--deep-indigo); margin-bottom: 12px; line-height: 1.4;"><a href="blog/occasions-custom-song.html" style="color: inherit; text-decoration: none;">Top 7 Occasions That Deserve a Custom Song</a></h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">From anniversaries to "just because" moments, discover the perfect occasions for gifting a personalized song and why they create such memorable experiences.</p>
+                        <a href="blog/occasions-custom-song.html" style="color: var(--terracotta); font-weight: 600; text-decoration: none; font-size: 14px;">Read More →</a>
                     </div>
                 </article>
 
                 <!-- Post 4: How to Choose -->
-                <article class="blog-card" data-tags="guide how-to">
-                    <div class="blog-card-image">
-                        <img src="blog-images/how-to-choose.png" alt="Guide to choosing custom songs" loading="lazy">
+                <article class="blog-card" data-tags="guide how-to" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); transition: var(--transition);">
+                    <div style="aspect-ratio: 16/9; overflow: hidden;">
+                        <img src="blog-images/how-to-choose.png" alt="Guide to choosing custom songs" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="blog-card-content">
-                        <div class="post-meta">
-                            <span class="post-date">January 15, 2025</span>
-                            <div class="post-tags">
-                                <span class="tag">How-To</span>
-                                <span class="tag">Guide</span>
+                    <div style="padding: 24px;">
+                        <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 12px;">
+                            <span style="color: var(--text-secondary); font-size: 14px;">January 15, 2025</span>
+                            <div style="display: flex; gap: 6px;">
+                                <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 10px; border-radius: 10px; font-size: 11px; font-weight: 600;">How-To</span>
+                                <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 10px; border-radius: 10px; font-size: 11px; font-weight: 600;">Guide</span>
                             </div>
                         </div>
-                        <h3><a href="blog/choose-custom-song.html">How to Choose the Perfect Custom Song: A Quick Guide</a></h3>
-                        <p>Step-by-step tips for crafting a song that hits all the right notes. From defining the occasion to adding personal details, we've got you covered.</p>
-                        <a href="blog/choose-custom-song.html" class="read-more">Read More →</a>
+                        <h3 style="font-family: 'Prata', serif; font-size: 18px; color: var(--deep-indigo); margin-bottom: 12px; line-height: 1.4;"><a href="blog/choose-custom-song.html" style="color: inherit; text-decoration: none;">How to Choose the Perfect Custom Song</a></h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">Step-by-step tips for crafting a song that hits all the right notes. From defining the occasion to adding personal details, we've got you covered.</p>
+                        <a href="blog/choose-custom-song.html" style="color: var(--terracotta); font-weight: 600; text-decoration: none; font-size: 14px;">Read More →</a>
                     </div>
                 </article>
 
                 <!-- Post 5: 2025 Trends -->
-                <article class="blog-card" data-tags="trends ai technology">
-                    <div class="blog-card-image">
-                        <img src="blog-images/2025-trends.png" alt="2025 AI gift trends" loading="lazy">
+                <article class="blog-card" data-tags="trends ai technology" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08); transition: var(--transition);">
+                    <div style="aspect-ratio: 16/9; overflow: hidden;">
+                        <img src="blog-images/2025-trends.png" alt="2025 AI gift trends" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
-                    <div class="blog-card-content">
-                        <div class="post-meta">
-                            <span class="post-date">January 15, 2025</span>
-                            <div class="post-tags">
-                                <span class="tag">Trends</span>
-                                <span class="tag">AI</span>
+                    <div style="padding: 24px;">
+                        <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 12px;">
+                            <span style="color: var(--text-secondary); font-size: 14px;">January 15, 2025</span>
+                            <div style="display: flex; gap: 6px;">
+                                <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 10px; border-radius: 10px; font-size: 11px; font-weight: 600;">Trends</span>
+                                <span style="background: rgba(232, 201, 207, 0.2); color: var(--deep-indigo); padding: 4px 10px; border-radius: 10px; font-size: 11px; font-weight: 600;">AI</span>
                             </div>
                         </div>
-                        <h3><a href="blog/ai-gifts-trends-2025.html">Trending in 2025: AI-Personalized Gifts for Gen Z & Millennials</a></h3>
-                        <p>Explore why younger generations are embracing AI-powered personalized gifts and the latest trends shaping the future of meaningful gift-giving.</p>
-                        <a href="blog/ai-gifts-trends-2025.html" class="read-more">Read More →</a>
+                        <h3 style="font-family: 'Prata', serif; font-size: 18px; color: var(--deep-indigo); margin-bottom: 12px; line-height: 1.4;"><a href="blog/ai-gifts-trends-2025.html" style="color: inherit; text-decoration: none;">AI-Personalized Gifts for Gen Z & Millennials</a></h3>
+                        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">Explore why younger generations are embracing AI-powered personalized gifts and the latest trends shaping the future of meaningful gift-giving.</p>
+                        <a href="blog/ai-gifts-trends-2025.html" style="color: var(--terracotta); font-weight: 600; text-decoration: none; font-size: 14px;">Read More →</a>
                     </div>
                 </article>
 
                 <!-- Newsletter Signup Card -->
-                <div class="blog-card newsletter-card">
-                    <div class="newsletter-content">
-                        <h3>🎵 Get Gift Ideas & Updates</h3>
-                        <p>Join our newsletter for personalized gift inspiration, exclusive offers, and the latest in custom music trends.</p>
-                        <form class="newsletter-form" action="https://formspree.io/f/xkgzqpyy" method="POST">
-                            <input type="email" name="email" placeholder="Your email address" required>
-                            <input type="hidden" name="_subject" value="Blog Newsletter Signup">
-                            <button type="submit">Subscribe</button>
-                        </form>
-                        <small>No spam, just thoughtful content. Unsubscribe anytime.</small>
-                    </div>
+                <div class="blog-card newsletter-card" style="background: var(--gradient-warm); border-radius: 20px; padding: 40px; text-align: center; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08);">
+                    <h3 style="font-family: 'Prata', serif; font-size: 24px; color: var(--deep-indigo); margin-bottom: 16px;">🎵 Get Gift Ideas & Updates</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px; margin-bottom: 24px;">Join our newsletter for personalized gift inspiration, exclusive offers, and the latest in custom music trends.</p>
+                    <form action="https://formspree.io/f/xkgzqpyy" method="POST" style="display: flex; gap: 12px; margin-bottom: 12px;">
+                        <input type="email" name="email" placeholder="Your email address" required style="flex: 1; padding: 12px 16px; border: 2px solid var(--dusty-pink); border-radius: 12px; font-size: 14px; outline: none;">
+                        <input type="hidden" name="_subject" value="Blog Newsletter Signup">
+                        <button type="submit" style="background: var(--gradient-luxury); color: white; border: none; padding: 12px 24px; border-radius: 12px; font-weight: 600; cursor: pointer;">Subscribe</button>
+                    </form>
+                    <small style="color: var(--text-secondary); font-size: 12px;">No spam, just thoughtful content. Unsubscribe anytime.</small>
                 </div>
                 
             </div>
@@ -265,14 +270,14 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="blog-cta">
+    <section style="padding: 100px 0; background: var(--gradient-warm); text-align: center;">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Create Your Own Personalized Song?</h2>
-                <p>Turn your stories into music with EchoGift's custom song service</p>
-                <div class="cta-buttons">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--deep-indigo); margin-bottom: 24px;">Ready to Create Your Own Personalized Song?</h2>
+                <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 40px;">Turn your stories into music with EchoGift's custom song service</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
                     <a href="single-song.html" class="cta-button secondary">Single Song - $79</a>
-                    <a href="album-gift.html" class="cta-button primary">5-Song Album - $299</a>
+                    <a href="album-gift.html" class="cta-button">5-Song Album - $299</a>
                 </div>
             </div>
         </div>

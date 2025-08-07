@@ -25,7 +25,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
     <!-- Product Schema -->
@@ -52,297 +52,185 @@
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "127"
-        },
-        "image": "https://echogifts.shop/audio/Two%20decades.png"
-    }
-    </script>
-    
-    <!-- Breadcrumb Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://echogifts.shop"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Single Song Gift",
-                "item": "https://echogifts.shop/single-song.html"
-            }
-        ]
+            "reviewCount": "89"
+        }
     }
     </script>
 </head>
 <body>
-    <!-- Header with CTA -->
-    <header class="product-header">
+    <!-- Navigation Header -->
+    <header class="main-header">
         <div class="container">
-            <nav class="product-nav">
+            <nav class="main-nav">
                 <a href="index.html" class="logo">EchoGift</a>
-                <div class="nav-links">
-                    <a href="gallery.html">Gallery</a>
-                    <a href="album-gift.html">Album Gift</a>
-                    <a href="index.html#order" class="cta-button-small">Order Now</a>
+                <div class="nav-menu">
+                    <a href="gallery.html" class="nav-link">🎵 Gallery</a>
+                    <a href="single-song.html" class="nav-link active">Single Song ($79)</a>
+                    <a href="album-gift.html" class="nav-link">Album Gift ($299)</a>
+                    <a href="blog.html" class="nav-link">📝 Blog</a>
+                    <a href="index.html#order" class="nav-cta">Order Now</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="product-hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Personalized Single Song Gift</h1>
-                    <p class="hero-subtitle">Transform your memories into a professional AI-generated song with custom artwork</p>
-                    
-                    <div class="product-highlights">
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🎵</span>
-                            <span>Custom lyrics from your story</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🎨</span>
-                            <span>Personalized artwork included</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🌎</span>
-                            <span>Available in English & Spanish</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">⚡</span>
-                            <span>Delivered in 5 business days</span>
-                        </div>
-                    </div>
-                    
-                    <div class="pricing-hero">
-                        <span class="price">$79</span>
-                        <span class="price-note">One-time payment</span>
-                    </div>
-                    
-                    <div class="hero-cta">
-                        <a href="index.html#order" class="cta-button primary">Order Your Song Now</a>
-                        <a href="gallery.html" class="cta-button secondary">Listen to Samples</a>
-                    </div>
+    <!-- Hero Section with Premium Imagery -->
+    <section class="product-hero" style="background: var(--gradient-warm); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/hero_emotional/cozy_couple_moment.jpg') center center / cover no-repeat; opacity: 0.08;"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
+        <div class="container" style="position: relative; z-index: 3;">
+            <div class="product-hero-content" style="padding: 100px 0; text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1 class="hero-title" style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 4rem); color: var(--deep-indigo); margin-bottom: 24px;">One Song, One Story, Forever Yours</h1>
+                <p class="hero-subtitle" style="font-size: 22px; color: var(--text-secondary); margin-bottom: 40px; line-height: 1.6;">Transform your most precious memories into a professionally crafted song that captures every emotion, every moment, every heartbeat.</p>
+                <div class="price-highlight" style="background: white; display: inline-block; padding: 20px 40px; border-radius: 20px; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.1); margin-bottom: 40px;">
+                    <span style="font-family: 'Prata', serif; font-size: 3rem; color: var(--terracotta);">$79</span>
+                    <span style="display: block; font-size: 14px; color: var(--text-secondary); margin-top: 8px;">One-time payment • 5-day delivery</span>
                 </div>
-                
-                <div class="hero-visual">
-                    <div class="song-preview">
-                        <img src="audio/Two decades.png" alt="Example of custom song artwork for personalized songs" class="preview-artwork">
-                        <div class="audio-preview">
-                            <audio controls preload="metadata">
-                                <source src="audio/Two Decades Strong.wav" type="audio/wav">
-                                Your browser does not support the audio element.
-                            </audio>
-                            <p class="preview-caption">Sample: "Two Decades Strong" - 20th Anniversary Gift</p>
-                        </div>
-                    </div>
+                <div>
+                    <a href="index.html#order" class="cta-button">Create Your Song Now</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What You Get Section -->
-    <section class="what-you-get">
+    <!-- What's Included Section -->
+    <section class="features-section" style="padding: 100px 0; background: white;">
         <div class="container">
-            <h2>What's Included in Your Single Song Gift</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎵</div>
-                    <h3>Custom Song</h3>
-                    <p>Professional AI-generated song based on your personal story, memories, and preferred style</p>
+            <h2 style="text-align: center; font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--deep-indigo); margin-bottom: 60px;">Your Complete Musical Package</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto;">
+                <div class="feature-card" style="text-align: center; padding: 40px 24px; background: rgba(241, 237, 230, 0.3); border-radius: 20px; transition: var(--transition);">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🎵</div>
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">Professional Song</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px;">3-4 minute custom song professionally produced with your story woven into every verse</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Custom Artwork</h3>
-                    <p>Unique visual art piece designed to complement your song's theme and story</p>
+                <div class="feature-card" style="text-align: center; padding: 40px 24px; background: rgba(241, 237, 230, 0.3); border-radius: 20px; transition: var(--transition);">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🎨</div>
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">Custom Artwork</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px;">Beautiful album cover designed specifically for your song's theme and story</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Multiple Formats</h3>
-                    <p>High-quality WAV and MP3 files, plus PNG artwork - perfect for any device</p>
+                <div class="feature-card" style="text-align: center; padding: 40px 24px; background: rgba(241, 237, 230, 0.3); border-radius: 20px; transition: var(--transition);">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">📁</div>
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">Multiple Formats</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px;">High-quality WAV and MP3 files plus PNG artwork for sharing and keeping</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💝</div>
-                    <h3>Commercial Rights</h3>
-                    <p>Full ownership and usage rights - use your song for any purpose, including commercial</p>
+                <div class="feature-card" style="text-align: center; padding: 40px 24px; background: rgba(241, 237, 230, 0.3); border-radius: 20px; transition: var(--transition);">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">🌍</div>
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">Bilingual Options</h3>
+                    <p style="color: var(--text-secondary); font-size: 16px;">Available in English or Spanish to perfectly express your emotions</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Language Support -->
-    <section class="language-support">
-        <div class="container">
-            <div class="language-content">
-                <div class="language-text">
-                    <h2>🌎 Available in English & Spanish</h2>
-                    <p>Create your personalized song in your preferred language! Our AI can generate beautiful, meaningful songs in both English and Spanish, perfect for bilingual families or Spanish-speaking loved ones.</p>
-                    <ul>
-                        <li>✅ Native Spanish lyrics and pronunciation</li>
-                        <li>✅ Cultural themes and expressions</li>
-                        <li>✅ Same professional quality in both languages</li>
-                        <li>✅ Specify your language preference during ordering</li>
+    <!-- Perfect For Section with Premium Background -->
+    <section style="padding: 100px 0; background: var(--gradient-warm); position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/occasions_celebrations/surprise_gift_reaction.jpg') center center / cover no-repeat; opacity: 0.05;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h2 style="text-align: center; font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--deep-indigo); margin-bottom: 60px;">Perfect For Every Occasion</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto;">
+                <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08);">
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">💕 Romantic Moments</h3>
+                    <ul style="color: var(--text-secondary); line-height: 1.8; list-style: none; padding: 0;">
+                        <li>✓ Anniversary celebrations</li>
+                        <li>✓ Valentine's Day surprises</li>
+                        <li>✓ Wedding proposals</li>
+                        <li>✓ "Just because" love songs</li>
                     </ul>
                 </div>
-                <div class="language-example">
-                    <div class="song-card">
-                        <img src="audio/reina_de_mi_vida.png" alt="Spanish song example artwork" class="song-artwork">
-                        <h4>"Reina de mi Vida"</h4>
-                        <p>Spanish love song created for Maria's anniversary</p>
-                        <audio controls preload="metadata">
-                            <source src="audio/gallery/Reina de mi Vida.wav" type="audio/wav">
-                        </audio>
+                <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08);">
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">🎉 Celebrations</h3>
+                    <ul style="color: var(--text-secondary); line-height: 1.8; list-style: none; padding: 0;">
+                        <li>✓ Birthday milestones</li>
+                        <li>✓ Graduation achievements</li>
+                        <li>✓ Retirement tributes</li>
+                        <li>✓ New baby arrivals</li>
+                    </ul>
+                </div>
+                <div style="background: white; padding: 32px; border-radius: 16px; box-shadow: 0 8px 32px rgba(162, 85, 36, 0.08);">
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 16px;">❤️ Family & Friends</h3>
+                    <ul style="color: var(--text-secondary); line-height: 1.8; list-style: none; padding: 0;">
+                        <li>✓ Mother's/Father's Day</li>
+                        <li>✓ Best friend appreciation</li>
+                        <li>✓ Family reunion songs</li>
+                        <li>✓ Memorial tributes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section style="padding: 100px 0; background: white; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/process_creation/professional_music_studio.jpg') center center / cover no-repeat; opacity: 0.03;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h2 style="text-align: center; font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--deep-indigo); margin-bottom: 60px;">Your Song Journey</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="display: flex; align-items: flex-start; margin-bottom: 48px;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient-luxury); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; flex-shrink: 0;">1</div>
+                    <div style="margin-left: 32px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px;">Share Your Story</h3>
+                        <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6;">Tell us about your recipient, the occasion, and the memories you want to capture. Every detail helps create magic.</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; margin-bottom: 48px;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient-luxury); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; flex-shrink: 0;">2</div>
+                    <div style="margin-left: 32px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px;">Choose Your Style</h3>
+                        <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6;">Select from genres like pop, acoustic, country, or R&B. Pick the tone that matches your emotion.</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; margin-bottom: 48px;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient-luxury); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; flex-shrink: 0;">3</div>
+                    <div style="margin-left: 32px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px;">We Create Magic</h3>
+                        <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6;">Our AI transforms your story into beautiful lyrics and melodies, professionally produced with care.</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient-luxury); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; flex-shrink: 0;">4</div>
+                    <div style="margin-left: 32px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); margin-bottom: 12px;">Receive & Share</h3>
+                        <p style="color: var(--text-secondary); font-size: 16px; line-height: 1.6;">Get your song via email in 5 days. Download, share, and create memories that last forever.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Perfect For Section -->
-    <section class="perfect-for">
+    <!-- Customer Testimonial Section -->
+    <section style="padding: 100px 0; background: var(--gradient-warm);">
         <div class="container">
-            <h2>Perfect For Any Special Occasion</h2>
-            <div class="occasions-grid">
-                <div class="occasion-card">
-                    <div class="occasion-emoji">💕</div>
-                    <h3>Romantic Gifts</h3>
-                    <p>Anniversaries, Valentine's Day, proposals, or just because you love them</p>
-                </div>
-                <div class="occasion-card">
-                    <div class="occasion-emoji">🎂</div>
-                    <h3>Birthday Celebrations</h3>
-                    <p>Create a unique birthday song that celebrates their life and achievements</p>
-                </div>
-                <div class="occasion-card">
-                    <div class="occasion-emoji">🎓</div>
-                    <h3>Milestone Moments</h3>
-                    <p>Graduations, promotions, retirements, or other life achievements</p>
-                </div>
-                <div class="occasion-card">
-                    <div class="occasion-emoji">👨‍👩‍👧‍👦</div>
-                    <h3>Family Gifts</h3>
-                    <p>Mother's Day, Father's Day, or celebrating family bonds and memories</p>
-                </div>
-                <div class="occasion-card">
-                    <div class="occasion-emoji">🎄</div>
-                    <h3>Holiday Gifts</h3>
-                    <p>Christmas, New Year, or any holiday celebration with personal meaning</p>
-                </div>
-                <div class="occasion-card">
-                    <div class="occasion-emoji">💐</div>
-                    <h3>Memorial Tributes</h3>
-                    <p>Honor and remember loved ones with a meaningful musical tribute</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works">
-        <div class="container">
-            <h2>How Your Song Gets Created</h2>
-            <div class="steps-container">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Share Your Story</h3>
-                        <p>Tell us about the person, occasion, and memories you want captured in song</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Choose Your Style</h3>
-                        <p>Select genre, tone, and language (English or Spanish) for your song</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>AI Creates Magic</h3>
-                        <p>Our advanced AI composes lyrics, melody, and custom artwork just for you</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Receive & Enjoy</h3>
-                        <p>Get your song files via email within 5 business days, ready to share</p>
+            <h2 style="text-align: center; font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--deep-indigo); margin-bottom: 60px;">Stories That Became Songs</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="background: white; padding: 48px; border-radius: 20px; box-shadow: 0 16px 48px rgba(162, 85, 36, 0.1); text-align: center; position: relative;">
+                    <span style="position: absolute; top: -20px; left: 40px; font-family: 'Prata', serif; font-size: 5rem; color: var(--dusty-pink); line-height: 1;">"</span>
+                    <p style="font-family: 'Prata', serif; font-size: 20px; color: var(--deep-indigo); line-height: 1.6; margin-bottom: 32px; font-style: italic;">
+                        I wanted something special for our 10th anniversary. The song captured our entire journey - from our first date to our kids being born. My wife listens to it every day on her commute. It's become 'our song' in the most personal way possible.
+                    </p>
+                    <div>
+                        <strong style="color: var(--terracotta); font-size: 18px;">David M.</strong>
+                        <p style="color: var(--text-secondary); font-size: 14px; margin-top: 4px;">Anniversary Song for Wife</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
+    <!-- CTA Section -->
+    <section style="padding: 100px 0; background: white; text-align: center;">
         <div class="container">
-            <h2>What Our Customers Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p>"The song for my husband's 50th birthday was absolutely perfect. He cried when he heard it - it captured our 25 years together beautifully!"</p>
-                    <div class="author">- Sarah M., Anniversary Gift</div>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p>"I ordered a Spanish song for my grandmother and she was so moved. The lyrics were poetic and the pronunciation was perfect."</p>
-                    <div class="author">- Carlos R., Family Gift</div>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">★★★★★</div>
-                    <p>"Best graduation gift ever! My daughter played it at her party and everyone wanted to know where I got it made."</p>
-                    <div class="author">- Michael T., Graduation</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>Can I really get a song in Spanish?</h3>
-                    <p>Absolutely! Our AI creates beautiful songs in both English and Spanish with native pronunciation and cultural authenticity.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How long is a single song?</h3>
-                    <p>Typically 2-4 minutes, similar to a standard radio song, with full verses, chorus, and complete musical arrangement.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What if I'm not satisfied?</h3>
-                    <p>We offer one free revision within 7 days of delivery to ensure your song captures your vision perfectly.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Can I use this song commercially?</h3>
-                    <p>Yes! You own full rights to your custom song and can use it for any purpose, including commercial use.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="final-cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Create Your Personalized Song Gift Today</h2>
-                <p>Transform your memories into music. Available in English and Spanish.</p>
-                <div class="cta-pricing">
-                    <span class="cta-price">$79</span>
-                    <span class="cta-features">Professional Song + Custom Artwork + Full Rights</span>
-                </div>
-                <a href="index.html#order" class="cta-button primary large contrast-safe">Order Your Song Now</a>
-                <p class="guarantee">5-day delivery • One free revision • 100% satisfaction focused</p>
+            <h2 style="font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: var(--deep-indigo); margin-bottom: 24px;">Ready to Create Something Unforgettable?</h2>
+            <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Join thousands who've turned their stories into songs. Your perfect gift is just a few clicks away.
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="index.html#order" class="cta-button">Start Your Song - $79</a>
+                <a href="gallery.html" class="cta-button secondary">Listen to Examples</a>
             </div>
         </div>
     </section>
