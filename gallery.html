@@ -127,8 +127,12 @@
     </section>
 
     <!-- Gallery Grid -->
-    <section style="padding: 100px 0; background: white;">
-        <div class="container">
+    <section style="padding: 100px 0; background: white; position: relative; overflow: hidden;">
+        <!-- Premium Background Texture -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/backgrounds_textures/marbled_pink_elegance_texture.jpg') center center / cover no-repeat; opacity: 0.02;"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(241,237,230,0.3) 100%);"></div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
             <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px;">
                 <button class="filter-btn active" data-filter="all" style="background: var(--gradient-luxury); color: white; border: none; padding: 12px 24px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">All Songs</button>
                 <button class="filter-btn" data-filter="english" style="background: transparent; color: var(--deep-indigo); border: 2px solid var(--dusty-pink); padding: 10px 22px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: var(--transition);">English</button>

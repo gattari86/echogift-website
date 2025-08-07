@@ -275,20 +275,32 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
+    <section class="hero" style="background: var(--gradient-warm); position: relative; overflow: hidden;">
+        <!-- Premium Background Layer -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/hero_emotional/candlelit_romantic_moment.jpg') center center / cover no-repeat; opacity: 0.12;"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
+        
+        <div class="container" style="position: relative; z-index: 3;">
             <div class="hero-content">
-                <h1 class="hero-title">Turn Your Story Into a Song</h1>
-                <p class="hero-subtitle">A deeply personal AI-crafted gift, born from your memories. Create intimate musical moments that capture love, celebration, and connection in every note.</p>
-                <button class="cta-button" onclick="scrollToOrder()">Begin Your Musical Story</button>
+                <h1 class="hero-title" style="font-family: 'Prata', serif; font-size: clamp(3rem, 6vw, 4.5rem); color: var(--deep-indigo); margin-bottom: 24px;">Turn Your Story Into a Song</h1>
+                <p class="hero-subtitle" style="font-size: 22px; color: var(--text-secondary); margin-bottom: 40px; line-height: 1.6; max-width: 600px;">A deeply personal AI-crafted gift, born from your memories. Create intimate musical moments that capture love, celebration, and connection in every note.</p>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-start; align-items: center;">
+                    <button class="cta-button" onclick="scrollToOrder()" style="font-size: 18px; padding: 20px 36px;">Begin Your Musical Story</button>
+                    <a href="#audio-samples" style="color: var(--terracotta); font-weight: 600; text-decoration: none; font-size: 16px; display: flex; align-items: center; gap: 8px;">🎵 Listen to Examples</a>
+                </div>
             </div>
             <div class="hero-visual">
-                <div class="music-wave">
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
+                <!-- Enhanced Music Wave with Premium Styling -->
+                <div class="music-wave" style="position: relative;">
+                    <div class="wave-bar" style="background: var(--gradient-luxury); animation: wave-animation 1.5s infinite ease-in-out;"></div>
+                    <div class="wave-bar" style="background: var(--gradient-luxury); animation: wave-animation 1.5s infinite ease-in-out 0.1s;"></div>
+                    <div class="wave-bar" style="background: var(--gradient-luxury); animation: wave-animation 1.5s infinite ease-in-out 0.2s;"></div>
+                    <div class="wave-bar" style="background: var(--gradient-luxury); animation: wave-animation 1.5s infinite ease-in-out 0.3s;"></div>
+                    <div class="wave-bar" style="background: var(--gradient-luxury); animation: wave-animation 1.5s infinite ease-in-out 0.4s;"></div>
+                </div>
+                <!-- Premium Audio Visualization Overlay -->
+                <div style="position: absolute; top: 20px; right: 20px; opacity: 0.7;">
+                    <img src="assets/premium/premium_graphics/golden_musical_notes_elegant.jpg" alt="Musical notes decoration" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; box-shadow: 0 8px 24px rgba(191, 161, 129, 0.3);">
                 </div>
             </div>
         </div>
@@ -319,10 +331,24 @@
     </section>
 
     <!-- Audio Samples Section -->
-    <section id="audio-samples" class="audio-samples">
-        <div class="container">
-            <h2>Hear the Magic - Real Customer Songs</h2>
-            <p class="samples-subtitle">Listen to actual personalized songs we've created for our customers. Each tells a unique story.</p>
+    <section id="audio-samples" class="audio-samples" style="background: white; position: relative; overflow: hidden;">
+        <!-- Premium Background Layer -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/music_audio/vintage_record_player.jpg') center center / cover no-repeat; opacity: 0.03;"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--deep-indigo); margin-bottom: 24px;">Hear the Magic - Real Customer Songs</h2>
+                <p class="samples-subtitle" style="font-size: 20px; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">Listen to actual personalized songs we've created for our customers. Each tells a unique story.</p>
+                <!-- Waveform Visual Element -->
+                <div style="display: flex; justify-content: center; margin-top: 32px; gap: 4px;">
+                    <div style="width: 3px; height: 40px; background: var(--dusty-pink); border-radius: 2px; animation: wave-animation 1.2s infinite ease-in-out;"></div>
+                    <div style="width: 3px; height: 30px; background: var(--terracotta); border-radius: 2px; animation: wave-animation 1.2s infinite ease-in-out 0.1s;"></div>
+                    <div style="width: 3px; height: 50px; background: var(--luxury-gold); border-radius: 2px; animation: wave-animation 1.2s infinite ease-in-out 0.2s;"></div>
+                    <div style="width: 3px; height: 25px; background: var(--dusty-pink); border-radius: 2px; animation: wave-animation 1.2s infinite ease-in-out 0.3s;"></div>
+                    <div style="width: 3px; height: 35px; background: var(--terracotta); border-radius: 2px; animation: wave-animation 1.2s infinite ease-in-out 0.4s;"></div>
+                </div>
+            </div>
             
             <div class="samples-grid">
                 <div class="sample-card">
