@@ -25,7 +25,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     
     <!-- BlogPosting Schema -->
@@ -58,47 +58,57 @@
     </script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="product-header">
+    <!-- Navigation Header -->
+    <header class="main-header">
         <div class="container">
-            <nav class="product-nav">
+            <nav class="main-nav">
                 <a href="../index.html" class="logo">EchoGift</a>
-                <div class="nav-links">
-                    <a href="../gallery.html">Gallery</a>
-                    <a href="../single-song.html">Single Song</a>
-                    <a href="../album-gift.html">Album Gift</a>
-                    <a href="../blog.html">Blog</a>
-                    <a href="../index.html#order" class="cta-button-small">Order Now</a>
+                <div class="nav-menu">
+                    <a href="../gallery.html" class="nav-link">🎵 Gallery</a>
+                    <a href="../single-song.html" class="nav-link">Single Song ($79)</a>
+                    <a href="../album-gift.html" class="nav-link">Album Gift ($299)</a>
+                    <a href="../blog.html" class="nav-link active">📝 Blog</a>
+                    <a href="../index.html#order" class="nav-cta">Order Now</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Blog Post Header -->
-    <header class="blog-post-header">
-        <div class="container">
-            <div class="blog-post-meta">
-                <div class="post-meta">
-                    <span class="post-date">January 15, 2025</span>
-                    <div class="post-tags">
-                        <span class="tag">Trends</span>
-                        <span class="tag">AI</span>
+    <!-- Blog Post Header with Premium Design -->
+    <section style="background: var(--gradient-warm); padding: 100px 0; position: relative; overflow: hidden;">
+        <!-- Premium Background Layer -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('../assets/premium/luxury_premium/elegant_couple_dancing_premium.jpg') center center / cover no-repeat; opacity: 0.08;"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
+        <div class="container" style="position: relative; z-index: 3;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <div style="display: flex; gap: 16px; justify-content: center; align-items: center; margin-bottom: 24px;">
+                    <span style="color: var(--text-secondary); font-size: 16px;">January 15, 2025</span>
+                    <div style="display: flex; gap: 8px;">
+                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">Trends</span>
+                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">AI</span>
                     </div>
                 </div>
-                <h1 class="blog-post-title">Trending in 2025: The Rise of AI-Personalized Gifts for Gen Z & Millennials</h1>
-                <p class="blog-post-excerpt">Explore why younger generations are embracing AI-powered personalized gifts and the latest trends shaping the future of meaningful gift-giving.</p>
+                <h1 style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--deep-indigo); margin-bottom: 24px; line-height: 1.2;">Trending in 2025: The Rise of AI-Personalized Gifts for Gen Z & Millennials</h1>
+                <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.6; max-width: 700px; margin: 0 auto;">Explore why younger generations are embracing AI-powered personalized gifts and the latest trends shaping the future of meaningful gift-giving.</p>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Blog Post Content -->
-    <article class="blog-post-content">
-        <div class="container">
-            <p>If you think AI-generated gifts sound impersonal, you haven't been paying attention to how younger generations approach technology. For Gen Z and Millennials, AI isn't the opposite of personal—it's a tool that makes hyper-personalization accessible, affordable, and incredibly creative.</p>
+    <!-- Blog Post Content with Premium Design -->
+    <article style="padding: 100px 0; background: white; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('../assets/premium/premium_textures/elegant_beige_marble_luxury.jpg') center center / cover no-repeat; opacity: 0.02;"></div>
+        <div class="container" style="position: relative; z-index: 2; max-width: 800px;">
+            <div style="font-family: 'Lato', sans-serif; font-size: 18px; line-height: 1.8; color: var(--text-secondary);">
+                <p style="margin-bottom: 32px; font-size: 20px;">If you think AI-generated gifts sound impersonal, you haven't been paying attention to how younger generations approach technology. For Gen Z and Millennials, AI isn't the opposite of personal—it's a tool that makes hyper-personalization accessible, affordable, and incredibly creative.</p>
 
             <p>As we move through 2025, AI-powered personalized gifts are becoming the gold standard for meaningful gift-giving among younger consumers. Here's why this trend is exploding and what it means for the future of gifting.</p>
 
-            <h2>The Numbers Don't Lie</h2>
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">The Numbers Don't Lie</h2>
 
             <p>Recent studies show some striking trends in gift-giving preferences:</p>
 
@@ -113,13 +123,13 @@
 
             <h2>Why Younger Generations Embrace AI Gifts</h2>
 
-            <h3>1. Technology as a Creative Partner</h3>
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">1. Technology as a Creative Partner</h3>
 
             <p>Unlike older generations who might see AI as impersonal, Gen Z and Millennials grew up with technology as a collaborative tool. They use AI to enhance their creativity on TikTok, Instagram, and in their work. To them, using AI to create a personalized gift isn't cheating—it's leveraging technology to express something they couldn't create alone.</p>
 
-            <blockquote>
+            <blockquote style="background: rgba(241, 237, 230, 0.3); border-left: 4px solid var(--terracotta); padding: 32px; margin: 32px 0; border-radius: 8px; font-style: italic; font-size: 20px; color: var(--deep-indigo); line-height: 1.6;">
                 "I used AI to create a song for my boyfriend's birthday because I wanted to give him something with our specific memories and inside jokes, but I can't write music. The AI didn't make it less personal—it made my vision possible."
-                <em>- Sarah, 24, Marketing Coordinator</em>
+                <br><em style="font-size: 16px; color: var(--text-secondary);">- Sarah, 24, Marketing Coordinator</em>
             </blockquote>
 
             <h3>2. Authenticity Over Tradition</h3>
@@ -225,21 +235,23 @@
 
             <p>In 2025, authenticity isn't about rejecting technology—it's about using every tool available to show someone exactly how much they mean to you. And for younger generations, AI-powered personalization is becoming the most authentic gift of all.</p>
 
-            <div class="back-to-blog">
-                <a href="../blog.html">← Back to Blog</a>
+                <div style="margin-top: 60px; text-align: center;">
+                    <a href="../blog.html" style="color: var(--terracotta); font-weight: 600; text-decoration: none; font-size: 16px; padding: 12px 24px; border: 2px solid var(--dusty-pink); border-radius: 25px; display: inline-block; transition: var(--transition);">← Back to Blog</a>
+                </div>
             </div>
         </div>
     </article>
 
-    <!-- CTA Section -->
-    <section class="blog-cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Join the 2025 Gift Revolution</h2>
-                <p>Create an AI-personalized song that reflects the future of meaningful gift-giving</p>
-                <div class="cta-buttons">
-                    <a href="../single-song.html" class="cta-button secondary">Single Song - $79</a>
-                    <a href="../album-gift.html" class="cta-button primary">5-Song Album - $299</a>
+    <!-- CTA Section with Premium Design -->
+    <section style="padding: 100px 0; background: var(--gradient-warm); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('../assets/premium/occasions_celebrations/surprise_gift_reaction.jpg') center center / cover no-repeat; opacity: 0.08;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <h2 style="font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 2.5rem); color: var(--deep-indigo); margin-bottom: 24px;">Join the 2025 Gift Revolution</h2>
+                <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 40px; line-height: 1.6;">Create an AI-personalized song that reflects the future of meaningful gift-giving</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="../single-song.html" class="cta-button secondary" style="background: rgba(255, 255, 255, 0.9); color: var(--terracotta); border: 2px solid var(--dusty-pink);">Single Song - $79</a>
+                    <a href="../album-gift.html" class="cta-button" style="background: var(--gradient-luxury);">5-Song Album - $299</a>
                 </div>
             </div>
         </div>

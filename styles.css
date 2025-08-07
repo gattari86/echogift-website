@@ -218,8 +218,8 @@ h5 { font-size: 1.25rem; }
 }
 
 .mobile-menu-toggle span {
-    width: 24px;
-    height: 3px;
+    width: 20px;
+    height: 2.5px;
     background: var(--terracotta);
     border-radius: 2px;
     transition: var(--transition);
@@ -1090,6 +1090,200 @@ h5 { font-size: 1.25rem; }
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
+    }
+    
+    /* Album Gift Page Mobile Optimization */
+    .product-hero-content {
+        padding: 60px 0 !important;
+        text-align: center !important;
+    }
+    
+    .price-highlight {
+        margin: 20px auto !important;
+        padding: 16px 24px !important;
+        max-width: 280px !important;
+    }
+    
+    .cta-buttons {
+        flex-direction: column !important;
+        gap: 16px !important;
+        align-items: center !important;
+    }
+    
+    .cta-buttons .cta-button {
+        width: 100% !important;
+        max-width: 280px !important;
+        text-align: center !important;
+        padding: 16px 24px !important;
+    }
+    
+    /* Grid optimizations for mobile */
+    section[style*="grid-template-columns"] > div {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    
+    /* Featured card mobile optimization */
+    .featured-post {
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+    }
+    
+    .featured-post > div:last-child {
+        padding: 40px 24px !important;
+    }
+    
+    /* Blog page mobile optimizations */
+    .blog-card {
+        margin-bottom: 32px !important;
+    }
+    
+    .tag-btn {
+        font-size: 14px !important;
+        padding: 8px 16px !important;
+        margin: 4px !important;
+    }
+    
+    /* Album Gift specific mobile layouts */
+    .album-sample {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    .album-cover-small {
+        max-width: 200px !important;
+        margin: 0 auto 20px !important;
+    }
+    
+    .sample-tracks {
+        text-align: left !important;
+        margin-top: 16px !important;
+    }
+    
+    /* Comparison table mobile */
+    .comparison-row {
+        display: block !important;
+        text-align: left !important;
+        padding: 16px 20px !important;
+        border-bottom: 1px solid rgba(232, 201, 207, 0.3) !important;
+    }
+    
+    .comparison-row > div {
+        display: block !important;
+        margin-bottom: 8px !important;
+        padding: 0 !important;
+    }
+    
+    .comparison-row > div:first-child {
+        font-weight: 600 !important;
+        color: var(--deep-indigo) !important;
+    }
+    
+    /* Mobile FAQ optimization */
+    .faq-item {
+        margin-bottom: 24px !important;
+        padding: 24px !important;
+    }
+    
+    /* Audio player mobile optimization */
+    .audio-player-container {
+        margin-top: 16px !important;
+    }
+    
+    .custom-audio-player {
+        width: 100% !important;
+        max-width: none !important;
+    }
+    
+    /* Comprehensive Mobile Optimizations */
+    .hero-title, h1 {
+        font-size: clamp(2rem, 6vw, 3.5rem) !important;
+    }
+    
+    .hero-subtitle, .hero-content p {
+        font-size: 18px !important;
+        line-height: 1.6 !important;
+        padding: 0 10px !important;
+    }
+    
+    .price-highlight span:first-child {
+        font-size: 2.5rem !important;
+    }
+    
+    .cta-button {
+        padding: 16px 28px !important;
+        font-size: 16px !important;
+        min-width: 200px !important;
+        text-align: center !important;
+    }
+    
+    /* Mobile navigation improvements */
+    .nav-menu.active {
+        left: 0 !important;
+    }
+    
+    .main-header {
+        padding: 0 !important;
+    }
+    
+    .mobile-menu-toggle {
+        padding: 10px !important;
+        margin-right: 10px !important;
+    }
+    
+    /* Mobile form optimization */
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea {
+        font-size: 16px !important;
+        padding: 16px 20px !important;
+    }
+    
+    .form-row {
+        flex-direction: column !important;
+    }
+    
+    /* Mobile card layouts */
+    .gallery-card, .blog-card, .sample-card {
+        margin-bottom: 24px !important;
+    }
+    
+    .play-btn {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 20px !important;
+    }
+    
+    /* Mobile sections padding */
+    section {
+        padding: 60px 0 !important;
+    }
+    
+    .product-hero {
+        padding: 80px 0 !important;
+    }
+    
+    /* Mobile text improvements */
+    p, li {
+        font-size: 16px !important;
+        line-height: 1.7 !important;
+    }
+    
+    .feature-card, .occasion-card {
+        padding: 24px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Blog mobile specific */
+    .featured-post {
+        margin-bottom: 40px !important;
+        border-radius: 16px !important;
+    }
+    
+    .tag-btn {
+        margin: 2px !important;
+        white-space: nowrap !important;
     }
     
     .nav-menu {
