@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <!-- Homepage -->
     <url>
         <loc>https://echogifts.shop/</loc>
-        <lastmod>2025-01-06</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -22,27 +23,89 @@
             <image:caption>Memorial personalized song custom artwork</image:caption>
         </image:image>
     </url>
+    
+    <!-- Product Pages -->
+    <url>
+        <loc>https://echogifts.shop/single-song.html</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://echogifts.shop/album-gift.html</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://echogifts.shop/gallery.html</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Blog Pages -->
+    <url>
+        <loc>https://echogifts.shop/blog.html</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://echogifts.shop/blog/ai-gifts-trends-2025.html</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://echogifts.shop/blog/ai-vs-human-music.html</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://echogifts.shop/blog/choose-custom-song.html</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://echogifts.shop/blog/occasions-custom-song.html</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://echogifts.shop/blog/personalized-gifts-happiness.html</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- SEO Landing Pages -->
     <url>
         <loc>https://echogifts.shop/songfinch-alternative.html</loc>
-        <lastmod>2025-01-06</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://echogifts.shop/unique-christmas-gifts.html</loc>
-        <lastmod>2025-01-06</lastmod>
-        <changefreq>monthly</changefreq>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>seasonal</changefreq>
         <priority>0.8</priority>
     </url>
+    
+    <!-- Legal Pages -->
     <url>
         <loc>https://echogifts.shop/terms-of-service.html</loc>
-        <lastmod>2025-01-06</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://echogifts.shop/privacy-policy.html</loc>
-        <lastmod>2025-01-06</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>

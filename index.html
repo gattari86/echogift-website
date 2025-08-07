@@ -8,8 +8,14 @@
     <meta name="keywords" content="personalized song, custom song, personalized song gift, custom song gift, personalized song for boyfriend, personalized song for girlfriend, unique Christmas gift, gift for someone who has everything, AI song generator, custom artwork, anniversary song, birthday song">
     <meta name="author" content="EchoGift">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="theme-color" content="#D4AF37">
+    <meta name="theme-color" content="#A25524">
     <link rel="canonical" href="https://echogifts.shop/">
+    
+    <!-- Geo-targeting and Local SEO -->
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="United States">
+    <meta name="geo.position" content="40.7128;-74.0060">
+    <meta name="ICBM" content="40.7128, -74.0060">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -45,6 +51,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Analytics & Conversion Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX'); // Replace with your Google Analytics ID
+    </script>
     
     <!-- Enhanced Structured Data for SEO -->
     <script type="application/ld+json">
@@ -101,8 +116,38 @@
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "127"
-        }
+            "reviewCount": "127",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Sarah M."
+                },
+                "reviewBody": "I gave my husband a song about our 20-year journey together for our anniversary. He cried happy tears – it captured our story perfectly."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Michael R."
+                },
+                "reviewBody": "My daughter's graduation song included all her achievements and dreams. She plays it every morning before work. Best gift I've ever given."
+            }
+        ]
     }
     </script>
     
@@ -164,6 +209,46 @@
                 }
             }
         ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://echogifts.shop/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Order",
+                "item": "https://echogifts.shop/#order"
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "EchoGift - Custom AI Song Creation",
+        "description": "Personalized AI-generated songs and albums for gifts",
+        "url": "https://echogifts.shop",
+        "telephone": "",
+        "email": "email@poppy-marketing.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US"
+        },
+        "priceRange": "$79-$299",
+        "openingHours": "Mo-Su 00:00-24:00",
+        "sameAs": []
     }
     </script>
 </head>
