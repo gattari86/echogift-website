@@ -1848,3 +1848,74 @@ a[href*="index.html#order"] {
         display: none !important;
     }
 }
+
+/* Professional Icon Styles */
+.nav-icon {
+    width: 18px;
+    height: 18px;
+    fill: var(--text-secondary);
+    margin-right: 8px;
+    vertical-align: middle;
+    transition: var(--transition);
+}
+
+.nav-link:hover .nav-icon {
+    fill: var(--terracotta);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    fill: var(--terracotta);
+}
+
+.play-icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--terracotta);
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    fill: var(--terracotta);
+    margin-bottom: 16px;
+}
+
+.check-icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--terracotta);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.celebration-icon {
+    width: 20px;
+    height: 20px;
+    fill: var(--terracotta);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Icon animation on hover */
+.feature-icon:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Email icon styling */
+.email-icon {
+    width: 18px;
+    height: 18px;
+    fill: white;
+    margin-right: 8px;
+    vertical-align: middle;
+}
