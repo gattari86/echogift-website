@@ -78,7 +78,7 @@ h5 { font-size: 1.25rem; }
 /* Elegant Button System */
 .cta-button, .submit-button {
     background: var(--gradient-luxury);
-    color: white;
+    color: white !important;
     border: none;
     padding: 18px 36px;
     border-radius: var(--border-radius);
@@ -94,6 +94,14 @@ h5 { font-size: 1.25rem; }
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+/* Ensure all text inside CTA buttons is white */
+.cta-button span,
+.cta-button *,
+.submit-button span,
+.submit-button * {
+    color: white !important;
 }
 
 .cta-button:hover, .submit-button:hover {
@@ -1675,7 +1683,7 @@ h5 { font-size: 1.25rem; }
 .payment-button {
     width: 100%;
     background: var(--gradient-luxury);
-    color: white;
+    color: white !important;
     border: none;
     padding: 20px;
     border-radius: var(--border-radius);
@@ -1687,6 +1695,13 @@ h5 { font-size: 1.25rem; }
     margin-top: 24px;
     position: relative;
     overflow: hidden;
+}
+
+/* Ensure all text inside payment button is white */
+.payment-button span,
+.payment-button #button-text,
+.payment-button #button-amount {
+    color: white !important;
 }
 
 .payment-button:hover:not(:disabled) {
