@@ -96,12 +96,25 @@ h5 { font-size: 1.25rem; }
     overflow: hidden;
 }
 
-/* Ensure all text inside CTA buttons is white */
-.cta-button span,
-.cta-button *,
+/* Ensure text inside primary CTA buttons is white (exclude secondary) */
+.cta-button:not(.secondary) span,
+.cta-button:not(.secondary) *,
 .submit-button span,
 .submit-button * {
     color: white !important;
+}
+
+/* Ensure secondary button text stays terracotta */
+.cta-button.secondary,
+.cta-button.secondary span,
+.cta-button.secondary * {
+    color: var(--terracotta) !important;
+}
+
+.cta-button.secondary:hover,
+.cta-button.secondary:hover span,
+.cta-button.secondary:hover * {
+    color: var(--terracotta) !important;
 }
 
 .cta-button:hover, .submit-button:hover {
