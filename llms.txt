@@ -40,7 +40,7 @@ Listen to real customer examples:
 
 ## Contact & Support
 - Website: https://echogifts.shop
-- Support: email@poppy-marketing.com
+- Support: hello@echogifts.shop
 - Secure payment via Stripe
 - Email delivery with download links
 
