@@ -8,10 +8,14 @@ const STRIPE_PRICES = {
 };
 
 // Alternative: Use Payment Links (more reliable than client-only checkout)
+// Payment Links support promotion codes natively
 const PAYMENT_LINKS = {
-    single: 'https://buy.stripe.com/YOUR_SINGLE_SONG_PAYMENT_LINK',
-    album: 'https://buy.stripe.com/YOUR_ALBUM_PAYMENT_LINK'
+    single: 'https://buy.stripe.com/YOUR_SINGLE_SONG_PAYMENT_LINK',  // Replace with your actual link
+    album: 'https://buy.stripe.com/YOUR_ALBUM_PAYMENT_LINK'   // Replace with your actual link
 };
+
+// Set this to true to use Payment Links instead of client-only checkout
+const USE_PAYMENT_LINKS = false;
 
 const PRICING = {
     single: { price: 79.00, name: 'Personalized Song', description: 'Custom AI-generated song with your story + custom artwork' },
@@ -93,13 +97,34 @@ async function handleSubmit(event) {
 async function createStripeCheckoutSession() {
     const orderData = window.orderData;
     const priceId = STRIPE_PRICES[orderData.productType];
+    const couponCode = document.getElementById('coupon').value.trim();
     
+    // Option 1: Use Payment Links if configured (supports coupons)
+    if (USE_PAYMENT_LINKS && PAYMENT_LINKS[orderData.productType] && !PAYMENT_LINKS[orderData.productType].includes('YOUR_')) {
+        const paymentLink = PAYMENT_LINKS[orderData.productType];
+        
+        // Build URL with prefilled email and client reference ID
+        const url = new URL(paymentLink);
+        url.searchParams.set('prefilled_email', orderData.email);
+        url.searchParams.set('client_reference_id', 'EG-' + Date.now());
+        
+        // If coupon code entered, add it to the URL (if your payment link has promotion codes enabled)
+        if (couponCode) {
+            url.searchParams.set('prefilled_promo_code', couponCode);
+        }
+        
+        // Store order data for retrieval after payment
+        sessionStorage.setItem('pendingOrder', JSON.stringify(orderData));
+        
+        // Redirect to payment link
+        window.location.href = url.toString();
+        return;
+    }
+    
+    // Option 2: Use client-only checkout (no coupon support)
     if (!priceId || priceId.includes('1234567890')) {
         throw new Error('Stripe price IDs not configured. Please set up your products in Stripe Dashboard.');
     }
-    
-    // Get coupon code if entered
-    const couponCode = document.getElementById('coupon').value.trim();
     
     // Send order details via email before payment (backup)
     try {
@@ -125,12 +150,15 @@ async function createStripeCheckoutSession() {
             customerEmail: orderData.email
         };
         
-        // Add coupon if provided
+        // IMPORTANT: Client-only redirectToCheckout doesn't support coupons
+        // To use coupons, you need to either:
+        // 1. Use Stripe Payment Links (set USE_PAYMENT_LINKS = true and add your links)
+        // 2. Implement server-side checkout sessions
+        // 3. Use Stripe's Customer Portal for applying coupons
+        
         if (couponCode) {
-            // For Stripe Checkout, we can either use allow_promotion_codes or pass specific discounts
-            // Since you have a specific coupon (ELYSON), we'll enable promotion codes
-            checkoutParams.allowPromotionCodes = true;
-            // Note: The user will enter the code on Stripe's checkout page
+            // Show warning that coupon can't be applied with current setup
+            alert('Note: Promo codes cannot be applied with the current checkout method. Please contact hello@echogifts.shop to receive your discount.');
         }
         
         // Try client-only checkout first
@@ -150,8 +178,9 @@ async function createStripeCheckoutSession() {
 
 // Backup: Send order details via email before payment
 async function sendOrderDetailsEmail(orderData) {
+    const couponCode = document.getElementById('coupon') ? document.getElementById('coupon').value.trim() : '';
     const emailData = {
-        _subject: `🎵 NEW SONG ORDER - ${orderData.recipientName} (${orderData.occasion})`,
+        _subject: `🎵 NEW SONG ORDER - ${orderData.recipientName} (${orderData.occasion})${couponCode ? ' - PROMO: ' + couponCode : ''}`,
         _template: 'box',
         _next: window.location.href, // Stay on current page
         
@@ -181,6 +210,12 @@ async function sendOrderDetailsEmail(orderData) {
                 emailData[`Song ${song.songNumber} Language`] = song.language || 'Not specified';
             }
         });
+    }
+    
+    // Add promo code if entered
+    if (couponCode) {
+        emailData['PROMO CODE'] = couponCode;
+        emailData['PROMO NOTE'] = couponCode === 'ELYSON' ? 'Valid code - Apply discount after payment' : 'Code entered but needs validation';
     }
     
     // Add technical details
@@ -277,18 +312,23 @@ function validateCoupon(code) {
         return;
     }
     
-    // For now, we'll show a message that the coupon will be applied at checkout
-    // Since Stripe handles the actual validation and application
-    if (code === 'ELYSON' || code) {
-        messageElement.textContent = '✓ Promo code will be applied at checkout';
+    // Check if it's the ELYSON code
+    if (code === 'ELYSON') {
+        messageElement.innerHTML = '✓ Valid promo code! <br><small>Note: Due to checkout limitations, please email hello@echogifts.shop with your order number after purchase to receive your discount refund.</small>';
         messageElement.style.display = 'block';
         messageElement.style.color = 'var(--terracotta)';
         
         // Store the coupon for reference
         appliedCoupon = code;
         
-        // Note: We can't show the actual discount amount here without server-side validation
-        // The discount will be applied and shown on Stripe's checkout page
+        // Add note to order data
+        if (window.orderData) {
+            window.orderData.promoCode = code;
+        }
+    } else {
+        messageElement.textContent = 'Invalid promo code';
+        messageElement.style.display = 'block';
+        messageElement.style.color = '#d32f2f';
     }
 }
 
