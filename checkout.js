@@ -29,8 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setupCouponHandler();
 });
 
-// Store coupon state
-let appliedCoupon = null;
 
 function loadOrderData() {
     // Get order data from sessionStorage (passed from main form)
@@ -97,7 +95,6 @@ async function handleSubmit(event) {
 async function createStripeCheckoutSession() {
     const orderData = window.orderData;
     const priceId = STRIPE_PRICES[orderData.productType];
-    const couponCode = document.getElementById('coupon').value.trim();
     
     // Option 1: Use Payment Links if configured (supports coupons)
     if (USE_PAYMENT_LINKS && PAYMENT_LINKS[orderData.productType] && !PAYMENT_LINKS[orderData.productType].includes('YOUR_')) {
@@ -107,11 +104,6 @@ async function createStripeCheckoutSession() {
         const url = new URL(paymentLink);
         url.searchParams.set('prefilled_email', orderData.email);
         url.searchParams.set('client_reference_id', 'EG-' + Date.now());
-        
-        // If coupon code entered, add it to the URL (if your payment link has promotion codes enabled)
-        if (couponCode) {
-            url.searchParams.set('prefilled_promo_code', couponCode);
-        }
         
         // Store order data for retrieval after payment
         sessionStorage.setItem('pendingOrder', JSON.stringify(orderData));
@@ -156,21 +148,6 @@ async function createStripeCheckoutSession() {
         // 2. Implement server-side checkout sessions
         // 3. Use Stripe's Customer Portal for applying coupons
         
-        if (couponCode && couponCode === 'ELYSON') {
-            // For valid ELYSON code, proceed without alert since we handle it manually
-            // The code is already included in the order email
-            console.log('ELYSON promo code will be processed after payment');
-        } else if (couponCode && couponCode !== 'ELYSON') {
-            // For invalid codes, show error in the UI instead of alert
-            const messageElement = document.getElementById('coupon-message');
-            if (messageElement) {
-                messageElement.textContent = 'Invalid promo code. Please check and try again.';
-                messageElement.style.display = 'block';
-                messageElement.style.color = '#d32f2f';
-            }
-            // Don't proceed to checkout
-            throw new Error('Invalid promo code');
-        }
         
         // Try client-only checkout first
         const { error } = await stripe.redirectToCheckout(checkoutParams);
@@ -189,9 +166,8 @@ async function createStripeCheckoutSession() {
 
 // Backup: Send order details via email before payment
 async function sendOrderDetailsEmail(orderData) {
-    const couponCode = document.getElementById('coupon') ? document.getElementById('coupon').value.trim() : '';
     const emailData = {
-        _subject: `🎵 NEW SONG ORDER - ${orderData.recipientName} (${orderData.occasion})${couponCode ? ' - PROMO: ' + couponCode : ''}`,
+        _subject: `🎵 NEW SONG ORDER - ${orderData.recipientName} (${orderData.occasion})`,
         _template: 'box',
         _next: window.location.href, // Stay on current page
         
@@ -221,12 +197,6 @@ async function sendOrderDetailsEmail(orderData) {
                 emailData[`Song ${song.songNumber} Language`] = song.language || 'Not specified';
             }
         });
-    }
-    
-    // Add promo code if entered
-    if (couponCode) {
-        emailData['PROMO CODE'] = couponCode;
-        emailData['PROMO NOTE'] = couponCode === 'ELYSON' ? 'Valid code - Apply discount after payment' : 'Code entered but needs validation';
     }
     
     // Add technical details
@@ -281,74 +251,6 @@ function showError(message) {
     
     // Scroll to error
     errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-// Setup coupon handler
-function setupCouponHandler() {
-    const applyButton = document.getElementById('apply-coupon');
-    const couponInput = document.getElementById('coupon');
-    
-    if (applyButton && couponInput) {
-        applyButton.addEventListener('click', function() {
-            const code = couponInput.value.trim().toUpperCase();
-            validateCoupon(code);
-        });
-        
-        // Also apply on Enter key
-        couponInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                const code = couponInput.value.trim().toUpperCase();
-                validateCoupon(code);
-            }
-        });
-    }
-}
-
-function validateCoupon(code) {
-    const messageElement = document.getElementById('coupon-message');
-    
-    // Reset message
-    messageElement.style.display = 'none';
-    messageElement.className = 'form-help';
-    
-    if (!code) {
-        messageElement.textContent = 'Please enter a promo code';
-        messageElement.style.display = 'block';
-        messageElement.style.color = '#d32f2f';
-        return;
-    }
-    
-    // Check if it's the ELYSON code
-    if (code === 'ELYSON') {
-        messageElement.innerHTML = '✓ Promo code accepted!';
-        messageElement.style.display = 'block';
-        messageElement.style.color = '#4caf50'; // Green color for success
-        
-        // Show the promo notice above the button
-        const promoNotice = document.getElementById('promo-notice');
-        if (promoNotice) {
-            promoNotice.style.display = 'block';
-        }
-        
-        // Store the coupon for reference
-        appliedCoupon = code;
-        
-        // Add note to order data
-        if (window.orderData) {
-            window.orderData.promoCode = code;
-        }
-    } else {
-        messageElement.textContent = 'Invalid promo code';
-        messageElement.style.display = 'block';
-        messageElement.style.color = '#d32f2f';
-        
-        // Hide promo notice if shown
-        const promoNotice = document.getElementById('promo-notice');
-        if (promoNotice) {
-            promoNotice.style.display = 'none';
-        }
-    }
 }
 
 // Handle back navigation
