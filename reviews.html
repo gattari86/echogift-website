@@ -65,7 +65,7 @@
                     
                     <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 32px; text-align: center;">Leave a Review</h2>
                     
-                    <form id="review-form" action="https://formspree.io/f/xqalgreg" method="POST" style="font-family: 'Lato', sans-serif;">
+                    <form id="review-form" action="https://formspree.io/f/xqalgreg" method="POST" enctype="multipart/form-data" style="font-family: 'Lato', sans-serif;">
                         <!-- Personal Information -->
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
                             <div>
@@ -115,11 +115,30 @@
                             <textarea id="review-text" name="review-text" required rows="6" placeholder="Tell us about your experience with EchoGift. How did the song make you or your recipient feel? What was special about it?" style="width: 100%; padding: 16px; border: 2px solid rgba(232, 201, 207, 0.3); border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 16px; resize: vertical; transition: var(--transition);"></textarea>
                         </div>
 
+                        <!-- Photo/Video Upload -->
+                        <div style="margin-bottom: 24px;">
+                            <label style="display: block; font-weight: 600; color: var(--deep-indigo); margin-bottom: 8px;">Share a Photo or Video (Optional)</label>
+                            <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; line-height: 1.5;">Upload a photo or video of the recipient's reaction, the song being played, or any moment related to your EchoGift experience. This helps others see the emotional impact of personalized songs.</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <div>
+                                    <label for="photo-upload" style="display: block; font-weight: 500; color: var(--deep-indigo); margin-bottom: 8px; font-size: 14px;">📷 Upload Photo</label>
+                                    <input type="file" id="photo-upload" name="photo-upload" accept="image/*" style="width: 100%; padding: 12px; border: 2px solid rgba(232, 201, 207, 0.3); border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 14px; background: white; transition: var(--transition);">
+                                    <small style="color: var(--text-secondary); font-size: 12px;">JPG, PNG, or GIF (max 10MB)</small>
+                                </div>
+                                <div>
+                                    <label for="video-upload" style="display: block; font-weight: 500; color: var(--deep-indigo); margin-bottom: 8px; font-size: 14px;">🎥 Upload Video</label>
+                                    <input type="file" id="video-upload" name="video-upload" accept="video/*" style="width: 100%; padding: 12px; border: 2px solid rgba(232, 201, 207, 0.3); border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 14px; background: white; transition: var(--transition);">
+                                    <small style="color: var(--text-secondary); font-size: 12px;">MP4, MOV, or AVI (max 50MB)</small>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 13px; margin-top: 12px; font-style: italic;">💡 <strong>Ideas:</strong> Capture the moment they first hear their song, a video of them singing along, or photos of the custom artwork displayed in their space.</p>
+                        </div>
+
                         <!-- Permission -->
                         <div style="margin-bottom: 32px;">
                             <label style="display: flex; align-items: center; cursor: pointer;">
                                 <input type="checkbox" id="permission" name="permission" required style="margin-right: 12px; transform: scale(1.2);">
-                                <span style="color: var(--text-secondary); line-height: 1.5;">I give EchoGift permission to use my review and name on their website, marketing materials, and social media to help others discover personalized songs.</span>
+                                <span style="color: var(--text-secondary); line-height: 1.5;">I give EchoGift permission to use my review, name, and any uploaded photos/videos on their website, marketing materials, and social media to help others discover personalized songs. I understand that any submitted media may be featured in testimonials and promotional content.</span>
                             </label>
                         </div>
 
@@ -274,12 +293,49 @@
                 });
             });
             
+            // File upload validation
+            const photoUpload = document.getElementById('photo-upload');
+            const videoUpload = document.getElementById('video-upload');
+            
+            photoUpload.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file && file.size > 10 * 1024 * 1024) { // 10MB limit
+                    alert('Photo file size must be less than 10MB. Please choose a smaller file.');
+                    this.value = '';
+                }
+            });
+            
+            videoUpload.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file && file.size > 50 * 1024 * 1024) { // 50MB limit
+                    alert('Video file size must be less than 50MB. Please choose a smaller file.');
+                    this.value = '';
+                }
+            });
+            
             // Form submission validation
             document.getElementById('review-form').addEventListener('submit', function(e) {
                 if (!ratingInput.value) {
                     e.preventDefault();
                     alert('Please select a star rating before submitting your review.');
                     return;
+                }
+                
+                // Show loading state for file uploads
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                const photoFile = photoUpload.files[0];
+                const videoFile = videoUpload.files[0];
+                
+                if (photoFile || videoFile) {
+                    submitBtn.textContent = 'Uploading files...';
+                    submitBtn.disabled = true;
+                    
+                    // Re-enable after a delay to prevent multiple submissions
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 5000);
                 }
                 
                 // Update subject line with reviewer name
