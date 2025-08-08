@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Order form submission
     if (orderForm) {
-        orderForm.addEventListener('submit', function(e) {
+        orderForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Get form data
@@ -119,12 +119,95 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             
-            // Store in session storage for checkout page
-            sessionStorage.setItem('orderData', JSON.stringify(orderData));
-            
-            // Redirect to checkout
-            window.location.href = 'checkout.html';
+            // Check if this is the Elyson free option
+            if (data['product-type'] === 'elyson') {
+                // Handle Elyson free order - skip checkout
+                await handleElysonOrder(orderData);
+            } else {
+                // Store in session storage for checkout page
+                sessionStorage.setItem('orderData', JSON.stringify(orderData));
+                
+                // Redirect to checkout
+                window.location.href = 'checkout.html';
+            }
         });
+    }
+    
+    // Handle Elyson free order submission
+    async function handleElysonOrder(orderData) {
+        try {
+            // Show loading state
+            const submitBtn = orderForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+            
+            // Send order details via email
+            await sendElysonOrderEmail(orderData);
+            
+            // Show success message
+            alert('🎉 Your free Elyson order has been submitted successfully! You will receive a confirmation email shortly.');
+            
+            // Reset form
+            orderForm.reset();
+            
+            // Redirect to success page with free parameter
+            window.location.href = 'success.html?free=true&elyson=true';
+            
+        } catch (error) {
+            console.error('Elyson order submission failed:', error);
+            alert('There was an error submitting your order. Please try again or contact hello@echogifts.shop');
+            
+            // Reset button
+            const submitBtn = orderForm.querySelector('button[type="submit"]');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    }
+    
+    // Send Elyson order details via email
+    async function sendElysonOrderEmail(orderData) {
+        const emailData = {
+            _subject: `🎵 FREE ELYSON ORDER - ${orderData.recipientName} (${orderData.occasion})`,
+            _template: 'box',
+            _next: window.location.href,
+            
+            // Order Summary
+            'Order Type': 'ELYSON SPECIAL - FREE',
+            'Customer Email': orderData.email,
+            'Order Date': new Date().toLocaleDateString(),
+            
+            // Song Details
+            'Recipient Name': orderData.recipientName,
+            'Occasion': orderData.occasion,
+            'Genre': orderData.genre,
+            'Tone': orderData.tone,
+            'Language': orderData.languagePreference || 'English',
+            
+            // Customer Story
+            'Story & Themes': orderData.storyThemes,
+            'Artwork Inspiration': orderData.artworkInspiration || 'None provided',
+            
+            // Technical details
+            'Order Source': 'echogifts.shop',
+            'Order ID': 'ELYSON-' + Date.now(),
+            'Status': 'FREE ORDER - NO PAYMENT REQUIRED',
+            'Special Notes': 'This is a free Elyson special order - no payment processing needed'
+        };
+        
+        const response = await fetch('https://formspree.io/f/xkgzqpyy', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(emailData)
+        });
+        
+        if (!response.ok) {
+            throw new Error('Failed to send Elyson order email');
+        }
+        
+        return response.json();
     }
     
     // Vinyl waitlist form (now handled by Formspree)
