@@ -41,6 +41,10 @@
                                 <span>Subtotal:</span>
                                 <span id="subtotal">$79.00</span>
                             </div>
+                            <div class="total-row" id="discount-row" style="display: none; color: var(--terracotta);">
+                                <span>Discount:</span>
+                                <span id="discount-amount">-$0.00</span>
+                            </div>
                             <div class="total-row final-total">
                                 <span>Total:</span>
                                 <span id="final-total">$79.00</span>
@@ -57,6 +61,15 @@
                             <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" required readonly>
                             <small class="form-help">This email will be used for your receipt and order updates</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="coupon">Promo Code (Optional)</label>
+                            <div style="display: flex; gap: 10px;">
+                                <input type="text" id="coupon" name="coupon" placeholder="Enter promo code" style="flex: 1;">
+                                <button type="button" id="apply-coupon" class="cta-button secondary" style="padding: 12px 24px; font-size: 14px;">Apply</button>
+                            </div>
+                            <small class="form-help" id="coupon-message" style="display: none;"></small>
                         </div>
 
                         <div class="checkout-info">

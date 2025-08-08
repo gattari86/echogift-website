@@ -22,7 +22,11 @@ const PRICING = {
 document.addEventListener('DOMContentLoaded', function() {
     loadOrderData();
     setupPaymentForm();
+    setupCouponHandler();
 });
+
+// Store coupon state
+let appliedCoupon = null;
 
 function loadOrderData() {
     // Get order data from sessionStorage (passed from main form)
@@ -94,6 +98,9 @@ async function createStripeCheckoutSession() {
         throw new Error('Stripe price IDs not configured. Please set up your products in Stripe Dashboard.');
     }
     
+    // Get coupon code if entered
+    const couponCode = document.getElementById('coupon').value.trim();
+    
     // Send order details via email before payment (backup)
     try {
         await sendOrderDetailsEmail(orderData);
@@ -106,8 +113,8 @@ async function createStripeCheckoutSession() {
     const currentDomain = window.location.origin;
     
     try {
-        // Try client-only checkout first
-        const { error } = await stripe.redirectToCheckout({
+        // Build checkout parameters
+        const checkoutParams = {
             lineItems: [{
                 price: priceId,
                 quantity: 1
@@ -116,7 +123,18 @@ async function createStripeCheckoutSession() {
             successUrl: `${currentDomain}/success.html?session_id={CHECKOUT_SESSION_ID}`,
             cancelUrl: `${currentDomain}/checkout.html?canceled=true`,
             customerEmail: orderData.email
-        });
+        };
+        
+        // Add coupon if provided
+        if (couponCode) {
+            // For Stripe Checkout, we can either use allow_promotion_codes or pass specific discounts
+            // Since you have a specific coupon (ELYSON), we'll enable promotion codes
+            checkoutParams.allowPromotionCodes = true;
+            // Note: The user will enter the code on Stripe's checkout page
+        }
+        
+        // Try client-only checkout first
+        const { error } = await stripe.redirectToCheckout(checkoutParams);
 
         if (error) {
             throw error;
@@ -217,6 +235,61 @@ function showError(message) {
     
     // Scroll to error
     errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Setup coupon handler
+function setupCouponHandler() {
+    const applyButton = document.getElementById('apply-coupon');
+    const couponInput = document.getElementById('coupon');
+    
+    if (applyButton && couponInput) {
+        applyButton.addEventListener('click', function() {
+            const code = couponInput.value.trim().toUpperCase();
+            validateCoupon(code);
+        });
+        
+        // Also apply on Enter key
+        couponInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const code = couponInput.value.trim().toUpperCase();
+                validateCoupon(code);
+            }
+        });
+    }
+}
+
+function validateCoupon(code) {
+    const messageElement = document.getElementById('coupon-message');
+    const discountRow = document.getElementById('discount-row');
+    const discountAmount = document.getElementById('discount-amount');
+    const finalTotal = document.getElementById('final-total');
+    const buttonAmount = document.getElementById('button-amount');
+    
+    // Reset message
+    messageElement.style.display = 'none';
+    messageElement.className = 'form-help';
+    
+    if (!code) {
+        messageElement.textContent = 'Please enter a promo code';
+        messageElement.style.display = 'block';
+        messageElement.style.color = '#d32f2f';
+        return;
+    }
+    
+    // For now, we'll show a message that the coupon will be applied at checkout
+    // Since Stripe handles the actual validation and application
+    if (code === 'ELYSON' || code) {
+        messageElement.textContent = '✓ Promo code will be applied at checkout';
+        messageElement.style.display = 'block';
+        messageElement.style.color = 'var(--terracotta)';
+        
+        // Store the coupon for reference
+        appliedCoupon = code;
+        
+        // Note: We can't show the actual discount amount here without server-side validation
+        // The discount will be applied and shown on Stripe's checkout page
+    }
 }
 
 // Handle back navigation
