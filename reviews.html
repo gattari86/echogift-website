@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - Share Your EchoGift Experience</title>
+    <meta name="description" content="Share your EchoGift experience and read what others are saying about their personalized songs. Help others discover the magic of custom music gifts.">
+    <meta name="keywords" content="EchoGift reviews, customer testimonials, personalized song reviews, custom music feedback">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://echogifts.shop/reviews.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://echogifts.shop/reviews.html">
+    <meta property="og:title" content="Customer Reviews - EchoGift">
+    <meta property="og:description" content="See what customers are saying about their personalized song gifts from EchoGift.">
+    <meta property="og:image" content="https://echogifts.shop/blog-images/happiness-science.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">EchoGift</a>
+                <div class="nav-menu">
+                    <a href="gallery.html" class="nav-link">🎵 Gallery</a>
+                    <a href="single-song.html" class="nav-link">Single Song ($79)</a>
+                    <a href="album-gift.html" class="nav-link">Album Gift ($299)</a>
+                    <a href="blog.html" class="nav-link">📝 Blog</a>
+                    <a href="index.html#order" class="nav-cta">Order Now</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Reviews Hero Section -->
+    <section style="background: var(--gradient-warm); padding: 100px 0; position: relative; overflow: hidden;">
+        <!-- Premium Background Layer -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/hero_emotional/joy_through_tears_premium.jpg') center center / cover no-repeat; opacity: 0.08;"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
+        <div class="container" style="position: relative; z-index: 3;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h1 style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--deep-indigo); margin-bottom: 24px; line-height: 1.2;">Share Your EchoGift Experience</h1>
+                <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.6; max-width: 700px; margin: 0 auto;">Your story matters. Help others discover the magic of personalized songs by sharing your experience with EchoGift.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Form Section -->
+    <section style="padding: 100px 0; background: white; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('assets/premium/premium_textures/elegant_beige_marble_luxury.jpg') center center / cover no-repeat; opacity: 0.02;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div style="background: rgba(255, 255, 255, 0.9); border-radius: 16px; padding: 48px; box-shadow: var(--shadow-lg); backdrop-filter: blur(20px); border: 1px solid rgba(232, 201, 207, 0.2);">
+                    
+                    <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 32px; text-align: center;">Leave a Review</h2>
+                    
+                    <form id="review-form" action="https://formspree.io/f/xqalgreg" method="POST" style="font-family: 'Lato', sans-serif;">
+                        <!-- Personal Information -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
+                            <div>
+                                <label for="reviewer-name" style="display: block; font-weight: 600; color: var(--deep-indigo); margin-bottom: 8px;">Your Name</label>
+                                <input type="text" id="reviewer-name" name="reviewer-name" required style="width: 100%; padding: 16px; border: 2px solid rgba(232, 201, 207, 0.3); border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 16px; transition: var(--transition);">
+                            </div>
+                            <div>
+                                <label for="reviewer-email" style="display: block; font-weight: 600; color: var(--deep-indigo); margin-bottom: 8px;">Email Address</label>
+                                <input type="email" id="reviewer-email" name="reviewer-email" required style="width: 100%; padding: 16px; border: 2px solid rgba(232, 201, 207, 0.3); border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 16px; transition: var(--transition);">
+                            </div>
+                        </div>
+
+                        <!-- Order Information -->
+                        <div style="margin-bottom: 24px;">
+                            <label for="order-number" style="display: block; font-weight: 600; color: var(--deep-indigo); margin-bottom: 8px;">Order Number (Optional)</label>
+                            <input type="text" id="order-number" name="order-number" placeholder="EG-1234567890 or ELYSON-123456" style="width: 100%; padding: 16px; border: 2px solid rgba(232, 201, 207, 0.3); border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 16px; transition: var(--transition);">
+                        </div>
+
+                        <!-- Product Type -->
+                        <div style="margin-bottom: 24px;">
+                            <label for="product-type" style="display: block; font-weight: 600; color: var(--deep-indigo); margin-bottom: 8px;">What did you order?</label>
+                            <select id="product-type" name="product-type" required style="width: 100%; padding: 16px; border: 2px solid rgba(232, 201, 207, 0.3); border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 16px; background: white;">
+                                <option value="">Select your order</option>
+                                <option value="single">Single Song ($79)</option>
+                                <option value="album">5-Song Album ($299)</option>
+                                <option value="elyson">Elyson Special (Free)</option>
+                            </select>
+                        </div>
+
+                        <!-- Star Rating -->
+                        <div style="margin-bottom: 32px;">
+                            <label style="display: block; font-weight: 600; color: var(--deep-indigo); margin-bottom: 16px;">Overall Rating</label>
+                            <div class="star-rating" id="star-rating" style="display: flex; gap: 8px; justify-content: center; margin-bottom: 8px;">
+                                <span class="star" data-rating="1" style="font-size: 32px; color: #ddd; cursor: pointer; transition: var(--transition);">★</span>
+                                <span class="star" data-rating="2" style="font-size: 32px; color: #ddd; cursor: pointer; transition: var(--transition);">★</span>
+                                <span class="star" data-rating="3" style="font-size: 32px; color: #ddd; cursor: pointer; transition: var(--transition);">★</span>
+                                <span class="star" data-rating="4" style="font-size: 32px; color: #ddd; cursor: pointer; transition: var(--transition);">★</span>
+                                <span class="star" data-rating="5" style="font-size: 32px; color: #ddd; cursor: pointer; transition: var(--transition);">★</span>
+                            </div>
+                            <input type="hidden" id="rating" name="rating" required>
+                            <p id="rating-text" style="text-align: center; color: var(--text-secondary); font-style: italic; margin-top: 8px;">Click to rate your experience</p>
+                        </div>
+
+                        <!-- Written Review -->
+                        <div style="margin-bottom: 24px;">
+                            <label for="review-text" style="display: block; font-weight: 600; color: var(--deep-indigo); margin-bottom: 8px;">Your Review</label>
+                            <textarea id="review-text" name="review-text" required rows="6" placeholder="Tell us about your experience with EchoGift. How did the song make you or your recipient feel? What was special about it?" style="width: 100%; padding: 16px; border: 2px solid rgba(232, 201, 207, 0.3); border-radius: 8px; font-family: 'Lato', sans-serif; font-size: 16px; resize: vertical; transition: var(--transition);"></textarea>
+                        </div>
+
+                        <!-- Permission -->
+                        <div style="margin-bottom: 32px;">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" id="permission" name="permission" required style="margin-right: 12px; transform: scale(1.2);">
+                                <span style="color: var(--text-secondary); line-height: 1.5;">I give EchoGift permission to use my review and name on their website, marketing materials, and social media to help others discover personalized songs.</span>
+                            </label>
+                        </div>
+
+                        <!-- Hidden Fields for Formspree -->
+                        <input type="hidden" name="_subject" value="⭐ NEW CUSTOMER REVIEW">
+                        <input type="hidden" name="_template" value="box">
+                        <input type="hidden" name="_next" value="https://echogifts.shop/reviews.html?success=true">
+                        <input type="hidden" name="Review Source" value="EchoGift Reviews Page">
+                        <input type="hidden" name="Submission Date" id="submission-date">
+                        
+                        <!-- Submit Button -->
+                        <div style="text-align: center;">
+                            <button type="submit" class="cta-button" style="padding: 18px 48px; font-size: 18px;">Submit Review</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Existing Reviews Section -->
+    <section style="padding: 100px 0; background: var(--cream); position: relative;">
+        <div class="container">
+            <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 48px; text-align: center;">What Our Customers Are Saying</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; max-width: 1200px; margin: 0 auto;">
+                <!-- Sample Review 1 -->
+                <div style="background: white; border-radius: 16px; padding: 32px; box-shadow: var(--shadow); position: relative;">
+                    <div style="display: flex; gap: 4px; margin-bottom: 16px; color: var(--luxury-gold);">
+                        <span style="font-size: 20px;">★★★★★</span>
+                    </div>
+                    <p style="font-family: 'Lato', sans-serif; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; font-style: italic;">"The song for our 25th anniversary brought tears to our eyes. Every detail from our story was perfectly woven into the music. It's now our favorite song to play together."</p>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 48px; height: 48px; background: var(--gradient-luxury); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Prata', serif; font-weight: 600;">M</div>
+                        <div>
+                            <h4 style="font-family: 'Lato', sans-serif; font-weight: 600; color: var(--deep-indigo); margin-bottom: 4px;">Margaret S.</h4>
+                            <p style="font-family: 'Lato', sans-serif; color: var(--text-secondary); font-size: 14px; margin: 0;">5-Song Album</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Review 2 -->
+                <div style="background: white; border-radius: 16px; padding: 32px; box-shadow: var(--shadow); position: relative;">
+                    <div style="display: flex; gap: 4px; margin-bottom: 16px; color: var(--luxury-gold);">
+                        <span style="font-size: 20px;">★★★★★</span>
+                    </div>
+                    <p style="font-family: 'Lato', sans-serif; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; font-style: italic;">"My mom cried when she heard the song I made for her 70th birthday. It captured our entire relationship and all the memories we've shared. Best gift I've ever given."</p>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 48px; height: 48px; background: var(--gradient-luxury); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Prata', serif; font-weight: 600;">J</div>
+                        <div>
+                            <h4 style="font-family: 'Lato', sans-serif; font-weight: 600; color: var(--deep-indigo); margin-bottom: 4px;">Jennifer L.</h4>
+                            <p style="font-family: 'Lato', sans-serif; color: var(--text-secondary); font-size: 14px; margin: 0;">Single Song</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Review 3 -->
+                <div style="background: white; border-radius: 16px; padding: 32px; box-shadow: var(--shadow); position: relative;">
+                    <div style="display: flex; gap: 4px; margin-bottom: 16px; color: var(--luxury-gold);">
+                        <span style="font-size: 20px;">★★★★★</span>
+                    </div>
+                    <p style="font-family: 'Lato', sans-serif; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; font-style: italic;">"The quality exceeded my expectations. The song perfectly captured our wedding day emotions and included details I didn't even know I mentioned. Simply beautiful."</p>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 48px; height: 48px; background: var(--gradient-luxury); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Prata', serif; font-weight: 600;">D</div>
+                        <div>
+                            <h4 style="font-family: 'Lato', sans-serif; font-weight: 600; color: var(--deep-indigo); margin-bottom: 4px;">David R.</h4>
+                            <p style="font-family: 'Lato', sans-serif; color: var(--text-secondary); font-size: 14px; margin: 0;">Single Song</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>EchoGift</h3>
+                    <p>Your story, your song.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="blog.html">Blog</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="mailto:hello@echogifts.shop">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EchoGift. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Star Rating Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star');
+            const ratingInput = document.getElementById('rating');
+            const ratingText = document.getElementById('rating-text');
+            
+            // Set submission date
+            document.getElementById('submission-date').value = new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            const ratingTexts = [
+                'Poor - Not satisfied',
+                'Fair - Below expectations', 
+                'Good - Satisfied',
+                'Very Good - Exceeded expectations',
+                'Excellent - Outstanding experience'
+            ];
+            
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = parseInt(this.dataset.rating);
+                    ratingInput.value = rating;
+                    ratingText.textContent = ratingTexts[rating - 1];
+                    
+                    // Update star colors
+                    stars.forEach((s, index) => {
+                        if (index < rating) {
+                            s.style.color = 'var(--luxury-gold)';
+                        } else {
+                            s.style.color = '#ddd';
+                        }
+                    });
+                });
+                
+                // Hover effect
+                star.addEventListener('mouseenter', function() {
+                    const rating = parseInt(this.dataset.rating);
+                    stars.forEach((s, index) => {
+                        if (index < rating) {
+                            s.style.color = 'var(--luxury-gold)';
+                        } else {
+                            s.style.color = '#ddd';
+                        }
+                    });
+                });
+            });
+            
+            // Form submission validation
+            document.getElementById('review-form').addEventListener('submit', function(e) {
+                if (!ratingInput.value) {
+                    e.preventDefault();
+                    alert('Please select a star rating before submitting your review.');
+                    return;
+                }
+                
+                // Update subject line with reviewer name
+                const subjectField = this.querySelector('input[name="_subject"]');
+                const reviewerName = document.getElementById('reviewer-name').value;
+                if (reviewerName) {
+                    subjectField.value = '⭐ NEW CUSTOMER REVIEW - ' + reviewerName;
+                }
+                
+                // Form will submit to Formspree
+            });
+            
+            // Check for success parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                alert('🎉 Thank you for your review! We appreciate your feedback and will review it shortly.');
+                // Remove success parameter from URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
+    </script>
+</body>
+</html>
