@@ -161,8 +161,13 @@ async function createStripeCheckoutSession() {
             // The code is already included in the order email
             console.log('ELYSON promo code will be processed after payment');
         } else if (couponCode && couponCode !== 'ELYSON') {
-            // For other codes, show a message
-            alert('This promo code is not recognized. Please check the code and try again.');
+            // For invalid codes, show error in the UI instead of alert
+            const messageElement = document.getElementById('coupon-message');
+            if (messageElement) {
+                messageElement.textContent = 'Invalid promo code. Please check and try again.';
+                messageElement.style.display = 'block';
+                messageElement.style.color = '#d32f2f';
+            }
             // Don't proceed to checkout
             throw new Error('Invalid promo code');
         }
