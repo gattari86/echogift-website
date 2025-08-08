@@ -302,10 +302,6 @@ function setupCouponHandler() {
 
 function validateCoupon(code) {
     const messageElement = document.getElementById('coupon-message');
-    const discountRow = document.getElementById('discount-row');
-    const discountAmount = document.getElementById('discount-amount');
-    const finalTotal = document.getElementById('final-total');
-    const buttonAmount = document.getElementById('button-amount');
     
     // Reset message
     messageElement.style.display = 'none';
@@ -320,21 +316,9 @@ function validateCoupon(code) {
     
     // Check if it's the ELYSON code
     if (code === 'ELYSON') {
-        messageElement.innerHTML = '✓ Promo code accepted! Your discount will be automatically applied after checkout.';
+        messageElement.innerHTML = '✓ Promo code accepted!';
         messageElement.style.display = 'block';
         messageElement.style.color = '#4caf50'; // Green color for success
-        
-        // Show discount row with estimated discount (you can adjust the percentage)
-        // Assuming ELYSON gives a certain discount
-        const subtotal = window.orderTotal || 79;
-        const discountPercent = 0.20; // 20% discount - adjust based on your actual coupon
-        const discountValue = subtotal * discountPercent;
-        const newTotal = subtotal - discountValue;
-        
-        discountRow.style.display = 'flex';
-        discountAmount.textContent = `-$${discountValue.toFixed(2)}`;
-        finalTotal.textContent = `$${newTotal.toFixed(2)}`;
-        buttonAmount.textContent = `${subtotal.toFixed(2)} (discount applied after checkout)`;
         
         // Show the promo notice above the button
         const promoNotice = document.getElementById('promo-notice');
@@ -354,14 +338,11 @@ function validateCoupon(code) {
         messageElement.style.display = 'block';
         messageElement.style.color = '#d32f2f';
         
-        // Hide discount row and promo notice if shown
-        discountRow.style.display = 'none';
+        // Hide promo notice if shown
         const promoNotice = document.getElementById('promo-notice');
         if (promoNotice) {
             promoNotice.style.display = 'none';
         }
-        finalTotal.textContent = `$${(window.orderTotal || 79).toFixed(2)}`;
-        buttonAmount.textContent = `${(window.orderTotal || 79).toFixed(2)}`;
     }
 }
 
