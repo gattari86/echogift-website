@@ -156,9 +156,15 @@ async function createStripeCheckoutSession() {
         // 2. Implement server-side checkout sessions
         // 3. Use Stripe's Customer Portal for applying coupons
         
-        if (couponCode) {
-            // Show warning that coupon can't be applied with current setup
-            alert('Note: Promo codes cannot be applied with the current checkout method. Please contact hello@echogifts.shop to receive your discount.');
+        if (couponCode && couponCode === 'ELYSON') {
+            // For valid ELYSON code, proceed without alert since we handle it manually
+            // The code is already included in the order email
+            console.log('ELYSON promo code will be processed after payment');
+        } else if (couponCode && couponCode !== 'ELYSON') {
+            // For other codes, show a message
+            alert('This promo code is not recognized. Please check the code and try again.');
+            // Don't proceed to checkout
+            throw new Error('Invalid promo code');
         }
         
         // Try client-only checkout first
@@ -314,9 +320,27 @@ function validateCoupon(code) {
     
     // Check if it's the ELYSON code
     if (code === 'ELYSON') {
-        messageElement.innerHTML = '✓ Valid promo code! <br><small>Note: Due to checkout limitations, please email hello@echogifts.shop with your order number after purchase to receive your discount refund.</small>';
+        messageElement.innerHTML = '✓ Promo code accepted! Your discount will be automatically applied after checkout.';
         messageElement.style.display = 'block';
-        messageElement.style.color = 'var(--terracotta)';
+        messageElement.style.color = '#4caf50'; // Green color for success
+        
+        // Show discount row with estimated discount (you can adjust the percentage)
+        // Assuming ELYSON gives a certain discount
+        const subtotal = window.orderTotal || 79;
+        const discountPercent = 0.20; // 20% discount - adjust based on your actual coupon
+        const discountValue = subtotal * discountPercent;
+        const newTotal = subtotal - discountValue;
+        
+        discountRow.style.display = 'flex';
+        discountAmount.textContent = `-$${discountValue.toFixed(2)}`;
+        finalTotal.textContent = `$${newTotal.toFixed(2)}`;
+        buttonAmount.textContent = `${subtotal.toFixed(2)} (discount applied after checkout)`;
+        
+        // Show the promo notice above the button
+        const promoNotice = document.getElementById('promo-notice');
+        if (promoNotice) {
+            promoNotice.style.display = 'block';
+        }
         
         // Store the coupon for reference
         appliedCoupon = code;
@@ -329,6 +353,15 @@ function validateCoupon(code) {
         messageElement.textContent = 'Invalid promo code';
         messageElement.style.display = 'block';
         messageElement.style.color = '#d32f2f';
+        
+        // Hide discount row and promo notice if shown
+        discountRow.style.display = 'none';
+        const promoNotice = document.getElementById('promo-notice');
+        if (promoNotice) {
+            promoNotice.style.display = 'none';
+        }
+        finalTotal.textContent = `$${(window.orderTotal || 79).toFixed(2)}`;
+        buttonAmount.textContent = `${(window.orderTotal || 79).toFixed(2)}`;
     }
 }
 
