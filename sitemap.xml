@@ -81,6 +81,17 @@
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
+    <url>
+        <loc>https://echogifts.shop/blog/holiday-gift-guide-personalized-songs.html</loc>
+        <lastmod>2025-08-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://echogifts.shop/blog/images/holiday-gifting-echogifts.png</image:loc>
+            <image:title>Holiday Gift Guide - Personalized Songs for Christmas</image:title>
+            <image:caption>Perfect holiday gifting with personalized songs from EchoGift</image:caption>
+        </image:image>
+    </url>
     
     <!-- SEO Landing Pages -->
     <url>
