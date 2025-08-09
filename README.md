@@ -9,7 +9,7 @@ A sleek, minimalist website for EchoGift, offering personalized AI-generated son
 ## Features
 
 - **Hero Section** with compelling headline and call-to-action
-- **Pricing Display** for single songs ($79) and albums ($299)
+- **Pricing Display** for single songs ($49.99) and albums ($199.99)
 - **Interactive Order Form** with comprehensive customization options
 - **Vinyl Waitlist** for upcoming physical products
 - **Customer Testimonials** showcasing emotional impact

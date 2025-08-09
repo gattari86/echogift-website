@@ -3,8 +3,8 @@ const stripe = Stripe('pk_live_51RTWhNEinaZMSMtjUEnWpzUPDC8KZBlFOy9O4Is2iG6KDg0C
 
 // Product pricing and Stripe Price IDs
 const STRIPE_PRICES = {
-    single: 'price_1RsuIhEinaZMSMtjh8LOF9vc', // $79 Personalized Song
-    album: 'price_1RsuIqEinaZMSMtjlfcmwgvI'   // $299 Custom Song Album
+    single: 'price_1RsuIhEinaZMSMtjh8LOF9vc', // $49.99 Personalized Song
+    album: 'price_1RsuIqEinaZMSMtjlfcmwgvI'   // $199.99 Custom Song Album
 };
 
 // Alternative: Use Payment Links (more reliable than client-only checkout)
@@ -18,8 +18,8 @@ const PAYMENT_LINKS = {
 const USE_PAYMENT_LINKS = false;
 
 const PRICING = {
-    single: { price: 79.00, name: 'Personalized Song', description: 'Custom AI-generated song with your story + custom artwork' },
-    album: { price: 299.00, name: 'Custom Song Album', description: '5 personalized songs telling your complete story + custom artwork' }
+    single: { price: 49.99, name: 'Personalized Song', description: 'Custom AI-generated song with your story + custom artwork' },
+    album: { price: 199.99, name: 'Custom Song Album', description: '5 personalized songs telling your complete story + custom artwork' }
 };
 
 // Initialize checkout page
@@ -172,7 +172,7 @@ async function sendOrderDetailsEmail(orderData) {
         _next: window.location.href, // Stay on current page
         
         // Order Summary
-        'Order Type': orderData.productType === 'single' ? 'Personalized Song ($79)' : 'Custom Album ($299)',
+        'Order Type': orderData.productType === 'single' ? 'Personalized Song ($49.99)' : 'Custom Album ($199.99)',
         'Customer Email': orderData.email,
         'Order Date': new Date().toLocaleDateString(),
         
@@ -221,7 +221,7 @@ async function sendOrderDetailsEmail(orderData) {
 
 function getEstimatedDelivery() {
     const deliveryDate = new Date();
-    deliveryDate.setDate(deliveryDate.getDate() + 5); // 5 business days
+    deliveryDate.setDate(deliveryDate.getDate() + 2); // 2 business days
     return deliveryDate.toLocaleDateString('en-US', { 
         weekday: 'long', 
         year: 'numeric', 

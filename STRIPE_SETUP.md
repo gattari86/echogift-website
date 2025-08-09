@@ -30,8 +30,8 @@ This guide will help you set up Stripe payments for your EchoGift website.
 
 1. In your Stripe Dashboard, go to **Products**
 2. Create two products:
-   - **Personalized Song** - $79.00
-   - **Custom Song Album** - $299.00
+   - **Personalized Song** - $49.99
+   - **Custom Song Album** - $199.99
 3. Note down the Price IDs for each product
 
 ## Step 4: Set Up Server-Side Payment Processing

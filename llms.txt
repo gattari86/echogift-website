@@ -4,15 +4,15 @@
 EchoGift creates custom AI-generated songs and albums as unique, personalized gifts for any occasion. We specialize in turning personal stories into professional-quality songs with custom artwork.
 
 ## Products & Services
-- **Personalized Song ($79)**: Custom AI-generated song with personal story + custom artwork
-- **Custom Song Album ($299)**: 5 personalized songs telling complete story + custom album-inspired artwork
+- **Personalized Song ($49.99)**: Custom AI-generated song with personal story + custom artwork
+- **Custom Song Album ($199.99)**: 5 personalized songs telling complete story + custom album-inspired artwork
 - **Upcoming**: Vinyl records of custom songs
 
 ## Key Features
 - AI-powered song creation from personal stories
 - Professional quality WAV and MP3 delivery
 - Custom artwork included with every order
-- 5-day delivery timeline
+- 2-day delivery timeline
 - Secure online ordering and payment
 
 ## Target Audience
@@ -26,7 +26,7 @@ Perfect for customers seeking:
 - Custom songs for parents/family
 
 ## Competitive Advantages
-- Faster delivery than Songfinch (5 days vs weeks)
+- Faster delivery than Songfinch (2 days vs weeks)
 - AI technology for consistent quality
 - Custom artwork included
 - More affordable pricing

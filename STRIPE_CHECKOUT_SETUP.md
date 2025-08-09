@@ -21,7 +21,7 @@ You need to create two products in your Stripe Dashboard and get their Price IDs
 **Product 1: Personalized Song**
 - Name: `Personalized Song`
 - Description: `Custom AI-generated song with your story`
-- Price: `$79.00 USD`
+- Price: `$49.99 USD`
 - Billing: `One time`
 - Click **"Save product"**
 - Copy the **Price ID** (starts with `price_`)
@@ -29,7 +29,7 @@ You need to create two products in your Stripe Dashboard and get their Price IDs
 **Product 2: Custom Song Album**
 - Name: `Custom Song Album` 
 - Description: `3-5 personalized songs telling your complete story`
-- Price: `$299.00 USD`
+- Price: `$199.99 USD`
 - Billing: `One time`
 - Click **"Save product"**
 - Copy the **Price ID** (starts with `price_`)
@@ -38,8 +38,8 @@ You need to create two products in your Stripe Dashboard and get their Price IDs
 
 Once you have your Price IDs, I need to update the `checkout.js` file:
 
-1. Replace `price_1234567890abcdef` with your $79 song Price ID
-2. Replace `price_0987654321fedcba` with your $299 album Price ID
+1. Replace `price_1234567890abcdef` with your $49.99 song Price ID
+2. Replace `price_0987654321fedcba` with your $199.99 album Price ID
 
 **Send me your two Price IDs and I'll update the code for you!**
 
@@ -62,7 +62,7 @@ Once you have your Price IDs, I need to update the `checkout.js` file:
 ## 💰 Fees
 
 - **Stripe fee**: 2.9% + $0.30 per successful charge
-- **Example**: $79 song = $2.59 fee, you keep $76.41
+- **Example**: $49.99 song = $1.74 fee, you keep $48.25
 
 ## 📧 What Happens After Payment
 
