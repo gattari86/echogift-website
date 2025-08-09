@@ -157,12 +157,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
             const sessionId = urlParams.get('session_id');
-            const isElysonFree = urlParams.get('elyson') === 'true';
             
-            if (isElysonFree) {
-                // Coming from free Elyson order
-                handleElysonSuccess();
-            } else if (sessionId) {
+            if (sessionId) {
                 // Coming from Stripe Checkout
                 retrieveStripeSession(sessionId);
             } else {
@@ -179,20 +175,6 @@
             }
         });
         
-        function handleElysonSuccess() {
-            // Create confirmation data for Elyson free order
-            const confirmationData = {
-                orderId: 'ELYSON-' + Date.now().toString().slice(-6),
-                amount: 0.00,
-                productType: 'elyson',
-                productName: 'Elyson Special - FREE',
-                email: 'Free Order',
-                paymentStatus: 'No payment required',
-                isElysonFree: true
-            };
-            
-            populateOrderDetails(confirmationData);
-        }
 
         async function retrieveStripeSession(sessionId) {
             try {
@@ -234,24 +216,10 @@
             document.getElementById('order-id').textContent = confirmationData.orderId;
             document.getElementById('order-reference').textContent = confirmationData.orderId;
             
-            // Handle Elyson free orders differently
-            if (confirmationData.isElysonFree) {
-                document.getElementById('product-name').textContent = confirmationData.productName || 'Elyson Special - FREE';
-                document.getElementById('amount-paid').textContent = 'FREE';
-                document.getElementById('customer-email').textContent = 'Order submitted successfully';
-                document.getElementById('delivery-date').textContent = getEstimatedDelivery();
-                
-                // Update the page title and messaging for free orders
-                const titleElement = document.querySelector('h1');
-                if (titleElement) {
-                    titleElement.innerHTML = '<svg style="width: 24px; height: 24px; fill: var(--terracotta); margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M111.49,52.63a15.8,15.8,0,0,0-26,5.77L33.27,202.21A8,8,0,0,0,40,216a7.9,7.9,0,0,0,2.21-.31l133.79-39.67a15.8,15.8,0,0,0,5.78-26Zm-8.33,135.21-35-35,13.16-30.33,52.21,52.21Zm-55,16.5,65.86-20.07-26.44-26.44ZM176,32a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H184A8,8,0,0,1,176,32Zm24,40a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H208A8,8,0,0,1,200,72ZM80,56a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H88A8,8,0,0,1,80,56Z"/></svg>Your Free Elyson Order is Confirmed!';
-                }
-            } else {
-                document.getElementById('product-name').textContent = confirmationData.product;
-                document.getElementById('amount-paid').textContent = `$${confirmationData.amount.toFixed(2)}`;
-                document.getElementById('customer-email').textContent = confirmationData.email;
-                document.getElementById('delivery-date').textContent = confirmationData.estimatedDelivery;
-            }
+            document.getElementById('product-name').textContent = confirmationData.product;
+            document.getElementById('amount-paid').textContent = `$${confirmationData.amount.toFixed(2)}`;
+            document.getElementById('customer-email').textContent = confirmationData.email;
+            document.getElementById('delivery-date').textContent = confirmationData.estimatedDelivery;
         }
 
         function getEstimatedDelivery() {
