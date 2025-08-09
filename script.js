@@ -641,3 +641,27 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// File upload validation
+const inspirationPhotoInput = document.getElementById('inspiration-photo');
+if (inspirationPhotoInput) {
+    inspirationPhotoInput.addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            // Check file size (10MB limit)
+            if (file.size > 10 * 1024 * 1024) {
+                alert('Photo file size must be less than 10MB. Please choose a smaller file.');
+                this.value = '';
+                return;
+            }
+            
+            // Check file type
+            const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+            if (!allowedTypes.includes(file.type)) {
+                alert('Please upload a valid image file (JPG, PNG, or GIF).');
+                this.value = '';
+                return;
+            }
+        }
+    });
+}
