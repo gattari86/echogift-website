@@ -3,8 +3,8 @@ const stripe = Stripe('pk_live_51RTWhNEinaZMSMtjUEnWpzUPDC8KZBlFOy9O4Is2iG6KDg0C
 
 // Product pricing and Stripe Price IDs
 const STRIPE_PRICES = {
-    single: 'price_1RsuIhEinaZMSMtjh8LOF9vc', // $49.99 Personalized Song
-    album: 'price_1RsuIqEinaZMSMtjlfcmwgvI'   // $199.99 Custom Song Album
+    single: 'price_1Ru3HhEinaZMSMtjNgdydbeU', // $49.99 Personalized Song
+    album: 'price_1Ru3HmEinaZMSMtjN8q30bVN'   // $199.99 Custom Song Album
 };
 
 // Alternative: Use Payment Links (more reliable than client-only checkout)

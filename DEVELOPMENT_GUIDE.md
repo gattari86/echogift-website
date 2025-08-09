@@ -229,8 +229,8 @@ document.getElementById('final-total').textContent = `$${product.price.toFixed(2
 2. **Price Configuration**:
 ```javascript
 const STRIPE_PRICES = {
-    single: 'price_1RsuIhEinaZMSMtjh8LOF9vc', // $49.99
-    album: 'price_1RsuIqEinaZMSMtjlfcmwgvI'   // $199.99
+    single: 'price_1Ru3HhEinaZMSMtjNgdydbeU', // $49.99
+    album: 'price_1Ru3HmEinaZMSMtjN8q30bVN'   // $199.99
 };
 ```
 
