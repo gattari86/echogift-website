@@ -11,6 +11,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Analytics 4 with Enhanced Ecommerce -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ECHOGIFT2025"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'G-ECHOGIFT2025', {
+        enhanced_ecommerce: true,
+        conversion_linker: true,
+        allow_enhanced_conversions: true
+      });
+    </script>
 </head>
 <body>
     <!-- Navigation Header -->
@@ -220,6 +234,31 @@
             document.getElementById('amount-paid').textContent = `$${confirmationData.amount.toFixed(2)}`;
             document.getElementById('customer-email').textContent = confirmationData.email;
             document.getElementById('delivery-date').textContent = confirmationData.estimatedDelivery;
+            
+            // Track conversion with Google Analytics 4
+            if (typeof gtag !== 'undefined') {
+                // Track purchase conversion
+                gtag('event', 'purchase', {
+                    transaction_id: confirmationData.orderId,
+                    value: confirmationData.amount,
+                    currency: 'USD',
+                    items: [{
+                        item_id: confirmationData.productType || 'custom-song',
+                        item_name: confirmationData.product || 'Custom Song',
+                        category: 'Personalized Music',
+                        quantity: 1,
+                        price: confirmationData.amount
+                    }]
+                });
+                
+                // Track custom conversion event
+                gtag('event', 'song_order_complete', {
+                    event_category: 'conversion',
+                    event_label: confirmationData.product || 'Custom Song',
+                    value: confirmationData.amount,
+                    order_id: confirmationData.orderId
+                });
+            }
         }
 
         function getEstimatedDelivery() {

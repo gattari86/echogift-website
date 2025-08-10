@@ -3,6 +3,88 @@
   "name": "echogift-website",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/album",
+      "destination": "/album-gift.html",
+      "permanent": true
+    },
+    {
+      "source": "/album/",
+      "destination": "/album-gift.html",
+      "permanent": true
+    },
+    {
+      "source": "/single",
+      "destination": "/single-song.html",
+      "permanent": true
+    },
+    {
+      "source": "/single/",
+      "destination": "/single-song.html", 
+      "permanent": true
+    },
+    {
+      "source": "/song",
+      "destination": "/single-song.html",
+      "permanent": true
+    },
+    {
+      "source": "/song/",
+      "destination": "/single-song.html",
+      "permanent": true
+    },
+    {
+      "source": "/order",
+      "destination": "/index.html#order",
+      "permanent": true
+    },
+    {
+      "source": "/order/",
+      "destination": "/index.html#order",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/gallery",
+      "destination": "/gallery.html",
+      "permanent": true
+    },
+    {
+      "source": "/gallery/",
+      "destination": "/gallery.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog.html",
+      "permanent": true
+    },
+    {
+      "source": "/reviews",
+      "destination": "/reviews.html",
+      "permanent": true
+    },
+    {
+      "source": "/reviews/",
+      "destination": "/reviews.html",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
