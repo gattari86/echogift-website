@@ -73,16 +73,6 @@
       "source": "/blog/",
       "destination": "/blog.html",
       "permanent": true
-    },
-    {
-      "source": "/reviews",
-      "destination": "/reviews.html",
-      "permanent": true
-    },
-    {
-      "source": "/reviews/",
-      "destination": "/reviews.html",
-      "permanent": true
     }
   ],
   "headers": [
