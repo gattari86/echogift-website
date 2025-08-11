@@ -3,6 +3,12 @@
   "name": "echogift-website",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/reviews",
+      "destination": "/reviews.html"
+    }
+  ],
   "redirects": [
     {
       "source": "/album",
