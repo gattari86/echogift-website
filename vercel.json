@@ -49,36 +49,6 @@
       "source": "/order/",
       "destination": "/index.html#order",
       "permanent": true
-    },
-    {
-      "source": "/about",
-      "destination": "/about.html",
-      "permanent": true
-    },
-    {
-      "source": "/about/",
-      "destination": "/about.html",
-      "permanent": true
-    },
-    {
-      "source": "/gallery",
-      "destination": "/gallery.html",
-      "permanent": true
-    },
-    {
-      "source": "/gallery/",
-      "destination": "/gallery.html",
-      "permanent": true
-    },
-    {
-      "source": "/blog",
-      "destination": "/blog.html",
-      "permanent": true
-    },
-    {
-      "source": "/blog/",
-      "destination": "/blog.html",
-      "permanent": true
     }
   ],
   "headers": [
