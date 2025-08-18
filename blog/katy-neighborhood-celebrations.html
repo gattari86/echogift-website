@@ -35,6 +35,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     
+    <style>
+        .community-hero {
+            background: linear-gradient(135deg, 
+                #3b82f6 0%, 
+                #60a5fa 25%, 
+                #34d399 50%, 
+                #10b981 75%, 
+                #059669 100%);
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .community-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(52, 211, 153, 0.3) 0%, transparent 50%);
+            opacity: 0.8;
+        }
+        
+        .community-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .community-hero h1 {
+            font-family: 'Prata', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            font-weight: 300;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        
+        .community-hero .container {
+            text-align: center;
+        }
+    </style>
+    
     <!-- BlogPosting Schema with Katy Community Focus -->
     <script type="application/ld+json">
     {
@@ -77,47 +133,27 @@
     </script>
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header class="main-header">
+    <header>
         <div class="container">
-            <nav class="main-nav">
-                <a href="../index.html" class="logo">EchoGift</a>
-                <div class="nav-menu">
-                    <a href="../gallery.html" class="nav-link"><svg style="width: 16px; height: 16px; fill: var(--terracotta); margin-right: 6px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"/></svg> Gallery</a>
-                    <a href="../single-song.html" class="nav-link">Single Song ($49.99)</a>
-                    <a href="../album-gift.html" class="nav-link">Album Gift ($199.99)</a>
-                    <a href="../blog.html" class="nav-link active">Blog</a>
-                    <a href="../index.html#order" class="nav-cta">Order Now</a>
-                </div>
-                <div class="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <div class="nav-brand">
+                <h1><a href="../index.html">EchoGifts</a></h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="../index.html">Home</a>
+                <a href="../gallery.html">Gallery</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../about.html">About</a>
             </nav>
         </div>
     </header>
 
-    <!-- Blog Post Header with Premium Design -->
-    <section style="background: var(--gradient-warm); padding: 100px 0; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
-        <div class="container" style="position: relative; z-index: 3;">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <div style="display: flex; gap: 16px; justify-content: center; align-items: center; margin-bottom: 24px;">
-                    <span style="color: var(--text-secondary); font-size: 16px;">January 18, 2025</span>
-                    <div style="display: flex; gap: 8px;">
-                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">
-                            <svg style="width: 14px; height: 14px; fill: currentColor; margin-right: 4px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M172.24,99.76a6,6,0,0,1,0,8.48l-40,40a6,6,0,0,1-8.48,0l-24-24a6,6,0,0,1,8.48-8.48L128,135.51l35.76-35.75A6,6,0,0,1,172.24,99.76ZM230,128A102,102,0,1,1,128,26,102.12,102.12,0,0,1,230,128Zm-12,0a90,90,0,1,0-90,90A90.1,90.1,0,0,0,218,128Z"/></svg>
-                            Community
-                        </span>
-                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">
-                            <svg style="width: 14px; height: 14px; fill: currentColor; margin-right: 4px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM80,80a16,16,0,1,1-16,16A16,16,0,0,1,80,80Zm96,112H80a8,8,0,0,1,0-16h96a8,8,0,0,1,0,16Zm0-32H80a8,8,0,0,1,0-16h96a8,8,0,0,1,0,16Z"/></svg>
-                            Celebration
-                        </span>
-                    </div>
-                </div>
-                <h1 style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--deep-indigo); margin-bottom: 24px; line-height: 1.2;">Katy Neighborhood Celebrations: Bringing Communities Together Through Music</h1>
-                <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.6; max-width: 700px; margin: 0 auto;">Transform community gatherings, HOA events, and neighborhood milestones into memorable musical celebrations that strengthen bonds and create lasting connections among Katy residents.</p>
+    <main>
+        <section class="community-hero">
+            <div class="container">
+                <h1>Katy Neighborhood Celebrations: Bringing Communities Together</h1>
+                <p class="hero-subtitle">Transform community gatherings, HOA events, and neighborhood milestones into memorable musical celebrations that strengthen bonds and create lasting connections among Katy residents.</p>
+            </div>
+        </section>
             </div>
         </div>
     </section>
@@ -427,6 +463,7 @@
             </div>
         </div>
     </article>
+    </main>
 
     <!-- Footer CTA Section -->
     <section style="background: linear-gradient(135deg, #8B4513 0%, #CD853F 100%); padding: 80px 0; text-align: center;">

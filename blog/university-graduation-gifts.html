@@ -29,6 +29,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     
+    <style>
+        .graduation-hero {
+            background: linear-gradient(135deg, 
+                #ffd700 0%, 
+                #ffed4a 25%, 
+                #3182ce 50%, 
+                #2c5aa0 75%, 
+                #1a365d 100%);
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .graduation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(49, 130, 206, 0.3) 0%, transparent 50%);
+            opacity: 0.8;
+        }
+        
+        .graduation-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .graduation-hero h1 {
+            font-family: 'Prata', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            font-weight: 300;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        
+        .graduation-hero .container {
+            text-align: center;
+        }
+    </style>
+    
     <!-- BlogPosting Schema with Houston Universities Focus -->
     <script type="application/ld+json">
     {
@@ -80,53 +136,32 @@
     </script>
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header class="main-header">
+    <header>
         <div class="container">
-            <nav class="main-nav">
-                <a href="../index.html" class="logo">EchoGift</a>
-                <div class="nav-menu">
-                    <a href="../gallery.html" class="nav-link"><svg style="width: 16px; height: 16px; fill: var(--terracotta); margin-right: 6px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"/></svg> Gallery</a>
-                    <a href="../single-song.html" class="nav-link">Single Song ($49.99)</a>
-                    <a href="../album-gift.html" class="nav-link">Album Gift ($199.99)</a>
-                    <a href="../blog.html" class="nav-link active">Blog</a>
-                    <a href="../index.html#order" class="nav-cta">Order Now</a>
-                </div>
-                <div class="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <div class="nav-brand">
+                <h1><a href="../index.html">EchoGifts</a></h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="../index.html">Home</a>
+                <a href="../gallery.html">Gallery</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../about.html">About</a>
             </nav>
         </div>
     </header>
 
-    <!-- Blog Post Header with Premium Design -->
-    <section style="background: var(--gradient-warm); padding: 100px 0; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
-        <div class="container" style="position: relative; z-index: 3;">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <div style="display: flex; gap: 16px; justify-content: center; align-items: center; margin-bottom: 24px;">
-                    <span style="color: var(--text-secondary); font-size: 16px;">January 18, 2025</span>
-                    <div style="display: flex; gap: 8px;">
-                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">Graduation</span>
-                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">University</span>
-                    </div>
-                </div>
-                <h1 style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--deep-indigo); margin-bottom: 24px; line-height: 1.2;">University Graduation Gifts That Celebrate Success</h1>
-                <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.6; max-width: 700px; margin: 0 auto;">Honor Houston university graduates with personalized songs that capture their academic journey, from freshman year dreams to commencement day triumph.</p>
+    <main>
+        <section class="graduation-hero">
+            <div class="container">
+                <h1>University Graduation Gifts That Celebrate Success</h1>
+                <p class="hero-subtitle">Honor Houston university graduates with personalized songs that capture their academic journey, from freshman year dreams to commencement day triumph.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Blog Post Content -->
     <article style="padding: 100px 0; background: white; position: relative;">
         <div class="container" style="position: relative; z-index: 2; max-width: 800px;">
             <div style="font-family: 'Lato', sans-serif; font-size: 18px; line-height: 1.8; color: var(--text-secondary);">
-                
-                <!-- Featured Image -->
-                <img src="../SEO Echo Blog Thumbnails/University GRaduation Gifts.png" alt="University Graduation Custom Songs" style="width: 100%; height: auto; border-radius: 16px; margin-bottom: 48px; box-shadow: var(--shadow-lg);">
-
                 <p style="margin-bottom: 32px; font-size: 20px;">Graduation season in Houston brings pride, celebration, and the challenge of finding the perfect gift. As students from the University of Houston, Rice University, Texas Southern University, and other local institutions cross the stage, families seek meaningful ways to honor their achievements. Custom graduation songs capture the graduate's entire journey in a way no generic gift can match.</p>
 
                 <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">Houston Universities, Unique Traditions</h2>
@@ -414,6 +449,7 @@
             </div>
         </div>
     </article>
+    </main>
 
     <!-- Footer -->
     <footer style="background: var(--deep-indigo); color: white; padding: 48px 0; text-align: center;">
