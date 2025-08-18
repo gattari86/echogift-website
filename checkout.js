@@ -10,12 +10,12 @@ const STRIPE_PRICES = {
 // Alternative: Use Payment Links (more reliable than client-only checkout)
 // Payment Links support promotion codes natively
 const PAYMENT_LINKS = {
-    single: 'https://buy.stripe.com/YOUR_SINGLE_SONG_PAYMENT_LINK',  // Replace with your actual link
-    album: 'https://buy.stripe.com/YOUR_ALBUM_PAYMENT_LINK'   // Replace with your actual link
+    single: 'https://buy.stripe.com/14A8wPd1a7WHfjW69u97G04',  // $49.99 Single Song
+    album: 'https://buy.stripe.com/cNi5kDe5eccXefSdBW97G05'   // $199.99 Album
 };
 
 // Set this to true to use Payment Links instead of client-only checkout
-const USE_PAYMENT_LINKS = false;
+const USE_PAYMENT_LINKS = true;
 
 const PRICING = {
     single: { price: 49.99, name: 'Personalized Song', description: 'Custom AI-generated song with your story + custom artwork' },
