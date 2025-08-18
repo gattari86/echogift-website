@@ -100,6 +100,16 @@ async function createStripeCheckoutSession() {
     if (USE_PAYMENT_LINKS && PAYMENT_LINKS[orderData.productType] && !PAYMENT_LINKS[orderData.productType].includes('YOUR_')) {
         const paymentLink = PAYMENT_LINKS[orderData.productType];
         
+        // Send order details via email before payment
+        try {
+            console.log('Sending order details to Formspree...', orderData);
+            await sendOrderDetailsEmail(orderData);
+            console.log('Order details sent successfully to Formspree');
+        } catch (error) {
+            console.error('Failed to send order email backup:', error);
+            // Don't block checkout if email fails
+        }
+        
         // Build URL with prefilled email and client reference ID
         const url = new URL(paymentLink);
         url.searchParams.set('prefilled_email', orderData.email);
