@@ -29,35 +29,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     
-    <!-- BlogPosting Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": "Custom Song Genres Guide: Choose the Perfect Musical Style",
-        "description": "Complete guide to choosing the perfect music genre for your custom AI song. From pop to country, jazz to rock - find the ideal style for your story.",
-        "image": "https://echogifts.shop/blog-images/custom-genres-guide.png",
-        "author": {
-            "@type": "Organization",
-            "name": "EchoGift",
-            "url": "https://echogifts.shop"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "EchoGift",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://echogifts.shop/logo.png"
-            }
-        },
-        "datePublished": "2024-12-15",
-        "dateModified": "2024-12-15",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://echogifts.shop/blog/custom-song-genres-guide.html"
+    <style>
+        /* CSS Custom Properties */
+        :root {
+            --terracotta: #C05D3A;
+            --terracotta-rgb: 192, 93, 58;
+            --luxury-gold: #D4AC4A;
+            --luxury-gold-rgb: 212, 172, 74;
+            --deep-indigo: #3A4A6D;
+            --deep-indigo-rgb: 58, 74, 109;
+            --cream: #F8F6F1;
+            --cream-rgb: 248, 246, 241;
+            --dusty-pink: #B8A5A5;
+            --dusty-pink-rgb: 184, 165, 165;
+            
+            --gradient-warm: linear-gradient(135deg, var(--terracotta) 0%, var(--luxury-gold) 100%);
+            --gradient-subtle: linear-gradient(135deg, rgba(var(--terracotta-rgb), 0.1) 0%, rgba(var(--luxury-gold-rgb), 0.1) 100%);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.1);
         }
-    }
-    </script>
         
         /* Premium Blog Styling */
         .blog-nav {
@@ -242,6 +231,7 @@
             margin-bottom: 25px;
         }
         
+        /* Genre Grid Styling */
         .genre-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -251,65 +241,63 @@
         
         .genre-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 25px;
             padding: 35px;
-            box-shadow: 0 8px 35px rgba(0,0,0,0.1);
-            border: 1px solid #f8fafc;
-            transition: all 0.4s ease;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(0,0,0,0.05);
             position: relative;
             overflow: hidden;
         }
         
-        .genre-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: var(--genre-color);
-        }
-        
         .genre-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.18);
         }
         
-        .genre-card.pop { --genre-color: var(--terracotta); }
-        .genre-card.rock { --genre-color: var(--deep-indigo); }
-        .genre-card.country { --genre-color: var(--luxury-gold); }
-        .genre-card.rb { --genre-color: var(--dusty-pink); }
-        .genre-card.folk { --genre-color: var(--terracotta); }
-        .genre-card.jazz { --genre-color: var(--deep-indigo); }
-        .genre-card.indie { --genre-color: var(--dusty-pink); }
-        .genre-card.electronic { --genre-color: var(--luxury-gold); }
+        .genre-card.pop { border-left: 5px solid var(--terracotta); }
+        .genre-card.rock { border-left: 5px solid #ef4444; }
+        .genre-card.country { border-left: 5px solid #f59e0b; }
+        .genre-card.rb { border-left: 5px solid var(--dusty-pink); }
+        .genre-card.folk { border-left: 5px solid #10b981; }
+        .genre-card.jazz { border-left: 5px solid var(--deep-indigo); }
+        .genre-card.indie { border-left: 5px solid #8b5cf6; }
+        .genre-card.electronic { border-left: 5px solid var(--luxury-gold); }
         
         .genre-header {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 20px;
             margin-bottom: 25px;
         }
         
         .genre-icon {
-            width: 55px;
-            height: 55px;
-            border-radius: 15px;
+            width: 60px;
+            height: 60px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 26px;
-            background: var(--genre-color);
+            font-size: 28px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         
+        .genre-card.pop .genre-icon { background: var(--terracotta); }
+        .genre-card.rock .genre-icon { background: #ef4444; }
+        .genre-card.country .genre-icon { background: #f59e0b; }
+        .genre-card.rb .genre-icon { background: var(--dusty-pink); }
+        .genre-card.folk .genre-icon { background: #10b981; }
+        .genre-card.jazz .genre-icon { background: var(--deep-indigo); }
+        .genre-card.indie .genre-icon { background: #8b5cf6; }
+        .genre-card.electronic .genre-icon { background: var(--luxury-gold); }
+        
         .genre-title {
             font-family: 'Prata', serif;
-            font-size: 1.5rem;
-            font-weight: 400;
+            font-size: 1.4rem;
             color: var(--deep-indigo);
             margin: 0;
+            font-weight: 400;
         }
         
         .genre-description {
@@ -317,7 +305,7 @@
             font-size: 1rem;
             color: #6B7280;
             margin-bottom: 25px;
-            line-height: 1.7;
+            line-height: 1.6;
         }
         
         .best-for {
@@ -329,7 +317,7 @@
             font-size: 1rem;
             font-weight: 600;
             color: var(--deep-indigo);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -343,7 +331,7 @@
         
         .best-for li {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
             margin-bottom: 8px;
             font-family: 'Lato', sans-serif;
@@ -351,91 +339,70 @@
             color: #6B7280;
         }
         
-        .best-for li i {
-            color: var(--genre-color);
-            font-size: 16px;
-        }
-        
         .mood-indicator {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
+            gap: 8px;
         }
         
         .mood-tag {
-            background: rgba(var(--terracotta-rgb), 0.1);
-            color: var(--terracotta);
-            padding: 6px 14px;
-            border-radius: 25px;
-            font-family: 'Lato', sans-serif;
+            background: rgba(var(--deep-indigo-rgb), 0.1);
+            color: var(--deep-indigo);
+            padding: 4px 12px;
+            border-radius: 15px;
             font-size: 0.8rem;
             font-weight: 500;
-            border: 1px solid rgba(var(--terracotta-rgb), 0.2);
         }
         
+        /* Quick Selector Styling */
         .quick-selector {
-            background: var(--gradient-warm);
+            background: var(--cream);
             border-radius: 25px;
             padding: 50px 40px;
             margin: 60px 0;
             text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .quick-selector::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-subtle);
-            z-index: 1;
-        }
-        
-        .quick-selector > * {
-            position: relative;
-            z-index: 2;
         }
         
         .quick-selector h3 {
             font-family: 'Prata', serif;
-            color: white;
-            font-size: 2rem;
-            margin-bottom: 25px;
+            color: var(--deep-indigo);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
             font-weight: 400;
+        }
+        
+        .quick-selector > p {
+            font-family: 'Lato', sans-serif;
+            color: #6B7280;
+            margin-bottom: 35px;
+            font-size: 1.1rem;
         }
         
         .selector-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
-            margin-top: 35px;
         }
         
         .selector-item {
-            background: rgba(255,255,255,0.2);
-            border-radius: 20px;
-            padding: 30px 25px;
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.3);
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
         }
         
         .selector-item:hover {
             transform: translateY(-5px);
-            background: rgba(255,255,255,0.25);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
         
         .selector-item h4 {
             font-family: 'Lato', sans-serif;
-            color: white;
-            font-size: 1.1rem;
-            margin-bottom: 12px;
+            color: var(--deep-indigo);
+            font-size: 1rem;
             font-weight: 600;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -443,27 +410,15 @@
         
         .selector-item p {
             font-family: 'Lato', sans-serif;
-            color: rgba(255,255,255,0.9);
-            font-size: 0.95rem;
+            color: #6B7280;
+            font-size: 0.9rem;
             margin: 0;
             line-height: 1.5;
         }
         
+        /* Matching Guide Styling */
         .matching-guide {
-            background: var(--cream);
-            border-radius: 25px;
-            padding: 50px 40px;
             margin: 60px 0;
-            position: relative;
-        }
-        
-        .matching-guide h3 {
-            font-family: 'Prata', serif;
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--deep-indigo);
-            font-size: 1.8rem;
-            font-weight: 400;
         }
         
         .scenario-list {
@@ -479,20 +434,25 @@
             margin-bottom: 25px;
             padding: 25px;
             background: white;
-            border-radius: 20px;
+            border-radius: 18px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
         
-        .scenario-list .scenario-icon {
+        .scenario-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        
+        .scenario-icon {
             width: 50px;
             height: 50px;
             border-radius: 15px;
+            background: var(--gradient-warm);
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--gradient-warm);
-            color: white;
             font-size: 22px;
             flex-shrink: 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -503,64 +463,60 @@
         }
         
         .scenario-content strong {
-            font-family: 'Lato', sans-serif;
             color: var(--deep-indigo);
-            font-weight: 600;
-            font-size: 1.05rem;
         }
         
-        .scenario-content .genre-suggestion {
-            font-family: 'Lato', sans-serif;
-            color: var(--terracotta);
-            font-weight: 500;
+        .genre-suggestion {
             font-style: italic;
-            margin-top: 5px;
-            display: block;
+            color: var(--terracotta);
+            margin-top: 8px;
+            font-weight: 500;
         }
         
+        /* Tips Section Styling */
         .tips-section {
-            background: white;
+            background: var(--cream);
             border-radius: 25px;
             padding: 50px 40px;
             margin: 60px 0;
-            box-shadow: 0 8px 35px rgba(0,0,0,0.1);
-            border: 1px solid rgba(0,0,0,0.05);
         }
         
         .tips-section h3 {
             font-family: 'Prata', serif;
-            margin-bottom: 30px;
             color: var(--deep-indigo);
+            margin-bottom: 35px;
+            text-align: center;
             font-size: 1.8rem;
             font-weight: 400;
-            text-align: center;
         }
         
         .tip-item {
             display: flex;
             align-items: flex-start;
-            gap: 18px;
-            margin-bottom: 25px;
+            gap: 15px;
+            margin-bottom: 20px;
             padding: 20px;
-            background: var(--cream);
+            background: white;
             border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
         }
         
         .tip-item i {
             color: var(--terracotta);
-            font-size: 22px;
+            font-size: 20px;
             margin-top: 2px;
             flex-shrink: 0;
         }
         
         .tip-item p {
-            font-family: 'Lato', sans-serif;
             margin: 0;
-            font-size: 1.05rem;
-            color: var(--deep-indigo);
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            color: #6B7280;
             line-height: 1.6;
         }
         
+        /* CTA Section Styling */
         .cta-section {
             background: var(--gradient-warm);
             padding: 60px 50px;
@@ -651,7 +607,6 @@
             
             .genre-grid {
                 grid-template-columns: 1fr;
-                gap: 25px;
             }
             
             .selector-grid {
@@ -668,35 +623,32 @@
             }
             
             .cta-section,
-            .quick-selector,
-            .matching-guide,
-            .tips-section {
+            .tips-section,
+            .quick-selector {
                 padding: 40px 25px;
             }
         }
     </style>
     
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
+    <!-- BlogPosting Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "Custom Song Genres Guide: Choose the Perfect Musical Style",
         "description": "Complete guide to choosing the perfect music genre for your custom AI song. From pop to country, jazz to rock - find the ideal style for your story.",
-        "image": "https://echogifts.shop/assets/blog/genres-guide-thumbnail.jpg",
+        "image": "https://echogifts.shop/blog-images/custom-genres-guide.png",
         "author": {
             "@type": "Organization",
-            "name": "EchoGifts",
+            "name": "EchoGift",
             "url": "https://echogifts.shop"
         },
         "publisher": {
             "@type": "Organization",
-            "name": "EchoGifts",
+            "name": "EchoGift",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://echogifts.shop/assets/logo.png"
+                "url": "https://echogifts.shop/logo.png"
             }
         },
         "datePublished": "2024-12-15",
@@ -748,6 +700,9 @@
         ]
     }
     </script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
     <!-- Premium Navigation -->
@@ -791,342 +746,342 @@
         </p>
 
         <h2>Popular Custom Song Genres</h2>
+        
+        <div class="genre-grid">
+            <div class="genre-card pop">
+                <div class="genre-header">
+                    <div class="genre-icon">
+                        <i class="ph ph-microphone"></i>
+                    </div>
+                    <h3 class="genre-title">Pop</h3>
+                </div>
+                <p class="genre-description">
+                    Catchy, accessible, and universally appealing. Pop songs feature memorable melodies, clear structure, and contemporary production that appeals to a wide audience.
+                </p>
+                <div class="best-for">
+                    <h4><i class="ph ph-heart"></i> Best For:</h4>
+                    <ul>
+                        <li><i class="ph ph-check"></i> Birthday celebrations</li>
+                        <li><i class="ph ph-check"></i> Anniversaries (upbeat tone)</li>
+                        <li><i class="ph ph-check"></i> Graduation gifts</li>
+                        <li><i class="ph ph-check"></i> General celebration songs</li>
+                        <li><i class="ph ph-check"></i> Recipients who love mainstream music</li>
+                    </ul>
+                </div>
+                <div class="mood-indicator">
+                    <span class="mood-tag">Upbeat</span>
+                    <span class="mood-tag">Positive</span>
+                    <span class="mood-tag">Energetic</span>
+                    <span class="mood-tag">Mainstream</span>
+                </div>
+            </div>
+
+            <div class="genre-card rock">
+                <div class="genre-header">
+                    <div class="genre-icon">
+                        <i class="ph ph-guitar"></i>
+                    </div>
+                    <h3 class="genre-title">Rock/Rock Ballad</h3>
+                </div>
+                <p class="genre-description">
+                    Powerful and emotional with strong instrumentals. Rock ballads combine the energy of rock with heartfelt lyrics, perfect for impactful storytelling.
+                </p>
+                <div class="best-for">
+                    <h4><i class="ph ph-heart"></i> Best For:</h4>
+                    <ul>
+                        <li><i class="ph ph-check"></i> Overcoming challenges stories</li>
+                        <li><i class="ph ph-check"></i> Father-son relationships</li>
+                        <li><i class="ph ph-check"></i> Milestone achievements</li>
+                        <li><i class="ph ph-check"></i> Passionate love stories</li>
+                        <li><i class="ph ph-check"></i> Recipients who love classic rock</li>
+                    </ul>
+                </div>
+                <div class="mood-indicator">
+                    <span class="mood-tag">Powerful</span>
+                    <span class="mood-tag">Emotional</span>
+                    <span class="mood-tag">Inspiring</span>
+                    <span class="mood-tag">Bold</span>
+                </div>
+            </div>
+
+            <div class="genre-card country">
+                <div class="genre-header">
+                    <div class="genre-icon">
+                        <i class="ph ph-cowboy-hat"></i>
+                    </div>
+                    <h3 class="genre-title">Country</h3>
+                </div>
+                <p class="genre-description">
+                    Storytelling at its finest with heartfelt lyrics and authentic emotion. Country music excels at painting vivid pictures and conveying genuine feelings.
+                </p>
+                <div class="best-for">
+                    <h4><i class="ph ph-heart"></i> Best For:</h4>
+                    <ul>
+                        <li><i class="ph ph-check"></i> Long-distance relationships</li>
+                        <li><i class="ph ph-check"></i> Family tribute songs</li>
+                        <li><i class="ph ph-check"></i> Small-town love stories</li>
+                        <li><i class="ph ph-check"></i> Memorial/remembrance songs</li>
+                        <li><i class="ph ph-check"></i> Traditional wedding songs</li>
+                    </ul>
+                </div>
+                <div class="mood-indicator">
+                    <span class="mood-tag">Heartfelt</span>
+                    <span class="mood-tag">Storytelling</span>
+                    <span class="mood-tag">Authentic</span>
+                    <span class="mood-tag">Traditional</span>
+                </div>
+            </div>
+
+            <div class="genre-card rb">
+                <div class="genre-header">
+                    <div class="genre-icon">
+                        <i class="ph ph-vinyl-record"></i>
+                    </div>
+                    <h3 class="genre-title">R&B/Soul</h3>
+                </div>
+                <p class="genre-description">
+                    Smooth, sensual, and deeply emotional. R&B brings out the romantic and intimate aspects of relationships with rich vocal delivery and sophisticated harmonies.
+                </p>
+                <div class="best-for">
+                    <h4><i class="ph ph-heart"></i> Best For:</h4>
+                    <ul>
+                        <li><i class="ph ph-check"></i> Romantic anniversary songs</li>
+                        <li><i class="ph ph-check"></i> Wedding first dance songs</li>
+                        <li><i class="ph ph-check"></i> Intimate relationship milestones</li>
+                        <li><i class="ph ph-check"></i> Apology/reconciliation songs</li>
+                        <li><i class="ph ph-check"></i> Valentine's Day gifts</li>
+                    </ul>
+                </div>
+                <div class="mood-indicator">
+                    <span class="mood-tag">Romantic</span>
+                    <span class="mood-tag">Smooth</span>
+                    <span class="mood-tag">Intimate</span>
+                    <span class="mood-tag">Soulful</span>
+                </div>
+            </div>
+
+            <div class="genre-card folk">
+                <div class="genre-header">
+                    <div class="genre-icon">
+                        <i class="ph ph-tree"></i>
+                    </div>
+                    <h3 class="genre-title">Folk/Acoustic</h3>
+                </div>
+                <p class="genre-description">
+                    Simple, honest, and deeply personal. Folk music strips away the production to focus on pure storytelling and emotional connection through acoustic instruments.
+                </p>
+                <div class="best-for">
+                    <h4><i class="ph ph-heart"></i> Best For:</h4>
+                    <ul>
+                        <li><i class="ph ph-check"></i> Personal growth stories</li>
+                        <li><i class="ph ph-check"></i> Parent-child relationships</li>
+                        <li><i class="ph ph-check"></i> Coming-of-age moments</li>
+                        <li><i class="ph ph-check"></i> Quiet, intimate occasions</li>
+                        <li><i class="ph ph-check"></i> Recipients who love indie music</li>
+                    </ul>
+                </div>
+                <div class="mood-indicator">
+                    <span class="mood-tag">Intimate</span>
+                    <span class="mood-tag">Honest</span>
+                    <span class="mood-tag">Reflective</span>
+                    <span class="mood-tag">Organic</span>
+                </div>
+            </div>
+
+            <div class="genre-card jazz">
+                <div class="genre-header">
+                    <div class="genre-icon">
+                        <i class="ph ph-piano"></i>
+                    </div>
+                    <h3 class="genre-title">Jazz</h3>
+                </div>
+                <p class="genre-description">
+                    Sophisticated, timeless, and elegantly romantic. Jazz brings a classic, refined quality that works beautifully for mature relationships and special occasions.
+                </p>
+                <div class="best-for">
+                    <h4><i class="ph ph-heart"></i> Best For:</h4>
+                    <ul>
+                        <li><i class="ph ph-check"></i> Milestone anniversaries (25th, 50th)</li>
+                        <li><i class="ph ph-check"></i> Elegant wedding songs</li>
+                        <li><i class="ph ph-check"></i> Sophisticated couples</li>
+                        <li><i class="ph ph-check"></i> Vintage-inspired celebrations</li>
+                        <li><i class="ph ph-check"></i> Recipients who appreciate classics</li>
+                    </ul>
+                </div>
+                <div class="mood-indicator">
+                    <span class="mood-tag">Sophisticated</span>
+                    <span class="mood-tag">Timeless</span>
+                    <span class="mood-tag">Elegant</span>
+                    <span class="mood-tag">Classic</span>
+                </div>
+            </div>
+
+            <div class="genre-card indie">
+                <div class="genre-header">
+                    <div class="genre-icon">
+                        <i class="ph ph-headphones"></i>
+                    </div>
+                    <h3 class="genre-title">Indie/Alternative</h3>
+                </div>
+                <p class="genre-description">
+                    Creative, unique, and artistically expressive. Indie music offers a more alternative approach with creative production and unconventional song structures.
+                </p>
+                <div class="best-for">
+                    <h4><i class="ph ph-heart"></i> Best For:</h4>
+                    <ul>
+                        <li><i class="ph ph-check"></i> Creative/artistic recipients</li>
+                        <li><i class="ph ph-check"></i> Unique relationship stories</li>
+                        <li><i class="ph ph-check"></i> Young adult milestones</li>
+                        <li><i class="ph ph-check"></i> Non-traditional celebrations</li>
+                        <li><i class="ph ph-check"></i> Recipients with alternative taste</li>
+                    </ul>
+                </div>
+                <div class="mood-indicator">
+                    <span class="mood-tag">Creative</span>
+                    <span class="mood-tag">Unique</span>
+                    <span class="mood-tag">Artistic</span>
+                    <span class="mood-tag">Alternative</span>
+                </div>
+            </div>
+
+            <div class="genre-card electronic">
+                <div class="genre-header">
+                    <div class="genre-icon">
+                        <i class="ph ph-waveform"></i>
+                    </div>
+                    <h3 class="genre-title">Electronic/Pop</h3>
+                </div>
+                <p class="genre-description">
+                    Modern, energetic, and digitally enhanced. Electronic pop combines catchy melodies with contemporary production for a fresh, current sound.
+                </p>
+                <div class="best-for">
+                    <h4><i class="ph ph-heart"></i> Best For:</h4>
+                    <ul>
+                        <li><i class="ph ph-check"></i> Younger recipients (teens/20s)</li>
+                        <li><i class="ph ph-check"></i> Dance/party celebrations</li>
+                        <li><i class="ph ph-check"></i> Modern love stories</li>
+                        <li><i class="ph ph-check"></i> High-energy occasions</li>
+                        <li><i class="ph ph-check"></i> Tech-savvy recipients</li>
+                    </ul>
+                </div>
+                <div class="mood-indicator">
+                    <span class="mood-tag">Modern</span>
+                    <span class="mood-tag">Energetic</span>
+                    <span class="mood-tag">Current</span>
+                    <span class="mood-tag">Dance-worthy</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-selector">
+            <h3>Not Sure Which Genre? Use Our Quick Guide</h3>
+            <p>Match your situation with the perfect musical style</p>
             
-            <div class="genre-grid">
-                <div class="genre-card pop">
-                    <div class="genre-header">
-                        <div class="genre-icon">
-                            <i class="ph ph-microphone"></i>
-                        </div>
-                        <h3 class="genre-title">Pop</h3>
-                    </div>
-                    <p class="genre-description">
-                        Catchy, accessible, and universally appealing. Pop songs feature memorable melodies, clear structure, and contemporary production that appeals to a wide audience.
-                    </p>
-                    <div class="best-for">
-                        <h4><i class="ph ph-heart"></i> Best For:</h4>
-                        <ul>
-                            <li><i class="ph ph-check"></i> Birthday celebrations</li>
-                            <li><i class="ph ph-check"></i> Anniversaries (upbeat tone)</li>
-                            <li><i class="ph ph-check"></i> Graduation gifts</li>
-                            <li><i class="ph ph-check"></i> General celebration songs</li>
-                            <li><i class="ph ph-check"></i> Recipients who love mainstream music</li>
-                        </ul>
-                    </div>
-                    <div class="mood-indicator">
-                        <span class="mood-tag">Upbeat</span>
-                        <span class="mood-tag">Positive</span>
-                        <span class="mood-tag">Energetic</span>
-                        <span class="mood-tag">Mainstream</span>
-                    </div>
+            <div class="selector-grid">
+                <div class="selector-item">
+                    <h4><i class="ph ph-heart-straight"></i> For Romance</h4>
+                    <p>R&B for intimacy, Pop for celebration, Country for storytelling, Jazz for sophistication</p>
                 </div>
-
-                <div class="genre-card rock">
-                    <div class="genre-header">
-                        <div class="genre-icon">
-                            <i class="ph ph-guitar"></i>
-                        </div>
-                        <h3 class="genre-title">Rock/Rock Ballad</h3>
-                    </div>
-                    <p class="genre-description">
-                        Powerful and emotional with strong instrumentals. Rock ballads combine the energy of rock with heartfelt lyrics, perfect for impactful storytelling.
-                    </p>
-                    <div class="best-for">
-                        <h4><i class="ph ph-heart"></i> Best For:</h4>
-                        <ul>
-                            <li><i class="ph ph-check"></i> Overcoming challenges stories</li>
-                            <li><i class="ph ph-check"></i> Father-son relationships</li>
-                            <li><i class="ph ph-check"></i> Milestone achievements</li>
-                            <li><i class="ph ph-check"></i> Passionate love stories</li>
-                            <li><i class="ph ph-check"></i> Recipients who love classic rock</li>
-                        </ul>
-                    </div>
-                    <div class="mood-indicator">
-                        <span class="mood-tag">Powerful</span>
-                        <span class="mood-tag">Emotional</span>
-                        <span class="mood-tag">Inspiring</span>
-                        <span class="mood-tag">Bold</span>
-                    </div>
+                
+                <div class="selector-item">
+                    <h4><i class="ph ph-cake"></i> For Celebrations</h4>
+                    <p>Pop for universal appeal, Rock for power, Electronic for energy, Folk for personal touch</p>
                 </div>
-
-                <div class="genre-card country">
-                    <div class="genre-header">
-                        <div class="genre-icon">
-                            <i class="ph ph-cowboy-hat"></i>
-                        </div>
-                        <h3 class="genre-title">Country</h3>
-                    </div>
-                    <p class="genre-description">
-                        Storytelling at its finest with heartfelt lyrics and authentic emotion. Country music excels at painting vivid pictures and conveying genuine feelings.
-                    </p>
-                    <div class="best-for">
-                        <h4><i class="ph ph-heart"></i> Best For:</h4>
-                        <ul>
-                            <li><i class="ph ph-check"></i> Long-distance relationships</li>
-                            <li><i class="ph ph-check"></i> Family tribute songs</li>
-                            <li><i class="ph ph-check"></i> Small-town love stories</li>
-                            <li><i class="ph ph-check"></i> Memorial/remembrance songs</li>
-                            <li><i class="ph ph-check"></i> Traditional wedding songs</li>
-                        </ul>
-                    </div>
-                    <div class="mood-indicator">
-                        <span class="mood-tag">Heartfelt</span>
-                        <span class="mood-tag">Storytelling</span>
-                        <span class="mood-tag">Authentic</span>
-                        <span class="mood-tag">Traditional</span>
-                    </div>
+                
+                <div class="selector-item">
+                    <h4><i class="ph ph-star"></i> For Achievements</h4>
+                    <p>Rock for triumph, Pop for joy, Electronic for modern success, Country for personal journey</p>
                 </div>
-
-                <div class="genre-card rb">
-                    <div class="genre-header">
-                        <div class="genre-icon">
-                            <i class="ph ph-vinyl-record"></i>
-                        </div>
-                        <h3 class="genre-title">R&B/Soul</h3>
-                    </div>
-                    <p class="genre-description">
-                        Smooth, sensual, and deeply emotional. R&B brings out the romantic and intimate aspects of relationships with rich vocal delivery and sophisticated harmonies.
-                    </p>
-                    <div class="best-for">
-                        <h4><i class="ph ph-heart"></i> Best For:</h4>
-                        <ul>
-                            <li><i class="ph ph-check"></i> Romantic anniversary songs</li>
-                            <li><i class="ph ph-check"></i> Wedding first dance songs</li>
-                            <li><i class="ph ph-check"></i> Intimate relationship milestones</li>
-                            <li><i class="ph ph-check"></i> Apology/reconciliation songs</li>
-                            <li><i class="ph ph-check"></i> Valentine's Day gifts</li>
-                        </ul>
-                    </div>
-                    <div class="mood-indicator">
-                        <span class="mood-tag">Romantic</span>
-                        <span class="mood-tag">Smooth</span>
-                        <span class="mood-tag">Intimate</span>
-                        <span class="mood-tag">Soulful</span>
-                    </div>
-                </div>
-
-                <div class="genre-card folk">
-                    <div class="genre-header">
-                        <div class="genre-icon">
-                            <i class="ph ph-tree"></i>
-                        </div>
-                        <h3 class="genre-title">Folk/Acoustic</h3>
-                    </div>
-                    <p class="genre-description">
-                        Simple, honest, and deeply personal. Folk music strips away the production to focus on pure storytelling and emotional connection through acoustic instruments.
-                    </p>
-                    <div class="best-for">
-                        <h4><i class="ph ph-heart"></i> Best For:</h4>
-                        <ul>
-                            <li><i class="ph ph-check"></i> Personal growth stories</li>
-                            <li><i class="ph ph-check"></i> Parent-child relationships</li>
-                            <li><i class="ph ph-check"></i> Coming-of-age moments</li>
-                            <li><i class="ph ph-check"></i> Quiet, intimate occasions</li>
-                            <li><i class="ph ph-check"></i> Recipients who love indie music</li>
-                        </ul>
-                    </div>
-                    <div class="mood-indicator">
-                        <span class="mood-tag">Intimate</span>
-                        <span class="mood-tag">Honest</span>
-                        <span class="mood-tag">Reflective</span>
-                        <span class="mood-tag">Organic</span>
-                    </div>
-                </div>
-
-                <div class="genre-card jazz">
-                    <div class="genre-header">
-                        <div class="genre-icon">
-                            <i class="ph ph-piano"></i>
-                        </div>
-                        <h3 class="genre-title">Jazz</h3>
-                    </div>
-                    <p class="genre-description">
-                        Sophisticated, timeless, and elegantly romantic. Jazz brings a classic, refined quality that works beautifully for mature relationships and special occasions.
-                    </p>
-                    <div class="best-for">
-                        <h4><i class="ph ph-heart"></i> Best For:</h4>
-                        <ul>
-                            <li><i class="ph ph-check"></i> Milestone anniversaries (25th, 50th)</li>
-                            <li><i class="ph ph-check"></i> Elegant wedding songs</li>
-                            <li><i class="ph ph-check"></i> Sophisticated couples</li>
-                            <li><i class="ph ph-check"></i> Vintage-inspired celebrations</li>
-                            <li><i class="ph ph-check"></i> Recipients who appreciate classics</li>
-                        </ul>
-                    </div>
-                    <div class="mood-indicator">
-                        <span class="mood-tag">Sophisticated</span>
-                        <span class="mood-tag">Timeless</span>
-                        <span class="mood-tag">Elegant</span>
-                        <span class="mood-tag">Classic</span>
-                    </div>
-                </div>
-
-                <div class="genre-card indie">
-                    <div class="genre-header">
-                        <div class="genre-icon">
-                            <i class="ph ph-headphones"></i>
-                        </div>
-                        <h3 class="genre-title">Indie/Alternative</h3>
-                    </div>
-                    <p class="genre-description">
-                        Creative, unique, and artistically expressive. Indie music offers a more alternative approach with creative production and unconventional song structures.
-                    </p>
-                    <div class="best-for">
-                        <h4><i class="ph ph-heart"></i> Best For:</h4>
-                        <ul>
-                            <li><i class="ph ph-check"></i> Creative/artistic recipients</li>
-                            <li><i class="ph ph-check"></i> Unique relationship stories</li>
-                            <li><i class="ph ph-check"></i> Young adult milestones</li>
-                            <li><i class="ph ph-check"></i> Non-traditional celebrations</li>
-                            <li><i class="ph ph-check"></i> Recipients with alternative taste</li>
-                        </ul>
-                    </div>
-                    <div class="mood-indicator">
-                        <span class="mood-tag">Creative</span>
-                        <span class="mood-tag">Unique</span>
-                        <span class="mood-tag">Artistic</span>
-                        <span class="mood-tag">Alternative</span>
-                    </div>
-                </div>
-
-                <div class="genre-card electronic">
-                    <div class="genre-header">
-                        <div class="genre-icon">
-                            <i class="ph ph-waveform"></i>
-                        </div>
-                        <h3 class="genre-title">Electronic/Pop</h3>
-                    </div>
-                    <p class="genre-description">
-                        Modern, energetic, and digitally enhanced. Electronic pop combines catchy melodies with contemporary production for a fresh, current sound.
-                    </p>
-                    <div class="best-for">
-                        <h4><i class="ph ph-heart"></i> Best For:</h4>
-                        <ul>
-                            <li><i class="ph ph-check"></i> Younger recipients (teens/20s)</li>
-                            <li><i class="ph ph-check"></i> Dance/party celebrations</li>
-                            <li><i class="ph ph-check"></i> Modern love stories</li>
-                            <li><i class="ph ph-check"></i> High-energy occasions</li>
-                            <li><i class="ph ph-check"></i> Tech-savvy recipients</li>
-                        </ul>
-                    </div>
-                    <div class="mood-indicator">
-                        <span class="mood-tag">Modern</span>
-                        <span class="mood-tag">Energetic</span>
-                        <span class="mood-tag">Current</span>
-                        <span class="mood-tag">Dance-worthy</span>
-                    </div>
+                
+                <div class="selector-item">
+                    <h4><i class="ph ph-memory"></i> For Memories</h4>
+                    <p>Folk for intimacy, Country for stories, Jazz for timeless moments, Indie for unique connections</p>
                 </div>
             </div>
+        </div>
 
-            <div class="quick-selector">
-                <h3>Not Sure Which Genre? Use Our Quick Guide</h3>
-                <p>Match your situation with the perfect musical style</p>
+        <div class="matching-guide">
+            <h3>Perfect Genre Matching by Occasion</h3>
+            
+            <ul class="scenario-list">
+                <li>
+                    <div class="scenario-icon"><i class="ph ph-ring"></i></div>
+                    <div class="scenario-content">
+                        <strong>Wedding Anniversary (1-10 years):</strong> Pop or R&B work great for the excitement of new love.
+                        <div class="genre-suggestion">Try: Upbeat Pop or Smooth R&B</div>
+                    </div>
+                </li>
                 
-                <div class="selector-grid">
-                    <div class="selector-item">
-                        <h4><i class="ph ph-heart-straight"></i> For Romance</h4>
-                        <p>R&B for intimacy, Pop for celebration, Country for storytelling, Jazz for sophistication</p>
+                <li>
+                    <div class="scenario-icon"><i class="ph ph-crown"></i></div>
+                    <div class="scenario-content">
+                        <strong>Milestone Anniversary (25+ years):</strong> Jazz or Country capture the depth of long-term love.
+                        <div class="genre-suggestion">Try: Classic Jazz or Heartfelt Country</div>
                     </div>
-                    
-                    <div class="selector-item">
-                        <h4><i class="ph ph-cake"></i> For Celebrations</h4>
-                        <p>Pop for universal appeal, Rock for power, Electronic for energy, Folk for personal touch</p>
+                </li>
+                
+                <li>
+                    <div class="scenario-icon"><i class="ph ph-baby"></i></div>
+                    <div class="scenario-content">
+                        <strong>New Baby:</strong> Folk for tender lullabies or Pop for joyful celebrations.
+                        <div class="genre-suggestion">Try: Acoustic Folk or Gentle Pop</div>
                     </div>
-                    
-                    <div class="selector-item">
-                        <h4><i class="ph ph-star"></i> For Achievements</h4>
-                        <p>Rock for triumph, Pop for joy, Electronic for modern success, Country for personal journey</p>
+                </li>
+                
+                <li>
+                    <div class="scenario-icon"><i class="ph ph-graduation-cap"></i></div>
+                    <div class="scenario-content">
+                        <strong>Graduation:</strong> Rock for achievement power or Electronic for modern success.
+                        <div class="genre-suggestion">Try: Rock Ballad or Electronic Pop</div>
                     </div>
-                    
-                    <div class="selector-item">
-                        <h4><i class="ph ph-memory"></i> For Memories</h4>
-                        <p>Folk for intimacy, Country for stories, Jazz for timeless moments, Indie for unique connections</p>
+                </li>
+                
+                <li>
+                    <div class="scenario-icon"><i class="ph ph-house"></i></div>
+                    <div class="scenario-content">
+                        <strong>Family Tributes:</strong> Country excels at family storytelling, Folk for intimate moments.
+                        <div class="genre-suggestion">Try: Storytelling Country or Intimate Folk</div>
                     </div>
-                </div>
-            </div>
+                </li>
+                
+                <li>
+                    <div class="scenario-icon"><i class="ph ph-airplane-takeoff"></i></div>
+                    <div class="scenario-content">
+                        <strong>Long Distance Love:</strong> Country for missing someone, R&B for romantic connection.
+                        <div class="genre-suggestion">Try: Emotional Country or Romantic R&B</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-            <div class="matching-guide">
-                <h3>Perfect Genre Matching by Occasion</h3>
-                
-                <ul class="scenario-list">
-                    <li>
-                        <div class="scenario-icon"><i class="ph ph-ring"></i></div>
-                        <div class="scenario-content">
-                            <strong>Wedding Anniversary (1-10 years):</strong> Pop or R&B work great for the excitement of new love.
-                            <div class="genre-suggestion">Try: Upbeat Pop or Smooth R&B</div>
-                        </div>
-                    </li>
-                    
-                    <li>
-                        <div class="scenario-icon"><i class="ph ph-crown"></i></div>
-                        <div class="scenario-content">
-                            <strong>Milestone Anniversary (25+ years):</strong> Jazz or Country capture the depth of long-term love.
-                            <div class="genre-suggestion">Try: Classic Jazz or Heartfelt Country</div>
-                        </div>
-                    </li>
-                    
-                    <li>
-                        <div class="scenario-icon"><i class="ph ph-baby"></i></div>
-                        <div class="scenario-content">
-                            <strong>New Baby:</strong> Folk for tender lullabies or Pop for joyful celebrations.
-                            <div class="genre-suggestion">Try: Acoustic Folk or Gentle Pop</div>
-                        </div>
-                    </li>
-                    
-                    <li>
-                        <div class="scenario-icon"><i class="ph ph-graduation-cap"></i></div>
-                        <div class="scenario-content">
-                            <strong>Graduation:</strong> Rock for achievement power or Electronic for modern success.
-                            <div class="genre-suggestion">Try: Rock Ballad or Electronic Pop</div>
-                        </div>
-                    </li>
-                    
-                    <li>
-                        <div class="scenario-icon"><i class="ph ph-house"></i></div>
-                        <div class="scenario-content">
-                            <strong>Family Tributes:</strong> Country excels at family storytelling, Folk for intimate moments.
-                            <div class="genre-suggestion">Try: Storytelling Country or Intimate Folk</div>
-                        </div>
-                    </li>
-                    
-                    <li>
-                        <div class="scenario-icon"><i class="ph ph-airplane-takeoff"></i></div>
-                        <div class="scenario-content">
-                            <strong>Long Distance Love:</strong> Country for missing someone, R&B for romantic connection.
-                            <div class="genre-suggestion">Try: Emotional Country or Romantic R&B</div>
-                        </div>
-                    </li>
-                </ul>
+        <div class="tips-section">
+            <h3>Pro Tips for Genre Selection</h3>
+            
+            <div class="tip-item">
+                <i class="ph ph-lightbulb"></i>
+                <p><strong>Consider Their Playlist:</strong> What genres do they already love? Match their taste for maximum impact.</p>
             </div>
-
-            <div class="tips-section">
-                <h3>Pro Tips for Genre Selection</h3>
-                
-                <div class="tip-item">
-                    <i class="ph ph-lightbulb"></i>
-                    <p><strong>Consider Their Playlist:</strong> What genres do they already love? Match their taste for maximum impact.</p>
-                </div>
-                
-                <div class="tip-item">
-                    <i class="ph ph-lightbulb"></i>
-                    <p><strong>Think About the Mood:</strong> Upbeat celebration? Choose Pop or Electronic. Intimate moment? Try R&B or Folk.</p>
-                </div>
-                
-                <div class="tip-item">
-                    <i class="ph ph-lightbulb"></i>
-                    <p><strong>Match the Story Tone:</strong> Epic love story = Rock Ballad. Sweet daily moments = Folk. Overcoming challenges = Rock.</p>
-                </div>
-                
-                <div class="tip-item">
-                    <i class="ph ph-lightbulb"></i>
-                    <p><strong>When in Doubt:</strong> Pop and R&B are universally appealing and work for most occasions and recipients.</p>
-                </div>
-                
-                <div class="tip-item">
-                    <i class="ph ph-lightbulb"></i>
-                    <p><strong>Don't Overthink It:</strong> Our AI can adapt your story to work beautifully in any genre you choose.</p>
-                </div>
+            
+            <div class="tip-item">
+                <i class="ph ph-lightbulb"></i>
+                <p><strong>Think About the Mood:</strong> Upbeat celebration? Choose Pop or Electronic. Intimate moment? Try R&B or Folk.</p>
             </div>
+            
+            <div class="tip-item">
+                <i class="ph ph-lightbulb"></i>
+                <p><strong>Match the Story Tone:</strong> Epic love story = Rock Ballad. Sweet daily moments = Folk. Overcoming challenges = Rock.</p>
+            </div>
+            
+            <div class="tip-item">
+                <i class="ph ph-lightbulb"></i>
+                <p><strong>When in Doubt:</strong> Pop and R&B are universally appealing and work for most occasions and recipients.</p>
+            </div>
+            
+            <div class="tip-item">
+                <i class="ph ph-lightbulb"></i>
+                <p><strong>Don't Overthink It:</strong> Our AI can adapt your story to work beautifully in any genre you choose.</p>
+            </div>
+        </div>
 
         <h2>Can't Decide? Let Us Help!</h2>
         <p>Still unsure which genre fits your story best? Don't worry! When you submit your story, simply mention:</p>

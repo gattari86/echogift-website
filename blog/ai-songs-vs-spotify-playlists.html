@@ -101,42 +101,55 @@
     </script>
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header class="main-header">
+    <style>
+        .ai-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 25%, #06b6d4 50%, #8b5cf6 75%, #6366f1 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ai-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" patternUnits="userSpaceOnUse" width="20" height="20"><rect x="8" y="8" width="4" height="4" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.15)"/><path d="M0,10 L8,10 M12,10 L20,10 M10,0 L10,8 M10,12 L10,20" stroke="rgba(255,255,255,0.08)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23circuit)"/></svg>') repeat;
+        }
+        
+        .ai-hero .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
+    
+    <!-- AI vs Spotify Hero Section -->
+    <section class="ai-hero">
         <div class="container">
-            <nav class="main-nav">
-                <a href="../index.html" class="logo">EchoGift</a>
-                <div class="nav-menu">
-                    <a href="../gallery.html" class="nav-link"><svg style="width: 16px; height: 16px; fill: var(--terracotta); margin-right: 6px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"/></svg> Gallery</a>
-                    <a href="../single-song.html" class="nav-link">Single Song ($49.99)</a>
-                    <a href="../album-gift.html" class="nav-link">Album Gift ($199.99)</a>
-                    <a href="../blog.html" class="nav-link active">Blog</a>
-                    <a href="../index.html#order" class="nav-cta">Order Now</a>
-                </div>
-                <div class="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Blog Post Header with Premium Design -->
-    <section style="background: var(--gradient-warm); padding: 100px 0; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
-        <div class="container" style="position: relative; z-index: 3;">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <div style="display: flex; gap: 16px; justify-content: center; align-items: center; margin-bottom: 24px;">
-                    <span style="color: var(--text-secondary); font-size: 16px;">December 15, 2024</span>
-                    <div style="display: flex; gap: 8px;">
-                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">AI Music</span>
-                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">Comparison</span>
-                    </div>
-                </div>
-                <h1 style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--deep-indigo); margin-bottom: 24px; line-height: 1.2;">AI Songs vs Spotify Playlists: Why Custom is King</h1>
-                <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.6; max-width: 700px; margin: 0 auto;">When it comes to meaningful musical gifts, discover why custom AI songs create deeper emotional connections than any carefully curated Spotify playlist ever could.</p>
-            </div>
+            <h1>AI Songs vs Spotify Playlists: Why Custom is King</h1>
+            <p class="hero-subtitle">When it comes to meaningful musical gifts, discover why custom AI songs create deeper emotional connections than any carefully curated Spotify playlist ever could.</p>
         </div>
     </section>
 
@@ -145,8 +158,6 @@
         <div class="container" style="position: relative; z-index: 2; max-width: 800px;">
             <div style="font-family: 'Lato', sans-serif; font-size: 18px; line-height: 1.8; color: var(--text-secondary);">
                 
-                <!-- Featured Image -->
-                <img src="blog-images/ai-songs-vs-spotify.png" alt="AI Songs vs Spotify Playlists Comparison" style="width: 100%; height: auto; border-radius: 16px; margin-bottom: 48px; box-shadow: var(--shadow-lg);">
 
                 <p style="margin-bottom: 32px; font-size: 20px;">You have two choices when giving music as a gift: curating a Spotify playlist or creating a custom AI song. While both involve music, the emotional impact couldn't be more different. Here's why custom AI songs are revolutionizing meaningful gift-giving.</p>
 

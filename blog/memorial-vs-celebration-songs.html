@@ -60,6 +60,24 @@
     </script>
     
     <style>
+        /* CSS Custom Properties */
+        :root {
+            --terracotta: #C05D3A;
+            --terracotta-rgb: 192, 93, 58;
+            --luxury-gold: #D4AC4A;
+            --luxury-gold-rgb: 212, 172, 74;
+            --deep-indigo: #3A4A6D;
+            --deep-indigo-rgb: 58, 74, 109;
+            --cream: #F8F6F1;
+            --cream-rgb: 248, 246, 241;
+            --dusty-pink: #B8A5A5;
+            --dusty-pink-rgb: 184, 165, 165;
+            
+            --gradient-warm: linear-gradient(135deg, var(--terracotta) 0%, var(--luxury-gold) 100%);
+            --gradient-subtle: linear-gradient(135deg, rgba(var(--terracotta-rgb), 0.1) 0%, rgba(var(--luxury-gold-rgb), 0.1) 100%);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
         /* Premium Blog Styling */
         .blog-nav {
             position: fixed;

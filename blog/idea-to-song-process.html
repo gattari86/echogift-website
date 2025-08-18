@@ -28,6 +28,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <style>
+        .process-hero {
+            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 25%, #f59e0b 50%, #8b5cf6 75%, #ef4444 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="gears" patternUnits="userSpaceOnUse" width="30" height="30"><circle cx="15" cy="15" r="8" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><circle cx="15" cy="15" r="3" fill="rgba(255,255,255,0.05)"/><path d="M15,7 L17,9 L15,11 L13,9 Z M23,15 L21,13 L19,15 L21,17 Z M15,23 L13,21 L15,19 L17,21 Z M7,15 L9,17 L11,15 L9,13 Z" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23gears)"/></svg>') repeat;
+        }
+        
+        .process-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
     
     <!-- HowTo Schema Markup -->
     <script type="application/ld+json">
@@ -140,50 +165,27 @@
     </script>
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header class="main-header">
+    <header>
         <div class="container">
-            <nav class="main-nav">
-                <a href="../index.html" class="logo">EchoGift</a>
-                <div class="nav-menu">
-                    <a href="../gallery.html" class="nav-link"><svg style="width: 16px; height: 16px; fill: var(--terracotta); margin-right: 6px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"/></svg> Gallery</a>
-                    <a href="../single-song.html" class="nav-link">Single Song ($49.99)</a>
-                    <a href="../album-gift.html" class="nav-link">Album Gift ($199.99)</a>
-                    <a href="../blog.html" class="nav-link active">Blog</a>
-                    <a href="../index.html#order" class="nav-cta">Order Now</a>
-                </div>
-                <div class="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <div class="nav-brand">
+                <h1><a href="../index.html">EchoGifts</a></h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="../index.html">Home</a>
+                <a href="../gallery.html">Gallery</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../about.html">About</a>
             </nav>
         </div>
     </header>
-
-    <!-- Blog Post Header with Premium Design -->
-    <section style="background: var(--gradient-warm); padding: 100px 0; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
-        <div class="container" style="position: relative; z-index: 3;">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <div style="display: flex; gap: 16px; justify-content: center; align-items: center; margin-bottom: 24px;">
-                    <span style="color: var(--text-secondary); font-size: 16px;">January 18, 2025</span>
-                    <div style="display: flex; gap: 8px;">
-                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">
-                            <svg style="width: 14px; height: 14px; fill: currentColor; margin-right: 4px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M174.63,81.37a8,8,0,0,1,11.31,11.31l-112,112a8,8,0,0,1-11.31-11.31ZM64,108a12,12,0,1,0,12-12A12,12,0,0,0,64,108Zm128,40a12,12,0,1,0,12,12A12,12,0,0,0,192,148Z"/></svg>
-                            Process Guide
-                        </span>
-                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">
-                            <svg style="width: 14px; height: 14px; fill: currentColor; margin-right: 4px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm40-68a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V88a8,8,0,0,1,16,0v52h24A8,8,0,0,1,168,148Z"/></svg>
-                            How-To
-                        </span>
-                    </div>
-                </div>
-                <h1 style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--deep-indigo); margin-bottom: 24px; line-height: 1.2;">From Idea to Song: The Complete EchoGifts Creation Process</h1>
-                <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.6; max-width: 700px; margin: 0 auto;">Discover exactly how we transform your personal stories and memories into professionally produced custom songs. Follow our proven 7-step process that delivers personalized music in just 2 business days.</p>
+    
+    <main>
+        <section class="process-hero">
+            <div class="container">
+                <h1>From Idea to Song: The Complete EchoGifts Creation Process</h1>
+                <p class="hero-subtitle">Discover exactly how we transform your personal stories and memories into professionally produced custom songs. Follow our proven 7-step process that delivers personalized music in just 2 business days.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Blog Post Content with Premium Design -->
     <article style="padding: 100px 0; background: white; position: relative;">
@@ -191,8 +193,6 @@
         <div class="container" style="position: relative; z-index: 2; max-width: 800px;">
             <div style="font-family: 'Lato', sans-serif; font-size: 18px; line-height: 1.8; color: var(--text-secondary);">
             
-            <!-- Featured Image -->
-            <img src="blog-images/idea-to-song-process.png" alt="Complete guide to turning your ideas into custom songs - 7 step process" style="width: 100%; height: auto; border-radius: 16px; margin-bottom: 48px; box-shadow: var(--shadow-lg);">
             
             <p>Creating a custom song might seem like magic, but there's actually a carefully crafted process behind every EchoGifts creation. Whether you're looking to surprise someone special or commemorate a meaningful moment, understanding how we transform your ideas into professionally produced music can help you create the perfect personalized song gift.</p>
 
@@ -445,52 +445,33 @@
             </div>
         </div>
     </article>
+    </main>
 
-    <!-- Footer CTA Section -->
-    <section style="background: linear-gradient(135deg, #8B4513 0%, #CD853F 100%); padding: 80px 0; text-align: center;">
+            <div class="cta-section">
+                <h2>Start Your Song Creation Process</h2>
+                <p>Ready to transform your story into a professionally produced custom song? Start our proven 7-step process today.</p>
+                <a href="../checkout.html" class="cta-button">Create Your Song Now - $49.99</a>
+                <p class="cta-guarantee">✅ 2-day delivery guaranteed<br>✅ Custom artwork included<br>✅ Full ownership rights</p>
+            </div>
+        </article>
+    </main>
+    
+    <footer>
         <div class="container">
-            <h2 style="font-family: 'Prata', serif; color: white; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 24px;">Start Your Song Creation Process</h2>
-            <p style="color: rgba(255, 255, 255, 0.9); font-size: 20px; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">Ready to transform your story into a professionally produced custom song? Start our proven 7-step process today.</p>
-            <a href="../index.html#order" style="display: inline-block; background: white; color: #8B4513; padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 18px; transition: transform 0.3s;">Create Your Song Now - $49.99</a>
-            <p style="color: rgba(255, 255, 255, 0.8); font-size: 14px; margin-top: 16px;">2-day delivery guaranteed • Custom artwork included • Full ownership rights</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer style="background: #2D1810; padding: 60px 0 30px; color: rgba(255, 255, 255, 0.8);">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;">
-                <div>
-                    <h3 style="color: white; margin-bottom: 16px;">EchoGift</h3>
-                    <p>Creating personalized AI-generated songs that capture your most precious memories and emotions.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>EchoGifts</h3>
+                    <p>Your Story. Your Song.</p>
                 </div>
-                <div>
-                    <h4 style="color: white; margin-bottom: 16px;">Quick Links</h4>
-                    <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <a href="../index.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Home</a>
-                        <a href="../gallery.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Gallery</a>
-                        <a href="../blog.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Blog</a>
-                        <a href="../index.html#order" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Order Now</a>
-                    </div>
-                </div>
-                <div>
-                    <h4 style="color: white; margin-bottom: 16px;">Products</h4>
-                    <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <a href="../single-song.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Single Song - $49.99</a>
-                        <a href="../album-gift.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">5-Song Album - $199.99</a>
-                    </div>
-                </div>
-                <div>
-                    <h4 style="color: white; margin-bottom: 16px;">Support</h4>
-                    <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <a href="mailto:hello@echogifts.shop" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">hello@echogifts.shop</a>
-                        <a href="../privacy-policy.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Privacy Policy</a>
-                        <a href="../terms-of-service.html" style="color: rgba(255, 255, 255, 0.8); text-decoration: none;">Terms of Service</a>
-                    </div>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../gallery.html">Gallery</a>
+                    <a href="../blog.html">Blog</a>
+                    <a href="../about.html">About</a>
                 </div>
             </div>
-            <div style="text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                <p>&copy; 2025 EchoGift. All rights reserved. Made with <svg style="width: 16px; height: 16px; fill: #CD853F; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M240,98a57.63,57.63,0,0,1-17,41L133.7,229.62a8,8,0,0,1-11.4,0L33,139a58,58,0,0,1,82-82.1L128,69.05l13.09-12.19A58,58,0,0,1,240,98Z"/></svg> in Houston</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EchoGifts. All rights reserved.</p>
             </div>
         </div>
     </footer>
