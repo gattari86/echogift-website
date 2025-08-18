@@ -3,391 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Songs vs Spotify Playlists: Why Custom is King | EchoGifts</title>
+    <title>AI Songs vs Spotify Playlists: Why Custom is King | EchoGift</title>
     <meta name="description" content="Discover why custom AI songs beat Spotify playlists for meaningful gifts. Compare personalized music creation vs streaming services for special occasions.">
     <meta name="keywords" content="custom AI songs, Spotify playlists, personalized music, custom songs vs playlists, AI music creation, unique gifts, personalized gifts">
-    <meta property="og:title" content="AI Songs vs Spotify Playlists: Why Custom is King">
-    <meta property="og:description" content="Learn why custom AI songs create deeper emotional connections than Spotify playlists. Expert comparison of personalized vs streaming music.">
-    <meta property="og:image" content="../assets/blog/ai-vs-spotify-thumbnail.jpg">
-    <meta property="og:url" content="https://echogifts.shop/blog/ai-songs-vs-spotify-playlists.html">
+    <meta name="author" content="EchoGift">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://echogifts.shop/blog/ai-songs-vs-spotify-playlists.html">
     
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #fafafa;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .blog-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 60px 0;
-            text-align: center;
-            color: white;
-        }
-        
-        .blog-header h1 {
-            font-size: clamp(28px, 4vw, 48px);
-            font-weight: 700;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
-        
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        .blog-meta span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .hero-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin: 40px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .content {
-            padding: 40px 0;
-            background: white;
-            margin: -60px 0 0 0;
-            border-radius: 20px 20px 0 0;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .intro {
-            font-size: 20px;
-            color: #555;
-            margin-bottom: 40px;
-            text-align: center;
-            font-weight: 400;
-            line-height: 1.5;
-        }
-        
-        h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin: 50px 0 25px 0;
-            color: #2d3748;
-            position: relative;
-        }
-        
-        h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 35px 0 20px 0;
-            color: #4a5568;
-        }
-        
-        p {
-            font-size: 17px;
-            margin-bottom: 20px;
-            color: #4a5568;
-            line-height: 1.7;
-        }
-        
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 40px 0;
-        }
-        
-        .comparison-card {
-            background: white;
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 2px solid #f7fafc;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .comparison-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        }
-        
-        .custom-songs {
-            border-color: #48bb78;
-            background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
-        }
-        
-        .spotify-playlists {
-            border-color: #4299e1;
-            background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
-        }
-        
-        .comparison-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 0 0 20px 0;
-            font-size: 22px;
-        }
-        
-        .comparison-card .icon {
-            width: 32px;
-            height: 32px;
-            padding: 8px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .custom-songs .icon {
-            background: #48bb78;
-            color: white;
-        }
-        
-        .spotify-playlists .icon {
-            background: #4299e1;
-            color: white;
-        }
-        
-        .features-list {
-            list-style: none;
-            margin: 20px 0;
-        }
-        
-        .features-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 12px;
-            font-size: 16px;
-        }
-        
-        .features-list li i {
-            color: #48bb78;
-            font-size: 18px;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-        
-        .spotify-playlists .features-list li i {
-            color: #4299e1;
-        }
-        
-        .scenario-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
-        }
-        
-        .scenario-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.06);
-            border-left: 4px solid #667eea;
-        }
-        
-        .scenario-card h4 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #2d3748;
-        }
-        
-        .scenario-card p {
-            font-size: 15px;
-            margin-bottom: 0;
-            color: #555;
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 16px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        .highlight-box h3 {
-            color: white;
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
-        
-        .highlight-box p {
-            color: rgba(255,255,255,0.95);
-            font-size: 18px;
-            margin-bottom: 0;
-        }
-        
-        .price-comparison {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 30px;
-            margin: 40px 0;
-        }
-        
-        .price-comparison h3 {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #2d3748;
-        }
-        
-        .price-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-        
-        .price-item {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        .price-item .service {
-            font-weight: 600;
-            font-size: 16px;
-            margin-bottom: 8px;
-            color: #2d3748;
-        }
-        
-        .price-item .price {
-            font-size: 20px;
-            font-weight: 700;
-            color: #667eea;
-            margin-bottom: 8px;
-        }
-        
-        .price-item .description {
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            padding: 50px;
-            border-radius: 20px;
-            text-align: center;
-            margin: 50px 0;
-            color: white;
-        }
-        
-        .cta-section h3 {
-            color: white;
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-        
-        .cta-section p {
-            color: rgba(255,255,255,0.95);
-            font-size: 18px;
-            margin-bottom: 25px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #f5576c;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: transform 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-        
-        .testimonial {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin: 30px 0;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-            border-left: 4px solid #48bb78;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            font-size: 16px;
-            margin-bottom: 15px;
-            color: #4a5568;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: #2d3748;
-            font-size: 14px;
-        }
-        
-        @media (max-width: 768px) {
-            .comparison-grid, .price-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .blog-meta {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            h2 {
-                font-size: 26px;
-            }
-            
-            .cta-section {
-                padding: 30px 20px;
-            }
-        }
-    </style>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://echogifts.shop/blog/ai-songs-vs-spotify-playlists.html">
+    <meta property="og:title" content="AI Songs vs Spotify Playlists: Why Custom is King">
+    <meta property="og:description" content="Learn why custom AI songs create deeper emotional connections than Spotify playlists. Expert comparison of personalized vs streaming music.">
+    <meta property="og:image" content="https://echogifts.shop/Downloads/SEO Echo Blog Thumbnails/AI songs vs spotify.png">
     
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://echogifts.shop/blog/ai-songs-vs-spotify-playlists.html">
+    <meta property="twitter:title" content="AI Songs vs Spotify Playlists: Why Custom is King">
+    <meta property="twitter:description" content="Learn why custom AI songs create deeper emotional connections than Spotify playlists.">
+    <meta property="twitter:image" content="https://echogifts.shop/Downloads/SEO Echo Blog Thumbnails/AI songs vs spotify.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    
+    <!-- BlogPosting Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "AI Songs vs Spotify Playlists: Why Custom is King",
         "description": "Compare custom AI songs with Spotify playlists for meaningful gifts. Discover why personalized music creates deeper emotional connections.",
-        "image": "https://echogifts.shop/assets/blog/ai-vs-spotify-thumbnail.jpg",
+        "image": "https://echogifts.shop/Downloads/SEO Echo Blog Thumbnails/AI songs vs spotify.png",
         "author": {
             "@type": "Organization",
-            "name": "EchoGifts",
+            "name": "EchoGift",
             "url": "https://echogifts.shop"
         },
         "publisher": {
             "@type": "Organization",
-            "name": "EchoGifts",
+            "name": "EchoGift",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://echogifts.shop/assets/logo.png"
+                "url": "https://echogifts.shop/logo.png"
             }
         },
         "datePublished": "2024-12-15",
@@ -441,168 +101,307 @@
     </script>
 </head>
 <body>
-    <header class="blog-header">
+    <!-- Navigation Header -->
+    <header class="main-header">
         <div class="container">
-            <h1>AI Songs vs Spotify Playlists: Why Custom is King</h1>
-            <div class="blog-meta">
-                <span><i class="ph ph-calendar"></i> December 15, 2024</span>
-                <span><i class="ph ph-clock"></i> 6 min read</span>
-                <span><i class="ph ph-user"></i> EchoGifts Team</span>
-            </div>
+            <nav class="main-nav">
+                <a href="../index.html" class="logo">EchoGift</a>
+                <div class="nav-menu">
+                    <a href="../gallery.html" class="nav-link"><svg style="width: 16px; height: 16px; fill: var(--terracotta); margin-right: 6px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"/></svg> Gallery</a>
+                    <a href="../single-song.html" class="nav-link">Single Song ($49.99)</a>
+                    <a href="../album-gift.html" class="nav-link">Album Gift ($199.99)</a>
+                    <a href="../blog.html" class="nav-link active">Blog</a>
+                    <a href="../index.html#order" class="nav-cta">Order Now</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <main class="content">
-        <div class="container">
-            <img src="../Downloads/SEO Echo Blog Thumbnails/ai-vs-spotify-thumbnail.jpg" alt="AI Songs vs Spotify Playlists comparison" class="hero-image">
-            
-            <p class="intro">
-                When it comes to meaningful musical gifts, you have two main options: curating a Spotify playlist or creating a custom AI song. While both involve music, the impact they have on recipients couldn't be more different. Let's dive into why custom AI songs are revolutionizing the way we give music as gifts.
-            </p>
-
-            <h2>The Fundamental Difference</h2>
-            
-            <div class="comparison-grid">
-                <div class="comparison-card custom-songs">
-                    <h3>
-                        <div class="icon">
-                            <i class="ph ph-microphone-stage"></i>
-                        </div>
-                        Custom AI Songs
-                    </h3>
-                    <p>Completely original music created specifically for your recipient, featuring their name, your shared memories, and personal details that make it uniquely theirs.</p>
-                    
-                    <ul class="features-list">
-                        <li><i class="ph ph-check-circle"></i> Contains recipient's actual name</li>
-                        <li><i class="ph ph-check-circle"></i> Includes specific personal memories</li>
-                        <li><i class="ph ph-check-circle"></i> Original melody and lyrics</li>
-                        <li><i class="ph ph-check-circle"></i> Professionally produced</li>
-                        <li><i class="ph ph-check-circle"></i> One-of-a-kind creation</li>
-                        <li><i class="ph ph-check-circle"></i> Emotional impact guaranteed</li>
-                    </ul>
-                </div>
-                
-                <div class="comparison-card spotify-playlists">
-                    <h3>
-                        <div class="icon">
-                            <i class="ph ph-playlist"></i>
-                        </div>
-                        Spotify Playlists
-                    </h3>
-                    <p>Curated collections of existing songs that remind you of someone or capture a mood, but weren't specifically created for your relationship.</p>
-                    
-                    <ul class="features-list">
-                        <li><i class="ph ph-check-circle"></i> Quick to create</li>
-                        <li><i class="ph ph-check-circle"></i> Access to millions of songs</li>
-                        <li><i class="ph ph-check-circle"></i> Easy to share</li>
-                        <li><i class="ph ph-check-circle"></i> Familiar melodies</li>
-                        <li><i class="ph ph-check-circle"></i> Can evoke memories</li>
-                        <li><i class="ph ph-check-circle"></i> Cost-effective option</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h2>When Custom AI Songs Win Every Time</h2>
-            
-            <div class="scenario-cards">
-                <div class="scenario-card">
-                    <h4><i class="ph ph-heart"></i> Anniversary Celebrations</h4>
-                    <p>A playlist might have "your song" on it, but a custom AI song IS your song - literally created from the story of how you met, your first date, and your journey together.</p>
-                </div>
-                
-                <div class="scenario-card">
-                    <h4><i class="ph ph-gift"></i> Wedding Gifts</h4>
-                    <p>Anyone can make a "wedding playlist," but only you can give them a song that tells their unique love story with their names, wedding date, and special moments.</p>
-                </div>
-                
-                <div class="scenario-card">
-                    <h4><i class="ph ph-baby"></i> New Parents</h4>
-                    <p>Playlists about babies are generic. A custom lullaby featuring the baby's actual name and parents' hopes for their future? Priceless.</p>
-                </div>
-                
-                <div class="scenario-card">
-                    <h4><i class="ph ph-graduation-cap"></i> Graduations</h4>
-                    <p>Motivational playlists inspire temporarily. A custom song celebrating their specific achievements and future dreams? They'll treasure it forever.</p>
-                </div>
-            </div>
-
-            <h3>The Personal Touch Factor</h3>
-            <p>Here's what you can't get from even the most thoughtfully curated Spotify playlist:</p>
-            
-            <ul class="features-list" style="margin: 20px 0 40px 40px;">
-                <li><i class="ph ph-check-circle"></i><strong>Their actual name in the lyrics</strong> - Not just a song about someone named Sarah, but a song FOR Sarah</li>
-                <li><i class="ph ph-check-circle"></i><strong>Specific memory references</strong> - "That rainy Tuesday in October when you said yes" instead of generic romantic lyrics</li>
-                <li><i class="ph ph-check-circle"></i><strong>Inside jokes and nicknames</strong> - References only the two of you would understand</li>
-                <li><i class="ph ph-check-circle"></i><strong>Future aspirations</strong> - Lyrics about dreams you've discussed and plans you've made together</li>
-                <li><i class="ph ph-check-circle"></i><strong>Emotional specificity</strong> - Exact feelings and moments rather than universal themes</li>
-            </ul>
-
-            <div class="highlight-box">
-                <h3>The "Wow" Factor</h3>
-                <p>Imagine their face when they realize this isn't just a song about love - it's a song about THEIR love, with details only you would know. That moment of recognition? You can't get that from a playlist.</p>
-            </div>
-
-            <h2>Practical Considerations</h2>
-            
-            <div class="price-comparison">
-                <h3>Cost Comparison</h3>
-                <div class="price-grid">
-                    <div class="price-item">
-                        <div class="service">Custom AI Song</div>
-                        <div class="price">$49.99</div>
-                        <div class="description">One-time cost for a personalized, professional-quality song they'll keep forever</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="service">Spotify Premium</div>
-                        <div class="price">$10.99/month</div>
-                        <div class="description">Monthly subscription for access to existing music (playlist creation is free)</div>
+    <!-- Blog Post Header with Premium Design -->
+    <section style="background: var(--gradient-warm); padding: 100px 0; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--gradient-subtle);"></div>
+        <div class="container" style="position: relative; z-index: 3;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <div style="display: flex; gap: 16px; justify-content: center; align-items: center; margin-bottom: 24px;">
+                    <span style="color: var(--text-secondary); font-size: 16px;">December 15, 2024</span>
+                    <div style="display: flex; gap: 8px;">
+                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">AI Music</span>
+                        <span style="background: rgba(232, 201, 207, 0.3); color: var(--deep-indigo); padding: 6px 16px; border-radius: 16px; font-size: 14px; font-weight: 600;">Comparison</span>
                     </div>
                 </div>
-            </div>
-
-            <h3>Time Investment</h3>
-            <p><strong>Spotify Playlist:</strong> 30 minutes to curate, but requires ongoing subscription for access.</p>
-            <p><strong>Custom AI Song:</strong> 10 minutes to submit your story, delivered professionally produced in 2 business days. No ongoing costs.</p>
-
-            <h3>Sharing and Ownership</h3>
-            <p>Both options are shareable, but with key differences:</p>
-            <ul class="features-list" style="margin: 20px 0 40px 40px;">
-                <li><i class="ph ph-check-circle"></i><strong>Playlists:</strong> Require Spotify account to fully experience, can be changed by creator</li>
-                <li><i class="ph ph-check-circle"></i><strong>Custom songs:</strong> Standard audio file format, shareable anywhere, permanent ownership</li>
-            </ul>
-
-            <h2>When Playlists Still Make Sense</h2>
-            <p>Don't get us wrong - Spotify playlists have their place:</p>
-            <ul class="features-list" style="margin: 20px 0 40px 40px;">
-                <li><i class="ph ph-check-circle"></i><strong>Background music</strong> for parties or daily listening</li>
-                <li><i class="ph ph-check-circle"></i><strong>Music discovery</strong> and sharing new artists</li>
-                <li><i class="ph ph-check-circle"></i><strong>Casual relationships</strong> where a custom song might feel too intense</li>
-                <li><i class="ph ph-check-circle"></i><strong>Quick gestures</strong> when you want to share music you're currently loving</li>
-            </ul>
-
-            <div class="testimonial">
-                <div class="testimonial-text">
-                    "I thought the Spotify playlist I made for my wife was romantic until I surprised her with a custom song for our 5th anniversary. She literally cried when she heard her name and our wedding date in the lyrics. The playlist was sweet, but the custom song became our actual song."
-                </div>
-                <div class="testimonial-author">- Michael R., verified customer</div>
-            </div>
-
-            <h2>The Bottom Line</h2>
-            <p>Spotify playlists are great for sharing music you love. Custom AI songs are for creating music that loves them back. When you want to give someone a musical gift they'll treasure forever - one that becomes part of their personal soundtrack - only a custom creation will do.</p>
-
-            <p>A playlist says "these songs remind me of you." A custom AI song says "you inspired me to create something that never existed before, just for you."</p>
-
-            <div class="highlight-box">
-                <h3>Ready to Create Something Truly Special?</h3>
-                <p>Stop settling for playlists when you can give them their own song. Share your story with EchoGifts and watch us transform it into a musical masterpiece that's uniquely theirs.</p>
-            </div>
-
-            <div class="cta-section">
-                <h3>Create Their Perfect Song Today</h3>
-                <p>Why give them a playlist when you can give them their own personal anthem? Start creating a custom AI song that will mean more than any collection of existing music ever could.</p>
-                <a href="../index.html#order" class="cta-button">Start Creating Now</a>
+                <h1 style="font-family: 'Prata', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); color: var(--deep-indigo); margin-bottom: 24px; line-height: 1.2;">AI Songs vs Spotify Playlists: Why Custom is King</h1>
+                <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.6; max-width: 700px; margin: 0 auto;">When it comes to meaningful musical gifts, discover why custom AI songs create deeper emotional connections than any carefully curated Spotify playlist ever could.</p>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Blog Post Content -->
+    <article style="padding: 100px 0; background: white; position: relative;">
+        <div class="container" style="position: relative; z-index: 2; max-width: 800px;">
+            <div style="font-family: 'Lato', sans-serif; font-size: 18px; line-height: 1.8; color: var(--text-secondary);">
+                
+                <!-- Featured Image -->
+                <img src="../Downloads/SEO Echo Blog Thumbnails/AI songs vs spotify.png" alt="AI Songs vs Spotify Playlists Comparison" style="width: 100%; height: auto; border-radius: 16px; margin-bottom: 48px; box-shadow: var(--shadow-lg);">
+
+                <p style="margin-bottom: 32px; font-size: 20px;">You have two choices when giving music as a gift: curating a Spotify playlist or creating a custom AI song. While both involve music, the emotional impact couldn't be more different. Here's why custom AI songs are revolutionizing meaningful gift-giving.</p>
+
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">The Fundamental Difference</h2>
+
+                <div style="display: grid; gap: 32px; margin: 40px 0;">
+                    <div style="background: rgba(241, 237, 230, 0.3); border: 2px solid var(--dusty-pink); border-radius: 16px; padding: 32px;">
+                        <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 0 0 20px;">
+                            <svg style="width: 24px; height: 24px; fill: var(--terracotta); margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"/></svg>
+                            Custom AI Songs
+                        </h3>
+                        <p style="margin-bottom: 20px;">Completely original music created specifically for your recipient, featuring their name, your shared memories, and personal details that make it uniquely theirs.</p>
+                        
+                        <div style="display: grid; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <svg style="width: 16px; height: 16px; fill: var(--luxury-gold);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                                <span>Contains recipient's actual name</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <svg style="width: 16px; height: 16px; fill: var(--luxury-gold);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                                <span>Includes specific personal memories</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <svg style="width: 16px; height: 16px; fill: var(--luxury-gold);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                                <span>Original melody and lyrics</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <svg style="width: 16px; height: 16px; fill: var(--luxury-gold);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                                <span>Professionally produced</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <svg style="width: 16px; height: 16px; fill: var(--luxury-gold);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                                <span>One-of-a-kind creation</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: white; border: 1px solid var(--border); border-radius: 16px; padding: 32px; box-shadow: var(--shadow);">
+                        <h3 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: 24px; margin: 0 0 20px;">
+                            <svg style="width: 24px; height: 24px; fill: var(--deep-indigo); margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M32,64a8,8,0,0,1,8-8H216a8,8,0,0,1,0,16H40A8,8,0,0,1,32,64Zm8,72H88a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm48,48H40a8,8,0,0,0,0,16H88a8,8,0,0,0,0-16Zm104-32H128a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm0-48H128a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16ZM216,72H128a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16ZM192,184H128a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Z"/></svg>
+                            Spotify Playlists
+                        </h3>
+                        <p style="margin-bottom: 20px;">Curated collections of existing songs that remind you of someone or capture a mood, but weren't specifically created for your relationship.</p>
+                        
+                        <div style="display: grid; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <svg style="width: 16px; height: 16px; fill: var(--luxury-gold);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                                <span>Quick to create</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <svg style="width: 16px; height: 16px; fill: var(--luxury-gold);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                                <span>Access to millions of songs</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <svg style="width: 16px; height: 16px; fill: var(--luxury-gold);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                                <span>Easy to share</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <svg style="width: 16px; height: 16px; fill: var(--luxury-gold);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                                <span>Familiar melodies</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <svg style="width: 16px; height: 16px; fill: var(--luxury-gold);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                                <span>Cost-effective option</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">When Custom AI Songs Win Every Time</h2>
+
+                <div style="display: grid; gap: 24px; margin: 32px 0;">
+                    <div style="border-left: 4px solid var(--terracotta); padding-left: 24px;">
+                        <h4 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: 20px; margin-bottom: 8px;">
+                            <svg style="width: 20px; height: 20px; fill: var(--luxury-gold); margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M240,98a57.63,57.63,0,0,1-17,41L133.7,229.62a8,8,0,0,1-11.4,0L33,139a58,58,0,0,1,82-82.1L128,69.05l13.09-12.19A58,58,0,0,1,240,98Z"/></svg>
+                            Anniversary Celebrations
+                        </h4>
+                        <p style="margin: 0; color: var(--text-secondary);">A playlist might have "your song" on it, but a custom AI song IS your song—literally created from your unique love story.</p>
+                    </div>
+                    <div style="border-left: 4px solid var(--terracotta); padding-left: 24px;">
+                        <h4 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: 20px; margin-bottom: 8px;">
+                            <svg style="width: 20px; height: 20px; fill: var(--luxury-gold); margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></svg>
+                            Wedding Gifts
+                        </h4>
+                        <p style="margin: 0; color: var(--text-secondary);">Anyone can make a "wedding playlist," but only you can give them a song that tells their unique love story with their names and special moments.</p>
+                    </div>
+                    <div style="border-left: 4px solid var(--terracotta); padding-left: 24px;">
+                        <h4 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: 20px; margin-bottom: 8px;">
+                            <svg style="width: 20px; height: 20px; fill: var(--luxury-gold); margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M230.14,70.54,185.46,25.85a20,20,0,0,0-28.29,0L33.86,149.17A19.85,19.85,0,0,0,28,163.31V208a20,20,0,0,0,20,20H92.69a19.86,19.86,0,0,0,14.14-5.86L230.14,98.82a20,20,0,0,0,0-28.28ZM91,204H52V165l84-84,39,39ZM192,103,153,64l18.34-18.34,39,39Z"/></svg>
+                            New Parents
+                        </h4>
+                        <p style="margin: 0; color: var(--text-secondary);">Playlists about babies are generic. A custom lullaby featuring the baby's actual name and parents' hopes for their future? Priceless.</p>
+                    </div>
+                    <div style="border-left: 4px solid var(--terracotta); padding-left: 24px;">
+                        <h4 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: 20px; margin-bottom: 8px;">
+                            <svg style="width: 20px; height: 20px; fill: var(--luxury-gold); margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M251.76,88.94l-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V240a8,8,0,0,0,16,0V199.51a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12ZM128,200c-43.27,0-68.72-21.14-80-33.71V126.4l76.24,40.66a8,8,0,0,0,7.52,0L176,143.47v46.34C163.4,195.69,147.52,200,128,200Zm80-33.75a97.83,97.83,0,0,1-16,14.25V134.93l16-8.53ZM188,118.94l-.22.13-56,29.87L76,118.94,57.24,109l-.22-.13L128,73.11l59,31.52Z"/></svg>
+                            Graduations
+                        </h4>
+                        <p style="margin: 0; color: var(--text-secondary);">Motivational playlists inspire temporarily. A custom song celebrating their specific achievements and future dreams? They'll treasure it forever.</p>
+                    </div>
+                </div>
+
+                <div style="background: var(--gradient-warm); color: var(--deep-indigo); padding: 40px; border-radius: 16px; margin: 40px 0; text-align: center;">
+                    <h3 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: 28px; margin-bottom: 16px;">The "Wow" Factor</h3>
+                    <p style="font-size: 20px; margin: 0; line-height: 1.6;">Imagine their face when they realize this isn't just a song about love—it's a song about THEIR love, with details only you would know. That moment of recognition? You can't get that from a playlist.</p>
+                </div>
+
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">The Personal Touch Factor</h2>
+                
+                <p>Here's what you can't get from even the most thoughtfully curated Spotify playlist:</p>
+                
+                <div style="background: white; border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin: 32px 0; box-shadow: var(--shadow);">
+                    <div style="display: grid; gap: 16px;">
+                        <div style="padding-left: 32px; position: relative;">
+                            <svg style="width: 16px; height: 16px; fill: var(--luxury-gold); position: absolute; left: 8px; top: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                            <strong>Their actual name in the lyrics</strong> - Not just a song about someone named Sarah, but a song FOR Sarah
+                        </div>
+                        <div style="padding-left: 32px; position: relative;">
+                            <svg style="width: 16px; height: 16px; fill: var(--luxury-gold); position: absolute; left: 8px; top: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                            <strong>Specific memory references</strong> - "That rainy Tuesday in October when you said yes" instead of generic romantic lyrics
+                        </div>
+                        <div style="padding-left: 32px; position: relative;">
+                            <svg style="width: 16px; height: 16px; fill: var(--luxury-gold); position: absolute; left: 8px; top: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                            <strong>Inside jokes and nicknames</strong> - References only the two of you would understand
+                        </div>
+                        <div style="padding-left: 32px; position: relative;">
+                            <svg style="width: 16px; height: 16px; fill: var(--luxury-gold); position: absolute; left: 8px; top: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                            <strong>Future aspirations</strong> - Lyrics about dreams you've discussed and plans you've made together
+                        </div>
+                        <div style="padding-left: 32px; position: relative;">
+                            <svg style="width: 16px; height: 16px; fill: var(--luxury-gold); position: absolute; left: 8px; top: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                            <strong>Emotional specificity</strong> - Exact feelings and moments rather than universal themes
+                        </div>
+                    </div>
+                </div>
+
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">Practical Considerations</h2>
+                
+                <div style="background: rgba(241, 237, 230, 0.5); padding: 32px; border-radius: 16px; margin: 32px 0;">
+                    <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 0 0 24px; text-align: center;">Cost Comparison</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+                        <div style="background: white; padding: 24px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);">
+                            <div style="font-family: 'Prata', serif; font-weight: 600; font-size: 18px; margin-bottom: 8px; color: var(--deep-indigo);">Custom AI Song</div>
+                            <div style="font-size: 24px; font-weight: 700; color: var(--terracotta); margin-bottom: 8px;">$49.99</div>
+                            <div style="font-size: 14px; color: var(--text-secondary);">One-time cost for a personalized, professional-quality song they'll keep forever</div>
+                        </div>
+                        <div style="background: white; padding: 24px; border-radius: 12px; text-align: center; box-shadow: var(--shadow);">
+                            <div style="font-family: 'Prata', serif; font-weight: 600; font-size: 18px; margin-bottom: 8px; color: var(--deep-indigo);">Spotify Premium</div>
+                            <div style="font-size: 24px; font-weight: 700; color: var(--terracotta); margin-bottom: 8px;">$10.99/month</div>
+                            <div style="font-size: 14px; color: var(--text-secondary);">Monthly subscription for access to existing music (playlist creation is free)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Time Investment</h3>
+                <p><strong>Spotify Playlist:</strong> 30 minutes to curate, but requires ongoing subscription for access.</p>
+                <p><strong>Custom AI Song:</strong> 10 minutes to submit your story, delivered professionally produced in 2 business days. No ongoing costs.</p>
+
+                <h3 style="font-family: 'Prata', serif; color: var(--terracotta); font-size: 24px; margin: 40px 0 20px;">Sharing and Ownership</h3>
+                <p>Both options are shareable, but with key differences:</p>
+                <div style="background: white; border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin: 20px 0;">
+                    <div style="display: grid; gap: 12px;">
+                        <div style="padding-left: 32px; position: relative;">
+                            <svg style="width: 16px; height: 16px; fill: var(--luxury-gold); position: absolute; left: 8px; top: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                            <strong>Playlists:</strong> Require Spotify account to fully experience, can be changed by creator
+                        </div>
+                        <div style="padding-left: 32px; position: relative;">
+                            <svg style="width: 16px; height: 16px; fill: var(--luxury-gold); position: absolute; left: 8px; top: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                            <strong>Custom songs:</strong> Standard audio file format, shareable anywhere, permanent ownership
+                        </div>
+                    </div>
+                </div>
+
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">When Playlists Still Make Sense</h2>
+                <p>Don't get us wrong—Spotify playlists have their place:</p>
+                <div style="background: white; border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin: 20px 0;">
+                    <div style="display: grid; gap: 12px;">
+                        <div style="padding-left: 32px; position: relative;">
+                            <svg style="width: 16px; height: 16px; fill: var(--luxury-gold); position: absolute; left: 8px; top: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                            <strong>Background music</strong> for parties or daily listening
+                        </div>
+                        <div style="padding-left: 32px; position: relative;">
+                            <svg style="width: 16px; height: 16px; fill: var(--luxury-gold); position: absolute; left: 8px; top: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                            <strong>Music discovery</strong> and sharing new artists
+                        </div>
+                        <div style="padding-left: 32px; position: relative;">
+                            <svg style="width: 16px; height: 16px; fill: var(--luxury-gold); position: absolute; left: 8px; top: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                            <strong>Casual relationships</strong> where a custom song might feel too intense
+                        </div>
+                        <div style="padding-left: 32px; position: relative;">
+                            <svg style="width: 16px; height: 16px; fill: var(--luxury-gold); position: absolute; left: 8px; top: 4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"/></svg>
+                            <strong>Quick gestures</strong> when you want to share music you're currently loving
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: white; border-left: 4px solid var(--luxury-gold); padding: 24px; margin: 32px 0; border-radius: 0 12px 12px 0; box-shadow: var(--shadow);">
+                    <p style="font-style: italic; font-size: 18px; margin-bottom: 16px; color: var(--text-secondary); line-height: 1.6;">"I thought the Spotify playlist I made for my wife was romantic until I surprised her with a custom song for our 5th anniversary. She literally cried when she heard her name and our wedding date in the lyrics. The playlist was sweet, but the custom song became our actual song."</p>
+                    <div style="font-weight: 600; color: var(--deep-indigo); font-size: 16px;">— Michael R., verified customer</div>
+                </div>
+
+                <h2 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 48px 0 24px; line-height: 1.3;">The Bottom Line</h2>
+                <p>Spotify playlists are great for sharing music you love. Custom AI songs are for creating music that loves them back. When you want to give someone a musical gift they'll treasure forever—one that becomes part of their personal soundtrack—only a custom creation will do.</p>
+
+                <p>A playlist says "these songs remind me of you." A custom AI song says "you inspired me to create something that never existed before, just for you."</p>
+
+                <div style="background: var(--gradient-warm); color: var(--deep-indigo); padding: 40px; border-radius: 16px; margin: 40px 0; text-align: center;">
+                    <h3 style="font-family: 'Prata', serif; color: var(--deep-indigo); font-size: 28px; margin-bottom: 16px;">Ready to Create Something Truly Special?</h3>
+                    <p style="font-size: 18px; margin: 0; line-height: 1.6;">Stop settling for playlists when you can give them their own song. Share your story with EchoGifts and watch us transform it into a musical masterpiece that's uniquely theirs.</p>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section style="padding: 100px 0; background: var(--gradient-luxury); text-align: center;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-family: 'Prata', serif; font-size: clamp(2rem, 4vw, 3rem); color: white; margin-bottom: 24px;">Create Their Perfect Song Today</h2>
+                <p style="font-size: 20px; color: rgba(255,255,255,0.9); margin-bottom: 40px;">Why give them a playlist when you can give them their own personal anthem? Start creating a custom AI song that will mean more than any collection of existing music ever could.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="../single-song.html" class="cta-button secondary" style="min-width: 280px; flex: 0 1 auto;">Single Song - $49.99</a>
+                    <a href="../album-gift.html" class="cta-button" style="min-width: 280px; flex: 0 1 auto; background: white; color: var(--deep-indigo);">5-Song Album - $199.99</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>EchoGift</h3>
+                    <p>Your story, your song.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="../blog.html">Blog</a>
+                    <a href="../terms-of-service.html">Terms of Service</a>
+                    <a href="../privacy-policy.html">Privacy Policy</a>
+                    <a href="mailto:hello@echogifts.shop">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"/></svg></a>
+                    <a href="#" aria-label="Twitter"><svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45.54,40.2a8,8,0,0,0-2.32,5.14C196,180.5,144.05,216,80,216c-8.06,0-15-1.12-20.62-2.54a111.14,111.14,0,0,0,35.81-18.54,8,8,0,0,0-.30-14.02c-.38-.2-38.47-20.42-48.65-70.84,17.29,8.17,45.66,16.69,88.19,5.47a8,8,0,0,0,6.66-9.8A31.81,31.81,0,0,1,136,88a32,32,0,0,1,32-32c16.16,0,32,14.78,32,32v32Z"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EchoGift. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
 </body>
 </html>
