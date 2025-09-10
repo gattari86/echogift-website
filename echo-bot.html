@@ -730,12 +730,12 @@
         // Conversation flow definition
         const conversationFlow = [
             {
-                bot: "Hey there! <i class='ph ph-hand-waving icon-sm'></i> I'm Echo, your personal lyric lovebot, and I'm SO excited to help you create something magical today! <i class='ph ph-heart icon-sm'></i><br><br>Before we dive in, what's your name? I'd love to make this personal for you!",
+                bot: "Hey there! <i class='ph ph-hand-waving icon-sm'></i> I'm Echo, your personal lyric lovebot, and I'm SO excited to help you create something magical today! <i class='ph ph-heart icon-sm'></i>\\n\\nBefore we dive in, what's your name? I'd love to make this personal for you!",
                 quickResponses: ["My name is...", "Call me...", "I'm..."],
                 validation: (input) => input.trim().length >= 1,
                 handler: (input) => {
                     songData.customerName = input.trim();
-                    return `Nice to meet you, ${songData.customerName}! <i class='ph ph-smiley icon-sm'></i> I love that name!<br><br>Now, who is this amazing song going to be for? You can tell me their name, or how they're special to you (like "my mom" or "my best friend Sarah").`;
+                    return `Nice to meet you, ${songData.customerName}! <i class='ph ph-smiley icon-sm'></i> I love that name!\\n\\nNow, who is this amazing song going to be for? You can tell me their name, or how they're special to you (like "my mom" or "my best friend Sarah").`;
                 }
             },
             {
@@ -744,7 +744,7 @@
                 validation: (input) => input.trim().length >= 1,
                 handler: (input) => {
                     songData.recipient = input.trim();
-                    return `Aww, ${songData.recipient}! <i class='ph ph-heart icon-sm'></i> I can already tell this is going to be something really special, ${songData.customerName}.<br><br>What's the occasion for this song? Is it for a birthday, anniversary, graduation, or maybe just because you wanted to show them how much they mean to you?`;
+                    return `Aww, ${songData.recipient}! <i class='ph ph-heart icon-sm'></i> I can already tell this is going to be something really special, ${songData.customerName}.\\n\\nWhat's the occasion for this song? Is it for a birthday, anniversary, graduation, or maybe just because you wanted to show them how much they mean to you?`;
                 }
             },
             {
@@ -753,7 +753,7 @@
                 validation: (input) => input.trim().length >= 1,
                 handler: (input) => {
                     songData.occasion = input.trim();
-                    return `Perfect! <i class='ph ph-check-circle icon-sm'></i> A ${songData.occasion.toLowerCase()} song for ${songData.recipient} - I'm getting goosebumps already!<br><br>Before we start crafting your lyrics, I need to know: are you looking for a <strong>single personalized song</strong> ($49.99) or a complete <strong>custom album with 5 songs</strong> ($199.99)?<br><br>Both include professional vocals, music production, and custom artwork!`;
+                    return `Perfect! <i class='ph ph-check-circle icon-sm'></i> A ${songData.occasion.toLowerCase()} song for ${songData.recipient} - I'm getting goosebumps already!\\n\\nBefore we start crafting your lyrics, I need to know: are you looking for a **single personalized song** ($49.99) or a complete **custom album with 5 songs** ($199.99)?\\n\\nBoth include professional vocals, music production, and custom artwork!`;
                 }
             },
             {
@@ -762,25 +762,25 @@
                 validation: (input) => input.toLowerCase().includes('single') || input.toLowerCase().includes('album') || input.toLowerCase().includes('more'),
                 handler: (input) => {
                     if (input.toLowerCase().includes('more')) {
-                        return `Great question! <i class='ph ph-info icon-sm'></i><br><br><strong>Single Song ($49.99):</strong><br>• One personalized song (3-4 minutes)<br>• Professional AI vocals & music<br>• Custom artwork<br>• Your story in one beautiful song<br><br><strong>Custom Album ($199.99):</strong><br>• 5 personalized songs<br>• Each song tells part of your story<br>• Professional vocals & music for all<br>• Custom artwork for the album<br>• Perfect for life stories, relationships, families<br><br>Which sounds perfect for ${songData.recipient}?`;
+                        return `Great question! <i class='ph ph-info icon-sm'></i>\\n\\n**Single Song ($49.99):**\\n• One personalized song (3-4 minutes)\\n• Professional AI vocals & music\\n• Custom artwork\\n• Your story in one beautiful song\\n\\n**Custom Album ($199.99):**\\n• 5 personalized songs\\n• Each song tells part of your story\\n• Professional vocals & music for all\\n• Custom artwork for the album\\n• Perfect for life stories, relationships, families\\n\\nWhich sounds perfect for ${songData.recipient}?`;
                     }
                     
                     if (input.toLowerCase().includes('single')) {
                         songData.productType = 'single';
-                        return `Excellent choice! <i class='ph ph-musical-note icon-sm'></i> A single personalized song is perfect for capturing that one special story or feeling.<br><br>Now for the fun part - tell me the story you want this song to capture! The more details you share about ${songData.recipient}, your relationship, and what makes them special, the more personal and meaningful your song will be.<br><br>Don't hold back - share memories, inside jokes, special moments, or anything that makes your heart smile when you think of them! <i class='ph ph-heart icon-sm'></i>`;
+                        return `Excellent choice! <i class='ph ph-musical-note icon-sm'></i> A single personalized song is perfect for capturing that one special story or feeling.\\n\\nNow for the fun part - tell me the story you want this song to capture! The more details you share about ${songData.recipient}, your relationship, and what makes them special, the more personal and meaningful your song will be.\\n\\nDon't hold back - share memories, inside jokes, special moments, or anything that makes your heart smile when you think of them! <i class='ph ph-heart icon-sm'></i>`;
                     }
                     
                     if (input.toLowerCase().includes('album')) {
                         songData.productType = 'album';
                         songData.collectingAlbumSongs = true;
                         songData.currentAlbumSong = 1;
-                        return `WOW! <i class='ph ph-star icon-sm'></i> A custom album is such an incredible gift! You're going to create something absolutely amazing for ${songData.recipient}.<br><br>I'll help you create 5 unique songs that tell your complete story together. Each song can have its own theme, mood, and style!<br><br><strong>Let's start with Song #1:</strong><br>What story, memory, or feeling do you want the first song to capture? Think about a specific moment, experience, or aspect of your relationship that's really meaningful.`;
+                        return `WOW! <i class='ph ph-star icon-sm'></i> A custom album is such an incredible gift! You're going to create something absolutely amazing for ${songData.recipient}.\\n\\nI'll help you create 5 unique songs that tell your complete story together. Each song can have its own theme, mood, and style!\\n\\n**Let's start with Song #1:**\\nWhat story, memory, or feeling do you want the first song to capture? Think about a specific moment, experience, or aspect of your relationship that's really meaningful.`;
                     }
                 }
             },
             {
                 bot: "",
-                quickResponses: [], // No quick responses - this needs personal details
+                quickResponses: ["Share a specific memory", "Talk about their personality", "Describe our relationship", "Tell about a special moment"],
                 validation: (input) => input.trim().length >= 10,
                 handler: (input) => {
                     if (songData.productType === 'album') {
@@ -791,11 +791,11 @@
                         songData.albumSongs[songData.currentAlbumSong - 1].story = input.trim();
                         songData.albumSongs[songData.currentAlbumSong - 1].songNumber = songData.currentAlbumSong;
                         
-                        return `That's beautiful! <i class='ph ph-heart icon-sm'></i> I can already feel the emotion in Song ${songData.currentAlbumSong}.<br><br>What genre/style would work best for this song? Think about the mood of your story - should it be uplifting pop, soulful R&B, heartfelt acoustic, energetic rock, or classic country?`;
+                        return `That's beautiful! <i class='ph ph-heart icon-sm'></i> I can already feel the emotion in Song ${songData.currentAlbumSong}.\\n\\nWhat genre/style would work best for this song? Think about the mood of your story - should it be uplifting pop, soulful R&B, heartfelt acoustic, energetic rock, or classic country?`;
                     } else {
                         // Handle single song
                         songData.story = input.trim();
-                        return `This is absolutely beautiful, ${songData.customerName}! <i class='ph ph-sparkles icon-sm'></i> I can already feel the love and emotion in your story.<br><br>Now, what genre would capture this feeling perfectly? Should this be an uplifting Pop song, soulful R&B, heartfelt Acoustic, energetic Rock, or classic Country?`;
+                        return `This is absolutely beautiful, ${songData.customerName}! <i class='ph ph-sparkles icon-sm'></i> I can already feel the love and emotion in your story.\\n\\nNow, what genre would capture this feeling perfectly? Should this be an uplifting **Pop** song, soulful **R&B**, heartfelt **Acoustic**, energetic **Rock**, or classic **Country**?`;
                     }
                 }
             },
@@ -808,10 +808,10 @@
                     
                     if (songData.productType === 'album') {
                         songData.albumSongs[songData.currentAlbumSong - 1].genre = genre;
-                        return `Perfect choice! <i class='ph ph-musical-note icon-sm'></i> ${genre} will be amazing for Song ${songData.currentAlbumSong}.<br><br>What mood should this song have? Should it be <strong>romantic</strong> and tender, <strong>uplifting</strong> and joyful, <strong>nostalgic</strong> and reflective, or <strong>emotional</strong> and heartfelt?`;
+                        return `Perfect choice! <i class='ph ph-musical-note icon-sm'></i> ${genre} will be amazing for Song ${songData.currentAlbumSong}.\\n\\nWhat mood should this song have? Should it be **romantic** and tender, **uplifting** and joyful, **nostalgic** and reflective, or **emotional** and heartfelt?`;
                     } else {
                         songData.genre = genre;
-                        return `${genre} is perfect! <i class='ph ph-musical-note icon-sm'></i> That genre will really bring your story to life.<br><br>Finally, what mood should your song have? Should it be <strong>romantic</strong> and tender, <strong>uplifting</strong> and joyful, <strong>nostalgic</strong> and reflective, or <strong>emotional</strong> and heartfelt?`;
+                        return `${genre} is perfect! <i class='ph ph-musical-note icon-sm'></i> That genre will really bring your story to life.\\n\\nFinally, what mood should your song have? Should it be **romantic** and tender, **uplifting** and joyful, **nostalgic** and reflective, or **emotional** and heartfelt?`;
                     }
                 }
             },
@@ -828,19 +828,19 @@
                         if (songData.currentAlbumSong < 5) {
                             songData.currentAlbumSong++;
                             updateAlbumProgress(songData.currentAlbumSong);
-                            return `Song ${songData.currentAlbumSong - 1} is going to be incredible! <i class='ph ph-check-circle icon-sm'></i><br><br><strong>Now let's create Song #${songData.currentAlbumSong}:</strong><br>What story, memory, or feeling should this song capture? Remember, each song can be completely different - maybe this one focuses on a different aspect of your relationship or a different time period.`;
+                            return `Song ${songData.currentAlbumSong - 1} is going to be incredible! <i class='ph ph-check-circle icon-sm'></i>\\n\\n**Now let's create Song #${songData.currentAlbumSong}:**\\nWhat story, memory, or feeling should this song capture? Remember, each song can be completely different - maybe this one focuses on a different aspect of your relationship or a different time period.`;
                         } else {
                             songData.albumSongs[songData.currentAlbumSong - 1].mood = mood;
                             songData.collectingAlbumSongs = false;
                             songData.story = songData.albumSongs.map((song, index) => 
                                 `Song ${index + 1} (${song.genre} - ${song.mood}): ${song.story}`
-                            ).join('<br><br>');
+                            ).join('\\n\\n');
                             
-                            return `WOW! <i class='ph ph-star icon-sm'></i> ${songData.customerName}, you've just created the outline for an absolutely incredible 5-song album for ${songData.recipient}! I'm getting chills thinking about how amazing this is going to be.<br><br>Your album will have:<br>${songData.albumSongs.map((song, i) => `• Song ${i+1}: ${song.genre} (${song.mood})`).join('<br>')}<br><br>Let me generate a preview of your first song's lyrics so you can see the magic we're about to create! <i class='ph ph-magic-wand icon-sm'></i>`;
+                            return `WOW! <i class='ph ph-star icon-sm'></i> ${songData.customerName}, you've just created the outline for an absolutely incredible 5-song album for ${songData.recipient}! I'm getting chills thinking about how amazing this is going to be.\\n\\nYour album will have:\\n${songData.albumSongs.map((song, i) => `• Song ${i+1}: ${song.genre} (${song.mood})`).join('\\n')}\\n\\nLet me generate a preview of your first song's lyrics so you can see the magic we're about to create! <i class='ph ph-magic-wand icon-sm'></i>`;
                         }
                     } else {
                         songData.mood = mood;
-                        return `Perfect! <i class='ph ph-heart icon-sm'></i> ${songData.customerName}, I have everything I need to create something absolutely magical for ${songData.recipient}.<br><br>I'm about to write a ${mood.toLowerCase()} ${songData.genre.toLowerCase()} song about your beautiful story for their ${songData.occasion.toLowerCase()}. This is going to be incredible!<br><br>Let me work my magic and create your personalized lyrics... <i class='ph ph-magic-wand icon-sm'></i>`;
+                        return `Perfect! <i class='ph ph-heart icon-sm'></i> ${songData.customerName}, I have everything I need to create something absolutely magical for ${songData.recipient}.\\n\\nI'm about to write a ${mood.toLowerCase()} ${songData.genre.toLowerCase()} song about your beautiful story for their ${songData.occasion.toLowerCase()}. This is going to be incredible!\\n\\nLet me work my magic and create your personalized lyrics... <i class='ph ph-magic-wand icon-sm'></i>`;
                     }
                 }
             }
@@ -927,9 +927,9 @@
             let errorMsg = `❌ ${message}`;
             
             if (suggestions.length > 0) {
-                errorMsg += '<br><br>💡 Try one of these:';
+                errorMsg += '\\n\\n💡 Try one of these:';
                 suggestions.forEach(suggestion => {
-                    errorMsg += `<br>• ${suggestion}`;
+                    errorMsg += `\\n• ${suggestion}`;
                 });
             }
             
@@ -1182,7 +1182,7 @@
                     addBotMessage(formattedLyrics, true);
                     
                     setTimeout(() => {
-                        addBotMessage(`${songData.customerName}, this is just the beginning! <i class='ph ph-sparkles icon-sm'></i><br><br>What you're seeing is your personalized lyrics preview. Here's what happens next:<br><br>🎤 <strong>Professional vocals</strong> - We'll have this sung beautifully<br>🎵 <strong>Music production</strong> - Full instrumental backing<br>🎨 <strong>Custom artwork</strong> - Designed to match your song<br>📧 <strong>Delivery</strong> - Complete package sent to you in 48 hours<br><br>To make this real for ${songData.recipient}, I just need your email address and we can get started on production!`);
+                        addBotMessage(`${songData.customerName}, this is just the beginning! <i class='ph ph-sparkles icon-sm'></i>\\n\\nWhat you're seeing is your personalized lyrics preview. Here's what happens next:\\n\\n🎤 **Professional vocals** - We'll have this sung beautifully\\n🎵 **Music production** - Full instrumental backing\\n🎨 **Custom artwork** - Designed to match your song\\n📧 **Delivery** - Complete package sent to you in 48 hours\\n\\nTo make this real for ${songData.recipient}, I just need your email address and we can get started on production!`);
                         
                         songData.collectingEmail = true;
                         document.getElementById('userInput').placeholder = 'Enter your email address...';
@@ -1196,7 +1196,7 @@
                 
             } catch (error) {
                 console.error('Error generating lyrics:', error);
-                addBotMessage(`I'm having a little trouble connecting to my creative engine right now. <i class='ph ph-warning icon-sm'></i> But don't worry! Let me collect your information and I'll make sure you get an amazing song.<br><br>What's your email address so I can send you updates and your completed song?`);
+                addBotMessage(`I'm having a little trouble connecting to my creative engine right now. <i class='ph ph-warning icon-sm'></i> But don't worry! Let me collect your information and I'll make sure you get an amazing song.\\n\\nWhat's your email address so I can send you updates and your completed song?`);
                 
                 songData.collectingEmail = true;
                 document.getElementById('userInput').placeholder = 'Enter your email address...';
@@ -1207,7 +1207,7 @@
         }
 
         async function createOrderWithEmail(email) {
-            addBotMessage(`Perfect! <i class='ph ph-check-circle icon-sm'></i> I've got your email: ${email}<br><br>Now I'm creating your order and setting up payment. One moment please...`);
+            addBotMessage(`Perfect! <i class='ph ph-check-circle icon-sm'></i> I've got your email: ${email}\\n\\nNow I'm creating your order and setting up payment. One moment please...`);
             
             const orderData = {
                 'Customer Email': email,
@@ -1253,7 +1253,7 @@
                 const price = songData.productType === 'album' ? '$199.99' : '$49.99';
                 const productName = songData.productType === 'album' ? 'Custom 5-Song Album' : 'Personalized Song';
                 
-                addBotMessage(`Excellent! <i class='ph ph-check-circle icon-sm'></i> Your order is ready, ${songData.customerName}!<br><br><strong>Order Summary:</strong><br>• ${productName} for ${songData.recipient}<br>• ${songData.occasion} occasion<br>• ${price} total<br>• Delivery to: ${email}<br><br>Ready to make this magical song a reality? Let's complete your order!`);
+                addBotMessage(`Excellent! <i class='ph ph-check-circle icon-sm'></i> Your order is ready, ${songData.customerName}!\\n\\n**Order Summary:**\\n• ${productName} for ${songData.recipient}\\n• ${songData.occasion} occasion\\n• ${price} total\\n• Delivery to: ${email}\\n\\nReady to make this magical song a reality? Let's complete your order!`);
                 
                 setTimeout(() => {
                     createStripeCheckout(email, orderData);
@@ -1315,7 +1315,7 @@
             
             const productText = productType === 'album' ? 'album' : 'song';
             setTimeout(() => {
-                addBotMessage(`<i class='ph ph-check-circle icon-sm'></i> Payment page opened! Complete your purchase there, ${songData.customerName}, and we'll get started on your ${productText} immediately.<br><br>If you have any questions, email us at hello@echogifts.shop. Thank you for choosing EchoGifts! <i class='ph ph-heart icon-sm'></i>`);
+                addBotMessage(`<i class='ph ph-check-circle icon-sm'></i> Payment page opened! Complete your purchase there, ${songData.customerName}, and we'll get started on your ${productText} immediately.\\n\\nIf you have any questions, email us at hello@echogifts.shop. Thank you for choosing EchoGifts! <i class='ph ph-heart icon-sm'></i>`);
             }, 1000);
         }
 
