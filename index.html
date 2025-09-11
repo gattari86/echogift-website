@@ -1036,6 +1036,22 @@
                     }
                 });
 
+                // Add event delegation for chat buttons
+                this.chatMessages.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('chat-button')) {
+                        const action = e.target.getAttribute('data-action');
+                        if (action !== null) {
+                            const index = parseInt(action);
+                            this.handleButtonClick(index);
+                        } else if (e.target.hasAttribute('data-function')) {
+                            const functionName = e.target.getAttribute('data-function');
+                            if (this[functionName]) {
+                                this[functionName]();
+                            }
+                        }
+                    }
+                });
+
                 this.startConversation();
             }
 
@@ -1247,8 +1263,8 @@ Of all the love we'll share today`;
                     <div class="message-content">
                         <div class="lyrics-display">${lyrics}</div>
                         <div class="button-group">
-                            <button class="chat-button secondary" onclick="echoBot.requestChanges()">Make Changes</button>
-                            <button class="chat-button" onclick="echoBot.approveLyrics()">Love It! Order Now</button>
+                            <button class="chat-button secondary" data-function="requestChanges">Make Changes</button>
+                            <button class="chat-button" data-function="approveLyrics">Love It! Order Now</button>
                         </div>
                     </div>
                 `;
@@ -1372,7 +1388,7 @@ Of all the love we'll share today`;
                 if (buttons) {
                     buttonHtml = '<div class="button-group">';
                     buttons.forEach((button, index) => {
-                        buttonHtml += `<button class="chat-button" onclick="echoBot.handleButtonClick(${index})" data-action="${index}">${button.text}</button>`;
+                        buttonHtml += `<button class="chat-button" data-action="${index}">${button.text}</button>`;
                     });
                     buttonHtml += '</div>';
                     
@@ -1438,6 +1454,7 @@ Of all the love we'll share today`;
         let echoBot;
         document.addEventListener('DOMContentLoaded', function() {
             echoBot = new EchoChatbot();
+            window.echoBot = echoBot; // Make globally accessible
         });
 
         // Add icon support for send button
