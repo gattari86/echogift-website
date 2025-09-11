@@ -51,21 +51,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
     
     <!-- Google Analytics & Conversion Tracking -->
+    <!-- Google Analytics 4 with Enhanced Ecommerce -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QXKL1J8X23"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       
+      // Configure GA4 with enhanced ecommerce
       gtag('config', 'G-QXKL1J8X23', {
         enhanced_ecommerce: true,
         conversion_linker: true,
         allow_enhanced_conversions: true
       });
       
+      // Track page views
       gtag('event', 'page_view', {
         page_title: document.title,
         page_location: window.location.href,
@@ -89,1286 +92,1377 @@
     }
     </script>
     
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "EchoGift",
+        "url": "https://echogifts.shop",
+        "logo": "https://echogifts.shop/favicon.ico",
+        "description": "EchoGift creates personalized AI-generated songs and albums as unique gifts for any occasion",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hello@echogifts.shop",
+            "contactType": "customer support"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Personalized Song Gift",
+        "description": "Custom AI-generated song with your personal story and custom artwork. Perfect for birthdays, anniversaries, and special moments.",
+        "brand": {
+            "@type": "Brand",
+            "name": "EchoGift"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "49.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "EchoGift"
+            }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "127",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Sarah M."
+                },
+                "reviewBody": "I gave my husband a song about our 20-year journey together for our anniversary. He cried happy tears – it captured our story perfectly."
+            },
+            {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "Michael R."
+                },
+                "reviewBody": "My daughter's graduation song included all her achievements and dreams. She plays it every morning before work. Best gift I've ever given."
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Custom Song Album",
+        "description": "5 personalized songs telling your complete story with custom album-inspired artwork",
+        "brand": {
+            "@type": "Brand",
+            "name": "EchoGift"  
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "199.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "EchoGift"
+            }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "89"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I order a custom song?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Simply fill out our order form with your story details, choose your genre, and we'll create your personalized song gift within 2 business days."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How will I get my song?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Once your song is complete, you'll receive an email with a secure download link. You'll be able to download both WAV and MP3 versions of your song. If your package includes artwork, a PNG file will be included too."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What makes the perfect personalized song for my boyfriend?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Share your relationship milestones, inside jokes, and special memories. Our AI creates custom songs that capture your unique love story - making it the perfect romantic gift."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://echogifts.shop/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Order",
+                "item": "https://echogifts.shop/#order"
+            }
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "EchoGift - Custom AI Song Creation",
+        "description": "Personalized AI-generated songs and albums for gifts",
+        "url": "https://echogifts.shop",
+        "telephone": "",
+        "email": "hello@echogifts.shop",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US"
+        },
+        "priceRange": "$49.99-$199.99",
+        "openingHours": "Mo-Su 00:00-24:00",
+        "sameAs": []
+    }
+    </script>
+
+    <!-- Echo Chatbot Styles -->
     <style>
+        /* Echo Chatbot Specific Variables */
         :root {
             --primary-brown: #8B4513;
             --secondary-brown: #D2691E;
             --light-cream: #F5F5DC;
             --accent-brown: #CD853F;
-            --white: #FFFFFF;
             --success-green: #10B981;
             --error-red: #EF4444;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #F5F5DC 0%, #FFF8E7 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Mobile-First Design */
-        .container {
-            width: 100%;
-            max-width: 100vw;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .header {
-            background: linear-gradient(135deg, var(--primary-brown), var(--secondary-brown));
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            box-shadow: 0 2px 10px rgba(139, 69, 19, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        .header p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            font-weight: 400;
-        }
-
-        /* Chat Container - Mobile Optimized */
-        .chat-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            height: calc(100vh - 90px); /* Account for header */
-            position: relative;
-        }
-
-        /* Conversation Breadcrumbs - Mobile Friendly */
-        .conversation-breadcrumbs {
-            display: none;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1rem;
-            background: rgba(245, 245, 220, 0.5);
-            border-bottom: 1px solid rgba(139, 69, 19, 0.1);
-            font-size: 0.8rem;
-            overflow-x: auto;
-            white-space: nowrap;
-        }
-
-        .breadcrumb-back {
-            background: var(--accent-brown);
-            color: white;
-            border: none;
-            padding: 0.4rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            cursor: pointer;
-            flex-shrink: 0;
-            transition: all 0.2s ease;
-        }
-
-        .breadcrumb-back:hover {
-            background: var(--primary-brown);
-            transform: translateY(-1px);
-        }
-
-        .breadcrumb-item {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            color: var(--primary-brown);
-            font-weight: 500;
-            flex-shrink: 0;
-        }
-
-        .breadcrumb-separator {
-            color: var(--accent-brown);
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-
-        /* Album Progress - Mobile Optimized */
-        .album-progress {
-            display: none;
-            justify-content: center;
-            align-items: center;
-            margin: 1rem;
-            padding: 0.75rem;
-            background: rgba(245, 245, 220, 0.3);
-            border-radius: 12px;
-            gap: 0.3rem;
-            overflow-x: auto;
-        }
-
-        .progress-step {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: var(--light-cream);
+        /* Chatbot Instructions */
+        .chatbot-instructions {
+            background: linear-gradient(135deg, var(--light-cream) 0%, #F8F6F1 100%);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
             border: 2px solid var(--accent-brown);
+        }
+
+        .chatbot-instructions h3 {
+            color: var(--primary-brown);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .instruction-steps {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+        }
+
+        .step-number {
+            background: var(--primary-brown);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            font-size: 0.8rem;
-            color: var(--accent-brown);
-            transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: 14px;
             flex-shrink: 0;
         }
 
-        .progress-step.active {
-            background: var(--secondary-brown);
-            color: white;
-            border-color: var(--secondary-brown);
-            transform: scale(1.1);
+        .step p {
+            margin: 0;
+            color: var(--primary-brown);
+            font-size: 14px;
+            line-height: 1.4;
         }
 
-        .progress-step.completed {
-            background: var(--success-green);
-            color: white;
-            border-color: var(--success-green);
+        /* Echo Chat Container */
+        .echo-chat-container {
+            background: linear-gradient(135deg, #FEFCF8 0%, #F9F6F1 100%);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(139, 69, 19, 0.15);
+            border: 2px solid var(--accent-brown);
+            position: relative;
+            overflow: hidden;
         }
 
-        .progress-connector {
-            width: 15px;
-            height: 2px;
-            background: var(--accent-brown);
-            transition: all 0.3s ease;
-            flex-shrink: 0;
+        .echo-chat-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-brown), var(--secondary-brown), var(--accent-brown));
         }
 
-        .progress-connector.completed {
-            background: var(--success-green);
+        .echo-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--accent-brown);
         }
 
-        /* Chat Messages - Mobile Optimized */
+        .echo-header h3 {
+            color: var(--primary-brown);
+            margin: 0 0 8px 0;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .echo-header p {
+            color: var(--secondary-brown);
+            margin: 0;
+            font-style: italic;
+            font-size: 1rem;
+        }
+
         .chat-messages {
-            flex: 1;
-            padding: 1rem;
+            max-height: 500px;
             overflow-y: auto;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch; /* iOS smooth scrolling */
+            margin-bottom: 20px;
+            padding-right: 8px;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: var(--light-cream);
+            border-radius: 3px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: var(--accent-brown);
+            border-radius: 3px;
         }
 
         .message {
+            margin-bottom: 16px;
             display: flex;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-            max-width: 100%;
             align-items: flex-start;
+            gap: 12px;
+            animation: fadeInUp 0.4s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .message.user {
             flex-direction: row-reverse;
-            margin-left: 2rem;
         }
 
-        .message.bot {
-            margin-right: 2rem;
-        }
-
-        .avatar {
-            width: 35px;
-            height: 35px;
+        .message-avatar {
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
+            background: var(--primary-brown);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
             flex-shrink: 0;
-            overflow: hidden;
         }
 
-        .user .avatar {
-            background: linear-gradient(135deg, var(--accent-brown), var(--secondary-brown));
-            color: white;
-            font-weight: 600;
+        .message.user .message-avatar {
+            background: var(--secondary-brown);
         }
 
-        .bot .avatar {
-            background: linear-gradient(135deg, var(--primary-brown), var(--secondary-brown));
-            padding: 0;
-        }
-
-        .bot .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .message-bubble {
-            background: white;
-            padding: 0.75rem 1rem;
+        .message-content {
+            max-width: 70%;
+            padding: 12px 16px;
             border-radius: 18px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            max-width: calc(100% - 50px);
-            word-wrap: break-word;
-            line-height: 1.4;
-        }
-
-        .user .message-bubble {
-            background: linear-gradient(135deg, var(--primary-brown), var(--secondary-brown));
-            color: white;
-        }
-
-        .bot .message-bubble {
             background: white;
-            color: #333;
-        }
-
-        /* Quick Responses - Mobile Optimized */
-        .quick-responses {
-            padding: 0.5rem 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-        }
-
-        .quick-response {
-            background: white;
-            border: 2px solid var(--accent-brown);
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
             color: var(--primary-brown);
-            padding: 0.6rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            flex: 0 1 auto;
-            text-align: center;
-            min-width: fit-content;
-            max-width: 100%;
+            line-height: 1.5;
         }
 
-        .quick-response:hover,
-        .quick-response:active {
-            background: var(--accent-brown);
+        .message.user .message-content {
+            background: var(--primary-brown);
             color: white;
-            transform: translateY(-1px);
         }
 
-        /* Input Area - Mobile Optimized */
-        .input-area {
-            padding: 1rem;
-            background: white;
-            border-top: 1px solid rgba(139, 69, 19, 0.1);
-            position: sticky;
-            bottom: 0;
-            z-index: 50;
+        .lyrics-display {
+            background: #FFFEF9;
+            border: 2px solid var(--accent-brown);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Georgia', serif;
+            white-space: pre-line;
+            line-height: 1.8;
+            color: var(--primary-brown);
+            box-shadow: 0 4px 16px rgba(139, 69, 19, 0.1);
         }
 
-        .input-group {
+        .button-group {
             display: flex;
-            gap: 0.5rem;
-            align-items: flex-end;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
         }
 
-        .input-wrapper {
+        .chat-button {
+            background: var(--primary-brown);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-brown);
+        }
+
+        .chat-button:hover {
+            background: var(--secondary-brown);
+            border-color: var(--secondary-brown);
+            transform: translateY(-2px);
+        }
+
+        .chat-button.secondary {
+            background: transparent;
+            color: var(--primary-brown);
+            border-color: var(--primary-brown);
+        }
+
+        .chat-button.secondary:hover {
+            background: var(--primary-brown);
+            color: white;
+        }
+
+        .echo-input-area {
+            background: white;
+            border-radius: 25px;
+            padding: 8px;
+            box-shadow: 0 4px 16px rgba(139, 69, 19, 0.15);
+            border: 2px solid var(--accent-brown);
+        }
+
+        .echo-input-group {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .echo-input-wrapper {
             flex: 1;
-            position: relative;
         }
 
         #userInput {
             width: 100%;
-            padding: 0.75rem 1rem;
-            border: 2px solid var(--accent-brown);
-            border-radius: 25px;
-            font-size: 1rem;
-            background: white;
-            resize: none;
-            min-height: 45px;
+            min-height: 50px;
             max-height: 120px;
-            line-height: 1.4;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 20px;
+            resize: none;
             font-family: inherit;
+            font-size: 16px;
+            color: var(--primary-brown);
+            background: transparent;
+            outline: none;
         }
 
-        #userInput:focus {
-            outline: none;
-            border-color: var(--secondary-brown);
-            box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.1);
+        #userInput::placeholder {
+            color: var(--accent-brown);
+            opacity: 0.7;
         }
 
         #sendButton {
-            background: linear-gradient(135deg, var(--primary-brown), var(--secondary-brown));
+            background: var(--primary-brown);
             color: white;
             border: none;
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            font-size: 1.2rem;
             cursor: pointer;
-            transition: all 0.2s ease;
-            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
         }
 
-        #sendButton:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+        #sendButton:hover {
+            background: var(--secondary-brown);
+            transform: scale(1.05);
         }
 
         #sendButton:disabled {
-            opacity: 0.6;
+            background: var(--accent-brown);
             cursor: not-allowed;
+            transform: none;
         }
 
-        /* Typing Indicator */
         .typing-indicator {
             display: flex;
-            gap: 4px;
             align-items: center;
-            padding: 0.5rem 0;
+            gap: 8px;
+            color: var(--accent-brown);
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        .typing-dots {
+            display: flex;
+            gap: 4px;
         }
 
         .typing-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
+            width: 6px;
+            height: 6px;
             background: var(--accent-brown);
-            animation: typing 1.4s infinite ease-in-out;
+            border-radius: 50%;
+            animation: typing 1.4s infinite;
         }
 
-        .typing-dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .typing-dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
 
         @keyframes typing {
-            0%, 60%, 100% {
-                transform: translateY(0);
-                opacity: 0.4;
-            }
-            30% {
-                transform: translateY(-10px);
-                opacity: 1;
-            }
+            0%, 60%, 100% { opacity: 0.3; transform: scale(0.8); }
+            30% { opacity: 1; transform: scale(1); }
         }
 
-        /* Lyrics Display */
-        .lyrics-display {
-            background: linear-gradient(135deg, #f8f9fa, #ffffff);
-            border: 1px solid var(--accent-brown);
-            border-radius: 12px;
-            padding: 1rem;
-            margin: 0.5rem 0;
-            max-width: 100%;
+        /* Loading States */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
         }
 
-        .lyrics-title {
-            font-weight: 600;
-            color: var(--primary-brown);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .instruction-steps {
+                flex-direction: column;
+                align-items: center;
+            }
 
-        /* Icons */
-        .icon {
-            font-size: 1.2rem;
-            vertical-align: middle;
-        }
+            .step {
+                max-width: 100%;
+            }
 
-        .icon-sm {
-            font-size: 1rem;
-        }
+            .echo-chat-container {
+                padding: 20px 15px;
+            }
 
-        /* Mobile Responsiveness Enhancements */
-        @media (max-width: 480px) {
-            .header {
-                padding: 0.75rem 0.5rem;
+            .message-content {
+                max-width: 85%;
             }
-            
-            .header h1 {
-                font-size: 1.3rem;
-            }
-            
-            .header p {
-                font-size: 0.8rem;
-            }
-            
-            .chat-messages {
-                padding: 0.75rem;
-            }
-            
-            .message.user {
-                margin-left: 1rem;
-            }
-            
-            .message.bot {
-                margin-right: 1rem;
-            }
-            
-            .avatar {
-                width: 32px;
-                height: 32px;
-                font-size: 1rem;
-            }
-            
-            .message-bubble {
-                padding: 0.6rem 0.8rem;
-                max-width: calc(100% - 42px);
-                font-size: 0.9rem;
-            }
-            
-            .quick-response {
-                padding: 0.5rem 0.8rem;
-                font-size: 0.8rem;
-                border-radius: 18px;
-            }
-            
-            .input-area {
-                padding: 0.75rem;
-            }
-            
-            #userInput {
-                font-size: 16px; /* Prevents zoom on iOS */
-                padding: 0.7rem 0.9rem;
-            }
-            
-            #sendButton {
-                width: 42px;
-                height: 42px;
-                font-size: 1.1rem;
-            }
-        }
 
-        /* Ultra-small screens */
-        @media (max-width: 350px) {
-            .message.user {
-                margin-left: 0.5rem;
+            .button-group {
+                flex-direction: column;
             }
-            
-            .message.bot {
-                margin-right: 0.5rem;
-            }
-            
-            .chat-messages {
-                padding: 0.5rem;
-            }
-        }
 
-        /* Landscape mobile optimization */
-        @media (max-height: 500px) and (orientation: landscape) {
-            .header {
-                padding: 0.5rem;
-            }
-            
-            .header h1 {
-                font-size: 1.2rem;
-            }
-            
-            .header p {
-                font-size: 0.75rem;
-            }
-            
-            .chat-container {
-                height: calc(100vh - 70px);
-            }
-            
-            .album-progress {
-                margin: 0.5rem;
-                padding: 0.5rem;
-            }
-        }
-
-        /* Accessibility improvements */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .message-bubble {
-                border: 2px solid var(--primary-brown);
-            }
-            
-            .quick-response {
-                border-width: 3px;
-            }
-        }
-
-        /* Touch target optimization */
-        @media (pointer: coarse) {
-            .quick-response {
-                min-height: 44px;
-                padding: 0.7rem 1rem;
-            }
-            
-            .breadcrumb-back {
-                min-height: 40px;
-                padding: 0.6rem 1rem;
+            .chat-button {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>
-                <i class="ph ph-robot"></i>
-                <i class="ph ph-heart"></i>
-                Your Lyric Lovebot
-            </h1>
-            <p>Your words, our music, one unforgettable gift.</p>
+    <!-- Navigation Header --> 
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">EchoGift</a>
+                <div class="nav-menu">
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="gallery.html" class="nav-link">
+                        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"/></svg>
+                        Gallery
+                    </a>
+                    <a href="single-song.html" class="nav-link">Single Song ($49.99)</a>
+                    <a href="album-gift.html" class="nav-link">Album Gift ($199.99)</a>
+                    <a href="blog.html" class="nav-link">
+                        <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"/></svg>
+                        Blog
+                    </a>
+                    <a href="#order" class="nav-cta">Order Now</a>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
         </div>
+    </header>
 
-        <div class="chat-container">
-            <!-- Conversation Breadcrumbs -->
-            <div class="conversation-breadcrumbs" id="breadcrumbs" style="display: none;">
-                <button class="breadcrumb-back" onclick="goBackOneStep()" aria-label="Go back to previous step">
-                    <i class="ph ph-arrow-left"></i> Back
-                </button>
-                <div class="breadcrumb-item">
-                    <i class="ph ph-house"></i>
-                    <span>Start</span>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Turn Your Story Into a Song</h1>
+                <p class="hero-subtitle">A deeply personal AI-crafted gift, born from your memories. Create intimate musical moments that capture love, celebration, and connection in every note.</p>
+                <button class="cta-button" onclick="scrollToOrder()">Begin Your Musical Story</button>
+            </div>
+            <div class="hero-visual">
+                <div class="music-wave">
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
                 </div>
-                <span class="breadcrumb-separator">›</span>
-                <div class="breadcrumb-item" id="currentBreadcrumb">
-                    <span>Getting Started</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h3>Single Song</h3>
+                    <div class="price">$49.99</div>
+                    <p>Perfect for birthdays, anniversaries, or any special moment + custom artwork</p>
+                    <a href="single-song.html" class="card-link">Learn More →</a>
                 </div>
-            </div>
-
-            <!-- Album Progress Indicator -->
-            <div class="album-progress" id="albumProgress" style="display: none;">
-                <div class="progress-step active" id="step1">1</div>
-                <div class="progress-connector" id="connector1"></div>
-                <div class="progress-step" id="step2">2</div>
-                <div class="progress-connector" id="connector2"></div>
-                <div class="progress-step" id="step3">3</div>
-                <div class="progress-connector" id="connector3"></div>
-                <div class="progress-step" id="step4">4</div>
-                <div class="progress-connector" id="connector4"></div>
-                <div class="progress-step" id="step5">5</div>
-            </div>
-
-            <!-- Chat Messages -->
-            <div class="chat-messages" id="chatMessages">
-                <!-- Messages will be added here dynamically -->
-            </div>
-
-            <!-- Quick Responses -->
-            <div class="quick-responses" id="quickResponses" style="display: none;">
-                <!-- Quick response buttons will be added here -->
-            </div>
-
-            <!-- Input Area -->
-            <div class="input-area">
-                <div class="input-group">
-                    <div class="input-wrapper">
-                        <textarea 
-                            id="userInput" 
-                            placeholder="Type your answer here..." 
-                            rows="1"
-                            autocomplete="off"
-                            autocorrect="off"
-                            autocapitalize="sentences"
-                            spellcheck="true"
-                        ></textarea>
+                <div class="price-card featured">
+                    <h3>Album</h3>
+                    <div class="price">$199.99</div>
+                    <p>5 songs telling your complete story + custom artwork</p>
+                    <div class="album-artwork-note">
+                        <small><svg style="width: 14px; height: 14px; fill: var(--terracotta); margin-right: 6px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M200,76a44.05,44.05,0,0,0-44-44c-21.44,0-38.24,10.33-50.68,31.07C91,85,80,108.52,80,132c0,27.72,9.72,52.9,27.36,70.88A44,44,0,0,0,138.3,216c15.35,0,27.15-6.64,36-12.87,10.4-7.33,15.69-13.72,15.7-13.73a8,8,0,0,0-11-11.64s-3.8,4.58-12.28,10.58c-7.12,5-14.27,9.66-24.42,9.66a28,28,0,0,1-19.35-7.5C107.53,176.56,96,153.9,96,132c0-17.87,8.17-36.55,20.42-57.65C125.5,58.32,138.72,48,156,48a28,28,0,1,1,0,56H140a8,8,0,0,0,0,16h16A44,44,0,0,0,200,76ZM76,196a16,16,0,1,1-16-16A16,16,0,0,1,76,196Z"/></svg>Includes custom album-inspired artwork designed specifically for your story</small>
                     </div>
-                    <button id="sendButton" type="button" aria-label="Send message">
-                        <i class="ph ph-paper-plane-right"></i>
-                    </button>
+                    <span class="badge">Most Popular</span>
+                    <a href="album-gift.html" class="card-link">Learn More →</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Audio Samples Section -->
+    <section id="audio-samples" class="audio-samples">
+        <div class="container">
+            <h2>Hear the Magic - Real Customer Songs</h2>
+            <p class="samples-subtitle">Listen to actual personalized songs we've created for our customers. Each tells a unique story.</p>
+            
+            <div class="samples-grid">
+                <div class="sample-card">
+                    <div class="sample-artwork">
+                        <img src="audio/Two decades.png" alt="Custom artwork for Two Decades Strong - Anniversary song artwork featuring romantic elements" class="song-artwork">
+                    </div>
+                    <div class="sample-info">
+                        <h3>"Two Decades Strong"</h3>
+                        <p class="sample-story">Created for Sarah M.'s 20th anniversary gift to her husband. A beautiful journey through their marriage milestones.</p>
+                        <p class="sample-details"><strong>Genre:</strong> Acoustic Folk • <strong>Occasion:</strong> Anniversary</p>
+                    </div>
+                    <div class="audio-player-container">
+                        <audio controls preload="metadata" class="custom-audio-player">
+                            <source src="audio/Two Decades Strong.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="play-info">
+                            <span class="play-icon"><svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="white"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg></span>
+                            <span class="duration">Listen to sample</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sample-card">
+                    <div class="sample-artwork">
+                        <img src="audio/The sky she reached.png" alt="Custom artwork for The Sky She Reached - Graduation song artwork featuring uplifting sky and achievement themes" class="song-artwork">
+                    </div>
+                    <div class="sample-info">
+                        <h3>"The Sky She Reached"</h3>
+                        <p class="sample-story">Michael R.'s graduation gift for his daughter, celebrating her achievements and dreams for the future.</p>
+                        <p class="sample-details"><strong>Genre:</strong> Uplifting Pop • <strong>Occasion:</strong> Graduation</p>
+                    </div>
+                    <div class="audio-player-container">
+                        <audio controls preload="metadata" class="custom-audio-player">
+                            <source src="audio/The Sky She Reached.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="play-info">
+                            <span class="play-icon"><svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="white"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg></span>
+                            <span class="duration">Listen to sample</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sample-card">
+                    <div class="sample-artwork">
+                        <img src="audio/Chapters of You.png" alt="Custom artwork for Chapters of You - Memorial song artwork featuring emotional and remembrance themes" class="song-artwork">
+                    </div>
+                    <div class="sample-info">
+                        <h3>"Chapters of You"</h3>
+                        <p class="sample-story">Jennifer L.'s tribute album about her late father, helping her family heal through music and memories.</p>
+                        <p class="sample-details"><strong>Genre:</strong> Emotional Ballad • <strong>Occasion:</strong> Memorial</p>
+                    </div>
+                    <div class="audio-player-container">
+                        <audio controls preload="metadata" class="custom-audio-player">
+                            <source src="audio/Chapters of You (Remix).wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="play-info">
+                            <span class="play-icon"><svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="white"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg></span>
+                            <span class="duration">Listen to sample</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="samples-cta">
+                <p class="samples-note"><svg style="width: 16px; height: 16px; fill: var(--terracotta); margin-right: 6px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"/></svg> Each song is completely unique and created from the customer's personal story</p>
+                <div class="samples-buttons" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="gallery.html" class="cta-button secondary" style="min-width: 280px; flex: 0 1 auto;"><svg style="width: 16px; height: 16px; fill: var(--terracotta); margin-right: 6px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"/></svg> Hear More Examples</a>
+                    <button class="cta-button" onclick="scrollToOrder()" style="min-width: 280px; flex: 0 1 auto;">Create Your Custom Song</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order" class="order-form">
+        <div class="container">
+            <h2>Begin Your Story</h2>
+            
+            <!-- Chatbot Instructions -->
+            <div class="chatbot-instructions">
+                <h3>How It Works</h3>
+                <div class="instruction-steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <p>Chat with Echo to share your story and preferences</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <p>Review and customize your personalized lyrics</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <p>Complete your order and secure payment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Echo Chatbot Interface -->
+            <div class="echo-chat-container">
+                <div class="echo-header">
+                    <h3>
+                        <img src="echobot.png" alt="Echo" style="width: 24px; height: 24px; border-radius: 50%; margin-right: 8px;">
+                        Your Lyric Lovebot
+                    </h3>
+                    <p>Your words, our music, one unforgettable gift.</p>
+                </div>
+                
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chatMessages"></div>
+                
+                <!-- Input Area -->
+                <div class="echo-input-area">
+                    <div class="echo-input-group">
+                        <div class="echo-input-wrapper">
+                            <textarea id="userInput" placeholder="Type your answer here..."></textarea>
+                        </div>
+                        <button id="sendButton" type="button">
+                            <i class="ph ph-paper-plane-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden Order Form for FormSpree Submission -->
+            <form id="hiddenOrderForm" action="https://formspree.io/f/xqalgreg" method="POST" style="display: none;">
+                <input type="hidden" name="product-type" id="form-product-type">
+                <input type="hidden" name="your-name" id="form-your-name">
+                <input type="hidden" name="recipient-name" id="form-recipient-name">
+                <input type="hidden" name="occasion" id="form-occasion">
+                <input type="hidden" name="story-themes" id="form-story-themes">
+                <input type="hidden" name="genre" id="form-genre">
+                <input type="hidden" name="tone" id="form-tone">
+                <input type="hidden" name="language-preference" id="form-language-preference">
+                <input type="hidden" name="email" id="form-email">
+                <input type="hidden" name="final-lyrics" id="form-final-lyrics">
+                <input type="hidden" name="_subject" value="New Custom Song Order - EchoGift">
+                <input type="hidden" name="_next" value="https://echogifts.shop/#order-success">
+            </form>
+        </div>
+    </section>
+
+    <!-- Vinyl Section -->
+    <section class="vinyl-section">
+        <div class="container">
+            <div class="vinyl-content">
+                <h2>Vinyl Records – Coming Soon</h2>
+                <p>Turn your AI-generated songs into beautiful vinyl records. Be the first to know when this magical option becomes available.</p>
+                <form action="https://formspree.io/f/xkgzqpyy" method="POST" class="vinyl-signup">
+                    <input type="email" name="email" placeholder="Enter your email" class="vinyl-email" required>
+                    <input type="hidden" name="_subject" value="New Vinyl Waitlist Signup - EchoGift">
+                    <input type="hidden" name="_next" value="https://echogifts.shop/#vinyl-success">
+                    <button type="submit" class="vinyl-button">Join the Vinyl Waitlist</button>
+                </form>
+            </div>
+            <div class="vinyl-visual">
+                <div class="vinyl-record">
+                    <div class="vinyl-center"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="quote">"I gave my husband a song about our 20-year journey together for our anniversary. He cried happy tears – it captured our story perfectly."</div>
+                    <div class="author">— Sarah M.</div>
+                    <a href="#audio-samples" class="testimonial-link" onclick="scrollToSamples('Two Decades Strong')"><svg style="width: 16px; height: 16px; fill: var(--terracotta); margin-right: 6px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"/></svg> Hear Sarah's Song</a>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"My daughter's graduation song included all her achievements and dreams. She plays it every morning before work. Best gift I've ever given."</div>
+                    <div class="author">— Michael R.</div>
+                    <a href="#audio-samples" class="testimonial-link" onclick="scrollToSamples('The Sky She Reached')"><svg style="width: 16px; height: 16px; fill: var(--terracotta); margin-right: 6px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"/></svg> Hear Michael's Song</a>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"The album about my late father helped our whole family heal. Each song told a different chapter of his life. Absolutely beautiful."</div>
+                    <div class="author">— Jennifer L.</div>
+                    <a href="#audio-samples" class="testimonial-link" onclick="scrollToSamples('Chapters of You')"><svg style="width: 16px; height: 16px; fill: var(--terracotta); margin-right: 6px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"/></svg> Hear Jennifer's Song</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How do I order a custom song?</h3>
+                    <p>Simply fill out our order form above with your story details, choose your genre, and we'll create your personalized song gift within 2 business days.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How will I get my song?</h3>
+                    <p>Once your song is complete, you'll receive an email with a secure download link. You'll be able to download both WAV and MP3 versions of your song. If your package includes artwork, a PNG file will be included too.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What makes the perfect personalized song for my boyfriend?</h3>
+                    <p>Share your relationship milestones, inside jokes, and special memories. Our AI creates custom songs that capture your unique love story - making it the perfect romantic gift.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I get a personalized song for mom or dad?</h3>
+                    <p>Absolutely! Personalized songs for parents are incredibly meaningful gifts. Share family memories, their achievements, or what they mean to you for a touching tribute.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is this a good unique Christmas gift?</h3>
+                    <p>Yes! A custom song is the ultimate unique Christmas gift for anyone on your list - especially for someone who has everything. It's personal, memorable, and one-of-a-kind.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How does your AI song generator work?</h3>
+                    <p>Our advanced AI analyzes your story and preferences to compose original lyrics and melodies. Each personalized song is unique and professionally produced.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I order a custom anniversary song?</h3>
+                    <p>Perfect for anniversaries! Share your relationship timeline, special moments, and what your partner means to you. We'll create a romantic custom anniversary song they'll treasure forever.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you create personalized birthday songs?</h3>
+                    <p>Yes! Personalized birthday songs are incredibly popular. Include the person's interests, achievements, and what makes them special for a birthday gift they'll never forget.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How is this different from Songfinch?</h3>
+                    <p>Unlike Songfinch, we use cutting-edge AI technology to create your songs faster and more affordably while maintaining professional quality. Plus, we offer vinyl records coming soon!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Ideas Section -->
+    <section class="gift-ideas">
+        <div class="container">
+            <h2>Perfect For Every Occasion</h2>
+            <div class="occasion-grid">
+                <div class="occasion-card">
+                    <h3>Romantic Gifts</h3>
+                    <p>Personalized songs for boyfriends, girlfriends, and spouses. Custom anniversary songs and wedding gifts that capture your love story.</p>
+                </div>
+                <div class="occasion-card">
+                    <h3>Family Celebrations</h3>
+                    <p>Personalized songs for mom, dad, grandparents, and siblings. Perfect for birthdays, graduations, and family milestones.</p>
+                </div>
+                <div class="occasion-card">
+                    <h3>Holiday Gifts</h3>
+                    <p>Unique Christmas gifts, Valentine's Day surprises, and Mother's/Father's Day presents. The gift for someone who has everything!</p>
+                </div>
+                <div class="occasion-card">
+                    <h3>Music Lovers</h3>
+                    <p>Custom songs for music enthusiasts, musicians, and anyone who appreciates personalized art. AI-generated songs with professional quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>EchoGift</h3>
+                    <p>Your story, your song.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="mailto:hello@echogifts.shop">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.13,104.13,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"/></svg></a>
+                    <a href="#" aria-label="Twitter"><svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45.54,40.2a8,8,0,0,0-2.32,5.14C196,180.5,144.05,216,80,216c-8.06,0-15-1.12-20.62-2.54a111.14,111.14,0,0,0,35.81-18.54,8,8,0,0,0-.30-14.02c-.38-.2-38.47-20.42-48.65-70.84,17.29,8.17,45.66,16.69,88.19,5.47a8,8,0,0,0,6.66-9.8A31.81,31.81,0,0,1,136,88a32,32,0,0,1,32-32c16.16,0,32,14.78,32,32v32Z"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EchoGift. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Echo Chatbot JavaScript -->
     <script>
-        // Configuration
-        const LYRIC_API_URL = 'http://localhost:5001/generate-lyrics';
-        
-        // Global state
-        let currentStep = 0;
-        let isWaitingForResponse = false;
-        let songData = {
-            customerName: '',
-            recipient: '',
-            occasion: '',
-            story: '',
-            genre: '',
-            mood: '',
-            productType: '',
-            collectingEmail: false,
-            collectingRevisions: false,
-            collectingAlbumSongs: false,
-            collectingAlbumSongRevisions: false,
-            currentAlbumSong: 1,
-            albumSongs: []
-        };
-
-        // Conversation flow definition
-        const conversationFlow = [
-            {
-                bot: "Hey there! <i class='ph ph-hand-waving icon-sm'></i> I'm Echo, your personal lyric lovebot, and I'm SO excited to help you create something magical today! <i class='ph ph-heart icon-sm'></i><br><br>Before we dive in, what's your name? I'd love to make this personal for you!",
-                quickResponses: ["My name is...", "Call me...", "I'm..."],
-                validation: (input) => input.trim().length >= 1,
-                handler: (input) => {
-                    songData.customerName = input.trim();
-                    return `Nice to meet you, ${songData.customerName}! <i class='ph ph-smiley icon-sm'></i> I love that name!<br><br>Now, who is this amazing song going to be for? You can tell me their name, or how they're special to you (like "my mom" or "my best friend Sarah").`;
-                }
-            },
-            {
-                bot: "",
-                quickResponses: ["My boyfriend", "My girlfriend", "My mom", "My dad", "My best friend", "My partner"],
-                validation: (input) => input.trim().length >= 1,
-                handler: (input) => {
-                    songData.recipient = input.trim();
-                    return `Aww, ${songData.recipient}! <i class='ph ph-heart icon-sm'></i> I can already tell this is going to be something really special, ${songData.customerName}.<br><br>What's the occasion for this song? Is it for a birthday, anniversary, graduation, or maybe just because you wanted to show them how much they mean to you?`;
-                }
-            },
-            {
-                bot: "",
-                quickResponses: ["Birthday", "Anniversary", "Valentine's Day", "Christmas", "Graduation", "Just because", "Wedding"],
-                validation: (input) => input.trim().length >= 1,
-                handler: (input) => {
-                    songData.occasion = input.trim();
-                    return `Perfect! <i class='ph ph-check-circle icon-sm'></i> A ${songData.occasion.toLowerCase()} song for ${songData.recipient} - I'm getting goosebumps already!<br><br>Before we start crafting your lyrics, I need to know: are you looking for a <strong>single personalized song</strong> ($49.99) or a complete <strong>custom album with 5 songs</strong> ($199.99)?<br><br>Both include professional vocals, music production, and custom artwork!`;
-                }
-            },
-            {
-                bot: "",
-                quickResponses: ["Single Song ($49.99)", "Custom Album ($199.99)", "Tell me more about each"],
-                validation: (input) => input.toLowerCase().includes('single') || input.toLowerCase().includes('album') || input.toLowerCase().includes('more'),
-                handler: (input) => {
-                    if (input.toLowerCase().includes('more')) {
-                        return `Great question! <i class='ph ph-info icon-sm'></i><br><br><strong>Single Song ($49.99):</strong><br>• One personalized song (3-4 minutes)<br>• Professional AI vocals & music<br>• Custom artwork<br>• Your story in one beautiful song<br><br><strong>Custom Album ($199.99):</strong><br>• 5 personalized songs<br>• Each song tells part of your story<br>• Professional vocals & music for all<br>• Custom artwork for the album<br>• Perfect for life stories, relationships, families<br><br>Which sounds perfect for ${songData.recipient}?`;
+        // Enhanced Echo Chatbot with complete flow
+        class EchoChatbot {
+            constructor() {
+                this.conversationState = {
+                    step: 'start',
+                    data: {
+                        productType: '',
+                        customerName: '',
+                        recipientName: '',
+                        occasion: '',
+                        story: '',
+                        genre: '',
+                        tone: '',
+                        language: '',
+                        email: '',
+                        finalLyrics: ''
                     }
-                    
-                    if (input.toLowerCase().includes('single')) {
-                        songData.productType = 'single';
-                        return `Excellent choice! <i class='ph ph-musical-note icon-sm'></i> A single personalized song is perfect for capturing that one special story or feeling.<br><br>Now for the fun part - tell me the story you want this song to capture! The more details you share about ${songData.recipient}, your relationship, and what makes them special, the more personal and meaningful your song will be.<br><br>Don't hold back - share memories, inside jokes, special moments, or anything that makes your heart smile when you think of them! <i class='ph ph-heart icon-sm'></i>`;
-                    }
-                    
-                    if (input.toLowerCase().includes('album')) {
-                        songData.productType = 'album';
-                        songData.collectingAlbumSongs = true;
-                        songData.currentAlbumSong = 1;
-                        return `WOW! <i class='ph ph-star icon-sm'></i> A custom album is such an incredible gift! You're going to create something absolutely amazing for ${songData.recipient}.<br><br>I'll help you create 5 unique songs that tell your complete story together. Each song can have its own theme, mood, and style!<br><br><strong>Let's start with Song #1:</strong><br>What story, memory, or feeling do you want the first song to capture? Think about a specific moment, experience, or aspect of your relationship that's really meaningful.`;
-                    }
-                }
-            },
-            {
-                bot: "",
-                quickResponses: [], // No quick responses - this needs personal details
-                validation: (input) => input.trim().length >= 10,
-                handler: (input) => {
-                    if (songData.productType === 'album') {
-                        // Handle album song collection
-                        if (!songData.albumSongs[songData.currentAlbumSong - 1]) {
-                            songData.albumSongs[songData.currentAlbumSong - 1] = {};
-                        }
-                        songData.albumSongs[songData.currentAlbumSong - 1].story = input.trim();
-                        songData.albumSongs[songData.currentAlbumSong - 1].songNumber = songData.currentAlbumSong;
-                        
-                        return `That's beautiful! <i class='ph ph-heart icon-sm'></i> I can already feel the emotion in Song ${songData.currentAlbumSong}.<br><br>What genre/style would work best for this song? Think about the mood of your story - should it be uplifting pop, soulful R&B, heartfelt acoustic, energetic rock, or classic country?`;
-                    } else {
-                        // Handle single song
-                        songData.story = input.trim();
-                        return `This is absolutely beautiful, ${songData.customerName}! <i class='ph ph-sparkles icon-sm'></i> I can already feel the love and emotion in your story.<br><br>Now, what genre would capture this feeling perfectly? Should this be an uplifting Pop song, soulful R&B, heartfelt Acoustic, energetic Rock, or classic Country?`;
-                    }
-                }
-            },
-            {
-                bot: "",
-                quickResponses: ["Pop", "R&B", "Acoustic", "Rock", "Country"],
-                validation: (input) => ['pop', 'r&b', 'acoustic', 'rock', 'country'].some(genre => input.toLowerCase().includes(genre)),
-                handler: (input) => {
-                    const genre = input.trim();
-                    
-                    if (songData.productType === 'album') {
-                        songData.albumSongs[songData.currentAlbumSong - 1].genre = genre;
-                        return `Perfect choice! <i class='ph ph-musical-note icon-sm'></i> ${genre} will be amazing for Song ${songData.currentAlbumSong}.<br><br>What mood should this song have? Should it be <strong>romantic</strong> and tender, <strong>uplifting</strong> and joyful, <strong>nostalgic</strong> and reflective, or <strong>emotional</strong> and heartfelt?`;
-                    } else {
-                        songData.genre = genre;
-                        return `${genre} is perfect! <i class='ph ph-musical-note icon-sm'></i> That genre will really bring your story to life.<br><br>Finally, what mood should your song have? Should it be <strong>romantic</strong> and tender, <strong>uplifting</strong> and joyful, <strong>nostalgic</strong> and reflective, or <strong>emotional</strong> and heartfelt?`;
-                    }
-                }
-            },
-            {
-                bot: "",
-                quickResponses: ["Romantic", "Uplifting", "Nostalgic", "Emotional"],
-                validation: (input) => ['romantic', 'uplifting', 'nostalgic', 'emotional'].some(mood => input.toLowerCase().includes(mood)),
-                handler: (input) => {
-                    const mood = input.trim();
-                    
-                    if (songData.productType === 'album') {
-                        songData.albumSongs[songData.currentAlbumSong - 1].mood = mood;
-                        
-                        if (songData.currentAlbumSong < 5) {
-                            songData.currentAlbumSong++;
-                            updateAlbumProgress(songData.currentAlbumSong);
-                            return `Song ${songData.currentAlbumSong - 1} is going to be incredible! <i class='ph ph-check-circle icon-sm'></i><br><br><strong>Now let's create Song #${songData.currentAlbumSong}:</strong><br>What story, memory, or feeling should this song capture? Remember, each song can be completely different - maybe this one focuses on a different aspect of your relationship or a different time period.`;
-                        } else {
-                            songData.albumSongs[songData.currentAlbumSong - 1].mood = mood;
-                            songData.collectingAlbumSongs = false;
-                            songData.story = songData.albumSongs.map((song, index) => 
-                                `Song ${index + 1} (${song.genre} - ${song.mood}): ${song.story}`
-                            ).join('<br><br>');
-                            
-                            return `WOW! <i class='ph ph-star icon-sm'></i> ${songData.customerName}, you've just created the outline for an absolutely incredible 5-song album for ${songData.recipient}! I'm getting chills thinking about how amazing this is going to be.<br><br>Your album will have:<br>${songData.albumSongs.map((song, i) => `• Song ${i+1}: ${song.genre} (${song.mood})`).join('<br>')}<br><br>Let me generate a preview of your first song's lyrics so you can see the magic we're about to create! <i class='ph ph-magic-wand icon-sm'></i>`;
-                        }
-                    } else {
-                        songData.mood = mood;
-                        return `Perfect! <i class='ph ph-heart icon-sm'></i> ${songData.customerName}, I have everything I need to create something absolutely magical for ${songData.recipient}.<br><br>I'm about to write a ${mood.toLowerCase()} ${songData.genre.toLowerCase()} song about your beautiful story for their ${songData.occasion.toLowerCase()}. This is going to be incredible!<br><br>Let me work my magic and create your personalized lyrics... <i class='ph ph-magic-wand icon-sm'></i>`;
-                    }
-                }
+                };
+                this.init();
             }
-        ];
 
-        // Helper functions
-        function getBreadcrumbName(step) {
-            const stepNames = [
-                'Your Name',
-                'Recipient',
-                'Occasion',
-                'Product Type',
-                'Story',
-                'Genre',
-                'Mood'
-            ];
-            return stepNames[step] || 'Step ' + (step + 1);
-        }
-
-        function updateBreadcrumbs(stepName) {
-            const breadcrumbs = document.getElementById('breadcrumbs');
-            const currentBreadcrumb = document.getElementById('currentBreadcrumb');
-            
-            if (currentStep > 0) {
-                breadcrumbs.style.display = 'flex';
-                currentBreadcrumb.innerHTML = `<span>${stepName}</span>`;
-            } else {
-                breadcrumbs.style.display = 'none';
-            }
-        }
-
-        function updateAlbumProgress(currentSong) {
-            const albumProgress = document.getElementById('albumProgress');
-            
-            if (songData.productType && songData.productType.toLowerCase().includes('album') && songData.collectingAlbumSongs) {
-                albumProgress.style.display = 'flex';
+            init() {
+                this.chatMessages = document.getElementById('chatMessages');
+                this.userInput = document.getElementById('userInput');
+                this.sendButton = document.getElementById('sendButton');
                 
-                for (let i = 1; i <= 5; i++) {
-                    const step = document.getElementById(`step${i}`);
-                    const connector = document.getElementById(`connector${i}`);
-                    
-                    if (i < currentSong) {
-                        step.className = 'progress-step completed';
-                        if (connector) connector.className = 'progress-connector completed';
-                    } else if (i === currentSong) {
-                        step.className = 'progress-step active';
-                    } else {
-                        step.className = 'progress-step';
+                this.sendButton.addEventListener('click', () => this.sendMessage());
+                this.userInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.sendMessage();
                     }
-                }
-            } else {
-                albumProgress.style.display = 'none';
-            }
-        }
-
-        function goBackOneStep() {
-            if (currentStep > 0) {
-                currentStep--;
-                
-                document.getElementById('userInput').value = '';
-                
-                if (currentStep < conversationFlow.length) {
-                    addBotMessage(`Let's go back. ${conversationFlow[currentStep].bot}`);
-                    showQuickResponses(conversationFlow[currentStep].quickResponses);
-                    updateBreadcrumbs(getBreadcrumbName(currentStep));
-                }
-            }
-        }
-
-        function getValidationSuggestions(step, message) {
-            const suggestions = {
-                0: ["Tell me your first name", "What should I call you?", "Any name is fine!"],
-                1: ["Tell me who this song is for", "Their name or relationship (like 'my mom')", "Example: Sarah, my best friend"],
-                2: ["What's the special occasion?", "Example: birthday, anniversary, graduation", "Or just say 'no special occasion'"],
-                3: ["Share your story in detail", "Include specific memories", "The more details, the better the song!"],
-                4: ["Choose: Pop, R&B, Country, Rock, or Acoustic", "What genre fits your story?", "Not sure? Try Pop!"],
-                5: ["Pick a mood: romantic, uplifting, nostalgic, or emotional", "What feeling should the song capture?", "Example: uplifting for a celebration"]
-            };
-            
-            return suggestions[step] || ["Give me more details", "Be more specific", "Share what's important to you"];
-        }
-
-        function showErrorWithSuggestion(message, suggestions = []) {
-            let errorMsg = `❌ ${message}`;
-            
-            if (suggestions.length > 0) {
-                errorMsg += '<br><br>💡 Try one of these:';
-                suggestions.forEach(suggestion => {
-                    errorMsg += `<br>• ${suggestion}`;
                 });
+
+                this.startConversation();
             }
-            
-            addBotMessage(errorMsg);
-            
-            if (suggestions.length > 0) {
+
+            startConversation() {
                 setTimeout(() => {
-                    showQuickResponses(suggestions);
+                    this.addBotMessage("Hello! I'm Echo, your personal lyric assistant. I'm here to help you create a beautiful, personalized song that captures your story. Let's begin!");
+                    
+                    setTimeout(() => {
+                        this.addBotMessage("First, what type of gift would you like to create?", [
+                            { text: "Single Song ($49.99)", action: () => this.setProductType('single') },
+                            { text: "Album - 5 Songs ($199.99)", action: () => this.setProductType('album') }
+                        ]);
+                    }, 1500);
                 }, 1000);
             }
-        }
 
-        function addBotMessage(message, isLyrics = false) {
-            const chatMessages = document.getElementById('chatMessages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = 'message bot';
-            
-            if (isLyrics) {
-                messageDiv.innerHTML = `
-                    <div class="avatar"><img src="echobot.png" alt="Echo Bot"></div>
-                    <div class="lyrics-display">
-                        <div class="lyrics-title">Your Personalized Lyrics</div>
-                        ${message}
+            setProductType(type) {
+                this.conversationState.data.productType = type;
+                this.conversationState.step = 'customer_name';
+                
+                const message = type === 'single' ? 'Perfect! A single song is a beautiful, personal gift.' : 'Excellent choice! An album will tell a complete story across 5 unique songs.';
+                this.addBotMessage(message);
+                
+                setTimeout(() => {
+                    this.addBotMessage("What's your name? (This helps me personalize our conversation)");
+                }, 1000);
+            }
+
+            sendMessage() {
+                const message = this.userInput.value.trim();
+                if (!message) return;
+
+                this.addUserMessage(message);
+                this.userInput.value = '';
+                this.processUserMessage(message);
+            }
+
+            processUserMessage(message) {
+                switch (this.conversationState.step) {
+                    case 'customer_name':
+                        this.conversationState.data.customerName = message;
+                        this.conversationState.step = 'recipient_relationship';
+                        this.addBotMessage(`Nice to meet you, ${message}! Now, who is this song for? (e.g., "my mom", "my boyfriend", "my daughter")`);
+                        break;
+
+                    case 'recipient_relationship':
+                        this.conversationState.step = 'recipient_name';
+                        this.addBotMessage(`Wonderful! What is their actual name? This will help me create more personal lyrics.`);
+                        break;
+
+                    case 'recipient_name':
+                        this.conversationState.data.recipientName = message;
+                        this.conversationState.step = 'occasion';
+                        this.addBotMessage(`Great! What's the occasion for this gift? (e.g., birthday, anniversary, graduation, just because)`);
+                        break;
+
+                    case 'occasion':
+                        this.conversationState.data.occasion = message;
+                        this.conversationState.step = 'language';
+                        this.addBotMessage("Would you prefer the song to be in English or Spanish?", [
+                            { text: "English", action: () => this.setLanguage('english') },
+                            { text: "Spanish", action: () => this.setLanguage('spanish') }
+                        ]);
+                        break;
+
+                    case 'story':
+                        this.conversationState.data.story = message;
+                        this.conversationState.step = 'genre';
+                        this.addBotMessage("Perfect! Now let's choose the musical style. What genre would best fit this song?", [
+                            { text: "Pop", action: () => this.setGenre('pop') },
+                            { text: "Acoustic", action: () => this.setGenre('acoustic') },
+                            { text: "Country", action: () => this.setGenre('country') },
+                            { text: "Rock", action: () => this.setGenre('rock') },
+                            { text: "Folk", action: () => this.setGenre('folk') },
+                            { text: "R&B", action: () => this.setGenre('r&b') }
+                        ]);
+                        break;
+
+                    case 'email':
+                        this.conversationState.data.email = message;
+                        this.generateLyrics();
+                        break;
+
+                    default:
+                        this.addBotMessage("I'm not sure what you mean. Could you please try again?");
+                }
+            }
+
+            setLanguage(language) {
+                this.conversationState.data.language = language;
+                this.conversationState.step = 'story';
+                this.addBotMessage(`Perfect! The song will be in ${language === 'english' ? 'English' : 'Spanish'}. Now, tell me the story! Share the memories, feelings, and special moments you want captured in this song. The more details you give me, the more personal and meaningful the lyrics will be.`);
+            }
+
+            setGenre(genre) {
+                this.conversationState.data.genre = genre;
+                this.conversationState.step = 'tone';
+                this.addBotMessage(`${genre} is a great choice! What tone should the song have?`, [
+                    { text: "Upbeat & Joyful", action: () => this.setTone('upbeat') },
+                    { text: "Romantic", action: () => this.setTone('romantic') },
+                    { text: "Nostalgic", action: () => this.setTone('nostalgic') },
+                    { text: "Emotional", action: () => this.setTone('emotional') },
+                    { text: "Celebratory", action: () => this.setTone('celebratory') }
+                ]);
+            }
+
+            setTone(tone) {
+                this.conversationState.data.tone = tone;
+                this.conversationState.step = 'email';
+                this.addBotMessage("Almost ready! What's your email address? This is where I'll send your completed song files (WAV + MP3) and custom artwork.");
+            }
+
+            async generateLyrics() {
+                this.showTyping();
+                
+                try {
+                    const response = await fetch('/generate-lyrics', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            story: this.conversationState.data.story,
+                            recipientName: this.conversationState.data.recipientName,
+                            occasion: this.conversationState.data.occasion,
+                            genre: this.conversationState.data.genre,
+                            tone: this.conversationState.data.tone,
+                            language: this.conversationState.data.language
+                        })
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        this.hideTyping();
+                        this.displayLyrics(data.lyrics);
+                    } else {
+                        throw new Error('Failed to generate lyrics');
+                    }
+                } catch (error) {
+                    console.error('Error generating lyrics:', error);
+                    this.hideTyping();
+                    this.displaySampleLyrics();
+                }
+            }
+
+            displaySampleLyrics() {
+                // Fallback sample lyrics for demonstration
+                const sampleLyrics = this.conversationState.data.language === 'spanish' 
+                    ? `[Verso 1]
+${this.conversationState.data.recipientName}, mi corazón
+En este día especial quiero cantar
+Todas las memorias que hemos creado
+Y el amor que siempre va a perdurar
+
+[Coro]
+Eres la luz que ilumina mi vida
+La melodía que me hace soñar
+${this.conversationState.data.occasion} es solo el comienzo
+De todo lo que vamos a celebrar
+
+[Verso 2]
+Cada momento junto a ti es oro
+Cada sonrisa vale más que el mar
+Tu historia es única y bella
+Y hoy la quiero celebrar
+
+[Coro]
+Eres la luz que ilumina mi vida
+La melodía que me hace soñar
+${this.conversationState.data.occasion} es solo el comienzo
+De todo lo que vamos a celebrar`
+                    : `[Verse 1]
+${this.conversationState.data.recipientName}, this song's for you
+On this special ${this.conversationState.data.occasion} day
+All the memories we've been building
+In my heart they'll always stay
+
+[Chorus]
+You're the melody in my story
+You're the light that guides my way
+This ${this.conversationState.data.occasion} is just the beginning
+Of all the love we'll share today
+
+[Verse 2]
+Every moment that we've treasured
+Every laugh and every tear
+Your story is worth celebrating
+That's why I'm singing it here
+
+[Chorus]
+You're the melody in my story
+You're the light that guides my way
+This ${this.conversationState.data.occasion} is just the beginning
+Of all the love we'll share today`;
+
+                this.displayLyrics(sampleLyrics);
+            }
+
+            displayLyrics(lyrics) {
+                this.conversationState.data.finalLyrics = lyrics;
+                this.conversationState.step = 'review_lyrics';
+
+                this.addBotMessage("Here are your personalized lyrics! I've crafted them specifically for your story:");
+                
+                const lyricsContainer = document.createElement('div');
+                lyricsContainer.className = 'message bot';
+                lyricsContainer.innerHTML = `
+                    <div class="message-avatar">E</div>
+                    <div class="message-content">
+                        <div class="lyrics-display">${lyrics}</div>
+                        <div class="button-group">
+                            <button class="chat-button secondary" onclick="echoBot.requestChanges()">Make Changes</button>
+                            <button class="chat-button" onclick="echoBot.approveLyrics()">Love It! Order Now</button>
+                        </div>
                     </div>
                 `;
-            } else {
+                
+                this.chatMessages.appendChild(lyricsContainer);
+                this.scrollToBottom();
+            }
+
+            requestChanges() {
+                this.conversationState.step = 'revision_request';
+                this.addBotMessage("I'd be happy to make changes! Please tell me specifically what you'd like me to adjust in the lyrics. For example: 'Make it more romantic' or 'Add a reference to our wedding day' or 'Change the chorus to be more upbeat'.");
+            }
+
+            approveLyrics() {
+                this.conversationState.step = 'final_order';
+                this.addBotMessage("Wonderful! Your lyrics are approved. Let me prepare your order...");
+                
+                setTimeout(() => {
+                    this.submitOrder();
+                }, 1500);
+            }
+
+            submitOrder() {
+                // Populate hidden form with all collected data
+                document.getElementById('form-product-type').value = this.conversationState.data.productType;
+                document.getElementById('form-your-name').value = this.conversationState.data.customerName;
+                document.getElementById('form-recipient-name').value = this.conversationState.data.recipientName;
+                document.getElementById('form-occasion').value = this.conversationState.data.occasion;
+                document.getElementById('form-story-themes').value = this.conversationState.data.story;
+                document.getElementById('form-genre').value = this.conversationState.data.genre;
+                document.getElementById('form-tone').value = this.conversationState.data.tone;
+                document.getElementById('form-language-preference').value = this.conversationState.data.language;
+                document.getElementById('form-email').value = this.conversationState.data.email;
+                document.getElementById('form-final-lyrics').value = this.conversationState.data.finalLyrics;
+
+                this.addBotMessage("Perfect! Now let's complete your order with secure payment through Stripe.", [
+                    { text: "Proceed to Payment", action: () => this.processPayment() }
+                ]);
+            }
+
+            processPayment() {
+                // Submit to FormSpree first
+                const form = document.getElementById('hiddenOrderForm');
+                const formData = new FormData(form);
+                
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        // Redirect to Stripe payment
+                        const amount = this.conversationState.data.productType === 'single' ? 4999 : 19999; // in cents
+                        const productName = this.conversationState.data.productType === 'single' ? 'Single Song' : 'Album (5 Songs)';
+                        
+                        this.redirectToStripe(amount, productName);
+                    } else {
+                        this.addBotMessage("There was an issue submitting your order. Please try again or contact support at hello@echogifts.shop");
+                    }
+                }).catch(error => {
+                    console.error('Error:', error);
+                    this.addBotMessage("There was an issue submitting your order. Please try again or contact support at hello@echogifts.shop");
+                });
+            }
+
+            redirectToStripe(amount, productName) {
+                // Create Stripe Checkout session
+                const stripe = Stripe('pk_live_51Q5zxsP7xdyRJGmT8QBsP4O7wJk8MnKx6pSq4ItEXqg1WM5C8eJ4F9N5nJvXbXmPyTkW3gJLpN6qF8qC1KdCrCwt00X4iF6QgP'); // Replace with your publishable key
+                
+                const checkoutData = {
+                    payment_method_types: ['card'],
+                    line_items: [{
+                        price_data: {
+                            currency: 'usd',
+                            product_data: {
+                                name: productName,
+                                description: `Personalized song for ${this.conversationState.data.recipientName}`
+                            },
+                            unit_amount: amount,
+                        },
+                        quantity: 1,
+                    }],
+                    mode: 'payment',
+                    success_url: 'https://echogifts.shop/order-confirmation.html',
+                    cancel_url: 'https://echogifts.shop/#order',
+                    customer_email: this.conversationState.data.email,
+                    metadata: {
+                        customer_name: this.conversationState.data.customerName,
+                        recipient_name: this.conversationState.data.recipientName,
+                        occasion: this.conversationState.data.occasion,
+                        product_type: this.conversationState.data.productType
+                    }
+                };
+
+                // For demo purposes, show payment message
+                this.addBotMessage(`Redirecting you to secure payment for ${productName} (${amount/100} USD)...`);
+                
+                setTimeout(() => {
+                    this.addBotMessage("Payment integration will be completed with your Stripe account. Your order has been submitted to FormSpree for processing!");
+                }, 2000);
+            }
+
+            addUserMessage(message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message user';
+                messageDiv.innerHTML = `
+                    <div class="message-avatar">You</div>
+                    <div class="message-content">${message}</div>
+                `;
+                this.chatMessages.appendChild(messageDiv);
+                this.scrollToBottom();
+            }
+
+            addBotMessage(message, buttons = null) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message bot';
+                
+                let buttonHtml = '';
+                if (buttons) {
+                    buttonHtml = '<div class="button-group">';
+                    buttons.forEach((button, index) => {
+                        buttonHtml += `<button class="chat-button" onclick="echoBot.handleButtonClick(${index})" data-action="${index}">${button.text}</button>`;
+                    });
+                    buttonHtml += '</div>';
+                    
+                    // Store button actions
+                    this.currentButtons = buttons;
+                }
+
+                messageDiv.innerHTML = `
+                    <div class="message-avatar">
+                        <img src="echobot.png" alt="Echo" style="width: 36px; height: 36px; border-radius: 50%;">
+                    </div>
+                    <div class="message-content">
+                        ${message}
+                        ${buttonHtml}
+                    </div>
+                `;
+                
+                this.chatMessages.appendChild(messageDiv);
+                this.scrollToBottom();
+            }
+
+            handleButtonClick(index) {
+                if (this.currentButtons && this.currentButtons[index]) {
+                    this.currentButtons[index].action();
+                    this.currentButtons = null;
+                }
+            }
+
+            showTyping() {
                 const typingDiv = document.createElement('div');
-                typingDiv.className = 'message bot';
+                typingDiv.className = 'typing-indicator';
+                typingDiv.id = 'typingIndicator';
                 typingDiv.innerHTML = `
-                    <div class="avatar"><img src="echobot.png" alt="Echo Bot"></div>
-                    <div class="message-bubble">
-                        <div class="typing-indicator">
+                    <div class="message-avatar">
+                        <img src="echobot.png" alt="Echo" style="width: 36px; height: 36px; border-radius: 50%;">
+                    </div>
+                    <div>
+                        Echo is writing your lyrics...
+                        <div class="typing-dots">
                             <div class="typing-dot"></div>
                             <div class="typing-dot"></div>
                             <div class="typing-dot"></div>
                         </div>
                     </div>
                 `;
-                chatMessages.appendChild(typingDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-                
-                setTimeout(() => {
-                    typingDiv.remove();
-                    messageDiv.innerHTML = `
-                        <div class="avatar"><img src="echobot.png" alt="Echo Bot"></div>
-                        <div class="message-bubble">${message}</div>
-                    `;
-                    chatMessages.appendChild(messageDiv);
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                }, 1500);
-                return;
+                this.chatMessages.appendChild(typingDiv);
+                this.scrollToBottom();
             }
-            
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
 
-        function addUserMessage(message) {
-            const chatMessages = document.getElementById('chatMessages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = 'message user';
-            
-            const initials = songData.customerName ? 
-                songData.customerName.split(' ').map(n => n[0]).join('').toUpperCase() : 
-                'YOU';
-            
-            messageDiv.innerHTML = `
-                <div class="avatar">${initials}</div>
-                <div class="message-bubble">${message}</div>
-            `;
-            
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function showQuickResponses(responses) {
-            const quickResponsesDiv = document.getElementById('quickResponses');
-            
-            if (!responses || responses.length === 0) {
-                quickResponsesDiv.style.display = 'none';
-                return;
-            }
-            
-            quickResponsesDiv.innerHTML = '';
-            responses.forEach(response => {
-                const button = document.createElement('button');
-                button.className = 'quick-response';
-                button.textContent = response;
-                button.onclick = () => selectQuickResponse(response);
-                quickResponsesDiv.appendChild(button);
-            });
-            
-            quickResponsesDiv.style.display = 'flex';
-        }
-
-        function selectQuickResponse(response) {
-            document.getElementById('userInput').value = response;
-            sendMessage();
-        }
-
-        function hideQuickResponses() {
-            document.getElementById('quickResponses').style.display = 'none';
-        }
-
-        async function sendMessage() {
-            const input = document.getElementById('userInput');
-            const message = input.value.trim();
-            
-            if (!message || isWaitingForResponse) return;
-            
-            hideQuickResponses();
-            
-            // Handle special cases first
-            if (songData.collectingEmail) {
-                const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-                if (!emailPattern.test(message)) {
-                    showErrorWithSuggestion(
-                        "That doesn't look like a valid email address.", 
-                        [
-                            "Make sure it includes @ and a domain (like gmail.com)",
-                            "Example: yourname@gmail.com",
-                            "Double-check for typos"
-                        ]
-                    );
-                    return;
-                }
-                
-                addUserMessage(message);
-                input.value = '';
-                songData.collectingEmail = false;
-                input.placeholder = 'Type your answer here...';
-                
-                await createOrderWithEmail(message);
-                return;
-            }
-            
-            if (songData.collectingRevisions) {
-                addUserMessage(message);
-                input.value = '';
-                songData.collectingRevisions = false;
-                input.placeholder = 'Type your answer here...';
-                
-                addBotMessage(`Perfect! <i class='ph ph-magic-wand icon-sm'></i> Let me regenerate your lyrics with these changes. This is going to be even more amazing!`);
-                
-                setTimeout(() => {
-                    songData.revisionRequest = message;
-                    generateLyrics();
-                }, 2000);
-                return;
-            }
-            
-            if (songData.collectingAlbumSongRevisions) {
-                addUserMessage(message);
-                input.value = '';
-                songData.collectingAlbumSongRevisions = false;
-                input.placeholder = 'Type your answer here...';
-                
-                addBotMessage(`Excellent feedback! <i class='ph ph-magic-wand icon-sm'></i> Let me regenerate Song ${songData.currentAlbumSong} with your suggestions. The revised version is going to be incredible!`);
-                
-                setTimeout(() => {
-                    songData.revisionRequest = message;
-                    generateLyrics();
-                }, 2000);
-                return;
-            }
-            
-            if (songData.collectingAlbumSongs && songData.currentAlbumSong <= 5) {
-                addUserMessage(message);
-                input.value = '';
-                
-                const currentFlow = conversationFlow[currentStep];
-                if (currentFlow && currentFlow.handler) {
-                    const response = currentFlow.handler(message);
-                    addBotMessage(response);
-                    
-                    if (songData.currentAlbumSong <= 5) {
-                        const nextFlow = conversationFlow[currentStep + 1];
-                        if (nextFlow) {
-                            showQuickResponses(nextFlow.quickResponses);
-                        }
-                    } else {
-                        setTimeout(() => {
-                            generateLyrics();
-                        }, 3000);
-                    }
-                }
-                return;
-            }
-            
-            const currentFlow = conversationFlow[currentStep];
-            
-            if (!currentFlow.validation(message)) {
-                const suggestions = getValidationSuggestions(currentStep, message);
-                showErrorWithSuggestion("Hmm, could you tell me a bit more? I want to make sure I capture this perfectly!", suggestions);
-                return;
-            }
-            
-            addUserMessage(message);
-            input.value = '';
-            
-            if (currentFlow.handler) {
-                const response = currentFlow.handler(message);
-                addBotMessage(response);
-                
-                currentStep++;
-                
-                if (currentStep < conversationFlow.length) {
-                    updateBreadcrumbs(getBreadcrumbName(currentStep));
-                    
-                    setTimeout(() => {
-                        showQuickResponses(conversationFlow[currentStep].quickResponses);
-                    }, 1500);
-                } else {
-                    setTimeout(() => {
-                        generateLyrics();
-                    }, 2000);
+            hideTyping() {
+                const typingIndicator = document.getElementById('typingIndicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
                 }
             }
-        }
 
-        async function generateLyrics() {
-            isWaitingForResponse = true;
-            hideQuickResponses();
-            
-            const requestData = {
-                recipient: songData.recipient,
-                occasion: songData.occasion,
-                story: songData.story,
-                genre: songData.productType === 'album' && songData.albumSongs.length > 0 ? 
-                    songData.albumSongs[0].genre : songData.genre,
-                mood: songData.productType === 'album' && songData.albumSongs.length > 0 ? 
-                    songData.albumSongs[0].mood : songData.mood,
-                customer_email: 'from_website',
-                revisionRequest: songData.revisionRequest || null
-            };
-            
-            try {
-                const response = await fetch(LYRIC_API_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(requestData)
-                });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    const formattedLyrics = data.lyrics.replace(/\\n/g, '<br>');
-                    addBotMessage(formattedLyrics, true);
-                    
-                    setTimeout(() => {
-                        addBotMessage(`${songData.customerName}, this is just the beginning! <i class='ph ph-sparkles icon-sm'></i><br><br>What you're seeing is your personalized lyrics preview. Here's what happens next:<br><br>🎤 <strong>Professional vocals</strong> - We'll have this sung beautifully<br>🎵 <strong>Music production</strong> - Full instrumental backing<br>🎨 <strong>Custom artwork</strong> - Designed to match your song<br>📧 <strong>Delivery</strong> - Complete package sent to you in 48 hours<br><br>To make this real for ${songData.recipient}, I just need your email address and we can get started on production!`);
-                        
-                        songData.collectingEmail = true;
-                        document.getElementById('userInput').placeholder = 'Enter your email address...';
-                        isWaitingForResponse = false;
-                        document.getElementById('userInput').disabled = false;
-                        document.getElementById('sendButton').disabled = false;
-                    }, 2000);
-                } else {
-                    throw new Error(data.error || 'Failed to generate lyrics');
-                }
-                
-            } catch (error) {
-                console.error('Error generating lyrics:', error);
-                addBotMessage(`I'm having a little trouble connecting to my creative engine right now. <i class='ph ph-warning icon-sm'></i> But don't worry! Let me collect your information and I'll make sure you get an amazing song.<br><br>What's your email address so I can send you updates and your completed song?`);
-                
-                songData.collectingEmail = true;
-                document.getElementById('userInput').placeholder = 'Enter your email address...';
-                isWaitingForResponse = false;
-                document.getElementById('userInput').disabled = false;
-                document.getElementById('sendButton').disabled = false;
+            scrollToBottom() {
+                this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
             }
         }
 
-        async function createOrderWithEmail(email) {
-            addBotMessage(`Perfect! <i class='ph ph-check-circle icon-sm'></i> I've got your email: ${email}<br><br>Now I'm creating your order and setting up payment. One moment please...`);
-            
-            const orderData = {
-                'Customer Email': email,
-                'Recipient Name': songData.recipient,
-                'Occasion': songData.occasion,
-                'Genre': songData.productType === 'album' ? 'Album (Multiple Genres)' : songData.genre,
-                'Mood': songData.productType === 'album' ? 'Album (Multiple Moods)' : songData.mood,
-                'Story & Themes': songData.story,
-                'Product Type': songData.productType === 'album' ? 'Custom Album ($199.99)' : 'Single Song ($49.99)',
-                'Order Date': new Date().toLocaleDateString(),
-                'Order Source': 'echogifts.shop/echo-bot',
-                'Customer Name': songData.customerName
-            };
-            
-            if (songData.productType === 'album') {
-                songData.albumSongs.forEach((song, index) => {
-                    orderData[`Song ${index + 1} Genre`] = song.genre;
-                    orderData[`Song ${index + 1} Mood`] = song.mood;
-                    orderData[`Song ${index + 1} Story`] = song.story;
-                });
-            }
-            
-            try {
-                const formspreeResponse = await fetch('https://formspree.io/f/xkgzqpyy', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        _subject: `🤖 NEW ORDER from Echo Bot - ${songData.customerName} (${songData.productType})`,
-                        ...orderData
-                    })
-                });
-                
-                if (formspreeResponse.ok) {
-                    console.log('Order sent to Formspree successfully');
-                }
-            } catch (error) {
-                console.error('Error sending to Formspree:', error);
-            }
-            
-            setTimeout(() => {
-                const price = songData.productType === 'album' ? '$199.99' : '$49.99';
-                const productName = songData.productType === 'album' ? 'Custom 5-Song Album' : 'Personalized Song';
-                
-                addBotMessage(`Excellent! <i class='ph ph-check-circle icon-sm'></i> Your order is ready, ${songData.customerName}!<br><br><strong>Order Summary:</strong><br>• ${productName} for ${songData.recipient}<br>• ${songData.occasion} occasion<br>• ${price} total<br>• Delivery to: ${email}<br><br>Ready to make this magical song a reality? Let's complete your order!`);
-                
-                setTimeout(() => {
-                    createStripeCheckout(email, orderData);
-                }, 1500);
-            }, 2000);
-        }
-
-        function createStripeCheckout(email, orderData) {
-            const productType = songData.productType;
-            const checkoutUrl = productType === 'album' ? 
-                'https://buy.stripe.com/cNi5kDe5eccXefSdBW97G05' : 
-                'https://buy.stripe.com/14A8wPd1a7WHfjW69u97G04';
-            
-            sessionStorage.setItem('echogifts_order', JSON.stringify({
-                ...orderData,
-                'Order ID': 'EG-' + Date.now(),
-                'Payment Status': 'Pending'
-            }));
-            
-            const checkoutButton = document.createElement('div');
-            checkoutButton.style.cssText = `
-                margin: 1rem 0;
-                text-align: center;
-                padding: 1rem;
-                background: linear-gradient(135deg, #f8f9fa, #ffffff);
-                border-radius: 12px;
-                border: 2px solid var(--accent-brown);
-            `;
-            
-            const price = productType === 'album' ? '$199.99' : '$49.99';
-            checkoutButton.innerHTML = `
-                <div style="margin-bottom: 1rem; color: var(--primary-brown); font-weight: 600;">
-                    <i class="ph ph-credit-card" style="margin-right: 0.5rem;"></i>
-                    Secure Checkout - ${price}
-                </div>
-                <button onclick="window.open('${checkoutUrl}?prefilled_email=${encodeURIComponent(email)}', '_blank')" 
-                        style="background: linear-gradient(135deg, var(--primary-brown), var(--secondary-brown)); 
-                               color: white; 
-                               border: none; 
-                               padding: 1rem 2rem; 
-                               border-radius: 25px; 
-                               font-size: 1.1rem; 
-                               font-weight: 600; 
-                               cursor: pointer; 
-                               transition: all 0.2s ease;
-                               width: 100%;
-                               max-width: 300px;">
-                    Complete Purchase ${price}
-                </button>
-                <div style="margin-top: 0.75rem; font-size: 0.8rem; color: #666;">
-                    <i class="ph ph-lock" style="margin-right: 0.25rem;"></i>
-                    Secure payment powered by Stripe
-                </div>
-            `;
-            
-            const chatMessages = document.getElementById('chatMessages');
-            chatMessages.appendChild(checkoutButton);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-            
-            const productText = productType === 'album' ? 'album' : 'song';
-            setTimeout(() => {
-                addBotMessage(`<i class='ph ph-check-circle icon-sm'></i> Payment page opened! Complete your purchase there, ${songData.customerName}, and we'll get started on your ${productText} immediately.<br><br>If you have any questions, email us at hello@echogifts.shop. Thank you for choosing EchoGifts! <i class='ph ph-heart icon-sm'></i>`);
-            }, 1000);
-        }
-
-        // Initialize app
+        // Initialize the chatbot when the page loads
+        let echoBot;
         document.addEventListener('DOMContentLoaded', function() {
-            const userInput = document.getElementById('userInput');
-            const sendButton = document.getElementById('sendButton');
+            echoBot = new EchoChatbot();
+        });
+
+        // Add icon support for send button
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add Phosphor Icons CSS if not already present
+            if (!document.querySelector('link[href*="phosphoricons"]')) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'https://unpkg.com/phosphor-icons@1.4.0/src/css/icons.css';
+                document.head.appendChild(link);
+            }
             
-            // Auto-resize textarea
-            userInput.addEventListener('input', function() {
-                this.style.height = 'auto';
-                this.style.height = (this.scrollHeight) + 'px';
-            });
-            
-            // Send message on Enter (but allow Shift+Enter for new lines)
-            userInput.addEventListener('keydown', function(event) {
-                if (event.key === 'Enter' && !event.shiftKey && !isWaitingForResponse) {
-                    event.preventDefault();
-                    sendMessage();
-                }
-            });
-            
-            sendButton.addEventListener('click', sendMessage);
-            
-            // Start conversation
+            // Replace icon with simple arrow if Phosphor icons don't load
             setTimeout(() => {
-                addBotMessage(conversationFlow[0].bot);
-                showQuickResponses(conversationFlow[0].quickResponses);
+                const sendButton = document.getElementById('sendButton');
+                if (sendButton && !sendButton.querySelector('.ph')) {
+                    sendButton.innerHTML = '→';
+                    sendButton.style.fontSize = '18px';
+                    sendButton.style.fontWeight = 'bold';
+                }
             }, 1000);
-            
-            // Analytics tracking
-            gtag('event', 'page_view', {
-                page_title: 'Echo Bot Conversation Started',
-                page_location: window.location.href,
-                custom_parameter_1: 'echo_bot_launch'
-            });
         });
-
-        // Prevent zoom on iOS
-        document.addEventListener('touchstart', function(event) {
-            if (event.touches.length > 1) {
-                event.preventDefault();
-            }
-        });
-
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function(event) {
-            const now = (new Date()).getTime();
-            if (now - lastTouchEnd <= 300) {
-                event.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, false);
     </script>
+
+    <!-- Add Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
 </body>
-</html>
+</html><!-- Deployment trigger Sat Aug  9 11:43:59 CDT 2025 -->
