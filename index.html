@@ -1052,21 +1052,36 @@
                 // Add event delegation for chat buttons
                 this.chatMessages.addEventListener('click', (e) => {
                     console.log('Click detected on:', e.target);
-                    if (e.target.classList.contains('chat-button')) {
-                        console.log('Chat button clicked');
-                        const action = e.target.getAttribute('data-action');
-                        const functionName = e.target.getAttribute('data-function');
+                    console.log('Target classes:', e.target.classList);
+                    console.log('Target tagName:', e.target.tagName);
+                    
+                    // Check if target or parent is a chat button
+                    let button = e.target;
+                    if (!button.classList.contains('chat-button')) {
+                        button = button.closest('.chat-button');
+                    }
+                    
+                    if (button && button.classList.contains('chat-button')) {
+                        console.log('Chat button found:', button);
+                        console.log('Button classes:', button.classList);
+                        console.log('Button data-action:', button.getAttribute('data-action'));
+                        console.log('Button data-function:', button.getAttribute('data-function'));
                         
-                        if (action !== null) {
-                            console.log('Button action:', action);
+                        const action = button.getAttribute('data-action');
+                        const functionName = button.getAttribute('data-function');
+                        
+                        if (action !== null && action !== '') {
+                            console.log('Executing button action:', action);
                             const index = parseInt(action);
                             this.handleButtonClick(index);
                         } else if (functionName) {
-                            console.log('Function name:', functionName);
+                            console.log('Executing function:', functionName);
                             if (this[functionName]) {
                                 this[functionName]();
                             }
                         }
+                    } else {
+                        console.log('No chat button found for click');
                     }
                 });
 
@@ -1401,19 +1416,24 @@ Of all the love we'll share today`;
             }
 
             addBotMessage(message, buttons = null) {
+                console.log('addBotMessage called with buttons:', buttons);
                 const messageDiv = document.createElement('div');
                 messageDiv.className = 'message bot';
                 
                 let buttonHtml = '';
                 if (buttons) {
+                    console.log('Creating buttons HTML...');
                     buttonHtml = '<div class="button-group">';
                     buttons.forEach((button, index) => {
+                        console.log(`Creating button ${index}: ${button.text}`);
                         buttonHtml += `<button class="chat-button" data-action="${index}">${button.text}</button>`;
                     });
                     buttonHtml += '</div>';
+                    console.log('Button HTML created:', buttonHtml);
                     
                     // Store button actions
                     this.currentButtons = buttons;
+                    console.log('Stored currentButtons:', this.currentButtons);
                 }
 
                 messageDiv.innerHTML = `
@@ -1428,6 +1448,14 @@ Of all the love we'll share today`;
                 
                 this.chatMessages.appendChild(messageDiv);
                 this.scrollToBottom();
+                
+                // Verify buttons were added to DOM
+                if (buttons) {
+                    setTimeout(() => {
+                        const addedButtons = this.chatMessages.querySelectorAll('.chat-button');
+                        console.log('Buttons in DOM after adding:', addedButtons);
+                    }, 100);
+                }
             }
 
             handleButtonClick(index) {
