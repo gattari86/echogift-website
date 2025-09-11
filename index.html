@@ -1173,36 +1173,22 @@
             }
 
             async generateLyrics() {
-                this.showTyping();
+                this.showTyping("🎵 Analyzing your story and creating personalized lyrics with Claude AI...");
                 
                 try {
-                    const response = await fetch('http://127.0.0.1:5000/generate-lyrics', {
+                    const response = await fetch('http://127.0.0.1:5001/generate-lyrics', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
+                            recipient: this.conversationState.data.recipientName,
                             story: this.conversationState.data.story,
-                            recipientName: this.conversationState.data.recipientName,
                             occasion: this.conversationState.data.occasion,
                             genre: this.conversationState.data.genre,
-                            tone: this.conversationState.data.tone,
+                            mood: this.conversationState.data.tone,
                             language: this.conversationState.data.language,
-                            prompt: `Create professional, heartfelt lyrics for a ${this.conversationState.data.tone} ${this.conversationState.data.genre} song in ${this.conversationState.data.language}. 
-
-Recipient: ${this.conversationState.data.recipientName}
-Occasion: ${this.conversationState.data.occasion}
-Story: ${this.conversationState.data.story}
-
-Requirements:
-- High-quality, emotional lyrics that capture the specific story
-- Professional song structure with [Verse 1], [Chorus], [Verse 2], [Chorus], [Bridge], [Final Chorus]
-- Use the recipient's name naturally in the lyrics
-- Match the ${this.conversationState.data.tone} tone throughout
-- ${this.conversationState.data.genre} musical style
-- Language: ${this.conversationState.data.language}
-- Include specific details from the story provided
-- Make it deeply personal and meaningful`
+                            customer_email: this.conversationState.data.email || 'from_chatbot'
                         })
                     });
 
@@ -1357,23 +1343,24 @@ Forever you'll be in my soul`;
 
             async processRevision(revisionRequest) {
                 this.addBotMessage("Perfect! Let me revise the lyrics based on your feedback...");
-                this.showTyping();
+                this.showTyping("🎭 Working with Claude AI to revise your lyrics...");
 
                 try {
-                    const response = await fetch('http://127.0.0.1:5000/revise-lyrics', {
+                    const response = await fetch('http://127.0.0.1:5001/generate-lyrics', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
-                            originalLyrics: this.conversationState.data.finalLyrics,
-                            revisionRequest: revisionRequest,
-                            recipientName: this.conversationState.data.recipientName,
-                            occasion: this.conversationState.data.occasion,
+                            recipient: this.conversationState.data.recipientName,
                             story: this.conversationState.data.story,
+                            occasion: this.conversationState.data.occasion,
                             genre: this.conversationState.data.genre,
-                            tone: this.conversationState.data.tone,
-                            language: this.conversationState.data.language
+                            mood: this.conversationState.data.tone,
+                            language: this.conversationState.data.language,
+                            customer_email: this.conversationState.data.email || 'from_chatbot',
+                            revisionRequest: revisionRequest,
+                            originalLyrics: this.conversationState.data.finalLyrics
                         })
                     });
 
@@ -1409,25 +1396,16 @@ Forever you'll be in my soul`;
                 this.addBotMessage("Wonderful! Your lyrics are approved. Let me prepare your order...");
                 
                 setTimeout(() => {
-                    this.submitOrder();
+                    this.showPaymentButton();
                 }, 1500);
             }
 
-            submitOrder() {
-                // Populate hidden form with all collected data
-                document.getElementById('form-product-type').value = this.conversationState.data.productType;
-                document.getElementById('form-your-name').value = this.conversationState.data.customerName;
-                document.getElementById('form-recipient-name').value = this.conversationState.data.recipientName;
-                document.getElementById('form-occasion').value = this.conversationState.data.occasion;
-                document.getElementById('form-story-themes').value = this.conversationState.data.story;
-                document.getElementById('form-genre').value = this.conversationState.data.genre;
-                document.getElementById('form-tone').value = this.conversationState.data.tone;
-                document.getElementById('form-language-preference').value = this.conversationState.data.language;
-                document.getElementById('form-email').value = this.conversationState.data.email;
-                document.getElementById('form-final-lyrics').value = this.conversationState.data.finalLyrics;
-
-                this.addBotMessage("Perfect! Now let's complete your order with secure payment through Stripe.", [
-                    { text: "Proceed to Payment", action: () => this.processPayment() }
+            showPaymentButton() {
+                const price = this.conversationState.data.productType === 'album' ? '$199.99' : '$49.99';
+                const productName = this.conversationState.data.productType === 'album' ? 'Album' : 'Song';
+                
+                this.addBotMessage(`Perfect! Your personalized ${productName.toLowerCase()} is ready. Click below to complete your order with secure payment through Stripe.`, [
+                    { text: `🎵 Complete Order - ${price}`, action: () => this.processPayment() }
                 ]);
             }
 
@@ -1451,12 +1429,18 @@ Forever you'll be in my soul`;
                     };
 
                     // Send order details to Formspree (matching existing sendOrderDetailsEmail function)
-                    await this.sendOrderToFormspree(orderData);
+                    try {
+                        await this.sendOrderToFormspree(orderData);
+                    } catch (emailError) {
+                        console.log('Email sending failed, proceeding with payment:', emailError);
+                        // Continue with payment even if email fails
+                    }
                     
                     // Redirect to Stripe using existing payment links
                     this.redirectToStripePayment(orderData);
                     
                 } catch (error) {
+                    console.error('Payment processing error:', error);
                     this.addBotMessage("There was an issue processing your order. Please try again or contact support at hello@echogifts.shop");
                 }
             }
@@ -1586,7 +1570,7 @@ Forever you'll be in my soul`;
                 }
             }
 
-            showTyping() {
+            showTyping(customMessage = "Echo is typing...") {
                 const typingDiv = document.createElement('div');
                 typingDiv.className = 'typing-indicator';
                 typingDiv.id = 'typingIndicator';
@@ -1595,7 +1579,7 @@ Forever you'll be in my soul`;
                         <img src="echobot.png" alt="Echo" style="width: 36px; height: 36px; border-radius: 50%;">
                     </div>
                     <div>
-                        Echo is writing your lyrics...
+                        ${customMessage}
                         <div class="typing-dots">
                             <div class="typing-dot"></div>
                             <div class="typing-dot"></div>
