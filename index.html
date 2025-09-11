@@ -1005,6 +1005,7 @@
         // Enhanced Echo Chatbot with complete flow
         class EchoChatbot {
             constructor() {
+                console.log('EchoChatbot constructor called');
                 this.conversationState = {
                     step: 'start',
                     data: {
@@ -1024,9 +1025,21 @@
             }
 
             init() {
+                console.log('init() called');
                 this.chatMessages = document.getElementById('chatMessages');
                 this.userInput = document.getElementById('userInput');
                 this.sendButton = document.getElementById('sendButton');
+                
+                console.log('Elements found:', {
+                    chatMessages: this.chatMessages,
+                    userInput: this.userInput,
+                    sendButton: this.sendButton
+                });
+
+                if (!this.chatMessages) {
+                    console.error('chatMessages element not found!');
+                    return;
+                }
                 
                 this.sendButton.addEventListener('click', () => this.sendMessage());
                 this.userInput.addEventListener('keypress', (e) => {
@@ -1057,6 +1070,7 @@
                     }
                 });
 
+                console.log('Event listeners added, starting conversation...');
                 this.startConversation();
             }
 
@@ -1464,8 +1478,17 @@ Of all the love we'll share today`;
         // Initialize the chatbot when the page loads
         let echoBot;
         document.addEventListener('DOMContentLoaded', function() {
-            echoBot = new EchoChatbot();
-            window.echoBot = echoBot; // Make globally accessible
+            console.log('DOM loaded, initializing chatbot...');
+            const chatMessages = document.getElementById('chatMessages');
+            console.log('Chat messages element found:', chatMessages);
+            
+            if (chatMessages) {
+                echoBot = new EchoChatbot();
+                window.echoBot = echoBot; // Make globally accessible
+                console.log('Chatbot initialized:', echoBot);
+            } else {
+                console.error('Chat messages element not found!');
+            }
         });
 
         // Add icon support for send button
