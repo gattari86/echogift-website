@@ -1181,15 +1181,19 @@
             }
 
             setGenre(genre) {
+                console.log('setGenre called with:', genre);
                 this.conversationState.data.genre = genre;
                 this.conversationState.step = 'tone';
-                this.addBotMessage(`${genre} is a great choice! What tone should the song have?`, [
+                console.log('About to create tone buttons...');
+                const toneButtons = [
                     { text: "Upbeat & Joyful", action: () => this.setTone('upbeat') },
                     { text: "Romantic", action: () => this.setTone('romantic') },
                     { text: "Nostalgic", action: () => this.setTone('nostalgic') },
                     { text: "Emotional", action: () => this.setTone('emotional') },
                     { text: "Celebratory", action: () => this.setTone('celebratory') }
-                ]);
+                ];
+                console.log('Tone buttons array:', toneButtons);
+                this.addBotMessage(`${genre} is a great choice! What tone should the song have?`, toneButtons);
             }
 
             setTone(tone) {
@@ -1463,8 +1467,9 @@ Of all the love we'll share today`;
                 console.log('currentButtons:', this.currentButtons);
                 if (this.currentButtons && this.currentButtons[index]) {
                     console.log('Executing action for button:', this.currentButtons[index]);
-                    this.currentButtons[index].action();
-                    this.currentButtons = null;
+                    const action = this.currentButtons[index].action;
+                    this.currentButtons = null; // Clear before executing to avoid race conditions
+                    action(); // Execute the action
                 } else {
                     console.log('No action found for button index:', index);
                 }
