@@ -1038,13 +1038,18 @@
 
                 // Add event delegation for chat buttons
                 this.chatMessages.addEventListener('click', (e) => {
+                    console.log('Click detected on:', e.target);
                     if (e.target.classList.contains('chat-button')) {
+                        console.log('Chat button clicked');
                         const action = e.target.getAttribute('data-action');
+                        const functionName = e.target.getAttribute('data-function');
+                        
                         if (action !== null) {
+                            console.log('Button action:', action);
                             const index = parseInt(action);
                             this.handleButtonClick(index);
-                        } else if (e.target.hasAttribute('data-function')) {
-                            const functionName = e.target.getAttribute('data-function');
+                        } else if (functionName) {
+                            console.log('Function name:', functionName);
                             if (this[functionName]) {
                                 this[functionName]();
                             }
@@ -1159,6 +1164,7 @@
             }
 
             setTone(tone) {
+                console.log('setTone called with:', tone);
                 this.conversationState.data.tone = tone;
                 this.conversationState.step = 'email';
                 this.addBotMessage("Almost ready! What's your email address? This is where I'll send your completed song files (WAV + MP3) and custom artwork.");
@@ -1411,9 +1417,14 @@ Of all the love we'll share today`;
             }
 
             handleButtonClick(index) {
+                console.log('handleButtonClick called with index:', index);
+                console.log('currentButtons:', this.currentButtons);
                 if (this.currentButtons && this.currentButtons[index]) {
+                    console.log('Executing action for button:', this.currentButtons[index]);
                     this.currentButtons[index].action();
                     this.currentButtons = null;
+                } else {
+                    console.log('No action found for button index:', index);
                 }
             }
 
